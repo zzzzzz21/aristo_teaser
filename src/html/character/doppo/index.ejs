@@ -1,0 +1,52 @@
+<%
+meta = { title:'キャラクター：愚地独歩', desc:'' };
+path = '../../';
+directory = 'character';
+directoryLv2 = 'doppo';
+page = '';
+%><!DOCTYPE html>
+<html lang="ja">
+<% include ../../include/_head %>
+<body class="<% if (directoryLv2!=='') { %><%= directory %> <%= directory %>-<%= directoryLv2 %><% } else if (directory!=='') { %> <%= directory %><% } else {%>home<% } %>" id="top">
+<div class="page" id="data-page">
+<% include ../../include/_header %>
+
+<% include ../../include/_top-carousel %>
+	
+	<div class="main contents">
+		<section class="contents__inner">
+			<h1 class="page-title"><img src="<%= path %>images/character/page-title.png" alt="<%= meta.title %>"></h1>
+			<div class="page-body">
+<% include ../../include/_character-navi %>
+
+				<div class="character-article">
+					<div class="character-article__body">
+						<div class="character-article__wrapper">
+							<div class="character-article__title">
+								<p class="character-article__shoulder"><img src="<%= path %>images/character/doppo/shoulder.png" alt="地下闘技場闘士"></p>
+								<h2 class="character-article__name"><img src="<%= path %>images/character/doppo/name.png" alt="愚地独歩"></h2>
+								<p class="character-article__cv"><img src="<%= path %>images/character/doppo/cv.png" alt="CV菅生隆之"></p>
+							</div>
+							<p class="character-article__image"><img src="<%= path %>images/character/doppo/character_main.png" alt="愚地独歩：全身"></p>
+						</div>
+					</div>
+					<div class="character-article__sub">
+						<div class="character-article__imageSub"><img src="<%= path %>images/character/doppo/character_sub.png" alt="愚地独歩：表情"></div>
+						<div class="character-article__description">
+							<p>実戦空手、神心会の創始者で、『武神』や『人食い愚地』の異名を取る。かつてはシベリアトラを素手で屠ったことも。</p>
+						</div>
+					</div>
+				</div><!-- /[.character-article] -->
+			</div>
+		</section>
+	</div>
+
+
+<% include ../../include/_footer %>
+</div><!-- /[.page] -->
+
+<% include ../../include/_loading %>
+
+<% include ../../include/_body_last %>
+</body>
+</html>

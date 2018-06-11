@@ -1,0 +1,763 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_character.scss
+//  Date:	2018-05-04(UTC+9)
+//  Note:	
+// ===================================================================
+// ----------------------------------------
+//	.character-navi
+// ----------------------------------------
+.character-navi {
+	@extend .block;
+	@include calcvw(100, 'margin-bottom');
+	font-family: $base_font_family_mincho;
+	text-align: center;
+	@include calcvw(31.5, 'font-size');
+	font-weight: 700;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		position: relative;
+		z-index: 100;
+		margin-bottom: 112px;
+		@include fontsize(24);
+	}
+	//	.character-navi__body
+	// ----------------------------------------
+	@include element(body) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+		}
+	}
+	//	.character-navi__item
+	// ----------------------------------------
+	@include element(item) {
+		margin-bottom: 1em;
+		display: inherit;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+		}
+		a {
+			display: inline;
+			padding: .2em 1.2em;
+			border-right: 1px solid $base_white_color;
+			border-left: 1px solid $base_white_color;
+			line-height: 1;
+			color: $base_white_color;
+			&:hover,
+			&.is--current {
+				background: $base_link_color;
+				color: $base_white_color;
+			}
+		}
+		&:nth-child(n+1) a {
+			margin-left: -1px;
+		}
+	}
+}
+
+.character-baki .is--baki a,
+.character-doppo .is--doppo a,
+.character-shibukawa .is--shibukawa a,
+.character-retsu .is--retsu a,
+.character-hanayama .is--hanayama a,
+.character-dorian .is--dorian a,
+.character-doyle .is--doyle a,
+.character-sikorsky .is--sikorsky a,
+.character-spec .is--spec a,
+.character-yanagi .is--yanagi a {
+	background: $base_link_color;
+	color: $base_white_color;
+}
+
+
+
+// ----------------------------------------
+//	.character-article
+// ----------------------------------------
+.character-article {
+	position: relative;
+	font-family: $base_font_family_mincho;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		.character-baki & {
+			background-image: url(#{$image_path}character/baki/bg_pc.jpg);
+		}
+		.character-doppo & {
+			background-image: url(#{$image_path}character/doppo/bg_pc.jpg);
+		}
+		.character-shibukawa & {
+			background-image: url(#{$image_path}character/shibukawa/bg_pc.jpg);
+		}
+		.character-retsu & {
+			background-image: url(#{$image_path}character/retsu/bg_pc.jpg);
+		}
+		.character-hanayama & {
+			background-image: url(#{$image_path}character/hanayama/bg_pc.jpg);
+		}
+		.character-dorian & {
+			background-image: url(#{$image_path}character/dorian/bg_pc.jpg);
+		}
+		.character-doyle & {
+			background-image: url(#{$image_path}character/doyle/bg_pc.jpg);
+		}
+		.character-sikorsky & {
+			background-image: url(#{$image_path}character/sikorsky/bg_pc.jpg);
+		}
+		.character-spec & {
+			background-image: url(#{$image_path}character/spec/bg_pc.jpg);
+		}
+		.character-yanagi & {
+			background-image: url(#{$image_path}character/yanagi/bg_pc.jpg);
+		}
+	}
+	//	.character-article__body
+	// ----------------------------------------
+	@include element(body) {
+		position: relative;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(720, 'min-height');
+			background-position: left bottom;
+			background-repeat: no-repeat;
+			background-size: cover;
+			.character-baki & {
+				background-image: url(#{$image_path}character/baki/bg_sp.jpg);
+			}
+			.character-doppo & {
+				background-image: url(#{$image_path}character/doppo/bg_sp.jpg);
+			}
+			.character-shibukawa & {
+				background-image: url(#{$image_path}character/shibukawa/bg_sp.jpg);
+			}
+			.character-retsu & {
+				background-image: url(#{$image_path}character/retsu/bg_sp.jpg);
+			}
+			.character-hanayama & {
+				background-image: url(#{$image_path}character/hanayama/bg_sp.jpg);
+			}
+			.character-dorian & {
+				background-image: url(#{$image_path}character/dorian/bg_sp.jpg);
+			}
+			.character-doyle & {
+				background-image: url(#{$image_path}character/doyle/bg_sp.jpg);
+			}
+			.character-sikorsky & {
+				background-image: url(#{$image_path}character/sikorsky/bg_sp.jpg);
+			}
+			.character-spec & {
+				background-image: url(#{$image_path}character/spec/bg_sp.jpg);
+			}
+			.character-yanagi & {
+				background-image: url(#{$image_path}character/yanagi/bg_sp.jpg);
+			}
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			
+		}
+	}
+	//	.character-article__wrapper
+	// ----------------------------------------
+	@include element(wrapper) {
+		@extend .block;
+		display: flex;
+		flex-direction: row-reverse;
+		@include calcvw(70, 'padding-top');
+		padding-right: 0;
+		padding-left: 0;
+		position: relative;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			padding: 80px 0 110px;
+		}
+	}
+	//	.character-article__title
+	// ----------------------------------------
+	@include element(title) {
+		position: relative;
+		z-index: 11;
+		display: flex;
+		flex-direction: row-reverse;
+		margin-right: $base_padding_sp;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-right: 0;
+		}
+	}
+	//	.character-article__shoulder
+	// ----------------------------------------
+	@include element(shoulder) {
+		img {
+			height: auto;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(60, 'width');
+			}
+		}
+	}
+	//	.character-article__name
+	// ----------------------------------------
+	@include element(name) {
+		margin-right: 10px;
+		img {
+			height: auto;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(160, 'width');
+			}
+		}
+		.character-doppo & {
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 20px;
+			}
+		}
+		.character-shibukawa & {}
+		.character-retsu & {}
+		.character-hanayama & {}
+		.character-dorian & {}
+		.character-doyle & {}
+		.character-sikorsky & {
+			@include calcvw(-18, 'margin-top');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: -40px;
+			}
+		}
+		.character-spec & {}
+		.character-yanagi & {
+			@include calcvw(-20, 'margin-right');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-right: -20px;
+			}
+			img {
+				height: auto;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(220, 'width');
+				}
+			}
+
+		}
+	}
+	//	.character-article__cv
+	// ----------------------------------------
+	@include element(cv) {
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-right: 0;
+		}
+		img {
+			height: auto;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(50, 'width');
+			}
+		}
+		.character-baki & {
+			@include calcvw(318, 'margin-top');
+			@include calcvw(30, 'margin-right');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 320px;
+				margin-right: 10px;
+			}
+		}
+		.character-doppo & {
+			@include calcvw(318, 'margin-top');
+			@include calcvw(30, 'margin-right');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 320px;
+				margin-right: 10px;
+			}
+		}
+		.character-shibukawa & {
+			@include calcvw(318, 'margin-top');
+			@include calcvw(30, 'margin-right');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 324px;
+				margin-right: 10px;
+			}
+		}
+		.character-retsu & {
+			@include calcvw(318, 'margin-top');
+			@include calcvw(30, 'margin-right');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 312px;
+				margin-right: 10px;
+			}
+		}
+		.character-hanayama & {
+			@include calcvw(318, 'margin-top');
+			@include calcvw(30, 'margin-right');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 310px;
+				margin-right: 10px;
+			}
+		}
+		.character-dorian & {
+			@include calcvw(340, 'margin-top');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 320px;
+			}
+		}
+		.character-doyle & {
+			@include calcvw(340, 'margin-top');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 320px;
+			}
+		}
+		.character-sikorsky & {
+			@include calcvw(310, 'margin-top');
+			@include calcvw(-25, 'margin-right');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 280px;
+				margin-right: -25px;
+			}
+			img {
+				@include calcvw(110,'width');
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: 110px;
+				}
+			}
+		}
+		.character-spec & {
+			@include calcvw(360, 'margin-top');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 310px;
+			}
+		}
+		.character-yanagi & {
+			@include calcvw(280, 'margin-top');
+			@include calcvw(-50, 'margin-right');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 300px;
+				margin-right: -50px;
+			}
+			img {
+				@include calcvw(110,'width');
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: 110px;
+				}
+			}
+		}
+	}
+	//	.character-article__image
+	// ----------------------------------------
+	@include element(image) {
+		position: absolute;
+		z-index: 10;
+		@include calcvw(-70, 'top');
+		.character-doyle & {
+			@include calcvw(-32, 'top');
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			top: -80px;
+		}
+		.character-baki & {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				left: 0;
+				img {
+					@include calcvw(436, 'width');
+					height: auto;
+				}
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				right: 260px;
+			}
+		}
+		.character-doppo & {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(-40, 'top');
+				@include calcvw(-30, 'left');
+				img {
+					@include calcvw(489, 'width');
+					height: auto;
+				}
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				top: 0;
+				right: 288px;
+			}
+		}
+		.character-shibukawa & {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(-120, 'top');
+				@include calcvw(-10, 'left');
+				img {
+					@include calcvw(490, 'width');
+					height: auto;
+				}
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				top: -50px;
+				right: 284px;
+			}
+		}
+		.character-retsu & {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(-120, 'top');
+				@include calcvw(-70, 'left');
+				img {
+					@include calcvw(620, 'width');
+					height: auto;
+				}
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				top: -150px;
+				right: 148px;
+			}
+		}
+		.character-hanayama & {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(-30, 'top');
+				@include calcvw(-64, 'left');
+				img {
+					@include calcvw(490, 'width');
+					height: auto;
+				}
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				top: -64px;
+				right: 254px;
+			}
+		}
+		.character-dorian & {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				left: 0;
+				img {
+					@include calcvw(489, 'width');
+					height: auto;
+				}
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				right: 200px;
+			}
+		}
+		.character-doyle & {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				left: 0;
+				img {
+					@include calcvw(558, 'width');
+					height: auto;
+				}
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				top: -32px;
+				right: 200px;
+			}
+		}
+		.character-sikorsky & {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				left: 0;
+				img {
+					@include calcvw(498, 'width');
+					height: auto;
+				}
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				top: -32px;
+				right: 200px;
+			}
+		}
+		.character-spec & {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(-100, 'left');
+				img {
+					@include calcvw(683, 'width');
+					height: auto;
+				}
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				top: -80px;
+				right: 220px;
+			}
+		}
+		.character-yanagi & {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				left: 0;
+				img {
+					@include calcvw(470, 'width');
+					height: auto;
+				}
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				top: -80px;
+				right: 220px;
+			}
+		}
+	}
+	//	.character-article__sub
+	// ----------------------------------------
+	@include element(sub) {
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			width: 50%;
+			position: absolute;
+			bottom: 60px;
+			right: 50%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			.character-doppo & {
+				bottom: 60px;
+			}
+			.character-shibukawa & {
+				bottom: 80px;
+			}
+			.character-retsu & {
+				bottom: 42px;
+			}
+			.character-hanayama & {
+				bottom: 40px;
+			}
+			.character-dorian & {
+				bottom: 40px;
+			}
+			.character-doyle & {
+				bottom: 40px;
+			}
+			.character-sikorsky & {
+				bottom: 110px;
+			}
+			.character-spec & {
+				bottom: 0;
+			}
+			.character-yanagi & {
+				bottom: 78px;
+			}
+		}
+	}
+	//	.character-article__imageSub
+	// ----------------------------------------
+	@include element(imageSub) {
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			@include calcvw(484, 'height');
+			background-image: url(#{$image_path}character/bg_sub.jpg);
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			.character-baki & {
+				img  {
+					position: absolute;
+					top: -32%;
+				}
+			}
+			.character-doppo & {
+				img {
+					position: absolute;
+					@include calcvw(-10, 'top');
+					@include calcvw(50, 'left');
+					width: 80%;
+					height: auto;
+				}
+			}
+			.character-shibukawa & {}
+			.character-retsu & {
+				img {
+					position: absolute;
+					@include calcvw(-60, 'top');
+					@include calcvw(60, 'right');
+					width: 82%;
+					height: auto;
+				}
+			}
+			.character-hanayama & {
+				img {
+					position: absolute;
+					@include calcvw(0, 'top');
+					@include calcvw(32, 'left');
+					width: 94%;
+					height: auto;
+				}
+			}
+			.character-dorian & {
+				img {
+					position: absolute;
+					@include calcvw(-32, 'top');
+				}
+			}
+			.character-doyle & {
+				img {
+					position: absolute;
+					@include calcvw(-60, 'top');
+					@include calcvw(-20, 'right');
+					width: 84%;
+					height: auto;
+				}
+			}
+			.character-sikorsky & {
+				img {
+					position: absolute;
+					@include calcvw(-50, 'top');
+					@include calcvw(56, 'right');
+					width: 84%;
+					height: auto;
+				}
+			}
+			.character-spec & {
+				img {
+					position: absolute;
+					@include calcvw(-20, 'top');
+					right: 0;
+				}
+			}
+			.character-yanagi & {
+				img {
+					position: absolute;
+					@include calcvw(-30, 'top');
+					@include calcvw(110, 'right');
+					width: 66%;
+				}
+			}
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			.character-doppo & {
+				right: 15.6%;
+			}
+			.character-shibukawa & {
+				right: -8%;
+			}
+			.character-retsu & {
+				right: 18.8%;
+			}
+			.character-dorian & {
+				right: -10%;
+			}
+			.character-doyle & {
+				right: -10%;
+			}
+			.character-sikorsky & {
+				right: 10%;
+			}
+			.character-spec & {}
+		}
+	}
+	//	.character-article__description
+	// ----------------------------------------
+	@include element(description) {
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			margin-top: 1rem;
+			padding: 0 $base_padding_sp;
+			@include calcvw(28, 'font-size');
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			display: flex;
+			justify-content: flex-end;
+			box-sizing: border-box;
+			position: relative;
+			z-index: 11;
+			width: 100%;
+			padding: 1em 10px;
+			background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.9) 1%,rgba(0,0,0,0.69) 50%,rgba(0,0,0,0.63) 65%,rgba(0,0,0,0) 80%);
+			p {
+				width: 500px;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+

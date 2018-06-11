@@ -1,0 +1,49 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	layout/_block-contact.scss
+//  Date:	2017-06-02(UTC+9)
+//  Note:	
+// ===================================================================
+// -------------------------------------------------------------------
+// .block-contact
+// -------------------------------------------------------------------
+.block-contact {
+	box-sizing: border-box;
+	width: $design_width;
+	margin: auto;
+	padding: 40px;
+	border: 6px solid $base_border_color;
+	text-align: center;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		width: 100%;
+		@include calcvw(20, 'padding', 640);
+	}
+
+	// .block-contact__tel
+	// ----------------------------------------
+	@include element(tel) {
+		@include fontsize(60);
+		font-weight: bold;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include fontsize(36);
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			a {
+				color: $base_text_color;
+			}
+		}
+	}
+	
+	.business-hours {
+		display: block;
+	}
+	.in-charge {
+		display: block;
+	}
+}

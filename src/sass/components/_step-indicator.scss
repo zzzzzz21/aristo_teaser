@@ -1,0 +1,122 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	layout/_step-indicator.scss
+//  Date:	2017-06-02(UTC+9)
+//  Note:	
+// ===================================================================
+// -------------------------------------------------------------------
+// .step-indicator
+// -------------------------------------------------------------------
+.step-indicator {
+	ul {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: center;
+	}
+	// .stap-indicator__item
+	// ----------------------------------------
+	@include element(item) {
+		position: relative;
+		display: inline-block;
+		margin-right: 8px;
+		@include fontsize(18);
+		font-weight: bold;
+		line-height: 1;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include fontsize(13);
+		}
+		> span {
+			display: inline-block;
+			position: relative;
+			padding: 12px 1.4em;
+			color: $base_white_color;
+			background-color: #ccc;
+			border-color: #ccc;	
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				padding: 12px 1em;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 100%;
+				content: '';
+				height: 0;
+				width: 0;
+				border: 21px solid transparent;
+				border-right-width: 0;
+				border-left-width: 20px;
+				z-index: 2;
+				border-left-color: inherit;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					border-width: 19px;
+					border-left-width: 16px;
+				}
+			}
+			&:before {
+				margin: 0 .6em;
+			}
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 100%;
+			content: '';
+			height: 0;
+			width: 0;
+			border: 21px solid transparent;
+			border-right-width: 0;
+			border-left-width: 20px;
+			z-index: 1;
+			transform: translateX(8px);
+			border-left-color: #fff;
+			margin: 0;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				border-width: 19px;
+				border-left-width: 16px;
+			}
+		}
+
+		&:first-child span:before {
+			content: 'Step1';
+		}
+		&:nth-child(2) span:before {
+			content: 'Step2';
+		}
+		&:nth-child(3) span:before {
+			content: 'Step3';
+		}
+		
+		&:last-child:after,
+		&:last-child span:after{
+			border: none;
+		}
+	}
+	& + .section-title {
+		margin-top: 80px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(80, 'margin-top', 640);
+		}
+	}
+}
+
+
+.page-input .-input,
+.page-confirm .-confirm,
+.page-complete .-complete {
+	span {
+		background-color: $base_corporate_color;
+		border-color: $base_corporate_color;
+	}
+}

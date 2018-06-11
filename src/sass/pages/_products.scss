@@ -1,0 +1,342 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_products.scss
+//  Date:	2018-05-04(UTC+9)
+//  Note:	
+// ===================================================================
+// ----------------------------------------
+//	.products-article
+// ----------------------------------------
+.products-article {
+	@extend .block;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	font-family: $base_font_family_mincho;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
+	& + & {
+		@include calcvw(80, 'margin-top');
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-top: 160px;
+		}
+	}
+	//	.products-article__title
+	// ----------------------------------------
+	@include element(title) {
+		@include calcvw(40, 'margin-bottom');
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			box-sizing: border-box;
+			@include text-indent;
+			width: 75px;
+			margin: 0;
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			.is--music & {
+				height: 440px;
+				background-image: url(#{$image_path}products/title_music_pc.png);
+			}
+		}
+	}
+	//	.products-article__body
+	// ----------------------------------------
+	@include element(body) {
+		box-sizing: border-box;
+		padding: 0 $base_padding_sp;
+		width: 100%;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			width: 85%;
+			padding: 0;
+		}
+	}
+}
+
+// ----------------------------------------
+//	.products-unit
+// ----------------------------------------
+.products-unit {
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		//	.products-unit.with-jacket
+		// ----------------------------------------
+		&.with-jacket {
+			display: grid;
+			grid-template-columns: 39.2% 3.9% 56.9%;
+			grid-template-rows: minmax(120px, auto) auto auto;
+			padding-left: 0;
+			background: none;
+			.products-unit__title {
+				grid-column: 3;
+				grid-row: 1;
+				-ms-grid-row-span: 1;
+				margin-bottom: 20px;
+			}
+			.products-unit__jacket {
+				grid-row-start: 1;
+				grid-row-end: 3;
+				-ms-grid-row-span: 3;
+			}
+			.products-unit__body {
+				grid-column: 3;
+				grid-row: 2;
+				-ms-grid-row-span: 1
+			}
+		}
+	}
+	& + & {
+		@include calcvw(84, 'margin-top');
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-top: 80px;
+		}
+	}
+	a {
+		transition: color ease .3s;
+		&:link, &:visited {
+			color: $base_white_color;
+			text-decoration: underline;
+		}
+		&:hover, &:active {
+			color: $base_link_color;
+			text-decoration: none;
+		}
+	}
+	//	.products-unit__title
+	// ----------------------------------------
+	@include element(title) {
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+		}
+		.title--sub {
+			display: block;
+			color: $base_text_color_red;
+			@include calcvw(28, 'font-size');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include fontsize(28);
+			}
+		}
+		.title--main {
+			display: block;
+			@include calcvw(48, 'font-size');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include fontsize(38);
+			}
+		}
+	}
+	//	.products-unit__jacket
+	// ----------------------------------------
+	@include element(jacket) {
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		.with--jacket & {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			@include calcvw(36, 'margin-bottom');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				flex-wrap: nowrap;
+				justify-content: flex-start;
+				margin-bottom: 24px;
+			}
+		}
+		//	.products-unit__jacket--caption
+		// ----------------------------------------
+		@include modifier(caption) {
+			font-family: $base_font_family;
+			@include fontsize(13);
+			text-align: center;
+			color: #ccc;
+			background-color: #000;
+
+			.products-unit__jacket--image + & {
+				@include calcvw(3, 'margin-top');
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					margin-top: 3px;
+				}
+			}
+		}
+		//	.products-unit__jacket__unit
+		// ----------------------------------------
+		@include element(unit) {
+			@include calcvw(320, 'width');
+			@include calcvw(18, 'margin-bottom');
+			//			@include calcvw(10, 'margin-right');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+//				margin-top: 28px;
+				width: calc(1200px * 320 / 1200);
+				margin-left: calc(100% * 20 / 1020);
+			}
+		}
+		.products-unit__title + & {
+			@include calcvw(40, 'margin-top');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 0;
+			}
+		}
+		& + .products-unit__body {
+			@include calcvw(40, 'margin-top');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 0;
+			}
+		}
+	}
+	//	.products-unit__body
+	// ----------------------------------------
+	@include element(body) {
+		@include calcvw(32, 'margin-top');
+		@include fontsize(14);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-top: 20px;
+			@include fontsize(16)
+		};
+		.is-outline {
+			line-height: 1.2;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+			}
+		}
+		.is-body {
+			display: flex;
+			flex-wrap: wrap;
+			@include calcvw(44, 'margin-top');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				flex-wrap: nowrap;
+				justify-content: space-between;
+				margin-top: 32px;
+				.with-jacket & {
+					flex-wrap: wrap;
+				}
+				&.-vertical {
+					justify-content: flex-start;
+				}
+			}
+		}
+	}
+}
+
+// ----------------------------------------
+//	.arist-comment
+// ----------------------------------------
+.artist-comment {
+	font-family: $base_font_family;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		width: calc(#{$base_contents_width} * .44);
+		.with--jacket & {
+			width: calc(100% * 564 / 1020);
+		}
+	}
+	//	.artist-comment__photo
+	// ----------------------------------------
+	@include element(photo) {
+		img {
+			@include calcvw(564, 'width');
+			height: auto;
+			.with--jacket & {
+				@include calcvw(400, 'width');
+			}
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			width: calc(#{$base_contents_width} * .375);
+			.with--jacket & {
+				width: calc(100% * 420 / 1020);
+				img {
+					width: 100%;
+				}
+			}
+			.with-jacket & {
+				max-width: 320px;
+				width: calc(#{$base_contents_width} * .320);
+				& + .artist-comment {
+					margin-top: 40px;
+				}
+			}
+			.-vertical & {
+				box-sizing: border-box;
+				width: calc(100% * 280 / 1020);
+				margin-right: calc(100% * 36 / 1020);
+			}
+			img {
+				width: 100%;
+			}
+		}
+	}
+	//	.artist-comment__title
+	// ----------------------------------------
+	@include element(title) {
+		@include calcvw(44, 'margin-top');
+		@include calcvw(32, 'margin-bottom');
+		@include fontsize(14);
+		text-decoration: underline;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin: 0 0 24px;
+			@include fontsize(14);
+		}
+	}
+	//	.artist-comment__name
+	// ----------------------------------------
+	@include element(name) {
+		@include fontsize(16);
+		.artist-comment__body + & {
+			@include calcvw(36, 'margin-top');
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 24px;
+				@include fontsize(18);
+			}
+		}
+	}
+	//	.artist-comment__body
+	// ----------------------------------------
+	@include element(body) {
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+		}
+	}
+}

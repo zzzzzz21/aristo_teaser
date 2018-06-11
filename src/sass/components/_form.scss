@@ -1,0 +1,118 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	components/_form.scss
+//  Date:	2017-06-02(UTC+9)
+//  Note:	
+// ===================================================================
+.element-select,
+.element-input,
+.element-input-text,
+.element-input-zip,
+.element-input-number,
+.element-checkbox,
+.element-textarea {
+	box-sizing: border-box;
+	padding: .5em .75em;
+}
+
+//	.element-select
+// ----------------------------------------
+.element-select {
+	width: 100%;
+}
+
+//	.element-input
+// ----------------------------------------
+.element-input {
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		width: 100%;
+	}
+}
+
+//	.element-input-text
+// ----------------------------------------
+.element-input-text {
+	width: 100%;
+}
+
+//	.element-input-zip
+// ----------------------------------------
+.element-input-zip {
+	width: 14em;
+}
+
+//	.element-input-number
+// ----------------------------------------
+.element-input-number {
+	width: 6em;
+	margin-right: .4em;
+	text-align: right;
+}
+
+//	.element-textarea
+// ----------------------------------------
+.element-textarea {
+	width: 100%;
+	min-height: 10em;
+}
+
+//	.element-checkbox
+// ----------------------------------------
+.element-input-checkbox {
+	margin-right: .6em;
+	label + & {
+		margin-left: 1em;
+	}
+}
+
+//	.element--name
+// ----------------------------------------
+.element--name {
+	display: flex;
+	justify-content: space-between;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+	}
+	
+	//	.element--name__item
+	// ----------------------------------------
+	@include element(item) {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		width: calc((100% - 1.6em) / 2);
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+		}
+		input {
+			width: 100%;
+		}
+		label {
+			margin-right: .4em;
+		}
+	}
+}
+
+//	.-checkbox
+// ----------------------------------------
+.-checkbox {
+	box-sizing: border-box;
+	padding: 1em 1.6em;
+	border: 1px solid #a9a9a9;
+	display: flex;
+	flex-wrap: wrap;
+	.-checkbox__item {
+		width: 25%;
+		padding: .2em 0;
+	}
+	//	.page-confirm &
+	// ----------------------------------------
+	.page-confirm & {
+		padding: 0;
+		border: none;
+	}
+}

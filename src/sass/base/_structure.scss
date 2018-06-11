@@ -1,0 +1,147 @@
+@charset "UTF-8";
+// ===================================================================
+//	File:	base/_structure.scss
+//	Date:	2018-04-30(+09:00)
+//	Note:	
+// ===================================================================
+html {
+	font-size: 62.5%;	// fontsize 指定は1rem=1px
+	height: 100%;
+	background: $base_bg_color;
+	overflo-x: hidden;
+}
+html, body {
+	height: 100%;
+//	overflow-x: hidden;
+	-webkit-overflow-scrolling : touch
+}
+body {
+	@include fontsize($base_font_size);
+	background: $base_bg_color;
+	color: $base_text_color;
+	font-family: $base_font_family;
+	font-feature-settings : "palt";
+	line-height: $base_line_height;
+	width: 100%;
+	position: relative;
+	min-height: 100%;
+	overflow-x: hidden;
+	@include smooth;
+	//		[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		&.is-open {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.main {
+	p + p {
+		margin-top: 1.6em;
+	}
+}
+
+.page {
+	min-height: 100%;
+	position: relative;
+	box-sizing: border-box;
+	//	[media queries sp]
+	// ----------------------------------------
+	@include media(sp) {
+		&.no-scroll {
+			overflow-y: hidden;
+		}
+	}
+}
+
+@mixin wrapper {
+	width: 100%;
+	max-width: $base_contents_width;
+	margin: 0 auto;
+	position: relative;
+}
+
+.container {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 $base_padding_sp;
+	@include clearfix;
+	//	[media queries tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		max-width: calc(#{$site_width} + 20px);
+		padding: 0 10px;
+	}
+	//	.container__inner
+	// ----------------------------------------
+	@include element(inner) {
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			@include clearfix;
+			max-width: $design_width;
+			padding: 0;
+		}
+	}
+}
+
+.block {
+	box-sizing: border-box;
+	position: relative;
+	z-index: 10;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 $base_padding_sp;
+	//	[media queries tablet]
+	// ----------------------------------------
+	@include media(tb) {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		width: $base_contents_width;
+		max-width: 100%;
+		padding: 0;
+	}
+}
+
+.unit + .unit {
+	margin-top: $base_padding*4;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		margin-top: $base_padding*6;
+	}
+}
+.data-link-sp {
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		cursor: default;
+	}
+}
+
+.alignR {
+	@include alignR;
+}
+button {
+	cursor: pointer;
+	/* when tapping or clicking the button */
+	outline: none;
+	border: none;
+}
+
+img {
+	height: auto;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		width: 100%;
+	}
+}

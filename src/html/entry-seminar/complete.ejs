@@ -1,0 +1,50 @@
+<%
+meta = { title:'完了：セミナー申し込み', desc:'' };
+path = '../';
+directory = 'entry-seminar';
+directoryLv2 = '';
+page = 'complete';
+%><!DOCTYPE html>
+<html lang="ja">
+<% include ../include/_head %>
+<body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } %>" id="top">
+<div class="page" id="data-page">
+<% include ../include/_header %>
+	<main class="main contents">
+		<header class="page-head">
+			<div class="container">
+				<h1 class="page-title"><%= meta.title %></h1>
+			</div>
+		</header>
+		<div class="page-body">
+			<div class="container">
+<% include ../include/_block-contact %>
+				<div class="contact-form">
+					<nav class="step-indicator">
+						<ul>
+							<li class="step-indicator__item -input"><span>入力</span></li>
+							<li class="step-indicator__item -confirm"><span>確認</span></li>
+							<li class="step-indicator__item -complete"><span>完了</span></li>
+						</ul>
+					</nav>
+					<!-- /[.step-indicator] -->
+					
+					<h2 class="section-title"><%= meta.title %></h2>
+					<div class="form-complete">
+						<p>お問い合わせ内容を送信いたしました。<br>
+						ありがとうございました。</p>
+						<a href="<%= path %>index.html" class="btn-back">ARISTOトップページに戻る</a>
+					</div>
+				</div>
+				<!-- /[.contact-form]-->	
+			</div>
+			<!-- /[.container] -->
+		</div>
+	</main>
+	<!-- /[.contents] -->
+<% include ../include/_footer %>
+</div><!-- /[.page] -->
+
+<% include ../include/_body_last %>
+</body>
+</html>

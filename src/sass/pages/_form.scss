@@ -1,0 +1,268 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_form.scss
+//  Date:	2018-06-04(UTC+9)
+//  Note:	
+// ===================================================================
+@import 'components/form';
+
+@mixin required {
+	content: '必須';
+	background: $base_label_color;
+	border-radius: 4px;
+	padding: .2em .4em;
+	@include fontsize(14);
+	color: $base_white_color;
+}
+
+// ----------------------------------------
+//	.contact-form
+// ----------------------------------------
+.contact-form {
+	@include wrapper;
+	padding: 70px 0 0;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include calcvw(70, 'padding-top', 640);
+	}
+
+	//	.contact-form__link
+	// ----------------------------------------
+	@include element(link) {
+		text-align: right;
+		a {
+			@include link-arrow;
+		}	
+	}
+	//	.contact-form__note
+	// ----------------------------------------
+	@include element(note) {
+		margin-bottom: 30px;
+		padding-bottom: 20px;
+		border-bottom: 1px dotted #eee;
+		@include fontsize(14);
+	}
+}
+.label-required {
+	@include required;
+	margin: 0 .4em;
+}
+
+
+// ----------------------------------------
+//	.form-field
+// ----------------------------------------
+.form-field {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		flex-wrap: wrap;
+	}
+	
+	& + & {
+		margin-top: 30px;
+	}
+	
+	//	.form-field__label
+	// ----------------------------------------
+	@include element(label) {
+		position: relative;
+		width: calc(100% - 500px - 60px);
+		padding-top: .5em;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+			margin-bottom: .2em;
+			padding: .6em .75em;
+			border-top: 1px solid #eee;
+			border-left: 12px solid #eee;
+			@include fontsize(14);
+		}
+		.required &:after {
+			@include required;
+			position: absolute;
+			top: .5em;
+			right: 0;
+		}
+	}
+	
+	//	.form-field__element
+	// ----------------------------------------
+	@include element(element) {
+		flex-basis: 500px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding-left: calc(.75em + 12px);
+			flex-basis: 100%;
+		}
+
+		//	確認画面 .page-confirm &
+		// ----------------------------------------
+		.page-confirm & {
+			padding-top: .5em;
+			label {
+				font-size: 80%;
+				color: #ccc;
+			}
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+				margin-bottom: .2em;
+				padding: .6em .75em;
+			}
+		}
+	}
+
+	//	.form-field--child
+	// ----------------------------------------
+	@include modifier(child) {
+		@extend .form-field;
+		align-items: center;
+		//	.form-field__label
+		// ----------------------------------------
+		.form-field__label {
+			width: 140px;
+			padding-top: 0;
+			&:after {
+				top: 0;
+			}
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+				border: none;
+			//	padding-left: calc(.75em + 12px);
+			}
+		}
+		//	.form-field__element
+		// ----------------------------------------
+		.form-field__element{
+			flex-basis: 310px;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				flex-basis: 100%;
+				padding-left: .75em;
+			}
+		}
+	}
+
+	//	.form-field--submit
+	// ----------------------------------------
+	@include modifier(submit) {
+		margin-top: 140px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(80, 'margin-top', 640);
+		}
+	}
+}
+
+//	.submit__information
+// ----------------------------------------
+.submit__information {
+	text-align: center;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include fontsize(14);
+	}
+	a {
+		text-decoration: underline;
+	}
+}
+
+//	.submit__privacy
+// ----------------------------------------
+.submit__privacy {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1em;
+	background: #eee;
+	.submit__information + & {
+		margin-top: 70px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(70, 'margin-top', 640);
+		}
+	}
+}
+
+//	.form-complete
+// ----------------------------------------
+.form-complete {
+	text-align: center;
+	a {
+		margin-top: 3rem ;
+	}
+}
+
+
+//	.form-submit
+// ----------------------------------------
+.form-submit {
+	@include btn-next;
+	display: block;
+	margin: 50px auto 0;
+	cursor: pointer;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 1em 20px;
+	color: $base_white_color;
+	text-align: center;
+	text-decoration: none;
+	background-image: url(#{$image_path}common/arrow-nav-small-white.svg);
+	background-repeat: no-repeat;
+	background-position: right 6px center;
+	background-size: auto 12px;	border: 1px solid #fff;
+	border-radius: 5px;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		width: 100%;
+		@include calcvw(50, 'margin-top', 640);
+	}
+}
+
+//	.form-back
+// ----------------------------------------
+.form-back {
+	@include btn-back;
+	display: block;
+	margin: 50px auto 0;
+	cursor: pointer;
+	box-sizing: border-box;
+	width: 40%;
+	margin: 0 auto;
+	padding: 1em 20px;
+	@include fontsize(14);
+	color: $base_white_color;
+	text-align: center;
+	text-decoration: none;
+	background-color: lighten($base_btn_color,20%);
+	background-image: url(#{$image_path}common/arrow-nav-small-white-back.svg);
+	background-repeat: no-repeat;
+	background-position: left 6px center;
+	background-size: auto 12px;	border: 1px solid #fff;
+	border-radius: 5px;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		width: 100%;
+		@include calcvw(50, 'margin-top', 640);
+	}
+	.form-submit + & {
+		margin-top: 1.6rem;
+	}
+}
+

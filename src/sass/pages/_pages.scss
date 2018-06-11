@@ -1,0 +1,116 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_pages.scss
+//  Date:	2017-10-18(UTC+9)
+//  Note:	
+// ===================================================================
+// ----------------------------------------
+//	.contents
+// ----------------------------------------
+.contents {
+	position: relative;
+	padding: 0 0 320px;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include calcvw(240, 'padding-bottom', 640);
+	}
+
+	// ----------------------------------------
+	//	.contents__inner
+	// ----------------------------------------
+	@include element(inner) {
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+		}
+	}
+
+	// ----------------------------------------
+	//	.page-head
+	// ----------------------------------------
+	.page-head {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 304px;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(300, 'height', 640);
+		}
+		@at-root .aristo-entry-seminar & {
+			background-image: url(#{$image_path}form/bg_header.jpg);
+		}
+		@at-root .aristo-request & {
+			background-image: url(#{$image_path}form/bg_header.jpg);
+		}
+		@at-root .aristo-inquiry & {
+			background-image: url(#{$image_path}form/bg_header.jpg);
+		}
+	}
+
+	// ----------------------------------------
+	//	.page-title
+	// ----------------------------------------
+	.page-title {
+		margin-bottom: .8em;
+		text-align: center;
+		font-family: $base_font_family_noto;
+		@include fontsize(48);
+		color: $base_corporate_color;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include fontsize(36);
+			.page-confirm &,
+			.page-complete & {
+				@include fontsize(32);
+			}
+		}
+	}
+	
+	// ----------------------------------------
+	//	.page-body
+	// ----------------------------------------
+	.page-body {
+		padding-top: 48px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(100, 'padding-top', 640);
+		}
+	}
+
+	// ----------------------------------------
+	//	.page-lead
+	// ----------------------------------------
+	.page-lead {
+		margin-bottom: 60px;
+		text-align: center;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(60, 'margin-bottom', 640);
+			text-align: left;
+		}
+	}
+
+	// ----------------------------------------
+	//	.section-title
+	// ----------------------------------------
+	.section-title {
+		margin-bottom: 90px;
+		text-align: center;
+		@include fontsize(36);
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(90, 'margin-bottom', 640);
+			@include fontsize(24);
+		}
+	}
+}

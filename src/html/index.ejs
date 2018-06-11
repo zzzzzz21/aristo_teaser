@@ -1,0 +1,108 @@
+<%
+meta = { title:'TVアニメ「バキ」公式サイト', desc:'' };
+path = './';
+directory = '';
+directoryLv2 = '';
+page = '';
+%><!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<% include include/_head %>
+</head>
+<body class="<% if (directory!=='') { %> <%= directory %><% } else {%>home<% } %>" id="top">
+<% include include/_gtag %>
+
+<div class="page" id="data-page">
+	<main class="main">
+		<div class="main-visual">
+			<div class="is-pc steam_wrap-outer">
+				<div class="steam_wrap">
+					<div class="steam st1"><object type="image/svg+xml" data="<%= path %>images/index/steam.svg" class="st_obj"></object></div>
+					<div class="st2" style="display: none;"><object type="image/svg+xml" data="<%= path  %>images/index/steam.svg" class="st_obj"></object></div>
+					<div class="st3" style="display: none;"><object type="image/svg+xml" data="<%= path  %>images/index/steam.svg" class="st_obj"></object></div>
+					<div class="st4" style="display: none;"><object type="image/svg+xml" data="<%= path  %>images/index/steam.svg" class="st_obj"></object></div>
+				</div>
+				<div class="steam_wrap2" style="display: none;">
+					<div class="steam st1"><img src="<%= path %>images/index/steam.png" class="st_obj"></div>
+					<div class="st2" style="display: none;"><img src="<%= path %>images/index/steam.png" class="st_obj"></div>
+					<div class="st3" style="display: none;"><img src="<%= path %>images/index/steam.png" class="st_obj"></div>
+					<div class="st4" style="display: none;"><img src="<%= path %>images/index/steam.png" class="st_obj"></div>
+				</div>
+			</div><!-- /[.steam_wrap-outer] -->
+			
+			<div class="home-hero">
+				<div class="wrapper">
+					<div class="home-hero__primary">
+						<img src="<%= path %>images/index/catchcopy.png" width="119" alt="筋肉（こいつ）が戦えと言っている。" class="catchcopy">
+					</div>
+					<section class="home-hero__secondary">
+						<h1><img src="<%= path %>images/index/logo.png" width="476" alt="TVアニメ「バキ」" class="logo"></h1>
+						<a href="https://www.youtube.com/embed/DkuHm8kmovI?rel=0&amp;autoplay=1&amp;wmode=transparent" class="pv_thumb youtube"><img src="<%= path %>images/index/pv_thumb_180529.gif" alt="PV"></a>
+						<h2><img src="<%= path %>images/index/txt_info.png" alt="“生態系崩壊”の肉弾バトル 2018年夏、開幕ッ!!NETFLIX先行配信 / 地上波放送予定" class="txt_info"></h2>
+						<a href="https://www.youtube.com/embed/DkuHm8kmovI?rel=0&amp;autoplay=1&amp;wmode=transparent" class="pv_thumb_sp youtube"><img src="<%= path %>images/index/pv_thumb_180529.gif" alt="PV"></a>
+					</section>
+				</div>
+			</div><!-- /[.home-hero] -->
+		</div><!-- /[.main-visual] -->
+	</main><!-- /[.main] -->
+	
+	<div class="header--home">
+<% include include/_header %>
+	</div>
+
+	<main class="main main-secondary">
+		<div class="home-information">
+			<div class="home-information__container">
+				<section class="home-news">
+					<h2 class="home-information__title is--news"><img src="<%= path %>images/common/title_news.png" alt="NEWS"></h2>
+					<div class="home-news__wrapper">
+					</div><!-- /[.home-news__wrapper] -->
+					<a href="https://bakianime.tumblr.com" target="_blank" class="btn-detail">もっと見るッッ</a>
+				</section><!-- /[.home-news] -->				
+				<section class="home-twitter">
+					<h2 class="home-information__title is--twitter"><img src="<%= path %>images/common/title_twitter.png" alt="Twitter"></h2>
+					<div class="home-twitter__wrapper is-pc">
+						<a class="twitter-timeline" data-lang="ja" data-width="100%" data-theme="dark" data-link-color="#ffaf99" href="https://twitter.com/baki_anime" data-chrome="transparent noheader noborders nofooter noscrollbar">Tweets by baki_anime</a>
+						<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+					<div class="home-twitter__wrapper is-sp">
+						<a class="twitter-timeline" data-lang="ja" data-width="320" data-theme="dark" data-link-color="#ffaf99" href="https://twitter.com/baki_anime" data-chrome="transparent noheader noborders nofooter noscrollbar">Tweets by baki_anime</a>
+						<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+					<a href="https://twitter.com/baki_anime" target="_blank" class="btn-detail">@baki_anime ＞</a>
+				</section><!-- /[.home-twitter] -->
+			</div>
+		</div><!-- /[.home-information] -->
+		<div class="home-introduction">
+			<section class="home-introduction__container">
+				<h2 class="home-introduction__title"><img src="<%= path %>images/index/title_introduction_pc.png" alt="“生態系崩壊”の肉弾バトル開幕ッッ！！"></h2>
+				<div class="home-introduction__body">
+					<p>板垣恵介による大人気格闘マンガ「刃牙」シリーズ<br>（秋田書店刊「週刊少年チャンピオン」連載中）は、<br>2016年に連載開始25周年を迎え、<br>累計発行部数7,000万部という驚異的な人気を誇るロングセラー作品。</p>
+					<p>地下闘技場の最年少チャンピオンである<br>主人公・範馬刃牙（はんま バキ）と、<br>地上最強の生物と呼ばれる父・範馬勇次郎、<br>さまざまな格闘士たちとの闘いを描いた<br>「刃牙」シリーズは『グラップラー刃牙』（第1部）、<br>『バキ』（第2部）、『範馬刃牙』（第3部）、<br>『刃牙道』（第4部）ほか外伝、特別篇が発表されてきた。</p>
+					<p>そしてついにファン待望の<br>『バキ』（第2部）のアニメ化が実現！<br>2018年夏NETFLIXにて先行配信、<br>地上波放送で闘いの幕が切って落とされるッッ！！</p>
+				</div>
+			</section>
+		</div><!-- /[.home-introduction] -->
+		<div class="main-stain">
+			<picture class="main-stain--left">
+				<source media="(min-width: 768px)" srcset="<%= path %>images/index/bg_stain_left.png">
+				<source media="(max-width: 767px)" srcset="<%= path %>images/index/bg_stain_left_sp.png">
+				<img src="<%= path %>images/index/bg_stain_left.png" alt="">
+			</picture>
+			<picture class="main-stain--right">
+				<source media="(min-width: 768px)" srcset="<%= path %>images/index/bg_stain_right.png">
+				<source media="(max-width: 767px)" srcset="<%= path %>images/index/bg_stain_right_sp.png">
+				<img src="<%= path %>images/index/bg_stain_right.png" alt="">
+			</picture>
+		</div>
+	</main>
+
+<% include include/_footer %>
+</div><!-- /.page -->
+
+<% include include/_loading %>
+
+<% include include/_body_last %>
+
+</body>
+</html>

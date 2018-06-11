@@ -1,0 +1,54 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	components/_loading.scss
+//  Date:	2018-05-04(UTC+9)
+//  Note:	
+// ===================================================================
+// ----------------------------------------
+//	.loading
+// ----------------------------------------
+.loading {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1000000;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+//	bakcground-image: url(#{$image_path}common/bg_contents_sp.jpg);
+//	background-position: 0 0;
+//	background-repeat: no-repeat;
+//	background-size: cover;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+//		background-image: url(#{$image_path}common/bg_contents_pc.jpg);
+	}
+	//	.loading__body
+	// ----------------------------------------
+	@include element(body) {
+		box-sizing: border-box;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding: $base_padding_sp*4;
+			img {
+			}
+		}
+		img {
+			animation: shake-hard .2s ease-in-out 0s 1 forwards;
+//			animation-name: shake-hard;
+//			animation-duration: 1000ms;
+//			animation-iteration-count: infinite;
+//			animation-timing-function: ease-in-out;
+//			animation-delay: 0s;
+		}
+	}
+}
