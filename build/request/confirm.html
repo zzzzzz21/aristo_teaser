@@ -26,6 +26,17 @@
 <!-- [css] -->
 <link rel="stylesheet" href="../css/style.css?201805291700" media="all">
 <body class="aristo-request page-confirm" id="top">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115670540-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-115670540-1');
+</script>
+<!-- /Google Analytics -->
+
 <div class="page" id="data-page">
 	<header class="globalHeader" id="data-header">
 		<div class="globalHeader__inner">
@@ -57,9 +68,8 @@
 		<div class="page-body">
 			<div class="container">
 				<div class="page-lead">
-					<p>ARISTOの資料請求を下記フォームより受け付けております。<br>
-						必要事項をご記入いただき、「入力内容を確認する」ボタンを押してください。<br>
-						<span class="is--notice">必須項目は、すべて選択または入力してください。</span></p>
+					<p>内容を確認して問題なければ「送信する」ボタンを押してください。<br>
+						修正したい場合は、「修正する」ボタンを押してください。</p>
 				</div>
 				<!-- /[.page-lead] -->
 							<div class="block-contact">
@@ -84,7 +94,7 @@
 					<!-- /[.step-indicator] -->
 
 					<h2 class="section-title">確認：資料請求</h2>
-					<p class="contact-form__link"><a href="../inquiry/" class="link-next">お問い合わせ</a></p>
+					<p class="contact-form__link"><a href="../inquiry/" class="btn-detail">お問い合わせ</a></p>
 					<p class="contact-form__note">※内容を確認して問題なければ「送信する」ボタンを押してください。<br>
 					　修正したい場合は、「修正する」ボタンを押してください。</p>
 					<form action="" id="form-contact" name="form-contact" class="form-body form-confirm h-adr">

@@ -14,6 +14,7 @@
 	// ----------------------------------------
 	@include media(sp) {
 		@include calcvw(240, 'padding-bottom', 640);
+		font-size: 1.3rem;
 	}
 
 	// ----------------------------------------
@@ -31,16 +32,22 @@
 	// ----------------------------------------
 	.page-head {
 		display: flex;
-		justify-content: center;
 		align-items: center;
 		height: 304px;
-		background-position: 0 0;
+		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
 			@include calcvw(300, 'height', 640);
+		}
+		@at-root .home & {
+			height: 674px;
+			background-image: url(#{$image_path}index/bg_header.jpg);
+			@include media(sp) {
+				@include calcvw(674, 'height', 640);
+			}
 		}
 		@at-root .aristo-entry-seminar & {
 			background-image: url(#{$image_path}form/bg_header.jpg);
@@ -57,11 +64,23 @@
 	//	.page-title
 	// ----------------------------------------
 	.page-title {
-		margin-bottom: .8em;
+		//margin-bottom: .8em;
 		text-align: center;
 		font-family: $base_font_family_noto;
 		@include fontsize(48);
 		color: $base_corporate_color;
+
+		//	.home .contents .page-title
+		// ----------------------------------------
+		@at-root .home & {
+			@include fontsize(30);
+			color: $base_text_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(30, 'font-size', 640);
+			}
+		}
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
@@ -69,6 +88,18 @@
 			.page-confirm &,
 			.page-complete & {
 				@include fontsize(32);
+			}
+		}
+		
+		//	.page-title--note
+		// ----------------------------------------
+		@include modifier(note) {
+			@include fontsize(13);
+			text-align: right;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include fontsize(10);
 			}
 		}
 	}
@@ -103,6 +134,21 @@
 	//	.section-title
 	// ----------------------------------------
 	.section-title {
+		margin-bottom: 90px;
+		text-align: center;
+		@include fontsize(36);
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(90, 'margin-bottom', 640);
+			@include fontsize(24);
+		}
+	}
+
+	// ----------------------------------------
+	//	.block__title
+	// ----------------------------------------
+	.block__title {
 		margin-bottom: 90px;
 		text-align: center;
 		@include fontsize(36);

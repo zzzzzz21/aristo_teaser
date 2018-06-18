@@ -10,11 +10,13 @@ html {
 	background: $base_bg_color;
 	overflo-x: hidden;
 }
+
 html, body {
 	height: 100%;
 //	overflow-x: hidden;
 	-webkit-overflow-scrolling : touch
 }
+
 body {
 	@include fontsize($base_font_size);
 	background: $base_bg_color;
@@ -84,6 +86,7 @@ body {
 		@include media(pc-tb) {
 			@include clearfix;
 			max-width: $design_width;
+			margin: 0 auto;
 			padding: 0;
 		}
 	}
@@ -93,32 +96,32 @@ body {
 	box-sizing: border-box;
 	position: relative;
 	z-index: 10;
-	width: 100%;
+	max-width: 100%;
+	width: $site_width;
 	margin: 0 auto;
-	padding: 0 $base_padding_sp;
-	//	[media queries tablet]
+	padding: 100px 0;
+	//	[media queries SP]
 	// ----------------------------------------
-	@include media(tb) {
-		padding-right: 10px;
-		padding-left: 10px;
+	@include media(sp) {
+		width: 100%;
+		@include calcvw(100, 'padding', 640);
+		padding-right: $base_padding_sp;
+		padding-left: $base_padding_sp;
 	}
-	//	[media queries PC-tablet]
-	// ----------------------------------------
-	@include media(pc-tb) {
-		width: $base_contents_width;
-		max-width: 100%;
-		padding: 0;
+	&:last-child {
+		padding-bottom: 0;
 	}
 }
 
 .unit + .unit {
-	margin-top: $base_padding*4;
-	//	[media queries PC-tablet]
+	margin-top: $base_padding*10;
+	//	[media queries SP]
 	// ----------------------------------------
-	@include media(pc-tb) {
-		margin-top: $base_padding*6;
+	@include media(sp) {
+		margin-top: $base_padding*8;
 	}
 }
+
 .data-link-sp {
 	//	[media queries PC-tablet]
 	// ----------------------------------------
@@ -130,6 +133,7 @@ body {
 .alignR {
 	@include alignR;
 }
+
 button {
 	cursor: pointer;
 	/* when tapping or clicking the button */

@@ -1,12 +1,13 @@
 'use strict';
 
+var $body = $('body');
+
 document.addEventListener('DOMContentLoaded', function () {
 	// 初期処理
 	function init() {
 		drawerNav();
 		topCarousel();
 		colorbox();
-		topLoading();
 	}
 
 	// 初期処理 呼び出し
@@ -20,7 +21,6 @@ window.addEventListener('load', function () {
 	function init() {
 		checkScrollDir();
 		loadingWindow();
-		topAnimation();
 		windowScroll();
 		disableLink();
 		goPageTop();
@@ -41,6 +41,14 @@ var loadingWindow = function loadingWindow() {
 		setTimeout(function () {
 			$loading.remove();
 		}, 5000);
+	});
+	$(function () {
+		setTimeout(function () {
+			$body.removeClass('nowOnLoading');
+			if ($body.hasClass('home')) {
+				$body.addClass('fixed');
+			}
+		}, 1000);
 	});
 };
 
@@ -170,26 +178,24 @@ var drawerNav = function drawerNav() {
 var topCarousel = function topCarousel() {
 	var $carousel = $('#data-carousel'),
 	    slickOption = {
-		centerMode: true,
-		centerPadding: '60px',
-		slidesToShow: 6,
-		autoplay: true,
-		autoplaySpeed: 0,
+		//			centerMode: true,
+		//			centerPadding: '60px',
+		//			dots: true,
 		cssEase: 'linear',
-		speed: 5000,
-		arrows: false,
+		speed: 500,
+		arrows: true,
 		zIndex: 1,
 		responsive: [{
 			breakpoint: 1280,
 			settings: {
-				slidesToShow: 4
+				slidesToShow: 1
 			}
 		}, {
 			breakpoint: 767,
 			settings: {
-				centerMode: true,
+				//					centerMode: true,
 				centerPadding: '40px',
-				slidesToShow: 2
+				slidesToShow: 1
 			}
 		}]
 	};
@@ -206,9 +212,7 @@ var topCarousel = function topCarousel() {
 // トップアニメーション
 // ----------------------------------------
 var topLoading = function topLoading() {
-	var $body = $('body'),
-	    $loadingClass = 'nowOnLoading';
-
+	var $loadingClass = 'nowOnLoading';
 	function init() {
 		$body.addClass($loadingClass);
 	}
@@ -216,26 +220,6 @@ var topLoading = function topLoading() {
 };
 
 var topAnimation = function topAnimation() {
-	var $body = $('body'),
-	    moveClass = 'move';
-	$(function () {
-		setTimeout(function () {
-			$('.st2').css({ display: 'inline' });
-			$('.st2').addClass(moveClass);
-		}, 5500);
-	});
-	$(function () {
-		setTimeout(function () {
-			$('.st3').css({ display: 'inline' });
-			$('.st3').addClass(moveClass);
-		}, 1000);
-	});
-	$(function () {
-		setTimeout(function () {
-			$('.st4').css({ display: 'inline' });
-			$('.st4').addClass(moveClass);
-		}, 8000);
-	});
 	$(function () {
 		setTimeout(function () {
 			$body.removeClass('nowOnLoading');

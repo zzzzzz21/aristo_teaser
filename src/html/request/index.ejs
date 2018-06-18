@@ -8,6 +8,7 @@ page = '';
 <html lang="ja">
 <% include ../include/_head %>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } else { %> page-input<% } %>" id="top">
+<% include ../include/_gtag %>
 <div class="page" id="data-page">
 <% include ../include/_header %>
 	<main class="main contents">
@@ -36,7 +37,7 @@ page = '';
 					<!-- /[.step-indicator] -->
 					
 					<h2 class="section-title"><%= meta.title %></h2>
-					<p class="contact-form__link"><a href="<%= path %>inquiry/" class="link-next">お問い合わせ</a></p>
+					<p class="contact-form__link"><a href="<%= path %>inquiry/" class="btn-detail">お問い合わせ</a></p>
 					<p class="contact-form__note">※<span class="label-required">必須</span>の入力欄は入力しなければフォームを完了できません。</p>
 					<form action="" id="form-contact" name="form-contact" class="form-body h-adr">
 						<input type="hidden" class="p-country-name" value="Japan">

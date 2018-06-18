@@ -1,646 +1,402 @@
 @charset "utf-8";
 // ===================================================================
 //  File:	pages/_top.scss
-//  Date:	2018-05-01(UTC+9)
+//  Date:	2018-06-16(UTC+9)
 //  Note:	
 // ===================================================================
-//	.main-visual
-// ----------------------------------------
-.main-visual{
-	height: 1106px;
-	background-image: url(#{$image_path}index/topmain_pc.jpg);
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: cover;
-	//	[media queries tablet]
+.home {
+	//	.home .page-head
 	// ----------------------------------------
-	@include media(tb) {
-		height: 850px;
-		background-position: 45% top;
-		background-size: auto 100%;
-	}
-	//	[media queries SP]
-	// ----------------------------------------
-	@include media(sp) {
-		height: auto;
-		background-image: url(#{$image_path}index/topmain_sp.jpg);
-		background-position: 20% top;
-		background-size: 100% auto;
-	}
-
-	.home-hero {
+	.page-head {
 		position: relative;
-		z-index: 20;
-		//	[media queries tablet]
-		// ----------------------------------------
-		@include media(tb) {
-		}
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-		}
 	}
 	
-	.home-hero__primary {
-		position: absolute;
-		left:0;
-		width: 30%;
-		text-align: left;
+	//	.home .page-title
+	// ----------------------------------------
+	.page-title {
+		margin-top: 72px;
+		font-weight: normal;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			position: relative;
-			left:auto;
-			right:0;
-			text-align: right;
-			width: 100%;
-			height: 290px;
+			@include calcvw(72, 'margin-top', 640);
 		}
-	}
-	
-	.catchcopy {
-		position: absolute;
-		height: auto;
-		margin-top: 15px;
-		margin-left: 10%;
-		animation-duration: .8s;
-		animation-iteration-count: 1;
-		//	[media queries tablet]
-		// ----------------------------------------
-		@include media(tb) {
-			width: 90px;
+		ruby > rt {
+			font-family: $base_font_family_noto;
 		}
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			@include calcvw(108, 'width');
-			right: 0;
+		@include modifier(note) {
 			position: absolute;
-			margin-top: 76px;
-			margin-left: 0;
-		}
-		@at-root .nowOnLoading & {
-			display: none;
+			bottom: 1em;
+			right: .6em;
+			color: $base_white_color;
+			text-shadow: 3px 3px 2px $base_text_color,
+				-3px -3px 2px $base_text_color;
 		}
 	}
 	
-	.home-hero__secondary {
-		position: absolute;
-		right: 0;
-		width: 78%;
-		text-align: right;
+	//	.home .block-point
+	// ----------------------------------------
+	.block-point {
+		padding-bottom: 250px;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
+			@include calcvw(200, 'padding-bottom', 640);
+		}
+		
+		//	.home .block-point .block__title
+		// ----------------------------------------
+		$title_color: #20428c;
+		.block__title {
 			position: relative;
-			right: 0;
-			bottom: 0;
-			width: 100%;
-			@include calcvw(990, 'min-height');
+			@include fontsize(30);
+			font-family: $base_font_family_noto;
+			font-weight: normal;
+			color: $title_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(24, 'font-size', 640);
+			}
+			&:before,
+			&:after {
+				position: relative;
+				display: inline-block;
+				content: '';
+				width: 36px;
+				height: 36px;
+				border: 2px solid #035ab1;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					width: 1.2em;
+					height: 1.2em;
+					border-width: 1px;
+				}
+			}
+			&:before {
+				top: -.6em;
+				border-right: none;
+				border-bottom: none;
+			}
+			&:after {
+				bottom: -.6em;
+				border-top: none;
+				border-left: none;
+			}
+		}
+
+		//	.home .block-point .block__body
+		// ----------------------------------------
+		.block__body {
 			text-align: center;
 		}
-	}
-	
-	.logo {
-		display: inline-block;
-		height: auto;
-		margin: 0;
-		animation-duration: .8s;
-		animation-iteration-count: 1;
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			@include calcvw(420, 'width');
-		}
-		//	[media queries tablet]
-		// ----------------------------------------
-		@include media(tb) {
-			width: 380px;
-		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			width: auto;
-			margin: 64px 5% 20px 0;
-			z-index: 1;
-		}
 
-		@at-root .nowOnLoading & {
-			display: none;
-		}
-
-	}
-	
-	.pv_thumb {
-		box-sizing: border-box;
-		display: inline-block;
-		width: 380px;
-		height: auto;
-		margin: 30px 7% 10px 0;
-		position: relative;
-		animation-iteration-count: 1;
-		animation-duration: 1s;
-		height: auto;
-		min-height: 0%;
-		border: 1px solid #000;
-		box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3), -6px 6px 6px rgba(0, 0, 0, 0.3);
-		z-index: 1;
-		//	[media queries SP]
+		//	.home .block-point .unit-point
 		// ----------------------------------------
-		@include media(sp) {
-			display: none;
-		}
-		//	[media queries tablet]
-		// ----------------------------------------
-		@include media(tb) {
-			width: 300px;
-		}
-		&:before {
-			position: absolute;
-			z-index: 2;
-			display: block;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			content: '';
-			background-color: rgba(#000, .6);
-			transition: all ease .3s;
-		}
-		&:after {
-			position: absolute;
-			z-index: 10;
-			display: block;
-			content: url(#{$image_path}common/icon_play_sp.png);
-			width: 60px;
-			height: 60px;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%,-50%);
-			transition: all ease .3s;
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				content: url(#{$image_path}common/icon_play_pc.png);
-				width: 100px;
-				height: 100px;
-			}
-		}
-		&:hover {
-			&:before,
-			&:after {
-				opacity: .7;
-			}
-		}
-		img {
-			width: 100%;
-			height: auto;
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				width: 100%;height: auto;
-			}
-		}
-		@at-root .nowOnLoading & {
-			display: none;
-		}
-
-	}
-	.pv_thumb_sp {
-		box-sizing: border-box;
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		display: block;
-		height: auto;
-		min-height: 0%;
-		border: 1px solid #000;
-		animation-iteration-count: 1;
-		&:before {
-			position: absolute;
-			z-index: 2;
-			display: block;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			content: '';
-			background-color: rgba(#000, .6);
-			transition: all ease .3s;
-		}
-		&:after {
-			position: absolute;
-			z-index: 10;
-			display: block;
-			content: url(#{$image_path}common/icon_play_sp.png);
-			width: 60px;
-			height: 60px;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%,-50%);
-			transition: all ease .3s;
-		}
-		&:hover {
-			&:before,
-			&:after {
-				opacity: .7;
-			}
-		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			display: none;
-		}
-	}
-	.txt_info {
-		display: inline-block;
-		margin: 40px 5% 10px 0;
-		height: auto;
-		position: relative;
-		animation-duration: 1s;
-		animation-iteration-count: 1;
-		z-index: 1;
-		//	[media queries tablet]
-		// ----------------------------------------
-		@include media(tb) {
-			width: 700px;
-		}
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			display: inline-block;
-			margin: 10px 0 10px 0;
+		.unit-point {
 			position: relative;
-			@include calcvw(712, 'width');
+			&:before {
+				display: inline-block;
+				content: '';
+				position: relative;
+				margin: 0 auto 2em;
+				padding: .4em 1.6em;
+				background: $title_color;
+				@include fontsize(14);
+				border-radius: 24px;
+				color: $base_white_color;
+				font-weight: bold;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(14, 'font-size', 640);
+				}
+			}
+
+			//	.unit-point__title
+			// ----------------------------------------
+			@include element(title) {
+				margin-bottom: 2em;
+				font-family: $base_font_family_noto;
+				font-weight: normal;
+				@include fontsize(36);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(28, 'font-size', 640);
+				}
+			}
+
+			//	.unit-point__body
+			// ----------------------------------------
+			@include element(body) {
+				@extend .container__inner;
+			}
 		}
-
-		@at-root .nowOnLoading & {
-			display: none;
-		}
-
-	}
-}
-
-
-//	steam
-// ----------------------------------------
-.steam_wrap,
-.steam_wrap2 {
-	width: 1920px;
-	position: absolute;
-	left: 50%;
-	margin-left: -960px;
-	z-index: 10;
-	top: -100px;
-}
-.steam {
-	position: absolute;
-	-webkit-animation: steam_Move 15s infinite linear;
-	animation: steam_Move 15s infinite linear;
-	transition: all 1s;
-}
-.move {
-	z-index: 3;
-	position: absolute;
-	top: 340px;
-	left: 350px;
-	-webkit-animation: steam_Move 15s infinite linear;
-	animation: steam_Move 15s infinite linear;
-	transition: all 1s;
-}
-
-@keyframes steam_Move {
-	0% {
-		filter: blur(10px);
-		transform: rotateY(0deg);
-		transform: scale(1, 1);
-		opacity: 0;
-		top: 280px;
-	}
-	33% {
-		transform: rotateY(40deg);
-		transform: scale(0.6, 1.2);
-		opacity: 0.2;
-	}
-	66% {
-		transform: rotateY(2deg);
-		transform: scaleY(1.2, 0.4);
-		opacity: 0.4;
-	}
-	100% {
-		filter: blur(16px);
-		transform: rotateY(50deg);
-		transform: scaleY(1.4, 1.2);
-		opacity: 0;
-		top: -600px;
-	}
-}
-.st1 {
-	left:600px;
-}
-.st2 {
-	left:700px;
-	display: none;
-}
-.st3 {
-	left:900px;
-	display: none;
-}
-.st4 {
-	left:600px;
-	display: none;
-}
-
-@media all and (-ms-high-contrast: none){
-	/* only IE*/
-	.steam_wrap{
-		display: none;
-	}
-	.steam_wrap2{
-		display: inline!important;
-	}
-}
-
-
-
-/******SP******/
-@media screen and (max-width:768px){
-	.steam_wrap,.steam_wrap2{
-
-	}
-	.steam_wrap-outer{
-		position: absolute;
-		width: 100%;
-		height: 600px;
-	}
-	.st_obj{
-		width: 250px;
-	}
-	.st2{
-		left:850px;
-		display: none;
-	}
-	.st4{
-		left:950px;
-		display: none;
-	}
-}
-
-//	.home-information
-// ----------------------------------------
-.home-information {
-	@include calcvw(90, 'padding-top');
-	@include calcvw(80, 'padding-bottom');
-	background-image: url(#{$image_path}index/bg_home-information_sp.jpg);
-	background-position: 0 0;
-	background-repeat: no-repeat;
-	background-size: cover;
-	//	[media queries PC-tablet]
-	// ----------------------------------------
-	@include media(pc-tb) {
-		padding: 112px 0 124px;
-		background-image: url(#{$image_path}index/bg_home-information_pc.jpg);
-		background-position: top center;
-	}
-	//	.home-information__container
-	// ----------------------------------------
-	@include element(container) {
-		box-sizing: border-box;
-		width: 100%;
-		margin: 0 auto;
-		padding: 0 $base_padding_sp;
-		display: flex;
-		flex-wrap: wrap;
-		z-index: 10;
-		position: relative;
-		//justify-content: center;
-		//	[media queries tablet]
+		
+		//	.home .block-point .-point1
 		// ----------------------------------------
-		@include media(tb) {
-			padding: 0 20px;
+		.-point1 {
+			&:before {
+				content: 'POINT 1';
+			}
+			.unit-point__title {
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					@include fontsize(60);
+				}
+			}
 		}
-		//	[media queries PC-tablet]
+
+		//	.home .block-point .-point2
 		// ----------------------------------------
-		@include media(pc-tb) {
-			max-width: $design_width;
-			padding: 0;
+		.-point2 {
+			&:before {
+				content: 'POINT 2';
+			}
+		}
+		
+		.-point3 {
+			&:before {
+				content: 'POINT 3';
+			}
+		}
+
+		.-point4 {
+			&:before {
+				content: 'POINT 4';
+			}
+		}
+
+		//	.home .block-point .aristo-note
+		// ----------------------------------------
+		.aristo-note {
+			padding: 1em 2em;
+			border: 1px solid $base_corporate_color;
+			text-align: center;
+			font-family: $base_font_family_noto;
+			@include fontsize(24);
+			color: #036;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(28, 'font-size', 640);
+				padding: 1em .6em;
+			}
+
+			//	.home .block-point .aristo-note__appendix
+			// ----------------------------------------
+			@include element(appendix) {
+				margin-top: .3em;
+				@include fontsize(16);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(16, 'font-size', 640);
+				}
+			}
+		}
+
+		//	.home .block-point .unit__title
+		// ----------------------------------------
+		.unit__title {
+			margin-bottom: 3.3em;
+			font-family: $base_font_family_noto;
+			@include fontsize(30);
+			font-weight: normal;
+			color: $base_text_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(28, 'font-size', 640);
+			}
+		}
+		
+		//	.home .block-point .unit-point__body
+		// ----------------------------------------
+		.unit-point__body {
+			display: flex;
 			flex-wrap: nowrap;
-			justify-content: flex-start;
+			justify-content: space-between;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				flex-wrap: wrap;
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				.unit + .unit {
+					margin-top: 0;
+				}
+			}
+			//	.unit-point
+			// ----------------------------------------
+			.unit-point--sub {
+				width: 50%;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					width: 100%;
+					&:nth-child(n+2) {
+						float: none;
+					}
+				}
+
+				//	.unit-point--sub__inner
+				// ----------------------------------------
+				@include element(inner) {
+					display: flex;
+					flex-wrap: wrap;
+					text-align: left;
+					justify-content: center;
+					margin: auto;
+					//	[media queries SP]
+					// ----------------------------------------
+					@include media(sp) {
+						width: 100%;
+					}
+				}
+				
+				//	.unit-point--sub__title
+				// ----------------------------------------
+				@include element(title) {
+					margin-bottom: .2em;
+					font-family: $base_font_family_noto;
+					font-weight: normal;
+					@include fontsize(36);
+					color: $title_color;
+					//	[media queries SP]
+					// ----------------------------------------
+					@include media(sp) {
+						@include calcvw(28, 'font-size', 640);
+					}
+				}
+
+				//	.unit-point--sub__image
+				// ----------------------------------------
+				@include element(image) {
+					//	[media queries SP]
+					// ----------------------------------------
+					@include media(sp) {
+					}
+				}
+
+				//	.unit-point--sub__body
+				// ----------------------------------------
+				@include element(body) {
+					padding: 25px 20px;
+					//	[media queries SP]
+					// ----------------------------------------
+					@include media(sp) {
+						padding: .8em .6em;
+					}
+				}
+			}
 		}
 	}
-	//	.home-information__title
+
+	//	.home .aristo-message
 	// ----------------------------------------
-	@include element(title) {
+	.aristo-message {
+		margin: 120px 0 160px;
+		margin-bottom: 2em;
+		font-family: $base_font_family_noto;
+		font-weight: normal;
+		@include fontsize(36);
+		line-height: 1.8;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			@include calcvw(36, 'margin-bottom');
-			img {
-				width: auto;
-				@include calcvw(76, 'height');
+			@include calcvw(120, 'margin-top', 640);
+			@include calcvw(160, 'margin-bottom', 640);
+			@include calcvw(28, 'font-size', 640);
+		}
+	}
+	
+	.top-carousel {
+		position: relative;
+		max-width: 100%;
+		margin: 0 auto;
+		overflow: hidden;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+		}
+		
+		//	.top-carousel__inner
+		// ----------------------------------------
+		@include element(inner) {
+			width: 1200px;
+			margin: 0 auto;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			.slick-list {
+				overflow: visible!important;
 			}
 		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			margin-bottom: 30px;
-		}
-	}
-}
 
-//	.home-news
-// ----------------------------------------
-.home-news {
-	//	.home-news__wrapper
-	// ----------------------------------------
-	@include element(wrapper) {
-		@include calcvw(400, 'height');
-		@include calcvw(48, 'margin-bottom');
-		overflow-y: scroll;
-		//	[media queries PC-tablet]
+		//	.top-carousel__message
 		// ----------------------------------------
-		@include media(pc-tb) {
-			width: 450px;
-			height: 420px;
-			margin-bottom: 28px;
+		@include element(message) {
+			box-sizing: border-box;
+			width: 100%;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				position: absolute;
+				top: 20%;
+				@include element(inner) {
+					max-width: calc(#{$site_width} + 20px);
+					margin: 0 auto;
+					padding: 0 10px;
+					display: flex;
+					justify-content: center;
+					flex-direction: row-reverse;
+					flex-wrap: nowrap;
+					color: $base_white_color;
+				}
+			}
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				margin: 0 auto;
+				padding: 0 $base_padding_sp;
+			}
 		}
-	}
-	//	.home-news__content
-	// ----------------------------------------
-	@include element(content) {
-		padding-right: .6em;
-		& + & {
-			margin-top: 1em;
-		}
-		//	.home-news__content__time
-		// ----------------------------------------
-		@include element(time) {
-			color: $base_black_color;
-			@include fontsize(16);
-			font-weight: bold;
-		}
-		//	.home-news__content__title
+
+		//	.top-carousel__title
 		// ----------------------------------------
 		@include element(title) {
-			@include fontsize(18);
-			line-height: 1.1;
-			a {
-				color: $base_text_color;
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
-		//	.home-news__content__text
-		// ----------------------------------------
-		@include element(text) {
-			@include fontsize(13);
-		}
-	}
-}
-
-//	.home-twitter
-// ----------------------------------------
-.home-twitter {
-	@include media(sp) {
-		width: 100%;
-	}
-	@include calcvw(100, 'margin-top');
-	//	[media queries PC-tablet]
-	// ----------------------------------------
-	@include media(pc-tb) {
-		margin: 0 0 0 80px;
-	}
-	//	.home-twitter__wrapper
-	// ----------------------------------------
-	@include element(wrapper) {
-		@extend .home-news__wrapper;
-	}
-}
-
-//	.home-introduction
-// ----------------------------------------
-.home-introduction {
-	@include calcvw(90, 'padding-top');
-	@include calcvw(130, 'padding-bottom');
-	background-image: url(#{$image_path}index/bg_home-introduction_pc.jpg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	//	[media queries PC-tablet]
-	// ----------------------------------------
-	@include media(pc-tb) {
-		padding: 194px 0 380px;
-	}
-	//	.home-introduction__container
-	// ----------------------------------------
-	@include element(container) {
-		box-sizing: border-box;
-		width: 100%;
-		margin: 0 auto;
-		padding: 0 $base_padding_sp;
-		text-align: center;
-		position: relative;
-		z-index: 10;
-		//	[media queries tablet]
-		// ----------------------------------------
-		@include media(tb) {
-			padding: 0 20px;
-		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			max-width: $design_width;
-			padding: 0;
-		}
-	}
-	//	.home-introduction__title
-	// ----------------------------------------
-	@include element(title) {
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			@include calcvw(54, 'margin-bottom');
-			img {
-				@include calcvw(640, 'width');
-				height: auto;
-			}
-		}
-		//	[media queries tablet]
-		// ----------------------------------------
-		@include media(tb) {
-			img {
-				width: 50%;
-				height: auto;
-			}
-		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			width: auto;
-			height: auto;
-			margin-bottom: 86px;
-		}
-	}
-	//	.home-introduction__body
-	// ----------------------------------------
-	@include element(body) {
-		@include fontsize(14);
-		line-height: 1.6;
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			@include fontsize(18);
-		}
-	}
-}
-
-//	.main-secondary
-// ----------------------------------------
-.main-secondary {
-	position: relative;
-	.main-stain {
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		@include modifier(left) {
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			img {
-				@include calcvw(312, 'width');
-				height: auto;
-				//	[media queries PC-tablet]
-				// ----------------------------------------
-				@include media(pc-tb) {
-					width: 70%;
-				}
-			}
-		}
-		@include modifier(right) {
-			position: absolute;
-			right: 0;
-			top: 60%;
+			font-family: $base_font_family_noto;
+			@include calcvw(28, 'font-size', 640);
 			//	[media queries PC-tablet]
 			// ----------------------------------------
 			@include media(pc-tb) {
-				top: 0;
-				display: flex;
-				justify-content: flex-end;
-			}
-			img {
-				@include calcvw(320, 'width');
-				height: auto;
-				//	[media queries PC-tablet]
-				// ----------------------------------------
-				@include media(pc-tb) {
-					width: 70%;
-					height: 70%;
-				}
+				-ms-writing-mode: tb-rl;
+				writing-mode: vertical-rl;
+				@include fontsize(72);
 			}
 		}
+
+		//	.top-carousel__body
+		// ----------------------------------------
+		@include element(body) {
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				-ms-writing-mode: tb-rl;
+				writing-mode: vertical-rl;
+				line-height: 2.4;
+			}
+		}
+
 	}
 }

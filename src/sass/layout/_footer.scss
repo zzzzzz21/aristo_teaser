@@ -61,6 +61,7 @@
 	// ----------------------------------------
 	@include media(sp) {
 		padding: 20px 0;
+		font-size: 1.2rem;
 	}
 	.container {
 		position: relative;
@@ -77,6 +78,11 @@
 		}
 		&:hover {
 			text-decoration: underline;
+		}
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			font-size: 1.2rem;
 		}
 	}
 	// 	.globalFooter__wrapper
@@ -158,6 +164,7 @@
 			margin: 10px 0;
 			padding-bottom: 10px;
 			border-bottom: 1px dotted #185896;
+			font-size: 1.2rem;
 		}
 		span {
 			margin-left: 3em;

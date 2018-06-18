@@ -8,6 +8,7 @@ page = 'confirm';
 <html lang="ja">
 <% include ../include/_head %>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } %>" id="top">
+<% include ../include/_gtag %>
 <div class="page" id="data-page">
 <% include ../include/_header %>
 	<main class="main contents">
@@ -19,9 +20,8 @@ page = 'confirm';
 		<div class="page-body">
 			<div class="container">
 				<div class="page-lead">
-					<p>ARISTOの資料請求を下記フォームより受け付けております。<br>
-						必要事項をご記入いただき、「入力内容を確認する」ボタンを押してください。<br>
-						<span class="is--notice">必須項目は、すべて選択または入力してください。</span></p>
+					<p>内容を確認して問題なければ「送信する」ボタンを押してください。<br>
+						修正したい場合は、「修正する」ボタンを押してください。</p>
 				</div>
 				<!-- /[.page-lead] -->
 				<% include ../include/_block-contact %>
@@ -36,7 +36,7 @@ page = 'confirm';
 					<!-- /[.step-indicator] -->
 
 					<h2 class="section-title"><%= meta.title %></h2>
-					<p class="contact-form__link"><a href="<%= path %>inquiry/" class="link-next">お問い合わせ</a></p>
+					<p class="contact-form__link"><a href="<%= path %>inquiry/" class="btn-detail">お問い合わせ</a></p>
 					<p class="contact-form__note">※内容を確認して問題なければ「送信する」ボタンを押してください。<br>
 					　修正したい場合は、「修正する」ボタンを押してください。</p>
 					<form action="" id="form-contact" name="form-contact" class="form-body form-confirm h-adr">

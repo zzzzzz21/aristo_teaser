@@ -25,15 +25,13 @@
 	// ----------------------------------------
 	@include media(sp) {
 		@include calcvw(70, 'padding-top', 640);
+		font-size: 1.6rem;
 	}
 
 	//	.contact-form__link
 	// ----------------------------------------
 	@include element(link) {
 		text-align: right;
-		a {
-			@include link-arrow;
-		}	
 	}
 	//	.contact-form__note
 	// ----------------------------------------
