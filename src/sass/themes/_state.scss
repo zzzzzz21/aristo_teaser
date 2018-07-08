@@ -67,6 +67,13 @@
 // -------------------------------------------------------------------
 .is--notice {
 	color: $base_notice_color;
+	text-align: center;
+	@include fontsize(13);
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include fontsize(11);
+	}
 }
 
 .is--attention {

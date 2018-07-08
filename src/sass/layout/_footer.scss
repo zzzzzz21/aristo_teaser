@@ -8,9 +8,15 @@
 // 	.goPageTop
 // -------------------------------------------------------------------
 .goPageTop {
-	position: absolute;
-	top: -10rem;
+	position: fixed;
+	z-index: 999;
+	bottom: 100px;
 	right: 10px;
+	transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+	&[aria-hidden="true"] {
+		opacity: 0;
+		transform: translateY(8px);
+	}
 	& a {
 		@include text-indent;
 		width: 44px;

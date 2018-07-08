@@ -20,9 +20,10 @@ $base_black_color:		#000;
 // -------------------------------------------------
 $base_text_color:		#000;
 $base_text_color_red:	#c00;
-$base_notice_color:	#c00;
+$base_notice_color:	#666;
 $base_bg_color:		#fff;// for BG
 $base_border_color:	#b5b5b5;// for BORDER
+$base_table_border: #999;
 $base_footer_color:	$base_corporate_color;
 $base_label_color: 	#cb3333;
 
@@ -47,7 +48,7 @@ $base_active_color:		$base_hover_color;
 $base_btn_color:		$base_corporate_color;
 $base_btn_color_hover:	#09f;
 $base_menu_color:		$base_corporate_color;
-$base_menu_overlay:		#e4e4e4;
+$base_menu_overlay:		#001932;
 
 
 // -------------------------------------------------------------------
@@ -68,7 +69,7 @@ $image_path:	"../images/";
 // -------------------------------------------------------------------
 $site_width:		1200px;
 $design_width:	1000px;
-$base_contents_width:	800px;
+$base_contents_width:	808px;
 $base_table_width: 100%;
 
 
@@ -79,7 +80,8 @@ $base_table_width: 100%;
 $base_font_size:		16;
 $base_font_family:	"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
 $base_font_family_mincho:	"Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "メイリオ", Meiryo, serif;
-$base_font_family_noto:	"Noto Serif";
+$base_font_family_meiryo:	Meiryo,"メイリオ","ＭＳ Ｐゴシック",'Hiragino Kaku Gothic Pro',"ヒラギノ角ゴ Pro W3",Osaka,sans-serif;
+$base_font_family_noto:	"Noto Serif";//$base_font_family_mincho;
 $base_font_family_helvetica: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1";
 $base_font_family_m1: "Mplus 1p";
 

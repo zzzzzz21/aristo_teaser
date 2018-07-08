@@ -4,59 +4,604 @@
 //  Date:	2018-06-16(UTC+9)
 //  Note:	
 // ===================================================================
-.home {
-	//	.home .page-head
+$title_color: #20428c;
+.unit + .unit {
+	margin-top: $base_padding*20;
+	//	[media queries SP]
 	// ----------------------------------------
-	.page-head {
+	@include media(sp) {
+		@include calcvw(128, 'margin-top', 640);
+	}
+}
+//	.page-head
+// ----------------------------------------
+.page-head {
+	position: relative;
+	margin-bottom: 3.2em;
+}
+
+//	.page-title
+// ----------------------------------------
+.page-title {
+	margin-top: 72px;
+	font-weight: normal;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include calcvw(72, 'margin-top', 640);
+	}
+	ruby > rt {
+		font-family: $base_font_family_noto;
+	}
+	@include modifier(note) {
+		position: absolute;
+		bottom: -3.2em;
+		right: .6em;
+	}
+}
+
+//	.block-point
+//	好立地の優良不動産へ投資することのメリットとは？
+// ----------------------------------------
+.block-point {
+	padding-bottom: 250px;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include calcvw(200, 'padding-bottom', 640);
+	}
+
+	//	.block-point .block__title
+	// ----------------------------------------
+
+	.block__title {
 		position: relative;
-	}
-	
-	//	.home .page-title
-	// ----------------------------------------
-	.page-title {
-		margin-top: 72px;
+		@include fontsize(30);
+		font-family: $base_font_family_noto;
 		font-weight: normal;
+		color: $title_color;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			@include calcvw(72, 'margin-top', 640);
+			@include calcvw(30, 'font-size', 640);
 		}
-		ruby > rt {
-			font-family: $base_font_family_noto;
+		&:before,
+		&:after {
+			position: relative;
+			display: inline-block;
+			content: '';
+			width: 36px;
+			height: 36px;
+			border: 2px solid #035ab1;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 1.2em;
+				height: 1.2em;
+				border-width: 1px;
+			}
 		}
-		@include modifier(note) {
-			position: absolute;
-			bottom: 1em;
-			right: .6em;
-			color: $base_white_color;
-			text-shadow: 3px 3px 2px $base_text_color,
-				-3px -3px 2px $base_text_color;
+		&:before {
+			top: -.6em;
+			border-right: none;
+			border-bottom: none;
+		}
+		&:after {
+			bottom: -.6em;
+			border-top: none;
+			border-left: none;
 		}
 	}
-	
-	//	.home .block-point
+
+	//	.block-point .block__body
 	// ----------------------------------------
-	.block-point {
-		padding-bottom: 250px;
+	.block__body {
+		text-align: center;
+	}
+
+	//	.block-point .unit-point
+	// ----------------------------------------
+	.unit-point {
+		position: relative;
+		&:before {
+			display: inline-block;
+			content: '';
+			position: relative;
+			margin: 0 auto 2em;
+			padding: .4em 1.6em;
+			background: $title_color;
+			@include fontsize(14);
+			border-radius: 24px;
+			color: $base_white_color;
+			font-weight: bold;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(18, 'font-size', 640);
+			}
+		}
+
+		//	.unit-point__title
+		// ----------------------------------------
+		@include element(title) {
+			margin-bottom: 2em;
+			font-family: $base_font_family_noto;
+			font-weight: normal;
+			@include fontsize(36);
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(32, 'font-size', 640);
+			}
+		}
+
+		//	.unit-point__body
+		// ----------------------------------------
+		@include element(body) {
+			@extend .container__inner;
+		}
+
+		//	.unit-point__image
+		// ----------------------------------------
+		@include element(image) {
+			img {
+				max-width: 100%;
+				width: auto;
+				height: auto;
+			}
+			.caption {
+				@include fontsize(16);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include fontsize(11);
+				}
+			}
+		}
+
+		.is--notice {
+			margin-top: 40px;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include fontsize(14);
+				@include calcvw(40, 'margin-top', 640);
+			}
+		}
+	}
+
+	//	.block-point .-point1
+	// ----------------------------------------
+	.-point1 {
+		&:before {
+			content: 'POINT 1';
+		}
+		.unit-point__title {
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include fontsize(36);
+			}
+		}
+		.unit-point__image {
+			display: flex;
+			flex-direction: column-reverse;
+			justify-content: center;
+			dt {
+				display: block;
+				margin-top: 1.6em;
+			}
+		}
+	}
+
+	//	.block-point .-point2
+	// ----------------------------------------
+	.-point2 {
+		&:before {
+			content: 'POINT 2';
+		}
+	}
+
+
+	//	.block-point .-point3-4
+	// ----------------------------------------
+	.-point3-4 .unit__title {
+		//@extend .block-point .block__title;
+		position: relative;
+		@include fontsize(30);
+		font-family: $base_font_family_noto;
+		font-weight: normal;
+		color: $title_color;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			@include calcvw(200, 'padding-bottom', 640);
+			@include calcvw(30, 'font-size', 640);
 		}
-		
-		//	.home .block-point .block__title
+		&:before,
+		&:after {
+			position: relative;
+			display: inline-block;
+			content: '';
+			width: 36px;
+			height: 36px;
+			border: 2px solid #035ab1;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 1.2em;
+				height: 1.2em;
+				border-width: 1px;
+			}
+		}
+		&:before {
+			top: -.6em;
+			border-right: none;
+			border-bottom: none;
+		}
+		&:after {
+			bottom: -.6em;
+			border-top: none;
+			border-left: none;
+		}
+	}
+
+	//	.block-point .-point3
+	// ----------------------------------------
+	.-point3 {
+		&:before {
+			content: '更なるメリット1';
+		}
+	}
+
+	//	.block-point .-point4
+	// ----------------------------------------
+	.-point4 {
+		&:before {
+			content: '更なるメリット2';
+		}
+	}
+
+	//	.block-point .aristo-note
+	// ----------------------------------------
+	.aristo-note {
+		padding: 1em 2em;
+		border: 1px solid $base_corporate_color;
+		text-align: center;
+		font-family: $base_font_family_noto;
+		@include fontsize(24);
+		color: #036;
+		//	[media queries SP]
 		// ----------------------------------------
-		$title_color: #20428c;
-		.block__title {
+		@include media(sp) {
+			@include calcvw(28, 'font-size', 640);
+			padding: 1em .6em;
+		}
+
+		//	.block-point .aristo-note__appendix
+		// ----------------------------------------
+		@include element(appendix) {
+			margin-top: .3em;
+			@include fontsize(16);
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(24, 'font-size', 640);
+			}
+		}
+	}
+
+	//	.block-point .unit__title
+	// ----------------------------------------
+	.unit__title {
+		margin-bottom: 3.3em;
+		font-family: $base_font_family_noto;
+		@include fontsize(30);
+		font-weight: normal;
+		color: $base_text_color;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(30, 'font-size', 640);
+		}
+	}
+
+	//	.block-point .unit-point__body
+	// ----------------------------------------
+	.unit-point__body {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			flex-wrap: wrap;
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			.unit + .unit {
+				margin-top: 0;
+			}
+		}
+		//	.unit-point
+		// ----------------------------------------
+		.unit-point--sub {
+			width: 49%;
+			&:nth-child(n+2) {
+				margin-left: 2%;
+			}
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+				&:nth-child(n+2) {
+					margin-left: 0;
+				}
+			}
+
+			//	.unit-point--sub__inner
+			// ----------------------------------------
+			@include element(inner) {
+				display: flex;
+				flex-wrap: wrap;
+				text-align: left;
+				justify-content: center;
+				margin: auto;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					width: 100%;
+				}
+			}
+
+			//	.unit-point--sub__title
+			// ----------------------------------------
+			@include element(title) {
+				margin-bottom: .2em;
+				font-family: $base_font_family_noto;
+				font-weight: normal;
+				@include fontsize(36);
+				color: $title_color;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(36, 'font-size', 640);
+				}
+			}
+
+			//	.unit-point--sub__image
+			// ----------------------------------------
+			@include element(image) {
+				img {
+					width: 100%;
+					height: auto;
+				}
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+				}
+			}
+
+			//	.unit-point--sub__body
+			// ----------------------------------------
+			@include element(body) {
+				padding: 25px 20px;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					padding: .8em .6em;
+				}
+			}
+		}
+	}
+}
+
+//	.aristo-message
+// ----------------------------------------
+.aristo-message {
+	margin: 120px 0 0;
+	margin-bottom: 2em;
+	font-family: $base_font_family_noto;
+	font-weight: normal;
+	@include fontsize(36);
+	line-height: 1.8;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include calcvw(120, 'margin-top', 640);
+		@include calcvw(28, 'font-size', 640);
+	}
+}
+
+//	.block-instruments
+//	ARISTO第一弾商品
+// ----------------------------------------
+.block-instruments {
+	//	.block-instruments .block__title
+	// ----------------------------------------
+	@at-root .home & .block__title {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-items:center;
+		min-height: 280px;
+		background: url(#{$image_path}index/bg_header_instruments.jpg) 0 0 no-repeat;
+		background-size: cover;
+		margin-bottom: 0;
+		@include fontsize(60);
+		font-family: $base_font_family_noto;
+		font-weight: normal;
+		color: $base_white_color;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding: 1em 0;
+			@include calcvw(94, 'min-height', 640);
+			@include calcvw(40, 'font-size', 640);
+		}
+		&:before,
+		&:after {
+			position: relative;
+			display: inline-block;
+			content: '';
+			width: 36px;
+			height: 36px;
+			border: 2px solid $base_white_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 1.2em;
+				height: 1.2em;
+				border-width: 1px;
+			}
+		}
+		&:before {
+			top: -.6em;
+			border-right: none;
+			border-bottom: none;
+		}
+		&:after {
+			bottom: -.6em;
+			border-top: none;
+			border-left: none;
+		}
+	}
+}
+
+//	.top-carousel
+//	歴史に守られながら進化する京都という価値。
+// ----------------------------------------
+.top-carousel {
+	position: relative;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		width: 100%;
+		margin-bottom: $base_padding*6;
+	}
+
+	//	.top-carousel__inner
+	// ----------------------------------------
+	@include element(inner) {
+		width: 1200px;
+		margin: 0 auto;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		.slick-list {
+			overflow: visible!important;
+		}
+	}
+
+	//	.top-carousel__message
+	// ----------------------------------------
+	@include element(message) {
+		box-sizing: border-box;
+		width: 100%;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			position: absolute;
+			top: 20%;
+			@include element(inner) {
+				max-width: calc(#{$site_width} + 20px);
+				margin: 0 auto;
+				padding: 0 10px;
+				display: flex;
+				justify-content: center;
+				flex-direction: row-reverse;
+				flex-wrap: nowrap;
+				color: $base_white_color;
+			}
+		}
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			margin: 0 auto;
+			padding: 0 $base_padding_sp;
+		}
+	}
+
+	//	.top-carousel__title
+	// ----------------------------------------
+	@include element(title) {
+		font-family: $base_font_family_noto;
+		@include calcvw(28, 'font-size', 640);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			-ms-writing-mode: tb-rl;
+			writing-mode: vertical-rl;
+			@include fontsize(72);
+		}
+	}
+
+	//	.top-carousel__body
+	// ----------------------------------------
+	@include element(body) {
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			-ms-writing-mode: tb-rl;
+			writing-mode: vertical-rl;
+			line-height: 2.4;
+		}
+	}
+
+}
+
+//	.block-title
+//	ARISTO京都　販売中
+// ----------------------------------------
+.block-title {
+	@extend .block;
+	width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 0;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	//	.block-title__logo
+	// ----------------------------------------
+	@include element(logo) {
+		text-align: center;
+	}
+
+	//	.unit-kyoto
+	// ----------------------------------------
+	.unit-kyoto {
+		padding: 100px 10px;
+		background: #f8f8f2;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding: 0;
+			@include calcvw(100, 'padding-top', 640);
+			@include calcvw(100, 'padding-bottom', 640);
+		}
+		@include element(title) {
+			//@extend .block-point .block__title;
 			position: relative;
 			@include fontsize(30);
 			font-family: $base_font_family_noto;
 			font-weight: normal;
 			color: $title_color;
+			text-align: center;
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
-				@include calcvw(24, 'font-size', 640);
+				@include calcvw(30, 'font-size', 640);
 			}
 			&:before,
 			&:after {
@@ -85,21 +630,42 @@
 				border-left: none;
 			}
 		}
-
-		//	.home .block-point .block__body
+		//	.unit-kyoto__body
 		// ----------------------------------------
-		.block__body {
-			text-align: center;
+		@include element(body) {
+			& + .unit-kyoto_body {
+				margin-top: 100px;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(100, 'margin-top', 640);
+				}
+			}
 		}
-
-		//	.home .block-point .unit-point
+		//	.unit-kyoto--merit__title
 		// ----------------------------------------
-		.unit-point {
-			position: relative;
+		@include modifier(merit) {
+			@include element(title) {
+				font-family: $base_font_family_noto;
+				font-weight: normal;
+				@include fontsize(36);
+				line-height: 1.8;
+				text-align: center;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(28, 'font-size', 640);
+				}
+			}
+		}
+		//	.unit-kyoto--merit1
+		// ----------------------------------------
+		@include modifier(merit1) {
+			display: block;
 			&:before {
-				display: inline-block;
-				content: '';
+				display: block;
 				position: relative;
+				max-width: 6em;
 				margin: 0 auto 2em;
 				padding: .4em 1.6em;
 				background: $title_color;
@@ -107,296 +673,1350 @@
 				border-radius: 24px;
 				color: $base_white_color;
 				font-weight: bold;
+				font-family: $base_font_family;
+				content: 'Merit1';
+				text-align: center;
+			}
+			& + .unit-kyoto--merit2 {
+				margin-top: 100px;
 				//	[media queries SP]
 				// ----------------------------------------
 				@include media(sp) {
-					@include calcvw(14, 'font-size', 640);
+					@include calcvw(100, 'margin-top', 640);
 				}
 			}
+		}
 
-			//	.unit-point__title
+		//	.unit-kyoto--merit2
+		// ----------------------------------------
+		@include modifier(merit2) {
+			&:before {
+				display: block;
+				position: relative;
+				max-width: 6em;
+				margin: 0 auto 2em;
+				padding: .4em 1.6em;
+				background: $title_color;
+				@include fontsize(14);
+				border-radius: 24px;
+				color: $base_white_color;
+				font-weight: bold;
+				font-family: $base_font_family;
+				content: 'Merit2';
+				text-align: center;
+			}
+		}
+	}
+}
+
+//	.-available
+//	販売中
+// ----------------------------------------
+.-available {
+	&:before {
+		position: absolute;
+		top: -2em;
+		left: 10px;
+		display: block;
+		content: '販売中';
+		padding: .2em .4em;
+		border: 4px solid $base_corporate_color;
+		color: $base_corporate_color;
+		text-align: center;
+		@include fontsize(32);
+		font-weight: bold;
+		line-height: 1;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(10, 'left', 640);
+			@include calcvw(32, 'font-size', 640);
+		}
+	}
+}
+
+//	.unit-merit
+//	京都不動産投資のメリット
+// ----------------------------------------
+.unit-merit {
+	margin-top: 60px;
+	font-family: $base_font_family;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include calcvw(60, 'margin-top', 640);
+	}
+	& + & {
+		margin-top: 100px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(100, 'margin-top', 640);
+		}
+	}
+	
+	//	.unit-merit__head
+	// ----------------------------------------
+	@include element(head) {
+		display: flex;
+		align-items: flex-start;
+		box-sizing: border-box;
+		position: relative;
+		max-width: 1054px;
+		width: 100%;
+		margin: 0 auto 120px;
+		padding: 0 $base_padding_sp;
+		@include fontsize(18);
+		font-weight: normal;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			display: block;
+			margin: 0 auto;
+			@include calcvw(24, 'font-size', 640);
+		}
+		&:before {
+			display: block;
+			margin: 0 .5em 0 0;
+			font-family: $base_font_family_helvetica;
+			@include fontsize(100);
+			font-weight: bold;
+			letter-spacing: .03em;
+			line-height: .7;
+			color: #e1e0e0;
+			//	[media queries SP]
 			// ----------------------------------------
-			@include element(title) {
-				margin-bottom: 2em;
-				font-family: $base_font_family_noto;
-				font-weight: normal;
-				@include fontsize(36);
-				//	[media queries SP]
-				// ----------------------------------------
-				@include media(sp) {
-					@include calcvw(28, 'font-size', 640);
-				}
-			}
-
-			//	.unit-point__body
-			// ----------------------------------------
-			@include element(body) {
-				@extend .container__inner;
+			@include media(sp) {
+				margin: 0 0 .25em;
+				@include fontsize(48);
+				text-align: center;
+				line-height: 1;
 			}
 		}
-		
-		//	.home .block-point .-point1
+		@at-root .-merit1 &:before {
+			content: 'Merit1';
+		}
+		@at-root .-merit2 &:before {
+			content: 'Merit2';
+		}
+		//	[media queries PC-tablet]
 		// ----------------------------------------
-		.-point1 {
-			&:before {
-				content: 'POINT 1';
-			}
-			.unit-point__title {
-				//	[media queries PC-tablet]
-				// ----------------------------------------
-				@include media(pc-tb) {
-					@include fontsize(60);
-				}
+		@include media(pc-tb) {
+			&:after {
+				position: absolute;
+				top: 0;
+				left: -480px;
+				content: url(../images/index/figure_merit.png);
+				overflow: hidden;
 			}
 		}
-
-		//	.home .block-point .-point2
+	}
+	
+	//	.unit-merit__title
+	// ----------------------------------------
+	@include element(title) {
+		box-sizing: border-box;
+		display: inline-block;
+		min-width: 372px;
+		margin-bottom: 60px;
+		padding: .4em 3em;
+		border: 4px solid #999;
+		@include fontsize(18);
+		font-weight: bold;
+		color: #878484;
+		text-align: center;
+		//	[media queries SP]
 		// ----------------------------------------
-		.-point2 {
-			&:before {
-				content: 'POINT 2';
-			}
+		@include media(sp) {
+			min-width: auto;
+			@include calcvw(60, 'margin-bottom', 640);
+			@include calcvw(24, 'font-size', 640);
 		}
-		
-		.-point3 {
-			&:before {
-				content: 'POINT 3';
-			}
-		}
-
-		.-point4 {
-			&:before {
-				content: 'POINT 4';
-			}
-		}
-
-		//	.home .block-point .aristo-note
+	}
+	
+	//	.unit-merit--inbound
+	//	インバウンド需要の拡大
+	// ----------------------------------------
+	@include modifier(inbound) {
+		display: flex;
+		//	[media queries PC-min]
 		// ----------------------------------------
-		.aristo-note {
-			padding: 1em 2em;
-			border: 1px solid $base_corporate_color;
+		@include media(site-width) {
+			flex-wrap: wrap;					
+			justify-content: center;
+		}
+	}
+
+	//	.unit-merit__item
+	// ----------------------------------------
+	@include element(item) {
+		//	.unit-merit.-inbound
+		//	インバウンド需要の拡大
+		// ----------------------------------------
+		&.-inbound {
+			width: 400px;
 			text-align: center;
-			font-family: $base_font_family_noto;
-			@include fontsize(24);
-			color: #036;
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
-				@include calcvw(28, 'font-size', 640);
-				padding: 1em .6em;
+				width: 100%;
+				text-align: center;
 			}
+		}
 
-			//	.home .block-point .aristo-note__appendix
+		//	.unit-merit.-consumption
+		//	京都市内観光消費額は上昇傾向
+		// ----------------------------------------
+		&.-consumption {
+			width: 752px;
+			margin-left: 48px;
+			text-align: center;
+			//	[media queries PC-min]
 			// ----------------------------------------
-			@include element(appendix) {
-				margin-top: .3em;
-				@include fontsize(16);
+			@include media(site-width) {
+				width: 100%;
+				@include calcvw(60, 'margin-top', 640);
+				margin-left: 0;
+				text-align: center;
+			}
+			//	.unit-merit__body
+			// ----------------------------------------
+			.unit-merit__body {
+				display: flex;
+				justify-content: space-between;
+				//	[media queries 1200px]
+				// ----------------------------------------
+				@include media(site-width) {
+					width: 100%;
+					justify-content: center;
+				}
 				//	[media queries SP]
 				// ----------------------------------------
 				@include media(sp) {
-					@include calcvw(16, 'font-size', 640);
+					flex-wrap: wrap;
+				}
+				//	.unt-point__image
+				// ----------------------------------------
+				.unit-point__image {
+					//	[media queries 1200px]
+					// ----------------------------------------
+					@include media(site-width) {
+						margin: 0 1em;
+					}
+
+					//	[media queries PC-min]
+					// ----------------------------------------
+					@include media(pc-min) {
+//						width: 100%;
+					}
+				}
+				//	.unit-point__table
+				// ----------------------------------------
+				.unit-point__table {
+					max-width: 320px;
+					//	[media queries site-width]
+					// ----------------------------------------
+					@include media(site-width) {
+						margin: 0 1em;
+					}
+					//	[media queries PC-min]
+					// ----------------------------------------
+					@include media(pc-min) {
+						width: 100%;
+//						margin-top: 4em;
+					}
+					//	[media queries SP]
+					// ----------------------------------------
+					@include media(sp) {
+						max-width: 100%;
+					}
+					table {
+						margin-bottom: 1.6em;
+						@include fontsize(14);
+						width: 100%;
+						//	[media queries PC-min]
+						// ----------------------------------------
+						@include media(pc-min) {
+							width: 100%;
+						}
+						//	[media queries SP]
+						// ----------------------------------------
+						@include media(sp) {
+							@include calcvw(16, 'font-size', 540);
+						}
+					}
+					th, td {
+						padding: .4em .8em;
+						border: 4px solid #f8f8f2;
+						&:nth-child(1) {
+							width: calc(60 / 330 * 100%);
+						}
+						&:nth-child(2) {
+							//white-space: nowrap;
+						}
+					}
+					thead {
+						th, td {
+							background: #d4e7f6;
+							font-weight: normal;
+						}
+					}
+					tbody {
+						th {
+							font-weight: normal;
+						}
+						td {
+							white-space: nowrap;
+						}
+						tr{
+							&:nth-child(2n+1) {
+								th,td {
+									background: #f6f6f6;
+								}
+							}
+							&:nth-child(2n) {
+								th,td {
+									background: #e8e8e8;
+								}
+							}
+						}
+						strong {
+							color: #c00;
+						}
+					}
+					.caption {
+						padding: 0 4px;
+						//	[media queries SP]
+						// ----------------------------------------
+						@include media(sp) {
+							@include fontsize(11);
+						}
+					}
 				}
 			}
 		}
-
-		//	.home .block-point .unit__title
+	}
+	//	.unit-merit.-rent
+	//	賃料相場が上昇
+	// ----------------------------------------
+	&.-rent {
+		text-align: center;
+		//	.rent-market
 		// ----------------------------------------
-		.unit__title {
-			margin-bottom: 3.3em;
-			font-family: $base_font_family_noto;
-			@include fontsize(30);
-			font-weight: normal;
-			color: $base_text_color;
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				@include calcvw(28, 'font-size', 640);
-			}
-		}
-		
-		//	.home .block-point .unit-point__body
-		// ----------------------------------------
-		.unit-point__body {
+		.rent-market {
 			display: flex;
-			flex-wrap: nowrap;
 			justify-content: space-between;
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
 				flex-wrap: wrap;
 			}
-			//	[media queries PC-tablet]
+			//	.rent-market__item
 			// ----------------------------------------
-			@include media(pc-tb) {
-				.unit + .unit {
-					margin-top: 0;
-				}
-			}
-			//	.unit-point
-			// ----------------------------------------
-			.unit-point--sub {
-				width: 50%;
+			@include element(item) {
+				position: relative;
+				width: calc(550 / 1200 * 100%);
 				//	[media queries SP]
 				// ----------------------------------------
 				@include media(sp) {
 					width: 100%;
-					&:nth-child(n+2) {
-						float: none;
-					}
 				}
-
-				//	.unit-point--sub__inner
-				// ----------------------------------------
-				@include element(inner) {
-					display: flex;
-					flex-wrap: wrap;
-					text-align: left;
-					justify-content: center;
-					margin: auto;
+				&:nth-child(2) {
 					//	[media queries SP]
 					// ----------------------------------------
 					@include media(sp) {
-						width: 100%;
+						margin-top: 100px;
+					}
+					&:before {
+						position: absolute;
+						top: 40%;
+						left: -12.8%;
+						display: block;
+						content: url(../images/index/image_arrow.png);
+						width: 50px;
+						height: 80px;
+						//	[media queries SP]
+						// ----------------------------------------
+						@include media(sp) {
+							top: -86px;
+							left: 44%;
+							transform: rotate3d(0, 0, 1, 90deg);
+						}
 					}
 				}
-				
-				//	.unit-point--sub__title
-				// ----------------------------------------
-				@include element(title) {
-					margin-bottom: .2em;
-					font-family: $base_font_family_noto;
-					font-weight: normal;
-					@include fontsize(36);
-					color: $title_color;
-					//	[media queries SP]
-					// ----------------------------------------
-					@include media(sp) {
-						@include calcvw(28, 'font-size', 640);
-					}
-				}
-
-				//	.unit-point--sub__image
-				// ----------------------------------------
-				@include element(image) {
-					//	[media queries SP]
-					// ----------------------------------------
-					@include media(sp) {
-					}
-				}
-
-				//	.unit-point--sub__body
-				// ----------------------------------------
-				@include element(body) {
-					padding: 25px 20px;
-					//	[media queries SP]
-					// ----------------------------------------
-					@include media(sp) {
-						padding: .8em .6em;
-					}
+				img {
+					width: 100%;
 				}
 			}
 		}
-	}
-
-	//	.home .aristo-message
-	// ----------------------------------------
-	.aristo-message {
-		margin: 120px 0 160px;
-		margin-bottom: 2em;
-		font-family: $base_font_family_noto;
-		font-weight: normal;
-		@include fontsize(36);
-		line-height: 1.8;
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			@include calcvw(120, 'margin-top', 640);
-			@include calcvw(160, 'margin-bottom', 640);
-			@include calcvw(28, 'font-size', 640);
+		.caption {
+			margin-top: 1.6em;
+			text-align: right;
 		}
 	}
 	
-	.top-carousel {
-		position: relative;
-		max-width: 100%;
-		margin: 0 auto;
-		overflow: hidden;
+	//	.unit-merit.-land-price
+	//	地価（商業地）が上昇傾向
+	// ----------------------------------------
+	&.-land-price {
+		text-align: center;
+	}
+	
+	//	.block--merit2 .unit-merit
+	// ----------------------------------------
+	.block--merit2 & {
+		text-align: center;
+		.unit-merit__title {
+			margin-bottom: 30px;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(30, 'margin-bottom', 640);
+			}
+		}
+	}
+	
+	//	.unit-merit__subtitle
+	// ----------------------------------------
+	@include element(subtitle) {
+		margin-bottom: 60px;
+		color: #000;
+		@include fontsize(16);
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			width: 100%;
+			@include calcvw(60, 'margin-bottom', 640);
+			@include calcvw(24, 'font-size', 640);
 		}
-		
-		//	.top-carousel__inner
-		// ----------------------------------------
-		@include element(inner) {
-			width: 1200px;
-			margin: 0 auto;
+		.main {
+			display: block;
+		}
+		.sub {
+			display: block;
+			color: #666;
+			font-weight: normal;
+		}
+	}
+	
+	//	.unit-merit.-regulation1
+	//	規制例1
+	// ----------------------------------------
+	&.-regulation1 {
+		.unit-merit__body {
+			box-sizing: border-box;
+			max-width: calc(#{$design_width} + 20px);
+			width: 100%;
+			margin: auto;
+			padding: 0 10px;
+			display: flex;
+			justify-content: center;
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
 				width: 100%;
-				margin-bottom: 20px;
+				padding: 0;
+				flex-wrap: wrap;
 			}
-			.slick-list {
-				overflow: visible!important;
+		}
+	}
+	
+	//	.unit-merit.-regulation2
+	//	規制例2
+	// ----------------------------------------
+	&.-regulation2 {
+		.unit-merit__body {
+			display: flex;
+			//	[media queries PC-min]
+			// ----------------------------------------
+			@include media(pc-min) {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			//	.unit-merit__body__main
+			// ----------------------------------------
+			@include element(main) {
+				//	[media queries PC-min]
+				// ----------------------------------------
+				@include media(pc-min) {
+					margin: 50px 0 0;
+					text-align: center;
+					br {
+						display: none;
+					}
+					.note {
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+	
+	//	.unit-merit.-regulation1, .unit-merit.-regulation2
+	//	規制例1, 2
+	// ----------------------------------------
+	&.-regulation1, &.-regulation2 {
+		.unit-merit__body__image {}
+		.unit-merit__body__main {
+			margin-left: 50px;
+			text-align: left;
+			line-height: 1.4;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				margin: 0;
+				@include calcvw(50, 'margin-top', 640);
+				text-align: left;
+			}
+			.main {
+				font-family: $base_font_family_noto;
+				@include fontsize(28);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(28, 'font-size', 640);
+				}
+			}
+			.note {
+				text-align: right;
+			}
+		}
+	}
+}
+
+//	.unit-location
+//	ロケーション
+// ----------------------------------------
+.block-location {
+	position: relative;
+	text-align: center;
+	line-height: 2.4;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		text-align: left;
+		line-height: 1.6;
+	}
+
+	//	.unit-location__logo
+	// ----------------------------------------
+	@include element(logo) {
+		margin-bottom: 120px;
+		text-align: center;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(120, 'margin-bottom', 640);
+			img {
+				width: auto;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+//	.unit-map
+//　ロケーション
+// ----------------------------------------
+.unit-map {
+	//	.unit-map__body
+	// ----------------------------------------
+	@include element(body) {
+		position: relative;
+		width: 100%;
+		max-width: 1200px;
+		margin-bottom: 1.6em;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	//	.unit-map__nav
+	// ----------------------------------------
+	@include element(nav) {
+		display: flex;
+		flex-direction: row;
+		position: absolute;
+		bottom: 12px;
+		right: 12px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			position: static;
+			justify-content: flex-end;
+			margin-top: 1em;
+		}
+		//	.unit-map__nav__item
+		// ----------------------------------------
+		@include element(item) {
+			margin: 0 .3em;
+			a {
+				display: block;
+				padding: .4em;
+				background: $base_corporate_color;
+				border-radius: .4em;
+				line-height: 1;
+				font-weight: bold;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					border: 1px solid $base_corporate_color;
+				}
+				&:link,&:visited {
+					color: $base_white_color;
+				}
+				&:hover,&:active,&.-active {
+					background-color: $base_white_color;
+					color: $base_corporate_color;
+					//	[media queries SP]
+					// ----------------------------------------
+					@include media(sp) {
+						border-color: $base_corporate_color;
+					}
+				}
+			}
+		}
+	}
+}
+
+//	.block-shikyougoku
+//	新京極通
+// ----------------------------------------
+.block-shinkyougoku {
+	//	.block-shinkyougoku__body
+	// ----------------------------------------
+	@include element(body) {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			flex-wrap: wrap;
+		}
+		//	.block-shinkyougoku__body__title
+		// ----------------------------------------
+		@include element(title) {
+			margin-bottom: .8em;
+			@include fontsize(28);
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(28, 'font-size', 640);
 			}
 		}
 
-		//	.top-carousel__message
+		//	.block-shinkyougoku__body_items
 		// ----------------------------------------
-		@include element(message) {
-			box-sizing: border-box;
-			width: 100%;
-			//	[media queries PC-tablet]
+		@include element(items) {
+			width: calc(640 / 1200 * 100%);
+		//	max-width: 640px;
+			//	[media queries SP]
 			// ----------------------------------------
-			@include media(pc-tb) {
-				position: absolute;
-				top: 20%;
-				@include element(inner) {
-					max-width: calc(#{$site_width} + 20px);
-					margin: 0 auto;
-					padding: 0 10px;
-					display: flex;
-					justify-content: center;
-					flex-direction: row-reverse;
-					flex-wrap: nowrap;
-					color: $base_white_color;
+			@include media(sp) {
+				width: 100%;
+			}
+			img {
+				width: 100%;
+				height: auto;
+			}
+			&:nth-child(n+2) {
+				width: calc(500 / 1200 * 100%);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					width: 100%;
+					margin-top: 2em;
+				}
+			}
+		}
+
+		//	.gallery-images
+		// ----------------------------------------
+		.gallery-images {
+			//	.gallery-images__main
+			// ----------------------------------------
+			@include element(main) {
+				//min-height: 380px;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(300, 'min-height', 640);
+				}
+			}
+
+			//	.gallery-images__thumbnail
+			// ----------------------------------------
+			@include element(thumbnail) {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				margin-top: 4%;
+				//	.gallery-images__thumbnail__item
+				// ----------------------------------------
+				@include element(item) {
+					cursor: pointer;
+					width: 22%;
+					//	[media queries SP]
+					// ----------------------------------------
+					@include media(sp) {
+						width: 22%;
+					}
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+
+			//	.gallery-images__caption
+			// ----------------------------------------
+			@include element(caption) {
+				margin-top: .5em;
+				@include fontsize(14);
+			}
+		}
+	}
+}
+
+//	.block-characteristic
+//	対象不動産の特性
+// ----------------------------------------
+.block-characteristic {
+	//	.block__body
+	// ----------------------------------------
+	.block__body {
+		display: flex;
+		flex-wrap: nowrap;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			flex-wrap: wrap;
+		}
+	}
+	
+	//	.block-characterisistic__image
+	// ----------------------------------------
+	@include element(image) {
+		width: calc( 480 / 1200 * 100%);
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+		}
+		img {
+			width: 100%;
+		}
+		.caption {
+			@include fontsize(16);
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include fontsize(11);
+			}
+		}
+	}
+	
+	//	.block-characteristic__body
+	// ----------------------------------------
+	@include element(body) {
+		box-sizing: border-box;
+		width: calc( 670 / 1200 * 100%);
+		margin-left: ( 50 / 1200 * 100% );
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+			margin-left: 0;
+			@include calcvw(50, 'margin-top', 640);
+		}
+		.title {
+			position: relative;
+			@include fontsize(20);
+			color: #666;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(28, 'font-size', 640);
+			}
+			&:before {
+				content: '●';
+				padding-right: .2em;
+			}
+		}
+		p {
+			margin-left: 1.2em;
+			& + p {
+				margin-top: 1em;
+			}
+			& + .title {
+				margin-top: 2em;
+			}
+		}
+		.indent {
+			text-indent: -.8em;
+		}
+		.characteristic-images {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			margin-top: 50px;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(50, 'margin-top', 640);
+			}
+			//	.characteristic-images__item
+			// ----------------------------------------
+			@include element(item) {
+				width: 48%;
+			}
+			p {
+				margin-left: 0;
+				& + p {
+					margin-top: .6em;
+				}
+			}
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	&-images {
+		margin-top: 100px;
+		@include calcvw(100, 'margin-top', 640);
+	}
+
+	//	.gallery-images
+	// ----------------------------------------
+	.gallery-images {
+		//	.gallery-images__main
+		// ----------------------------------------
+		@include element(main) {
+			//min-height: 380px;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(300, 'min-height', 640);
+			}
+			img {
+				width: 100%;
+			}
+		}
+
+		//	.gallery-images__thumbnail
+		// ----------------------------------------
+		@include element(thumbnail) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-top: 1.33333%;
+			//	.gallery-images__thumbnail__item
+			// ----------------------------------------
+			@include element(item) {
+				cursor: pointer;
+				width: 24%;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					width: 24%;
+				}
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		//	.gallery-images__caption
+		// ----------------------------------------
+		@include element(caption) {
+			margin-top: .5em;
+			@include fontsize(14);
+			text-align: right;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include fontsize(11);
+			}
+		}
+	}
+}
+
+//	.block-surroundings
+//	商業ビルとしての価値の高まり
+// ----------------------------------------
+.block-surroundings {
+	//	.block-surroundings__lead
+	// ----------------------------------------
+	@include element(lead) {
+		text-align: center;
+		margin-bottom: 2em;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			text-align: left;
+		}
+	}
+	//	.block-surroundings__body
+	// ----------------------------------------
+	@include element(body) {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			flex-wrap: wrap;
+		}
+		.block-surroundings__lead + .block-surroundings__body {
+			margin-top: 70px;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(70, 'margin-top');
+			}
+		}
+	}
+	//	.block-surroundings__items
+	// ----------------------------------------
+	@include element(items) {
+		width: 50%;
+		//max-width: 600px;
+		img {
+			width: 100%;
+			height: auto;
+		}
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+		}
+		&:nth-child(n+2) {
+			//max-width: 540px;
+			width: 45%;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+				margin-top: 2em;
+			}
+		}
+	}
+	//	.list-hotels
+	// ----------------------------------------
+	.list-hotels {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		//	/list-hotels__item
+		// ----------------------------------------
+		@include element(item) {
+			position: relative;
+			width: calc( 170 / 540 * 100% );
+			counter-increment: list;
+			&:nth-child(n+4) {
+				margin-top: 20px;
+			}
+			//	[media queries PC-min]
+			// ----------------------------------------
+			@include media(pc-min) {
+				width: calc( 250 / 540 * 100% );
+				&:nth-child(n+4) {
+					margin-top: 0;
+				}
+				&:nth-child(n+3) {
+					margin-top: 20px;
 				}
 			}
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
-				margin: 0 auto;
-				padding: 0 $base_padding_sp;
+				width: 48%;
+				margin-top: 0;
+				&:nth-child(n+3) {
+					margin-top: 4%;
+				}
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+			.label {
+				position: absolute;
+				top: 0;
+				right: 0;
+				display: block;
+				padding: .2em .4em;
+				background: $base_corporate_color;
+				@include fontsize(11);
+				color: $base_white_color;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(18, 'font-size', 640);
+				}
+				& + p {
+					margin-top: 0;
+				}
+			}
+			p + p {
+				margin-top: .6em;
+			}
+			.name {
+				position: relative;
+				margin-left: 1.8em;
+				&:before {
+					box-sizing: border-box;
+					display: block;
+					position: absolute;
+					top: 0;
+					left: -28px;
+					content: counter(list);
+					width: 24px;
+					height: 24px;
+					padding: .5em .25em;
+					background: #414a8d;
+					border-radius: 50%;
+					color: $base_white_color;
+					line-height: 1;
+					@include fontsize(12);
+					font-weight: bold;
+					text-align: center;
+				}
+			}
+			.caption {
+				@include fontsize(14);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include fontsize(11);
+				}
 			}
 		}
+	}
+}
 
-		//	.top-carousel__title
+//	.block-products, .block-products
+// ----------------------------------------
+.block-products,
+.block-property {
+	//	.block-products__body
+	// ----------------------------------------
+	@include element(body) {
+		max-width: 808px;
+		width: 100%;
+		margin: auto;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+		}
+	}
+}
+
+//	.block-flow
+//	ご契約の流れ
+// ----------------------------------------
+.block-flow {
+	margin: 200px 0;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include calcvw(200, 'margin-top', 640);
+		@include calcvw(200, 'margin-bottom', 640);
+	}
+	
+	//	.block-flow .block__title
+	// ----------------------------------------
+	@at-root .home & .block__title {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 280px;
+		background: url(#{$image_path}index/bg_header_flow.jpg) center center no-repeat;
+		background-size: cover;
+		margin-bottom: 0;
+		@include fontsize(60);
+		font-family: $base_font_family_noto;
+		font-weight: normal;
+		color: $base_corporate_color;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding: 1em 0;
+			@include calcvw(94, 'min-height', 640);
+			@include calcvw(40, 'font-size', 640);
+		}
+		&:before,
+		&:after {
+			position: relative;
+			display: inline-block;
+			content: '';
+			width: 36px;
+			height: 36px;
+			border: 2px solid $base_corporate_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 1.2em;
+				height: 1.2em;
+				border-width: 1px;
+			}
+		}
+		&:before {
+			top: -.6em;
+			border-right: none;
+			border-bottom: none;
+		}
+		&:after {
+			bottom: -.6em;
+			border-top: none;
+			border-left: none;
+		}
+	}
+	
+	//	.block-flow__body
+	// ----------------------------------------
+	@include element(body) {
+		margin-bottom: 100px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(100, 'margin-bottom', 640);
+		}
+	}
+	
+	//	.unit-flow
+	// ----------------------------------------
+	.unit-flow {
+		box-sizing: border-box;
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		padding: 20px;
+		border: 6px solid #eff1f0;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			flex-wrap: wrap;
+			padding: 2em 1em;
+		}
+		& + .unit-flow {
+			margin-top: 60px;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(60, 'margin-top', 640);
+			}
+		}
+		//	.unit-flow__title
 		// ----------------------------------------
 		@include element(title) {
-			font-family: $base_font_family_noto;
-			@include calcvw(28, 'font-size', 640);
-			//	[media queries PC-tablet]
+			display: flex;
+			align-items: center;
+			flex-wrap: nowrap;
+			width: 48%;
+			//	[media queries SP]
 			// ----------------------------------------
-			@include media(pc-tb) {
-				-ms-writing-mode: tb-rl;
-				writing-mode: vertical-rl;
-				@include fontsize(72);
+			@include media(sp) {
+				width: 100%;
+			}
+			.step {
+				color: #c5c6d6;
+				@include fontsize(36);
+				line-height: 1.2;
+				font-weight: normal;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(30, 'font-size', 640);
+				}
+			}
+			.title {
+				margin-left: 1em;
+				@include fontsize(20);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					margin-left: 1em;
+					@include calcvw(24, 'font-size', 640);
+				}
 			}
 		}
-
-		//	.top-carousel__body
+		//	.unit-flow__body
 		// ----------------------------------------
 		@include element(body) {
-			//	[media queries PC-tablet]
+			//	[media queries PC-small]
 			// ----------------------------------------
-			@include media(pc-tb) {
-				-ms-writing-mode: tb-rl;
-				writing-mode: vertical-rl;
-				line-height: 2.4;
+			@include media(pc-small) {
+				margin: 1em 0 0;
+			}
+			a + a {
+				margin-left: 1em;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+				}
 			}
 		}
-
+		&:first-child {
+			flex-wrap: wrap;
+			//	[media queries PC-small]
+			// ----------------------------------------
+			@media screen and (max-width: 849px) {
+				.unit-flow__title {
+					width: 100%;
+				}
+			}
+		}
 	}
+}
+
+//	.block-faq
+//	よくあるご質問
+// ----------------------------------------
+.block-faq {
+	padding: 100px 0;
+	background-color: #f6f6f6;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include calcvw(100, 'padding',640);
+		padding-right: 0;
+		padding-left: 0;
+	}
+	//	.block-faq .block__title
+	// ----------------------------------------
+	@at-root .home & .block__title {
+		position: relative;
+		margin-bottom: 0;
+		@include fontsize(48);
+		font-family: $base_font_family_noto;
+		font-weight: normal;
+		color: $base_corporate_color;
+		text-align: center;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(48, 'font-size', 640);
+		}
+	}
+
+	//	.block-faq__body
+	// ----------------------------------------
+	@include element(body) {
+		dt, dd {
+			display: block;
+			padding: 30px 1rem 30px 10rem;
+			position: relative;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				padding: 1em 1em 1em 5rem;
+			}
+			&:before {
+				position: absolute;
+				top: 16px;
+				left: 2rem;
+				display: block;
+				margin-right: 2em;
+				vertical-align: middle;
+				font-family: $base_font_family_meiryo;
+				@include fontsize(40);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(40, 'font-size', 640);
+				}
+			}
+		}
+		dt {
+			background-color: #92a7c6;
+			color: $base_white_color;
+			@include fontsize(22);
+			font-weight: bold;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(32, 'font-size', 640);
+			}
+			&:before {
+				content: 'Q';
+				font-weight: normal;
+			}
+		}
+		dd {
+			&:before {
+				content: 'A';
+				color: #666;
+			}
+			& +dt {
+				margin-top: $base_padding*2;
+			}
+		}
+	}
+}
+
+//	.footer-information
+// ----------------------------------------
+.footer-information {
+	.block__body + .block__title {
+		margin-top: $base_padding*20;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(128, 'margin-top', 640);
+		}
+	}
+	//	.footer-information__body
+	// ----------------------------------------
+	@include element(body) {
+		@extend .container__inner;
+		columns: 2 480px;
+	}
+
+	//	.footer-information__outline
+	// ----------------------------------------
+	@include element(outline) {
+		//	.footer-information__outline__item
+		// ----------------------------------------
+		@include element(item) {
+			.label {
+				display: inline-block;
+				width: 25%;
+				vertical-align: top;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					border-bottom: 1px solid $base_text_color;
+					width: auto;
+					margin-bottom: .4em;
+					padding-bottom: .2em;
+				}
+			}
+			.body {
+				display: inline-block;
+				width: 75%;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+
+
+@media all and (-ms-high-contrast:none){
+	*::-ms-backdrop,
+	.block-instruments .block__title,
+	.block-flow .block__title	{
+		min-height: inherit;
+		height: 280px;
+	} 
 }

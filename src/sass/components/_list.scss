@@ -1,0 +1,18 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	components/_list.scss
+//  Date:	2018-06-20(UTC+9)
+//  Note:	
+// ===================================================================
+.list__item {
+	& + & {
+		margin-top: 1.2em;
+	}
+}
+
+.disc-list {
+	.list__item {
+		margin-left: 1em;
+		list-style: disc outside;
+	}
+}

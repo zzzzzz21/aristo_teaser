@@ -34,7 +34,7 @@
 .globalHeader {
 	width: 100%;
 	position: relative;
-	z-index: 2;
+	z-index: 1000;
 	//	[media queries SP]
 	// ----------------------------------------
 	@include media(sp) {
@@ -52,22 +52,87 @@
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			padding: 0 $base_padding_sp 0 0;
+			display: flex;
+			align-items: center;
 		}
 	}
 
 	// .globalHeader__top
 	// ----------------------------------------
 	@include element(top) {
+		box-sizing: border-box;
 		position: relative;
 		display: flex;
 		justify-content: space-between;
-		padding: 32px 0 28px;
+		min-height: 135px;
+		padding: 10px 76px 10px 0;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
 			flex-wrap: wrap;
+			min-height: inherit;
 			padding: 12px 0;
+		}
+	}
+	
+	// 	.globalHeader__body
+	// ----------------------------------------
+	@include element(body) {
+		box-sizing: border-box;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		overflow-y: scroll;
+		padding: 100px 0 60px;
+		background-color: $base_menu_overlay;
+		transition: transform .2s ease-out;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(100, 'padding-top', 640);
+			@include calcvw(60, 'padding-bottom', 640);
+		}
+
+		//	.globalHeader__body__inner
+		// ----------------------------------------
+		@include element(inner) {
+			box-sizing: border-box;
+			width: calc( 1280 / 1920 * 100% );
+			max-width: 800px;
+			margin: auto;
+			display: flex;
+			justify-content: flex-start;
+			flex-wrap: nowrap;
+			//	[media queries PC-small]
+			// ----------------------------------------
+			@include media(pc-small) {
+				width: 100%;
+			}
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+				padding: 0 $base_padding_sp;
+				flex-wrap: wrap;
+				justify-content: flex-start;
+			}
+		}
+		.siteTitle {
+			box-sizing: border-box;
+			width: calc( 220 / 800 * 100% );
+			text-align: center;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+			}
+			img {
+				width: auto;
+			}
 		}
 	}
 }
@@ -75,14 +140,24 @@
 // 	.siteTitle
 // ----------------------------------------
 .siteTitle {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	flex-wrap: nowrap;
+	dl {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: nowrap;
+		br {
+			display: none;
+			//	[media queries PC-min]
+			// ----------------------------------------
+			@include media(pc-min) {
+				display: block;
+			}
+		}
+	}
 	// .siteTItle__logo
 	// ----------------------------------------
 	@include element(logo) {
-		position: absolute;
+		position: relative;
 		top: 0;
 		left: 0;
 		z-index: 2;
@@ -93,16 +168,16 @@
 		}
 	}
 	img {
-		box-shadow: 4px 4px 4px rgba(0, 0, 0, .2);
+//		box-shadow: 4px 4px 4px rgba(0, 0, 0, .2);
 	}
 	// .siteTitle__catch
 	// ----------------------------------------
 	@include element(catch) {
-		padding-left: 140px;
+		padding-left: 20px;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			@include calcvw(140, 'padding-left', 640);
+			@include calcvw(20, 'padding-left', 640);
 			@include fontsize(14);
 		}
 	}
@@ -112,6 +187,12 @@
 		display: flex;
 		flex-wrap: nowrap;
 		align-items: center;
+		margin-left: 24px;
+		//	[media queries PC-min]
+		// ----------------------------------------
+		@include media(pc-min) {
+			flex-wrap: wrap;
+		}
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
@@ -123,6 +204,12 @@
 		// .siteTitle__function__tel
 		// ----------------------------------------
 		@include element(tel) {
+			margin-right: 24px;
+			//	[media queries PC-min]
+			// ----------------------------------------
+			@media screen and (max-width:920px) {
+				margin-right: 0;
+			}
 			// .siteTitle__function__tel__number
 			// ----------------------------------------
 			@include element(number) {
@@ -156,7 +243,6 @@
 		// .siteTitle__function__form
 		// ----------------------------------------
 		@include element(form) {
-			margin-left: 24px;
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
@@ -169,407 +255,269 @@
 // 	ハンバーガーメニュー
 // ----------------------------------------
 .gNavi {
+	padding: 0 6% 6%;
 	//	[media queries PC-tablet]
 	// ----------------------------------------
 	@include media(pc-tb) {
+		box-sizing: border-box;
+		width: calc( 580 / 800 * 100% );
+		border-left: 1px solid #999;
 	}
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include calcvw(40, 'margin-top', 640);
+	}
+	
 	// 	.gNavi__body::MENU本体
 	// ----------------------------------------
 	@include element(body) {
-		display: flex;
-		flex-wrap: wrap;
-		margin: 0 auto;
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			@include calcvw(670, 'width');
-		}
-		//	[media queries tablet]
-		// ----------------------------------------
-		@include media(tb) {
-			flex-wrap: wrap;
-			justify-content: flex-start;
-			width: calc(100vw - 302px);
-			.home & {
-				width: 100%;
-				flex-wrap: nowrap;
-			}
-		}
-		@media screen and (min-width: 768px ) and (max-width: 1075px) {
-			.home & {
-				width: calc(100vw);
-				flex-wrap: wrap;
-			}
-		}
-		//	[media queries tablet-pc-small]
-		// ----------------------------------------
-		@include media(tb-pc-small) {
-			flex-wrap: nowrap;
-		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			padding: 18px 30px 0 3%;
-			flex-wrap: nowrap;
-			justify-content: flex-end;
-			.home & {
-//				padding-top: 0;
-			}
-		}
-		//	[media queries tablet]
-		// ----------------------------------------
-		@include media(tb) {
-//			padding-top: 18px;
-			.home & {
-//				padding-top: 12px;
-			}
-		}
-		.home & {
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				padding-top: 16px;
-				padding-left: 0;
-			}
-		}
 	}
+	
 	// 	.gNavi__item
 	// ----------------------------------------
 	@include element(item) {
-		position: relative;
-		@include transition(all linear .5s);
-		width: calc(89.33333vw / 2);
-		@include calcvw(76, 'margin-bottom');
-		//	[media queries tablet]
-		// ----------------------------------------
-		@include media(tb) {
-			margin-bottom: 20px;
+		& ul {
+			padding-bottom: 1em;
 		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			flex-wrap: nowrap;
-			vertical-align: bottom;
-			margin-bottom: 0;
-		}
-		> a, > span {
-			text-align: center;
-			position: relative;
-			box-sizing: border-box;
-			display: block;
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				overflow: hidden;
-				text-indent: 100%;
-				white-space: nowrap;
-				background-image: url(#{$image_path}common/menu_pc.png);
-				background-repeat: no-repeat;
-			}
-			img {
-				width: auto;
-				@include calcvw(86, 'height');
-			}
+		&  & {
+			padding-left: 2em;
 		}
 		> a {
-			//	[media queries PC]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				position: relative;
-				span {
-					display: block;
-					height: 48px;
-				}
-				&:after {
-					position: absolute;
-					top: 20px;
-					left: 0;
-					width: 100%;
-					height: 0;
-					background: rgba($base_link_color, .8);
-					content: '';
-					transform: translateX(-100%);
-					border-bottom: 10px solid transparent;
-					opacity: 0;
-					transition: all .2s;
-					z-index: -1;
-				}
-				&.is--current,
-				&:hover {
-					&:after	{
-						opacity: 1;
-						transform: translateY(0);
-					}
-				}
-			}
-		}
-		> span {
+			box-sizing: border-box;
 			display: block;
-			height: 48px;
+			padding: .4em 0;
+			transition: all .3s ease;
+			&:link, &:visited {
+				color: #999;
+			}
+			&:hover, &:active {
+				color: #666;
+			}
 		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			margin-right: 20px;
-			&:last-child {
-				margin-right: 0;
+	}
+	
+	//	.btn-detail
+	// ----------------------------------------
+	.btn-detail {
+		color: #999;
+		@include fontsize(16);
+		margin-left: 0;
+		border: 1px solid #999;
+		background-color: transparent;
+		& + .btn-detail {
+			margin-top: 2em;
+		}
+		&:after {
+			border-color: #999;
+		}
+		&:link, &:vsited {
+			background-color: transparent;
+		}
+		&:hover, &:active {
+			color: $base_white_color;
+			background-color: $base_hover_color;
+			&:after {
+				border-color: $base_white_color;
 			}
-			&.is--news {
-				width: 65px;
-				> a {
-					background-position: 0 0;
-				}
-				> span {
-					background-position: 0 -48px;
-				}
-			}
-			&.is--story {
-				width: 74px;
-				> a {
-					background-position: -96px 0;
-				}
-				> span {
-					background-position: -96px -48px;
-				}
-			}
-			&.is--cast {
-				width: 143px;
-				> a {
-					background-position: -200px 0;
-				}
-				> span {
-					background-position: -200px -48px;
-				}
-			}
-			&.is--character {
-				width: 135px;
-				> a {
-					background-position: -374px 0;
-				}
-				> span {
-					background-position: -374px -48px;
-				}
-			}
-			&.is--onair {
-				width: 70px;
-				> a {
-					background-position: -540px 0;
-				}
-				> span {
-					background-position: -540px -48px;
-				}
-			}
-			&.is--movie {
-				width: 71px;
-				> a {
-					background-position: -642px 0;
-				}
-				> span {
-					background-position: -642px -48px;
-				}
-			}
-			&.is--products {
-				width: 122px;
-				> a {
-					background-position: -744px 0;
-				}
-				> span {
-					background-position: -744px -48px;
-				}
-			}
-			&.is--special {
-				width: 93px;
-				> a {
-					background-position: -897px 0;
-				}
-				> span {
-					background-position: -897px -48px;
-				}
-			}
+		}
+	}
+
+}
+
+
+
+
+// MENUボタン
+// ----------------------------------------
+.navDrawer_btn_wrapper {
+	position: fixed;
+	top: 50px;
+	right: 20px;
+	height: 60px;
+	z-index: 2000;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		top: 30px;
+		right: 0;
+	}
+	&:after {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 12px;
+		bottom: 12px;
+		left: 0;
+		text-transform: uppercase;
+		content: 'MENU';
+		font-size: 12px;
+		text-align: center;
+		.no-scroll & {
+			content: 'CLOSE';
+			color: #999;
 		}
 	}
 }
 
+.navDrawer_btn {
+	width: 60px;
+	height: 60px;
+	padding: 0;
+	color: #000;
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	transition: background-color 0.1s;
 
-// -------------------------------------------------------------------
-// SP版メニュー
-// -------------------------------------------------------------------
-//	[media queries SP]
-// ----------------------------------------
-@include media(sp) {
-	// MENUボタン
-	// ----------------------------------------
-	.navDrawer_btn_wrapper {
-		position: fixed;
-		top: 0;
-		right: 0;
-		height: 60px;
-		z-index: 2000;
-		&:after {
-			background-size: contain;
-			.no-scroll & {
-			}
-		}
+	&::after {
+		content: '';
+		position: absolute;
+		top: 26px;
+		left: 16px;
+		width: 28px;
+		height: 4px;
+		background-color: currentColor;
 	}
-
-	.navDrawer_btn {
-		width: 60px;
-		height: 60px;
-		padding: 0;
-		color: #000;
-		background-color: $base_menu_color;
-		border: 0;
-		outline: 0;
-		transition: background-color 0.1s;
-
+	span {
+		&::before,
 		&::after {
 			content: '';
 			position: absolute;
-			top: 26px;
 			left: 16px;
 			width: 28px;
 			height: 4px;
 			background-color: currentColor;
 		}
-		span {
-			&::before,
-			&::after {
-				content: '';
-				position: absolute;
-				left: 16px;
-				width: 28px;
-				height: 4px;
-				background-color: currentColor;
-			}
 
-			&::before {
-				top: 10px;
-			}
-
-			&::after {
-				top: 18px;
-			}
+		&::before {
+			top: 10px;
 		}
 
-		&[aria-expanded="false"] {
-			&::after {
-				transition: opacity 0.1s;
-			}
-
-			span {
-				&::before,
-				&::after {
-					animation-duration: 0.1s;
-					animation-fill-mode: forwards;
-				}
-
-				&::before {
-					animation-name: close-before;
-					@at-root {
-						@keyframes close-before {
-							0% {
-								transform: translateY(5px) rotate(45deg);
-							}
-							60% {
-								transform: translateY(5px) rotate(0);
-							}
-							70% {
-								transform: translateY(5px) rotate(0);
-							}
-							100% {
-								transform: translateY(0) rotate(0);
-							}
-						}
-					}
-				}
-
-				&::after {
-					animation-name: close-after;
-					@at-root {
-						@keyframes close-after {
-							0% {
-								transform: translateY(-5px) rotate(-45deg);
-							}
-							30% {
-								transform: translateY(-5px) rotate(0);
-							}
-							40% {
-								transform: translateY(-5px) rotate(0);
-							}
-							100% {
-								transform: translateY(0) rotate(0);
-							}
-						}
-					}
-				}
-			}
-		}
-
-		&[aria-expanded="true"] {
-			background: transparent;
-			&::after {
-				opacity: 0;
-				transition: opacity 0.1s 0.1s;
-			}
-
-			span {
-				&::before,
-				&::after {
-					animation-duration: 0.2s;
-					animation-fill-mode: forwards;
-				}
-
-				&::before {
-					animation-name: open-before;
-					@at-root {
-						@keyframes open-before {
-							0% {
-								transform: translateY(0) rotate(0);
-							}
-							30% {
-								transform: translateY(5px) rotate(0);
-							}
-							40% {
-								transform: translateY(5px) rotate(0);
-							}
-							100% {
-								transform: translateY(5px) rotate(45deg);
-							}
-						}
-					}
-				}
-
-				&::after {
-					top: 20px;
-					animation-name: open-after;
-					@at-root {
-						@keyframes open-after {
-							0% {
-								transform: translateY(0) rotate(0);
-							}
-							30% {
-								transform: translateY(-5px) rotate(0);
-							}
-							40% {
-								transform: translateY(-5px) rotate(0);
-							}
-							100% {
-								transform: translateY(-5px) rotate(-45deg);
-							}
-						}
-					}
-				}
-			}
-		}
-
-		&:focus {
+		&::after {
+			top: 18px;
 		}
 	}
 
-	// ドロワーナビ //
-	.globalHeader__body {
-		&[aria-hidden="true"] {
-			transform: translateX(100%);
+	&[aria-expanded="false"] {
+		&::after {
+			transition: opacity 0.1s;
 		}
+
+		span {
+			&::before,
+			&::after {
+				animation-duration: 0.1s;
+				animation-fill-mode: forwards;
+			}
+
+			&::before {
+				animation-name: close-before;
+				@at-root {
+					@keyframes close-before {
+						0% {
+							transform: translateY(5px) rotate(45deg);
+						}
+						60% {
+							transform: translateY(5px) rotate(0);
+						}
+						70% {
+							transform: translateY(5px) rotate(0);
+						}
+						100% {
+							transform: translateY(0) rotate(0);
+						}
+					}
+				}
+			}
+
+			&::after {
+				animation-name: close-after;
+				@at-root {
+					@keyframes close-after {
+						0% {
+							transform: translateY(-5px) rotate(-45deg);
+						}
+						30% {
+							transform: translateY(-5px) rotate(0);
+						}
+						40% {
+							transform: translateY(-5px) rotate(0);
+						}
+						100% {
+							transform: translateY(0) rotate(0);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&[aria-expanded="true"] {
+		background: transparent;
+		&::after {
+			opacity: 0;
+			transition: opacity 0.1s 0.1s;
+		}
+
+		span {
+			&::before,
+			&::after {
+				color: #999;
+				animation-duration: 0.2s;
+				animation-fill-mode: forwards;
+			}
+
+			&::before {
+				animation-name: open-before;
+				@at-root {
+					@keyframes open-before {
+						0% {
+							transform: translateY(0) rotate(0);
+						}
+						30% {
+							transform: translateY(5px) rotate(0);
+						}
+						40% {
+							transform: translateY(5px) rotate(0);
+						}
+						100% {
+							transform: translateY(5px) rotate(45deg);
+						}
+					}
+				}
+			}
+
+			&::after {
+				top: 20px;
+				animation-name: open-after;
+				@at-root {
+					@keyframes open-after {
+						0% {
+							transform: translateY(0) rotate(0);
+						}
+						30% {
+							transform: translateY(-5px) rotate(0);
+						}
+						40% {
+							transform: translateY(-5px) rotate(0);
+						}
+						100% {
+							transform: translateY(-5px) rotate(-45deg);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&:focus {
+	}
+}
+
+// ドロワーナビ //
+.globalHeader__body {
+	&[aria-hidden="true"] {
+		transform: translateX(100%);
 	}
 }

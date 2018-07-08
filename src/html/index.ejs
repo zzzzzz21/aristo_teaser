@@ -11,39 +11,45 @@ page = '';
 </head>
 <body class="<% if (directory!=='') { %> <%= directory %><% } else {%>home<% } %>" id="top">
 <% include include/_gtag %>
-<% include include/_header %>
 <div class="page" id="data-page">
+<% include include/_header %>
 	<main class="main contents">
 		<header class="page-head">
 			<div class="container">
 				<h1 class="page-title"><ruby>ARISTO <rp>(</rp><rt>アリスト</rt><rp>)</rp></ruby>は、好立地の優良不動産に対して<br>最低出資金額「500万円」からの投資が可能な<br>不動産小口化商品です。</h1>
-				<p class="page-title--note">「ARISTO」は｢最良」の意味を込めた当社不動産小口化商品名です。</p>
+				<p class="page-title--note">ARISTO(アリスト)は、株式会社エー・ディー・ワークスが提供する、<br class="is-pc">不動産特定共同事業法に基づく不動産小口化商品の登録商標です。
+				</p>
 			</div>
 		</header>
 		<!-- /[.page-head] -->
 		<section class="block block-point" id="section-point">
-			<h2 class="block__title">好立地の優良不動産へ投資することのメリットとは？</h2>
+			<h2 class="block__title">好立地の優良不動産へ<br class="is-sp">投資することのメリットとは？</h2>
 			<div class="block__body">
 				<section class="unit unit-point -point1" id="point1">
 					<h3 class="unit-point__title">安定した賃料収入が期待でき、<br>かつ資産価値が堕ちづらい傾向がある。</h3>
-					<p class="unit-point__image"><img src="<%= path %>images/index/img_point1.jpg" alt="イメージ：安定した賃料収入が期待でき、かつ資産価値が堕ちづらい傾向がある。"></p>
+					<dl class="unit-point__image">
+						<dt class="caption">京都府「地価調査」より作成</dt>
+						<dd><img src="<%= path %>images/index/image_point1.jpg" alt="イメージ：安定した賃料収入が期待でき、かつ資産価値が堕ちづらい傾向がある。"></dd>
+					</dl>
+					<p class="is--notice">※物件の資産価値が下落しないことを保証するものではありません。</p>
 				</section>
 				<!-- /[.unit.unit-point#point1] -->
 				<section class="unit unit-point -point2" id="point2">
 					<h3 class="unit-point__title">不動産は、相続・贈与時に時価と<br class="is-sp">評価額の差が大きいことから<br>資産の圧縮効果を得ることができる。</h3>
-					<p class="unit-point__image"><img src="<%= path %>images/index/img_point2.jpg" alt="イメージ：不動産は、相続・贈与時に時価と評価額の差が大きいことから資産の圧縮効果を得ることができる。"></p>
+					<p class="unit-point__image"><img src="<%= path %>images/index/image_point2.jpg" alt="イメージ：不動産は、相続・贈与時に時価と評価額の差が大きいことから資産の圧縮効果を得ることができる。"></p>
+					<p class="is--notice">※図はあくまでもイメージであり、圧縮効果は不動産によって異なります。  また、税制の変更等により効果の幅も変わります。</p>
 				</section>
 				<!-- /[.unit.unit-point#point2] -->
 				<div class="unit aristo-note">
-					<p>一般的に、優良不動産に投資をするためには大きな資本が必要となります。<br>ARISTOは、不動産を小口化することで、メリットをそのままに、500万円からの投資が可能です。</p>
+					<p>好立地の優良不動産に投資をするためには大きな資本が必要となります。<br>ARISTOは、不動産を小口化することで、メリットをそのままに、500万円からの投資が可能です。</p>
 					<p class="aristo-note__appendix">（一口100万円で最低5口からの投資になります）</p>
 				</div>
-				<section class="unit -point3-4">
-					<h3 class="unit__title">小口化の更なるメリットとは？</h3>
+				<section class="unit -point3-4" id="section-merit">
+					<h3 class="unit__title">小口化することによる更なるメリット</h3>
 					<div class="unit-point__body">
 						<div class="unit unit-point unit-point--sub -point3">
 							<div class="unit-point--sub__inner">
-								<p class="unit-point--sub__image"><img src="<%= path %>images/index/img_point3.jpg" alt="イメージ：管理運営の手間無し"></p>
+								<p class="unit-point--sub__image"><img src="<%= path %>images/index/image_point3.jpg" alt="イメージ：管理運営の手間無し"></p>
 								<section class="unit-point--sub__body">
 									<h4 class="unit-point--sub__title">管理運営の手間無し</h4>
 									<p>入居するテナントへの対応や、日々の維持管理から、長期的な建物のメンテナンス等、不動産の管理運営には手間がかかります。そのような管理運営は当社が⼀括して執り行いますので、皆様には煩わしい手間はかかりません。</p>
@@ -53,10 +59,10 @@ page = '';
 						<!-- /[.unit.unit-point--sub.-point3] -->
 						<div class="unit unit-point unit-point--sub -point4">
 							<div class="unit-point--sub__inner">
-								<p class="unit-point--sub__image"><img src="<%= path %>images/index/img_point4.jpg" alt="イメージ：次世代への平等な資産承継"></p>
+								<p class="unit-point--sub__image"><img src="<%= path %>images/index/image_point4.jpg" alt="イメージ：次世代への平等な資産承継"></p>
 								<section class="unit-point--sub__body">
 									<h4 class="unit-point--sub__title">次世代への平等な資産承継</h4>
-									<p>不動産の特性である、相続税評価額の負担軽減効果に加え、複数人への平等な相続、贈与が可能です。</p>
+									<p>口数による分割が可能であることから、実物不動産と異なり、複数人への平等な相続、贈与が容易です。</p>
 								</section>
 							</div>
 						</div>
@@ -71,8 +77,9 @@ page = '';
 			<a href="<%= path %>request/" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
 		</section>
 		<!-- /[.block-point#section-point] -->
+		
 		<section class="block-instruments" id="section-instruments">
-			<h2 class="block__title">ARISTO第一弾商品</h2>
+			<h2 class="block__title"><span>ARISTO第一弾商品</span></h2>
 			<div class="top-carousel">
 				<div class="top-carousel__inner" id="data-carousel">
 					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_kyoto01.jpg" alt=""></div>
@@ -90,21 +97,528 @@ page = '';
 				</div>
 			</div>
 			<!-- /[.top-carousel] -->
-			<div class="block">
-				<section class="unit unit-location -available" id="section-location">
-					<h2 class="unit-location__logo"><img src="<%= path %>images/common/logo_aristo-kyoto.jpg" alt="ARISTO京都"></h2>
-					<h3 class="unit__title"><span>ロケーション</span></h3>
-					<p class="unit-location__map"><img src="<%= path %>images/common/map_location.jpg" alt="地図：ロケーション"></p>
-					<p>京都駅や多数の観光名所に囲まれた、京都市内でも特に人気の高い『田の字エリア』と呼ばれる地域にあります。<br>
-					観光地へのアクセスが良いことから、観光客にも人気のエリアで、インバウンド需要の恩恵を受け易い地域といえます。</p>
+			
+			<div class="block-title" id="section-title">
+				<div class="block -available">
+					<h2 class="block-title__logo"><img src="<%= path %>images/common/logo_aristo-kyoto.jpg" alt="ARISTO京都"></h2>
+				</div>
+				<section class="unit-kyoto" id="section-kyoto--merit">
+					<h3 class="unit-kyoto__title">京都不動産投資のメリット</h3>
+					<div class="block unit-kyoto__body">
+						<div class="unit-kyoto--merit1" id="section-kyoto-merit1">
+							<p class="unit-kyoto--merit__title">京都市内中心部商業地の賃料・不動産価格は上昇傾向。</p>
+							<div class="unit unit-merit -merit1" id="section-merit1">
+								<h4 class="unit-merit__head unit-merit1">インバウンド需要拡大の恩恵を受ける<br class="is-pc">京都市内中心部の物販・飲食業が好調で<br class="is-pc">京都市内中心部商業地の賃料・不動産価格は上昇傾向にある。</h4>
+								<div class="block--merit1">
+									<div class="unit-merit unit-merit--inbound">
+										<section class="unit-merit__item -inbound" id="section-growth-inbound">
+											<h5 class="unit-merit__title">インバウンド需要の拡大</h5>
+											<div class="unit-point__image">
+												<p><img src="<%= path %>images/index/figure_growth01.png" alt="京都市宿泊客数（除く民泊、万人）"></p>
+												<p class="caption">京都市「京都観光総合調査」H28年より当社作成</p>
+											</div>
+										</section>
+										<!-- /[.unit-merit__item.-inbound#section-growth-inbound] -->
+										<section class="unit-merit__item -consumption" id="section-growth-consumption">
+											<h5 class="unit-merit__title">京都市内観光消費額は上昇傾向</h5>
+											<div class="unit-merit__body">
+												<div class="unit-point__image">
+													<p><img src="<%= path %>images/index/figure_growth02.png" alt="京都市観光消費額（億円）"></p>
+													<p class="caption">京都市「京都観光総合調査」H28年より当社作成</p>
+												</div>
+												<div class="unit-point__table">
+													<table>
+														<thead>
+															<tr>
+																<th colspan="2">高島屋店舗</th>
+																<th>上：売上高（億円）<br>下：前年比増減率（％）</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<th>関西</th>
+																<td>京都店</td>
+																<td>88,126<br><strong>3.9%</strong></td>
+															</tr>
+															<tr>
+																<th rowspan="3">関東</th>
+																<td>日本橋店</td>
+																<td>134,241<br>1.0%</td>
+															</tr>
+															<tr>
+																<td>横浜店</td>
+																<td>131,649<br>1.7%</td>
+															</tr>
+															<tr>
+																<td>新宿店</td>
+																<td>73,331<br>3.5%</td>
+															</tr>
+														</tbody>
+													</table>
+													<p class="caption">株式会社高島屋2018年2月期決算補足資料<br>「店舗別売上高等」より当社作成</p>
+												</div>
+											</div>
+										</section>
+										<!-- /[.unit-merit__item.-consumption#section-growth-consumption] -->
+									</div>
+									<section class="unit-merit -rent" id="section-growth-rent">
+										<h5 class="unit-merit__title">賃料相場が上昇</h5>
+										<div class="unit-merit__body">
+											<ul class="rent-market">
+												<li class="rent-market__item"><img src="<%= path %>images/index/image_rental-rate_2017.png" alt="賃料相場：2017年秋"></li>
+												<li class="rent-market__item"><img src="<%= path %>images/index/image_rental-rate_2018.png" alt="賃料相場：2018年春"></li>
+											</ul>
+											<p class="caption">一般財団法人日本不動産研究所、株式会社ピーエーシー・アーバンプロジェクト、スタイルアクト株式会社<br>2017年秋及び2018年春公表資料より当社作成</p>
+										</div>
+									</section>
+									<!-- /[unit-merit.-rent#section-growth-rent] -->
+									<section class="unit-merit -land-price">
+										<h5 class="unit-merit__title">地価（商業地）が上昇傾向</h5>
+										<div class="unit-merit__body">
+											<div class="unit-point__image">
+												<p><img src="<%= path %>images/index/figure_land-price.png" alt="グラフ：京都市の商業地平均地価の推移"></p>
+												<p class="caption">京都府「地価調査」より当社作成</p>
+											</div>
+										</div>
+									</section>
+									<!-- /[section.unit-merit.-land-price] -->
+								</div>
+								<!-- /[.unit.unit-merit#section-growth] -->
+							</div>
+							<!-- /[.unit-merit.-merit1#section-merit1] -->
+
+						</div>
+						<div class="unit-kyoto--merit2" id="section-kyoto-merit2">
+							<p class="unit-kyoto--merit__title">景観保全で建築規制が厳しく、不動産供給に一定の制限がかかる傾向。</p>
+							<div class="unit unit-merit -merit2" id="section-merit2">
+								<h3 class="unit-merit__head unit-merit1">景観保全で建築規制が厳しく、不動産供給に一定の制限が掛かる傾向。<br class="is-pc">よって市内中心部好立地の不動産は今後も希少性が高い可能性。</h3>
+								<div class="block--merit2">
+									<section class="unit-merit -regulation1" id="section-regulation1">
+										<h4 class="unit-merit__title">規制例1</h4>
+										<h5 class="unit-merit__subtitle"><span class="main">建物の高さ規制の強化</span><span class="sub">（2007年：高度地区による高さ規制）</span></h5>
+										<div class="unit-merit__body">
+											<div class="unit-merit__body__image"><img src="<%= path %>images/index/image_merit2-1.png" alt="図：建物の高さ規制の強化"></div>
+											<div class="unit-merit__body__main">
+												<p class="main">風情ある京町屋の景観保全を<br class="is-pc">目的として建築物の<br class="is-pc">高さ最高限度を<br class="is-pc">41mから31mへ規制強化</p>
+												<p class="note">例：都心部の幹線道路沿道等</p>
+											</div>
+										</div>
+									</section>
+									<!-- /[.unit-merit.-regulation1#section-regulation1] -->
+									<section class="unit-merit -regulation2" id="section-regulation2">
+										<h4 class="unit-merit__title">規制例2</h4>
+										<h5 class="unit-merit__subtitle"><span class="main">眺望景観や借景の保全による高さ制限</span><span class="sub">（2007年：京都市眺望景観創生条例）</span></h5>
+										<div class="unit-merit__body">
+											<div class="unit-merit__body__image"><img src="<%= path %>images/index/image_merit2-2.png" alt="図：眺望景観や借景の保全による高さ制限"></div>
+											<div class="unit-merit__body__main">
+												<p class="main">世界遺産に登録されている社寺等か<br class="is-pc">らの眺望景観を保全するための条約<br class="is-pc">であり、そこからの眺めを遮る建物<br class="is-pc">の高さ、デザインを規制します。</p>
+												<p class="note">例：賀茂川西岸からの「大文字」</p>
+												<p class="note">京都新聞2007年2月5日新景観政策概要より抜粋</p>
+											</div>
+										</div>
+									</section>
+									<!-- /[.unit-merit.-regulation2#section-regulation2] -->
+								</div>
+							</div>
+							<!-- /[.unit-merit.-merit1#section-merit2] -->
+						</div>
+					</div>
 				</section>
-				<!-- /[.unit.unit-location#section-location] -->
-				<section class="unit unit-growth" id="section-growth">
-					<h3 class="unit__title"><span>観光業の成長</span></h3>
-				</section>
+				<!-- /[.unit-kyoto#section-kyoto--merit] -->
 			</div>
+			<!-- /[.block-title#section-title] -->
 		</section>
 		<!-- /[.block-instruments#section-instruments] -->
+		
+		<section class="block block-location" id="section-location">
+			<h2 class="unit__title"><span>ロケーション</span></h2>
+			<div class="unit-map__body">
+				<p class="unit-map__main"><img src="<%= path %>images/index/map_aristo_wide.jpg" alt="地図"></p>
+				<ul class="unit-map__nav">
+					<li class="unit-map__nav__item"><a href="<%= path %>images/index/map_aristo_wide.jpg">広域<br>地図</a></li>
+					<li class="unit-map__nav__item"><a href="<%= path %>images/index/map_aristo_around.jpg">周辺<br>地図</a></li>
+				</ul>
+			</div>
+			<p>ARISTO京都は「田の字エリア」に位置します。<br>
+				「田の字エリア」は、ターミナル駅や観光名所へのアクセスが良く京都市の中枢で資産価値の高いブランドエリアと言えます。<br>
+				またインバウンド需要の恩恵を受けやすいエリアと考えられます。</p>
+		</section>
+		<!-- /[.block.block-location#section-location] -->
+
+		<section class="block block-shinkyougoku" id="section-shinkyougoku">
+			<h2 class="unit__title"><span>新京極通</span></h2>
+			<div class="block-shinkyougoku__body">
+				<div class="block-shinkyougoku__body__items">
+					<div class="block-shinkyogoku-images">
+						<div class="gallery-images__main"></div>
+						<ul class="gallery-images__thumbnail">
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/photo_shinkyougoku01.jpg" alt="新京極通：写真01"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/photo_shinkyougoku02.jpg" alt="新京極通：写真02"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/photo_shinkyougoku03.jpg" alt="新京極通：写真03"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/photo_shinkyougoku04.jpg" alt="新京極通：写真04"></li>
+						</ul>
+						<p class="gallery-images__caption">撮影日：2018年5月</p>
+					</div>
+				</div>
+				<div class="block-shinkyougoku__body__items">
+					<h3 class="block-shinkyougoku__body__title">田の字エリア（三条通～四条通）を南北に貫く商店街。</h3>
+					<p>天正年間（1573年~1592年）、豊臣秀吉が市中の多くの寺院を寺町通りに集めたことで、各寺院の境内が縁日の舞台として利用され、周辺が見世物や催し物を中心に発展していきました。</p>
+					<p>その後、明治5年（1872年）に京都府参事槇村正直により、寺院の境内を整理し、新たな通りが作られ、新京極通りとなりました。</p>
+					<p>明治10年（1877年）ごろには芝居座、浄瑠璃、寄席などの興行場や飲食店など、多くの店舗が立ち並び、明治30年代には東京の浅草、大阪の千日前とともににほんを代表する盛り場として知られるようになりました。</p>
+					<p>その後も、劇場・映画館・園芸場が多く立ち並び、京都座、京都松竹座、京都宝塚劇場など娯楽の通りとして発展し、近年では地元向け、観光客向けの商店が混在する商店街として賑わいが続いています。</p>
+				</div>
+			</div>	
+		</section>
+		<!-- /[.block.block-shinkyougokut#section-shinkyougoku] -->
+		
+		<section class="block block-characteristic" id="section-characteristic">
+			<h2 class="unit__title"><span>対象不動産の特性</span></h2>
+			<div class="block__body">
+				<div class="block-characteristic__image">
+					<p><img src="<%= path %>images/index/image_arcade.jpg" alt="図：対象不動産の特性"></p>
+					<p class="caption">※赤点線はアーケードのイメージです</p>
+				</div>
+				<div class="block-characteristic__body">
+					<h3 class="title">立地特性</h3>
+					<p class="indent">・「広場に面していること」、「間口が非掌に広いこと(※)」、「2面接道であること」から、繁華性の高い新京極通りの中でも極めて視認性の耳い希少立地であるといえます。</p>
+					<p class="indent">・アーケードによる視線の返りがなく、上層階まで物件を認識することができます。<br>※周辺吻件は、 閲口が狭く奥行きがある”うなぎの寝床”と言われる店誦が一般的であるのに対して、本件は極めて間口が広く、商業地として希少性が萬いといえます。</p>
+					<h3 class="title">ガラス張りの外観（建物特性）</h3>
+					<p>視認性の高い立地を生かしたインパクトのある外観といえます。 また、外から建物内部を見通すことができ、店舗内へ歩行者を誘引しやすく、商業ビルとしての強みになります。</p>
+					<ul class="characteristic-images">
+						<li class="characteristic-images__item">
+							<p><img src="<%= path %>images/index/photo_surroundings1.jpg" alt="写真：周辺店舗"></p>
+							<p class="caption">周辺店舗</p>
+						</li>
+						<li class="characteristic-images__item">
+							<p><img src="<%= path %>images/index/photo_surroundings2.jpg" alt="写真：ARISTO 京都"></p>
+							<p class="caption">ARISTO 京都</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="block-characteristic-images">
+				<div class="gallery-images__main"></div>
+				<ul class="gallery-images__thumbnail">
+					<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/image_perspective01.jpg" alt="ARISTO京都：イメージ01"></li>
+					<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/image_perspective02.jpg" alt="ARISTO京都：イメージ02"></li>
+					<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/image_perspective03.jpg" alt="ARISTO京都：イメージ03"></li>
+					<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/image_perspective04.jpg" alt="ARISTO京都：イメージ04"></li>
+				</ul>
+				<p class="gallery-images__caption">※上記掲載の完成予想図は計画段階の図面を素基に描いたもので実際とは異なる場合があります。</p>
+			</div>
+		</section>
+		<!-- /[.block.block-characteristic#section-characteristic] -->
+
+		<section class="block block-surroundings" id="section-surroundings">
+			<h2 class="unit__title"><span>商業ビルとしての価値の高まり</span></h2>
+			<p class="block-surroundings__lead">本件周辺ではホテル間発が進んでいるため、 今後も本件ではインパウンド需要の恩恵を受けやすい。<br class="is-pc">飲食・物販テナントの出店ニーズが高まる可能性。</p>
+			<div class="block-surroundings__body">
+				<div class="block-surroundings__items"><img src="<%= path %>images/index/image_surroundings.jpg" alt="「田の字エリア」地区概念図"></div>
+				<div class="block-surroundings__items">
+					<ol class="list-hotels">
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_hotelgracery.jpg" alt="ホテルグレイスリー京都三条写真：2018年5月撮影"></p>
+							<p class="name">ホテルグレイスリー京都三条<br>（2017年5月開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_themillenials.jpg" alt="ザミレニアルズ京都写真：2018年5月撮影"></p>
+							<p class="name">ザミレニアルズ京都<br>（2017年7月開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_thegate.jpg" alt="ザ・ゲート立誠京都写真：2018年5月撮影"></p>
+							<p class="name">ザ・ゲート立誠京都<br>（2020年春開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_honnouji.jpg" alt="ホテル本能寺本館写真：2018年5月撮影"></p>
+							<p class="name">ホテル本能寺本館<br>（2019年秋開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_firstcabin.jpg" alt="ファーストキャビン京都河原町三条写真：2018年5月撮影"></p>
+							<p class="name">ファーストキャビン京都河原町三条<br>（2017年12月開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_hotelresol.jpg" alt="ホテルリソル京都河原町三条写真：2018年5月撮影"></p>
+							<p class="name">ホテルリソル京都河原町三条<br>（2018年6月開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_crosshotel.jpg" alt="クロスホテル京都写真：2018年5月撮影"></p>
+							<p class="name">クロスホテル京都<br>（2018年秋開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル等</p>
+							<p><img src="<%= path %>images/index/photo_sakaiza.jpg" alt="京都松竹阪井座ビル写真：2018年5月撮影"></p>
+							<p class="name">京都松竹阪井座ビル<br>（2018年秋開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル等</p>
+							<p><img src="<%= path %>images/index/photo_biostyle.jpg" alt="BIO-Style京都写真：2018年5月撮影"></p>
+							<p class="name">BIO-Style京都<br>（2019年春開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル等</p>
+							<p><img src="<%= path %>images/index/photo_shinpuhkan.jpg" alt="新風館写真：2018年5月撮影"></p>
+							<p class="name">新風館<br>（2019年秋開業）</p>
+						</li>
+					</ol>
+					<p class="caption">撮影日：2018年5月</p>
+				</div>
+			</div>
+			<h2 class="block-contact__title">お問い合わせ</h2>
+<% include include/_block-contact %>
+			<a href="<%= path %>request/" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
+		</section>
+		<!-- /[.block.block-surroundings#section-surroundings] -->
+
+		<section class="block block-products" id="section-products">
+			<h2 class="unit__title"><span>商品概要</span></h2>
+			<div class="block-products__body">
+				<table class="outline-table">
+					<tr>
+						<th>募集総額</th>
+						<td>12億2千万円</td>
+					</tr>
+					<tr>
+						<th>募集総口数</th>
+						<td>1220口</td>
+					</tr>
+					<tr>
+						<th>組合組成予定日</th>
+						<td>2018年12月21日予定</td>
+					</tr>
+					<tr>
+						<th>予定運用期間</th>
+						<td>15年間</td>
+					</tr>
+					<tr>
+						<th>お申込単位</th>
+						<td>
+							<dl>
+								<dt>1口100万円単位</dt>
+								<dd class="indent">最低出資金額500万円（5口）<br>
+									最高出資金額300万円（300口）<br>
+									（500万円以上であれば、100万円単位で出資額をお決め頂けます。）</dd>
+							</dl>
+						</td>
+					</tr>
+					<tr>
+						<th>必要経費</th>
+						<td>不動産取得税等（1口あたりの目安約○○円）</td>
+					</tr>
+					<tr>
+						<th>支払期日</th>
+						<td>2018年12月14日予定</td>
+					</tr>
+					<tr>
+						<th>売買代金に代金に対する賃料利回り</th>
+						<td>
+							<p>4.46％</p>
+							<p>※売買代金に対する賃料利回りとは、「満室時の年間の賃料収入等の総額」÷「募集総額」で算出しています。なお売買代金に対する賃料利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
+						</td>
+					</tr>
+					<tr>
+						<th>投資コストに対する分配金利回り</th>
+						<td>
+							<p>3.91％</p>
+							<p>※投資コストに対する分配金利回りとは、「年間の現金分配額」÷「（募集総額＋必要経費）」で算出しています。なお投資コストに対する分配金利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
+						</td>
+					</tr>
+					<tr>
+						<th>収益分配</th>
+						<td>年1回（2月）</td>
+					</tr>
+					<tr>
+						<th>不動産特定共同事業者</th>
+						<td>株式会社エー・ディー・ワークス<br>東京都知事　第96号</td>
+					</tr>
+					<tr>
+						<th>事業者との関係</th>
+						<td>事業者株式会社エー・ディー・ワークス自らが不動産特定共同事業契約の当事者となります。</td>
+					</tr>
+					<tr>
+						<th>契約形態</th>
+						<td>不動産特定共同事業法に基づく任意組合契約</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- /[.block.block-products#section-products] -->
+
+		<section class="block block-property" id="section-property">
+			<h2 class="unit__title"><span>物件概要</span></h2>
+			<div class="block-property__body">
+				<table class="outline-table multi-head">
+					<tr>
+						<th>物件</th>
+						<td>
+							<dl class="in-table"><dt>名称</dt><dd>ARISTO新京極</dd></dl>
+							<dl class="in-table"><dt>権利</dt><dd>所有権</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>所在地</th>
+						<td>
+							<dl class="in-table"><dt>地番</dt><dd>京都府京都市中京区新京極通六角下る桜之町441番2</dd></dl>
+							<dl class="in-table"><dt>住居表示</dt><dd>京都府京都市中京区新京極通六角下る桜之町441－2</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>交通</th>
+						<td>
+							<dl class="in-table"><dt> </dt><dd>阪神京都線「河原町」駅　徒歩5分 </dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>土地</th>
+						<td>
+							<dl class="in-table"><dt>公簿面積 </dt><dd>161.89m<sup>2</sup> （48.97坪） </dd></dl>
+							<dl class="in-table"><dt>実測面積 </dt><dd>162.32m<sup>2</sup> （49.10坪）</dd></dl>
+							<dl class="in-table"><dt>地目</dt><dd>宅地</dd></dl>
+							<dl class="in-table"><dt>接道</dt><dd><p>北側幅員約5m公道</p><p>西側幅員約6m公道</p></dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>建物</th>
+						<td>
+							<dl class="in-table"><dt>家屋番号</dt><dd>441番2の2</dd></dl>
+							<dl class="in-table"><dt>種類</dt><dd>店舗</dd></dl>
+							<dl class="in-table"><dt>構造規模</dt><dd>鉄骨造陸屋根3階建</dd></dl>
+							<dl class="in-table"><dt>延床面積</dt><dd>411.95m<sup>2</sup>（公簿）　</dd></dl>
+							<dl class="in-table"><dt>竣工</dt><dd>1998年6月</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>公法上の制限</th>
+						<td>
+							<dl class="in-table"><dt>都市計画区域</dt><dd>市街化区域</dd></dl>
+							<dl class="in-table"><dt>用途地域</dt><dd>商業地域</dd></dl>
+							<dl class="in-table"><dt>地域・地区</dt><dd><p>防火地域</p><p>31m高度地区</p><p>駐車場整備地区</p><p>既成都市区域</p></dd></dl>
+							<dl class="in-table"><dt>建蔽率</dt><dd>80%</dd></dl>
+							<dl class="in-table"><dt>容積率</dt><dd>700%</dd></dl>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- /[.unit.block-property#section-property] -->	
+			
+		<section class="block-flow" id="section-flow">
+			<h2 class="block__title"><span>ご契約の流れ</span></h2>
+			<div class="block">
+				<div class="block-flow__body">
+					<div class="unit-flow">
+						<h3 class="unit-flow__title">
+							<span class="step">STEP1</span>
+							<span class="title">資料請求・セミナーご来訪</span>
+						</h3>
+						<div class="unit-flow__body">
+							<a href="<%= path %>request/" class="btn-detail">資料請求はこちら</a>
+							<a href="<%= path %>entry-seminar/" class="btn-detail -reverse">セミナー申込みはこちら</a>
+						</div>
+					</div>
+					<div class="unit-flow">
+						<h3 class="unit-flow__title">
+							<span class="step">STEP2</span>
+							<span class="title">申込書のご提出</span>
+						</h3>
+						<div class="unit-flow__body">
+							<p>商品内容をご理解のうえ、お申込をしてください。</p>
+						</div>
+					</div>
+					<div class="unit-flow">
+						<h3 class="unit-flow__title">
+							<span class="step">STEP3</span>
+							<span class="title">ご契約のお手続き</span>
+						</h3>
+						<div class="unit-flow__body">
+							<p>※契約にかかる時間は約１～２時間を予定しております。<br>
+							クーリングオフ期間は契約締結後８日間です。</p>
+						</div>
+					</div>
+					<div class="unit-flow">
+						<h3 class="unit-flow__title">
+							<span class="step">STEP4</span>
+							<span class="title">出資金のお振り込み</span>
+						</h3>
+						<div class="unit-flow__body">
+							<p>出資金のお振込期日・振込先等の詳細につきましては<br class="is-pc">ご契約時にご説明いたします。</p>
+						</div>
+					</div>
+					<div class="unit-flow">
+						<h3 class="unit-flow__title">
+							<span class="step">STEP 5</span>
+							<span class="title">組合加入・契約成立</span>
+						</h3>
+					</div>
+				</div>
+				<h2 class="block-contact__title">お問い合わせ</h2>
+				<% include include/_block-contact %>
+				<a href="<%= path %>request/" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
+			</div>
+		</section>
+		<!-- /[.block-flow#section-flow] -->
+
+		<section class="block-faq" id="section-faq">
+			<h2 class="block__title"><span>よくあるご質問</span></h2>
+			<div class="block">
+				<dl class="block-faq__body">
+					<dt>なぜ任意組合なのですか？</dt>
+					<dd>不動産特定共同事業法に基づき事業を行う上で、 不動産特定共同事業法に基づいた仕組みでの事業化が必要であり、そのひとつの仕組みが「任意組合型」です。</dd>
+					<dt>出資金の元本保証はされていますか？</dt>
+					<dd>元本の保証は致しません。<br>また対象不動産の価格の変動により、出資元本の欠損が生じることがあります。</dd>
+					<dt>出資金は現金のみですか？</dt>
+					<dd>現金のみでの払込になります。<br>また出資により保有された共有持分の移転登記はせず、共有持分に対し抵当権や質権等の担保権の設定はできません。</dd>
+					<dt>分配金の保証はされていますか？</dt>
+					<dd>分配金の保証は致しません。対象不動産の賃貸運営状況により分配金は変動致します。</dd>
+					<dt>分配金はどのように計算されますか？</dt>
+					<dd>組合での各計算期間の間に得られた賃料等の収入から、管理運営費用、理事長報酬や修繕積立金等を控除した金員を各組合員の出資持分に応じた割合で計算します。</dd>
+					<dt>事業期間はどれくらいですか？</dt>
+					<dd>実際の商品により異なりますが、出来るだけ長期間の運用を前提としています。<br>但し、事業期間中に市況の変化等に鑑み、 理事長の判断にて事業期間の中途で対象不動産を売却し事業を終了させる場合があります。<br>なお、その場合は理事長から投資家のみなさまに対し、事前に通知をさせていただきます。</dd>
+				</dl>
+			</div>
+		</section>
+		<!-- /[.block-flow#section-flow] -->
+		
+		<footer class="block footer-information" id="section-information">
+			<h2 class="block__title"><span>ご注意事項</span></h2>
+			<div class="block__body">
+				<ul class="disc-list">
+					<li class="list__item">本商品の契約の種別は不動産特定共同事業法第2条第3項第1号に掲げる不動産特定共同事業契約（民法上の任意組合契約）であり、不動産特定共同事業者であるエー・ディー・ワークスは不動産特定共同事業契約の当事者となります。</li>
+					<li class="list__item">本資料は不動産特定共同事業契約の締結の勧誘を意図するものではなく、本商品に関する費用等の負担やリスクを全て特定・示唆するものではありません。</li>
+					<li class="list__item">投資判断にあたっては、不動産特定共同事業契約成立前交付書面等を入手熟読され、十分に内容をご理解された上で、必要に応じて、 顧問弁護士や顧問税理士等の専門家に意見を求めるなどし、自らのご判断で行ってください。</li>
+					<li class="list__item">投資家のみなさまからの出資金が出資予定総額に満たなかった場合又はその他の事由によって取得予定日までに組合が不動産を取得できなかった場合には契約は直ちに終了し、出資金を返還する場合があります。</li>
+					<li class="list__item">組合での事業の実施によって生じる損失について、投資家のみなさまは組合員として対外的に無限責任を負います。</li>
+					<li class="list__item">不動産市場の変動により、組合財産である不動産を売却した場合に、売却損が発生し、出資元本の欠損が生じるおそれがあります。</li>
+					<li class="list__item">経済情勢、不動産市況、組合財産である不動産の運営状況、組合財産である不動産の特性、テナントの賃料減額請求や倒産等の状況の変化により、不動産相場や賃料相場の下落、空室率の上昇、賃料の下落、賃料滞納等が発生し、賃貸利益が減少し、その結果期待された分配金の減少や出資元本の欠損、組合員の地位の譲渡価格が出資元本を下回るおそれがあります。</li>
+					<li class="list__item">組合財産である不動産を管理運営するための費用の増加により、賃貸利益が減少し、その結果期待された分配金の減少や出資元本の欠損、組合員の地位の譲渡価格が出資元本を下回るおそれがあります。</li>
+					<li class="list__item">税制の変更による不動産に関する税金の増加、又は組合財産である不動産に係る法令等の変更により、期待された分配金の減少や損失の発生あるいは出資元本の欠損や出資元本を上回る損失を被るおそれ、及び組合からの脱退時や組合員の地位の譲渡時に期待された税効果を得られなくなるおそれがあります。</li>
+					<li class="list__item">地震等の災害により、組合財産である不動産の全部又は一部が滅失・毀損または劣化した場合及び土壌汚染等の隠れたる瑕疵が見つかった場合に、 期待された分配金の減少や出資元本の欠損、あるいは出資元本を上回る損失を被るおそれがあります。</li>
+					<li class="list__item">万が一、組合財産である不動産に予期せぬ不具合が起こり、組合事業遂行のために必要不可欠な修繕等により組合の資金が不足する場合には、組合員全員の同意の下、追加出資して頂くことがあります。</li>
+				</ul>
+			</div>
+			<h2 class="block__title" id="section-company"><span>事業者 エー・ディー・ワークスについて</span></h2>
+			<div class="block__body footer-information__body">
+				<div class="footer-information__outline">
+					<p class="footer-information__outline__item"><span class="label">社名</span><span class="body">株式会社エー・ディー・ワークス</span></p>
+					<p class="footer-information__outline__item"><span class="label">所在地</span><span class="body">東京都千代田区内幸町1-1-7　日比谷U-1ビル</span></p>
+					<p class="footer-information__outline__item"><span class="label">創業</span><span class="body">1886年（明治19年) 2月</span></p>
+					<p class="footer-information__outline__item"><span class="label">資本金</span><span class="body">38億9107万円</span></p>
+					<p class="footer-information__outline__item"><span class="label">代表者</span><span class="body">代表取締役CEO　田中秀夫</span></p>
+					<p class="footer-information__outline__item"><span class="label">お問合せ先</span><span class="body">TEL:0120-545-949</span></p>
+					<p class="footer-information__outline__item"><span class="label">事業内容</span><span class="body">収益不動産販売事業／プロパティ・マネジメント事業／不動産鑑定／各種コンサルティング</span></p>
+					<p class="footer-information__outline__item"><span class="label">許認可</span><span class="body">宅地建物取引業　国土交通大臣（1）8550号<br>不動産鑑定業　東京都知事（4）1620号<br>金融商品取引業　関東財務局長（金商）第597号<br>※第二種金融商品取引業、投資助言・代理業<br>一般不動産投資顧問業 国土交通大臣（一般）第424号<br>不動産特定共同事業 東京都知事 第96号</span></p>
+					<p class="alignR">※2018年3月31日現在</p>
+				</div>
+			</div>
+		</footer>
+		<!-- /[.block.footer-information] -->
+
 	</main>
 	<!-- /[.main] -->
 <% include include/_footer %>

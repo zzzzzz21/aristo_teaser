@@ -97,9 +97,9 @@ body {
 	position: relative;
 	z-index: 10;
 	max-width: 100%;
-	width: $site_width;
+	width: calc(#{$site_width} + 20px);
 	margin: 0 auto;
-	padding: 100px 0;
+	padding: 100px $base_padding;
 	//	[media queries SP]
 	// ----------------------------------------
 	@include media(sp) {

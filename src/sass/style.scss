@@ -9,8 +9,6 @@
 //	Reset
 // -------------------------------------------------------------------
 @import "base/reset";
-@import "base/add-animation";
-
 
 //	Variables
 // -------------------------------------------------------------------
@@ -34,8 +32,10 @@
 @import "components/block-contact";
 @import "components/btn";
 @import "components/font";
-@import "components/step-indicator";
+@import "components/list";
 @import "components/loading";
+@import "components/step-indicator";
+@import "components/table";
 @import "components/unit";
 
 

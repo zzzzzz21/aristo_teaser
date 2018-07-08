@@ -9,7 +9,8 @@
 // -------------------------------------------------------------------
 .block-contact {
 	box-sizing: border-box;
-	width: $design_width;
+	max-width: $design_width;
+	width: 100%;
 	margin: auto;
 	padding: 40px;
 	border: 6px solid $base_border_color;
@@ -53,12 +54,15 @@
 	// .block-contact__title
 	// ----------------------------------------
 	@include element(title) {
+		margin-top: 160px;
 		margin-bottom: 1em;
 		@include fontsize(36);
 		text-align: center;
+		color: #06c;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
+			@include calcvw(160, 'margin-top', 640);
 			@include calcvw(28, 'font-size', 640);
 		}
 	}
@@ -68,7 +72,7 @@
 	@include element(button) {
 		&.btn-detail {
 			display: block;
-			width: 50%;
+			width: 60%;
 			margin: 50px auto 0;
 			@include fontsize(24);
 			//	[media queries SP]

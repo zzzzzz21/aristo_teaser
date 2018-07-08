@@ -1,11 +1,4 @@
 @charset "UTF-8";
-//$break_point_pc_max:			2560px;
-//$break_point_pc_min:			$site_width(=1440px);
-//$design_width:				1280px;
-//$break_point_tablet_max:		$design_width - 1px;
-//$break_point_tablet_min:		768px;
-//$break_point_mobile_max:	767px;
-//$break_point_mobile_min:	320px;
 // -------------------------------------------------------------------
 //  mediaquery.scss
 //  Date: 2016-05-02(+09:00)
@@ -20,8 +13,16 @@
 		@media screen and (min-width: $break_point_tablet_min) {
 			@content;
 		}
-	} @else if $mediaSize == pc-small {	// 1200px以下PC用
-		@media screen and (min-width: $base_contents_width) {
+	} @else if $mediaSize == site-width {	// 1200px以下PC用
+		@media screen and (max-width: $site_width) {
+			@content;
+		}
+	} @else if $mediaSize == pc-min {	// 1100px以下PC用
+		@media screen and (max-width: 1100px) {
+			@content;
+		}
+	} @else if $mediaSize == pc-small {	// 800px以下PC用
+		@media screen and (max-width: $base_contents_width) {
 			@content;
 		}
 	} @else if $mediaSize == tb {	// タブレット用

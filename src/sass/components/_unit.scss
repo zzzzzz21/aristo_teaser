@@ -19,37 +19,11 @@
 		// ----------------------------------------
 		@include media(sp) {
 			@include calcvw(70, 'margin-bottom', 640);
-			@include calcvw(28, 'font-size', 640);
+			@include calcvw(36, 'font-size', 640);
 		}
 		span {
 			padding-bottom: .4em;
 			border-bottom: 1px solid $base_corporate_color;
-		}
-	}
-}
-
-.unit-location {
-	position: relative;
-	line-height: 2.4;
-	//	[media queries PC-tablet]
-	// ----------------------------------------
-	@include media(pc-tb) {
-		text-align: center;
-	}
-
-	//	.unit-location__logo
-	// ----------------------------------------
-	@include element(logo) {
-		margin-bottom: 120px;
-		text-align: center;
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			@include calcvw(120, 'margin-bottom', 640);
-			img {
-				width: auto;
-				max-width: 100%;
-			}
 		}
 	}
 }

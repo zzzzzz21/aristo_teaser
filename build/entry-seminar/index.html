@@ -26,38 +26,86 @@
 <!-- [css] -->
 <link rel="stylesheet" href="../css/style.css?201805291700" media="all">
 <body class="aristo-entry-seminar page-input" id="top">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115670540-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61020271-5"></script>
 <script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 
-	gtag('config', 'UA-115670540-1');
+	gtag('config', 'UA-61020271-5');
 </script>
-<!-- /Google Analytics -->
 
 <div class="page" id="data-page">
-	<header class="globalHeader" id="data-header">
-		<div class="globalHeader__inner">
-			<div class="globalHeader__top" id="data-navDrawer" aria-hidden="true">
-				<div class="siteTitle">
-					<dl>
-						<dt class="siteTitle__logo"><a href="../" aria-label="トップページへのリンク"><img src="../images/common/logo.jpg" alt="ロゴ：ARISTO（アリスト）"></a></dt>
-						<dd class="siteTitle__catch">エー・ディー・ワークスの<br class="is-sp">不動産小口化商品 ARISTO</dd>
-					</dl>
+<header class="globalHeader" id="data-header">
+	<div class="globalHeader__inner">
+		<div class="globalHeader__top">
+			<div class="siteTitle">
+				<dl>
+					<dt class="siteTitle__logo"><a href="../" aria-label="トップページへのリンク"><img src="../images/common/logo.jpg" alt="ロゴ：ARISTO（アリスト）"></a></dt>
+					<dd class="siteTitle__catch">エー・ディー・ワークスの<br>不動産小口化商品 ARISTO</dd>
+				</dl>
+			</div>
+			<div class="siteTitle__function">
+				<div class="siteTitle__function__tel is--tel">
+					<p class="siteTitle__function__tel__number"><a href="tel:0120540949">0120-540-949</a></p>
+					<p class="siteTitle__function__tel__description">受付時間 9:00～18:00 （土日祝日除く）</p>
 				</div>
-				<div class="siteTitle__function">
-					<div class="siteTitle__function__tel is--tel">
-						<p class="siteTitle__function__tel__number"><a href="tel:0120540949">0120-540-949</a></p>
-						<p class="siteTitle__function__tel__description">受付時間 9:00～18:00 （土日祝日除く）</p>
-					</div>
-					<div class="siteTitle__function__form"><a href="../request/" class="btn-contact">資料請求はこちら</a></div>
-				</div>
+				<div class="siteTitle__function__form"><a href="../request/" class="btn-contact">資料請求はこちら</a></div>
 			</div>
 		</div>
-	</header>
-	<!-- /[.globalHeader] -->
+		<div class="navDrawer_btn_wrapper">
+			<button class="navDrawer_btn" id="data-menuBtn" aria-labelledby="aria-menuBtnLabel" aria-controls="js-navDrawer"><span></span></button>
+		</div>
+	</div>
+	<div class="globalHeader__body" id="data-navDrawer" aria-hidden="true">
+		<div class="globalHeader__body__inner">
+			<div class="siteTitle"><a href="../" aria-label="トップページへのリンク"><img src="../images/common/logo_globalheader.png" alt=""></a></div>
+			<nav class="gNavi">
+				<ul class="gNavi__body" role="menubar">
+					<li class="gNavi__item" role="presentation">
+						<a role="menuitem" href="#section-point"><span>好立地の優良不動産に投資することのメリット</span></a>
+						<ul>
+							<li class="gNavi__item"　role="presentation"><a href="#point1" role="menuitem"><span>Point1</span></a></li>
+							<li class="gNavi__item"　role="presentation"><a href="#point2" role="menuitem"><span>Point2</span></a></li>
+						</ul>
+					</li>
+					<li class="gNavi__item" role="presentation">
+						<a role="menuitem" href="#section-merit"><span>小口化することによる更なるメリット</span></a>
+						<ul>
+							<li class="gNavi__item"　role="presentation"><a href="#point3" role="menuitem"><span>更なるメリット1</span></a></li>
+							<li class="gNavi__item"　role="presentation"><a href="#point4" role="menuitem"><span>更なるメリット2</span></a></li>
+						</ul>
+					</li>
+					<li class="gNavi__item" role="presentation">
+						<a role="menuitem" href=""><span>ARISTO 第一号商品　「ARISTO 京都」</span></a>
+						<ul>
+							<li class="gNavi__item" role="presentation">
+								<a role="menuitem" href="#section-kyoto-merit"><span>京都不動産投資のメリット</span></a>
+								<ul>
+									<li class="gNavi__item" role="presentation"><a href="#section-kyoto-merit1" role="menuitem"><span>Merit1</span></a></li>
+									<li class="gNavi__item" role="presentation"><a href="#section-kyoto-merit2" role="menuitem"><span>Merit2</span></a></li>
+								</ul>
+							</li>
+							<li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-location"><span>ロケーション</span></a></li>
+							<li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-shinkyougoku"><span>新京極通</span></a></li>
+							<li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-chracteristic"><span>対象不動産の特性</span></a></li>
+							<li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-surroundings"><span>商業ビルとしての価値の高まり</span></a></li>
+							<li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-products"><span>商品概要</span></a></li>
+							<li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-property"><span>物件概要</span></a></li>
+						</ul>
+					</li>
+					<li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-flow"><span>ご契約の流れ</span></a></li>
+					<li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-faq"><span>よくあるご質問</span></a></li>
+					<li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-information"><span>ご注意事項</span></a></li>
+					<li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-company"><span>事業者 エー・ディー・ワークスについて</span></a></li>
+				</ul>
+				<a class="btn-detail block-contact__button" href="../request/">資料請求はこちら</a>
+				<a class="btn-detail block-contact__button" href="../inquiry/">お問い合わせ</a>
+			</nav>
+		</div>
+	</div>
+</header>
+<!-- /[.globalHeader] -->
 
 	<main class="main contents">
 		<header class="page-head">
