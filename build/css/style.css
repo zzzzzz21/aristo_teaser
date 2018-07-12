@@ -1346,11 +1346,46 @@ a.btn-target:after {
 .globalHeader__body .siteTitle {
   box-sizing: border-box;
   width: calc( 220 / 800 * 100%);
+  padding: 0 20px;
   text-align: center;
 }
 
 .globalHeader__body .siteTitle img {
   width: auto;
+}
+
+.globalHeader__body .siteTitle .btn-detail {
+  color: #999;
+  font-size: 16px;
+  font-size: 1.6rem;
+  width: 100%;
+  margin-left: 0;
+  border: 1px solid #999;
+  background-color: transparent;
+}
+
+.globalHeader__body .siteTitle .btn-detail + .btn-detail {
+  margin-top: 2em;
+}
+
+.globalHeader__body .siteTitle .btn-detail:after {
+  border-color: #999;
+}
+
+.globalHeader__body .siteTitle .btn-detail:link,
+.globalHeader__body .siteTitle .btn-detail:vsited {
+  background-color: transparent;
+}
+
+.globalHeader__body .siteTitle .btn-detail:hover,
+.globalHeader__body .siteTitle .btn-detail:active {
+  color: #fff;
+  background-color: #0068cc;
+}
+
+.globalHeader__body .siteTitle .btn-detail:hover:after,
+.globalHeader__body .siteTitle .btn-detail:active:after {
+  border-color: #fff;
 }
 
 .siteTitle dl {
@@ -1432,39 +1467,6 @@ a.btn-target:after {
 .gNavi__item > a:hover,
 .gNavi__item > a:active {
   color: #666;
-}
-
-.gNavi .btn-detail {
-  color: #999;
-  font-size: 16px;
-  font-size: 1.6rem;
-  margin-left: 0;
-  border: 1px solid #999;
-  background-color: transparent;
-}
-
-.gNavi .btn-detail + .btn-detail {
-  margin-top: 2em;
-}
-
-.gNavi .btn-detail:after {
-  border-color: #999;
-}
-
-.gNavi .btn-detail:link,
-.gNavi .btn-detail:vsited {
-  background-color: transparent;
-}
-
-.gNavi .btn-detail:hover,
-.gNavi .btn-detail:active {
-  color: #fff;
-  background-color: #0068cc;
-}
-
-.gNavi .btn-detail:hover:after,
-.gNavi .btn-detail:active:after {
-  border-color: #fff;
 }
 
 .navDrawer_btn_wrapper {
@@ -1791,16 +1793,16 @@ a.btn-target:after {
   margin-bottom: 3.2em;
 }
 
-.page-title {
+.home .page-title {
   margin-top: 72px;
   font-weight: normal;
 }
 
-.page-title ruby > rt {
+.home .page-title ruby > rt {
   font-family: "Noto Serif";
 }
 
-.page-title--note {
+.home .page-title--note {
   position: absolute;
   bottom: -3.2em;
   right: .6em;
@@ -2094,6 +2096,13 @@ a.btn-target:after {
 .top-carousel__title {
   font-family: "Noto Serif";
   font-size: 4.375vw;
+  line-height: 1.4;
+}
+
+.top-carousel__map {
+  position: absolute;
+  right: 40px;
+  bottom: -40px;
 }
 
 .block-title {
@@ -4203,6 +4212,7 @@ body.rtl .formError .formErrorArrow {
   }
 
   .top-carousel__message__inner {
+    position: relative;
     max-width: calc(1200px + 20px);
     margin: 0 auto;
     padding: 0 10px;
@@ -4545,6 +4555,7 @@ body.rtl .formError .formErrorArrow {
 
   .globalHeader__body .siteTitle {
     width: 100%;
+    padding: 0 36px;
   }
 
   .siteTitle__logo {
@@ -4581,7 +4592,7 @@ body.rtl .formError .formErrorArrow {
   }
 
   .gNavi {
-    margin-top: 6.25vw;
+    margin-top: 12.5vw;
   }
 
   .navDrawer_btn_wrapper {
@@ -4649,7 +4660,7 @@ body.rtl .formError .formErrorArrow {
     margin-top: 20vw;
   }
 
-  .page-title {
+  .home .page-title {
     margin-top: 11.25vw;
   }
 
@@ -4767,6 +4778,10 @@ body.rtl .formError .formErrorArrow {
   .top-carousel__message {
     margin: 0 auto;
     padding: 0 10px;
+  }
+
+  .top-carousel__map {
+    display: none;
   }
 
   .block-title {
@@ -5092,6 +5107,10 @@ body.rtl .formError .formErrorArrow {
   .block-flow .unit-flow__title .title {
     margin-left: 1em;
     font-size: 3.75vw;
+  }
+
+  .block-flow .unit-flow__body a + a {
+    margin: 1em 0 0;
   }
 
   .block-faq {

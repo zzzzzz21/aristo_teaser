@@ -124,14 +124,42 @@
 		.siteTitle {
 			box-sizing: border-box;
 			width: calc( 220 / 800 * 100% );
+			padding: 0 20px;
 			text-align: center;
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
 				width: 100%;
+				padding: 0 36px;
 			}
 			img {
 				width: auto;
+			}
+			//	.btn-detail
+			// ----------------------------------------
+			.btn-detail {
+				color: #999;
+				@include fontsize(16);
+				width: 100%;
+				margin-left: 0;
+				border: 1px solid #999;
+				background-color: transparent;
+				& + .btn-detail {
+					margin-top: 2em;
+				}
+				&:after {
+					border-color: #999;
+				}
+				&:link, &:vsited {
+					background-color: transparent;
+				}
+				&:hover, &:active {
+					color: $base_white_color;
+					background-color: $base_hover_color;
+					&:after {
+						border-color: $base_white_color;
+					}
+				}
 			}
 		}
 	}
@@ -266,7 +294,7 @@
 	//	[media queries SP]
 	// ----------------------------------------
 	@include media(sp) {
-		@include calcvw(40, 'margin-top', 640);
+		@include calcvw(80, 'margin-top', 640);
 	}
 	
 	// 	.gNavi__body::MENU本体
@@ -296,33 +324,6 @@
 			}
 		}
 	}
-	
-	//	.btn-detail
-	// ----------------------------------------
-	.btn-detail {
-		color: #999;
-		@include fontsize(16);
-		margin-left: 0;
-		border: 1px solid #999;
-		background-color: transparent;
-		& + .btn-detail {
-			margin-top: 2em;
-		}
-		&:after {
-			border-color: #999;
-		}
-		&:link, &:vsited {
-			background-color: transparent;
-		}
-		&:hover, &:active {
-			color: $base_white_color;
-			background-color: $base_hover_color;
-			&:after {
-				border-color: $base_white_color;
-			}
-		}
-	}
-
 }
 
 
