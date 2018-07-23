@@ -10,30 +10,28 @@
 .block-contact {
 	box-sizing: border-box;
 	max-width: $design_width;
-	width: 100%;
-	margin: auto;
-	padding: 40px;
-	border: 6px solid $base_border_color;
+	width: 60%;
+	margin: 40px auto 0;
+	padding: 20px 40px;
+    border: 2px solid $base_btn_color;
 	text-align: center;
-	@at-root .home & {
-		border: none;
-	}
 	//	[media queries SP]
 	// ----------------------------------------
 	@include media(sp) {
 		width: 100%;
+        @include calcvw(40, 'margin-top', 640);
 		@include calcvw(20, 'padding', 640);
 	}
 
 	// .block-contact__tel
 	// ----------------------------------------
 	@include element(tel) {
-		@include fontsize(60);
+		@include fontsize(36);
 		font-weight: bold;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			@include fontsize(36);
+			@include fontsize(24);
 		}
 		//	[media queries PC-tablet]
 		// ----------------------------------------
@@ -74,14 +72,37 @@
 			display: block;
 			width: 60%;
 			margin: 50px auto 0;
-			@include fontsize(24);
+            padding: 70px 1.2em;
+			@include fontsize(36);
+            font-weight: bold;
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
 				width: 100%;
 				@include calcvw(60, 'margin-top', 640);
 				@include fontsize(18);
+                @include calcvw(70, 'padding-top');
+                @include calcvw(70, 'padding-bottom');
 			}
-		}
+            &:after {
+                //	[media queries PC-tablet]
+                // ----------------------------------------
+                @include media(pc-tb) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .globalHeader & {
+                padding: .6em 1.2em;
+                &:after {
+                    //	[media queries PC-tablet]
+                    // ----------------------------------------
+                    @include media(pc-tb) {
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+            }
+        }
 	}
 }

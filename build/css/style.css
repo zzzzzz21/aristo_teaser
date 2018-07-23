@@ -682,20 +682,16 @@ img {
 .block-contact {
   box-sizing: border-box;
   max-width: 1000px;
-  width: 100%;
-  margin: auto;
-  padding: 40px;
-  border: 6px solid #b5b5b5;
+  width: 60%;
+  margin: 40px auto 0;
+  padding: 20px 40px;
+  border: 2px solid #003466;
   text-align: center;
 }
 
-.home .block-contact {
-  border: none;
-}
-
 .block-contact__tel {
-  font-size: 60px;
-  font-size: 6rem;
+  font-size: 36px;
+  font-size: 3.6rem;
   font-weight: bold;
 }
 
@@ -720,8 +716,14 @@ img {
   display: block;
   width: 60%;
   margin: 50px auto 0;
-  font-size: 24px;
-  font-size: 2.4rem;
+  padding: 70px 1.2em;
+  font-size: 36px;
+  font-size: 3.6rem;
+  font-weight: bold;
+}
+
+.globalHeader .block-contact__button.btn-detail {
+  padding: .6em 1.2em;
 }
 
 .btn-contact {
@@ -4214,6 +4216,16 @@ body.rtl .formError .formErrorArrow {
     color: #000;
   }
 
+  .block-contact__button.btn-detail:after {
+    width: 20px;
+    height: 20px;
+  }
+
+  .globalHeader .block-contact__button.btn-detail:after {
+    width: 10px;
+    height: 10px;
+  }
+
   .fixed .header--home {
     z-index: 100000;
   }
@@ -4441,12 +4453,13 @@ body.rtl .formError .formErrorArrow {
 
   .block-contact {
     width: 100%;
+    margin-top: 6.25vw;
     padding: 3.125vw;
   }
 
   .block-contact__tel {
-    font-size: 36px;
-    font-size: 3.6rem;
+    font-size: 24px;
+    font-size: 2.4rem;
   }
 
   .block-contact__title {
@@ -4459,6 +4472,8 @@ body.rtl .formError .formErrorArrow {
     margin-top: 9.375vw;
     font-size: 18px;
     font-size: 1.8rem;
+    padding-top: 9.33333vw;
+    padding-bottom: 9.33333vw;
   }
 
   .loading__body {
