@@ -173,14 +173,13 @@
 		justify-content: flex-start;
 		align-items: center;
 		flex-wrap: nowrap;
-		br {
-			display: none;
-			//	[media queries PC-min]
-			// ----------------------------------------
-			@include media(pc-min) {
-				display: block;
-			}
-		}
+        //	[media queries SP]
+        // ----------------------------------------
+        @include media(sp) {
+            @at-root .teaser & {
+                align-items: flex-start;
+            }
+        }
 	}
 	// .siteTItle__logo
 	// ----------------------------------------
@@ -228,6 +227,10 @@
 			flex-wrap: wrap;
 			justify-content: flex-end;
 			@include calcvw(140, 'padding-left', 640);
+            .teaser & {
+                display: block;
+                margin-left: 0;
+            }
 		}
 		// .siteTitle__function__tel
 		// ----------------------------------------
@@ -278,6 +281,20 @@
 			}
 		}
 	}
+    //	.siteTitle__announce
+    // ----------------------------------------
+    @include element(announce) {
+        padding: .2em .4em;
+        border: 4px solid #c00;
+        @include fontsize(30);
+        font-weight: bold;
+        color: #c00;
+        //	[media queries SP]
+        // ----------------------------------------
+        @include media(sp) {
+            @include calcvw(30, 'font-size',640);
+        }
+    }
 }
 
 // 	ハンバーガーメニュー

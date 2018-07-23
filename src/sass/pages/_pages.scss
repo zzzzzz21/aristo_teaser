@@ -49,7 +49,14 @@
 				@include calcvw(674, 'height', 640);
 			}
 		}
-		@at-root .aristo-entry-seminar & {
+        @at-root .teaser & {
+            height: 674px;
+            background-image: url(#{$image_path}index/bg_header-teaser.jpg);
+            @include media(sp) {
+                @include calcvw(674, 'height', 640);
+            }
+        }
+        @at-root .aristo-entry-seminar & {
 			background-image: url(#{$image_path}form/bg_header.jpg);
 		}
 		@at-root .aristo-request & {
@@ -58,6 +65,9 @@
 		@at-root .aristo-inquiry & {
 			background-image: url(#{$image_path}form/bg_header.jpg);
 		}
+        @at-root &.teaser {
+            margin-bottom: 0;
+        }
 	}
 
 	// ----------------------------------------
@@ -81,7 +91,18 @@
 				@include calcvw(30, 'font-size', 640);
 			}
 		}
-		//	[media queries SP]
+        //	.teaser .contents .page-title
+        // ----------------------------------------
+        @at-root .teaser & {
+            @include fontsize(30);
+            color: $base_white_color;
+            //	[media queries SP]
+            // ----------------------------------------
+            @include media(sp) {
+                @include calcvw(30, 'font-size', 640);
+            }
+        }
+        //	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
 			@include fontsize(36);

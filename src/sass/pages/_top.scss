@@ -6,11 +6,11 @@
 // ===================================================================
 $title_color: #20428c;
 .unit + .unit {
-	margin-top: $base_padding*20;
+	padding-top: $base_padding*10;
 	//	[media queries SP]
 	// ----------------------------------------
 	@include media(sp) {
-		@include calcvw(128, 'margin-top', 640);
+		@include calcvw(128, 'padding-top', 640);
 	}
 }
 //	.page-head
@@ -38,6 +38,11 @@ $title_color: #20428c;
 		bottom: -3.2em;
 		right: .6em;
 	}
+}
+
+.teaser .page-title--note {
+    bottom: .6em;
+    color: #999;
 }
 
 //	.block-point
@@ -320,7 +325,8 @@ $title_color: #20428c;
 		// ----------------------------------------
 		@include media(pc-tb) {
 			.unit + .unit {
-				margin-top: 0;
+                margin-top: 0;
+				padding-top: 0;
 			}
 		}
 		//	.unit-point
@@ -747,6 +753,11 @@ $title_color: #20428c;
 			@include calcvw(32, 'font-size', 640);
 		}
 	}
+    &.pre-open {
+        &:before {
+            content: '先行案内中';
+        }
+    }
 }
 
 //	.unit-merit
@@ -1978,11 +1989,11 @@ $title_color: #20428c;
 // ----------------------------------------
 .footer-information {
 	.block__body + .block__title {
-		margin-top: $base_padding*20;
+		padding-top: $base_padding*10;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			@include calcvw(128, 'margin-top', 640);
+			@include calcvw(128, 'padding-top', 640);
 		}
 	}
 	//	.footer-information__body
@@ -2000,7 +2011,7 @@ $title_color: #20428c;
 		@include element(item) {
 			.label {
 				display: inline-block;
-				width: 25%;
+				width: 22%;
 				vertical-align: top;
 				//	[media queries SP]
 				// ----------------------------------------
@@ -2013,7 +2024,7 @@ $title_color: #20428c;
 			}
 			.body {
 				display: inline-block;
-				width: 75%;
+				width: 78%;
 				//	[media queries SP]
 				// ----------------------------------------
 				@include media(sp) {
