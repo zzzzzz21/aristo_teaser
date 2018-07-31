@@ -1805,12 +1805,15 @@ a.btn-target:after {
 }
 
 .fixed-button .button-entry {
-  margin-top: 1.2em;
   transition: all ease .3s .3s;
 }
 
 .fixed-button .button-entry a:before {
   content: url(../images/common/icon_entry.png);
+}
+
+.fixed-button p + p {
+  margin-top: 1.2em;
 }
 
 .globalFooter {

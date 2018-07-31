@@ -134,11 +134,13 @@
         content: url(#{$image_path}common/icon_form.png);
     }
     .button-entry {
-        margin-top: 1.2em;
         transition: all ease .3s .3s;
         a:before {
             content: url(#{$image_path}common/icon_entry.png);
         }
+    }
+    p + p {
+        margin-top: 1.2em;
     }
 }
 

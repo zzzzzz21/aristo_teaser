@@ -14,7 +14,7 @@ page = '';
 <div class="page" id="data-page">
 <% include include/_header %>
 	<main class="main contents">
-        <header class="page-head">
+		<header class="page-head">
 			<div class="container">
 				<h1 class="page-title"><ruby>ARISTO <rp>(</rp><rt>アリスト</rt><rp>)</rp></ruby>は、好立地の優良不動産に対して<br>最低出資金額「500万円」からの投資が可能な<br>不動産小口化商品です。</h1>
 				<p class="page-title--note">ARISTO(アリスト)は、株式会社エー・ディー・ワークスが提供する、<br class="is-pc">不動産特定共同事業法に基づく不動産小口化商品の登録商標です。
@@ -22,6 +22,7 @@ page = '';
 			</div>
 		</header>
 		<!-- /[.page-head] -->
+		
 		<section class="block block-point" id="section-point">
 			<h2 class="block__title">好立地の優良不動産へ<br class="is-sp">投資することのメリットとは？</h2>
 			<div class="block__body">
@@ -72,10 +73,9 @@ page = '';
 				</section>
 				<!-- /[.unit.-point3-4] -->
 			</div>
-			<h2 class="block-contact__title">セミナー申込み・資料請求・お問い合わせはこちら</h2>
+			<h2 class="block-contact__title">資料請求・お問い合わせはこちら</h2>
             <a href="<%= path %>request/" class="btn-detail block-contact__button">Webお問い合わせフォーム</a>
-            <a href="<%= path %>entry-seminar/" class="btn-detail block-contact__button">セミナー申込みはこちら</a>
-<% include include/_block-contact_0801 %>
+<% include include/_block-contact %>
 		</section>
 		<!-- /[.block-point#section-point] -->
 		
@@ -101,7 +101,7 @@ page = '';
 			<!-- /[.top-carousel] -->
 			
 			<div class="block-title" id="section-title">
-				<div class="block -available">
+				<div class="block -available pre-open">
 					<h2 class="block-title__logo"><img src="<%= path %>images/common/logo_aristo-kyoto.jpg" alt="ARISTO京都"></h2>
 				</div>
 				<section class="unit-kyoto" id="section-kyoto--merit">
@@ -372,10 +372,9 @@ page = '';
 					<p class="caption">撮影日：2018年5月</p>
 				</div>
 			</div>
-			<h2 class="block-contact__title">セミナー申込み・資料請求・お問い合わせはこちら</h2>
+			<h2 class="block-contact__title">資料請求・お問い合わせはこちら</h2>
             <a href="<%= path %>request/" class="btn-detail block-contact__button">Webお問い合わせフォーム</a>
-            <a href="<%= path %>entry-seminar/" class="btn-detail block-contact__button">セミナー申込みはこちら</a>
-<% include include/_block-contact_0801 %>
+<% include include/_block-contact %>
 		</section>
 		<!-- /[.block.block-surroundings#section-surroundings] -->
 
@@ -522,7 +521,7 @@ page = '';
 						</h3>
 						<div class="unit-flow__body">
 							<a href="<%= path %>request/" class="btn-detail">資料請求はこちら</a>
-							<a href="<%= path %>entry-seminar/" class="btn-detail -reverse">セミナー申込みはこちら</a>
+							<!--<a href="<%= path %>entry-seminar/" class="btn-detail -reverse">セミナー申込みはこちら</a>-->
 						</div>
 					</div>
 					<div class="unit-flow">
@@ -560,10 +559,9 @@ page = '';
 						</h3>
 					</div>
 				</div>
-				<h2 class="block-contact__title">セミナー申込み・資料請求・お問い合わせはこちら</h2>
+				<h2 class="block-contact__title">資料請求・お問い合わせはこちら</h2>
                 <a href="<%= path %>request/" class="btn-detail block-contact__button">Webお問い合わせフォーム</a>
-                <a href="<%= path %>entry-seminar/" class="btn-detail block-contact__button">セミナー申込みはこちら</a>
-<% include include/_block-contact_0801 %>
+<% include include/_block-contact %>
 			</div>
 		</section>
 		<!-- /[.block-flow#section-flow] -->
@@ -626,12 +624,6 @@ page = '';
 	</main>
 	<!-- /[.main] -->
 <% include include/_footer %>
-
-    <div class="fixed-button" id="data-fixedButton">
-        <p class="button-request"><a href="<%= path %>request/" class="btn-detail">資料請求はこちら</a></p>
-        <p class="button-entry"><a href="<%= path %>entry-seminar/" class="btn-detail">セミナー申込みはこちら</a></p>
-    </div>
-    <!--　/[.fixed-button] -->
 </div><!-- /.page -->
 
 <% include include/_loading %>
