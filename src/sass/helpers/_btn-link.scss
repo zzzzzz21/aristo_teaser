@@ -63,6 +63,20 @@
 	}
 }
 
+@mixin btn-seminar {
+    @include btn-next;
+    font-weight: bold;
+    &:before {
+        position: relative;
+        display: inline-block;
+        width: 38px;
+        height: 24px;
+        content: url(#{$image_path}common/icon_entry.png);
+        margin-right: .4em;
+        vertical-align: middle;
+    }
+}
+
 @mixin btn-up {
 	position: relative;
 	box-sizing: border-box;

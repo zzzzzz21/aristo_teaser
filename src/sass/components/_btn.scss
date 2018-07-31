@@ -9,6 +9,10 @@
 }
 
 
+.btn-seminar {
+    @include btn-seminar;
+}
+
 .btn-area {
 	margin-top: 1em;
 	text-align: center;

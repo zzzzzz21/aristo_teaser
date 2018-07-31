@@ -26,6 +26,41 @@
 		@include media(sp) {
 		}
 	}
+    // ----------------------------------------
+    //	.breadcrumb
+    // ----------------------------------------
+    .breadcrumb {
+        //	.breadcrumb__inner
+        // ----------------------------------------
+        @include element(inner) {
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            width: 100%;
+            max-width: calc(#{$site_width} + 20px);
+            margin: 0 auto;
+            padding: 0 $base_padding;
+            @include fontsize(13);
+            //	[media queries SP]
+            // ----------------------------------------
+            @include media(sp) {
+                display: flex;
+                align-items: center;
+            }
+        }
+        //	.breadcrumb__item
+        // ----------------------------------------
+        @include element(item) {
+            span{
+                display: inline-block;
+                padding: .4em .6em;
+            }
+            &:nth-child(n+2):before {
+                display: inline-block;
+                content: '>';
+            }
+        }
+    }
 
 	// ----------------------------------------
 	//	.page-head

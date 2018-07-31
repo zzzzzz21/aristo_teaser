@@ -26,7 +26,8 @@ window.addEventListener('load', function () {
 		disableLink();
 		gallery();
 		mapSwitch();
-		goPageTop();
+        goPageTop();
+        fixedButton();
 	}
 
 	// 初期処理 呼び出し
@@ -320,6 +321,43 @@ var goPageTop = function goPageTop() {
 
 	init();
 };
+
+
+// fixed-button
+// ----------------------------------------
+var fixedButton = function fixedButton() {
+    var $fixedBtn = $('#data-fixedButton'),
+        $goTopBtn = $('#data-goPageTop'),
+        triggerPosition = window.innerHeight / 2;
+    var scroll_position = 0,
+        scrollTimer = false;
+
+    function init() {
+        $(window).on('scroll', scrollEvent);
+        $goTopBtn.on('click', goPageTop);
+    }
+
+    function switchDisplay() {
+        scroll_position = pageYOffset;
+        if (triggerPosition <= scroll_position) {
+            $fixedBtn.attr('aria-hidden', 'false').find('a').attr('tabindex', '0');
+        } else {
+            $fixedBtn.attr('aria-hidden', 'true').find('a').attr('tabindex', '-1');
+        }
+    }
+
+    function scrollEvent() {
+        if (scrollTimer !== false) {
+            clearTimeout(scrollTimer);
+        }
+        scrollTimer = setTimeout(function () {
+            switchDisplay();
+        }, 20);
+    }
+
+    init();
+};
+
 
 // UA判別
 // ----------------------------------------

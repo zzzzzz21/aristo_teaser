@@ -123,7 +123,7 @@
 		}
 		.siteTitle {
 			box-sizing: border-box;
-			width: calc( 220 / 800 * 100% );
+			width: calc( 260 / 800 * 100% );
 			padding: 0 20px;
 			text-align: center;
 			//	[media queries SP]
@@ -168,7 +168,8 @@
 // 	.siteTitle
 // ----------------------------------------
 .siteTitle {
-	dl {
+//    min-width: 40%;
+    dl {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
@@ -211,10 +212,12 @@
 	// .siteTitle__function
 	// ----------------------------------------
 	@include element(function) {
-		display: flex;
-		flex-wrap: nowrap;
-		align-items: center;
-		margin-left: 24px;
+//		display: flex;
+//		flex-wrap: nowrap;
+//        flex-wrap: wrap;
+//        justify-content: flex-end;
+//		align-items: center;
+		margin: 20px 0 0 24px;
 		//	[media queries PC-min]
 		// ----------------------------------------
 		@include media(pc-min) {
@@ -235,7 +238,7 @@
 		// .siteTitle__function__tel
 		// ----------------------------------------
 		@include element(tel) {
-			margin-right: 24px;
+//			margin-right: 24px;
 			//	[media queries PC-min]
 			// ----------------------------------------
 			@media screen and (max-width:920px) {
@@ -244,6 +247,8 @@
 			// .siteTitle__function__tel__number
 			// ----------------------------------------
 			@include element(number) {
+                display: inline-block;
+                vertical-align: middle;
 				@include fontsize(28);
 				font-weight: bold;
 				//	[media queries SP]
@@ -262,8 +267,11 @@
 			// .siteTitle__function__tel__description
 			// ----------------------------------------
 			@include element(description) {
+                display: inline-block;
+                vertical-align: middle;
 				@include fontsize(13);
 				line-height: 1;
+                margin-left: 1em;
 				//	[media queries SP]
 				// ----------------------------------------
 				@include media(sp) {
@@ -279,6 +287,9 @@
 			@include media(sp) {
 				display: none;
 			}
+            a  {
+                margin-bottom: 10px;
+            }
 		}
 	}
     //	.siteTitle__announce
@@ -305,7 +316,7 @@
 	// ----------------------------------------
 	@include media(pc-tb) {
 		box-sizing: border-box;
-		width: calc( 580 / 800 * 100% );
+		width: calc( 540 / 800 * 100% );
 		border-left: 1px solid #999;
 	}
 	//	[media queries SP]
@@ -351,7 +362,8 @@
 .navDrawer_btn_wrapper {
 	position: fixed;
 	top: 50px;
-	right: 20px;
+//	right: 20px;
+    right: 0;
 	height: 60px;
 	z-index: 2000;
 	//	[media queries SP]

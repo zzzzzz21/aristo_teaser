@@ -8,12 +8,15 @@
 				</dl>
 			</div>
 			<div class="siteTitle__function">
-				<div class="siteTitle__function__tel is--tel">
-					<p class="siteTitle__function__tel__number"><a href="tel:0120540949">0120-540-949</a></p>
-					<p class="siteTitle__function__tel__description">受付時間 9:00～18:00 （土日祝日除く）</p>
-				</div>
-				<div class="siteTitle__function__form"><a href="<%= path %>request/" class="btn-contact">資料請求はこちら</a></div>
-			</div>
+                <div class="siteTitle__function__form">
+                    <a href="<%= path %>request/" class="btn-contact">資料請求はこちら</a>
+                    <a href="<%= path %>entry-seminar/" class="btn-seminar">セミナー申込みはこちら</a>
+                </div>
+                <div class="siteTitle__function__tel is--tel">
+                    <p class="siteTitle__function__tel__number"><a href="tel:0120540949">0120-540-949</a></p>
+                    <p class="siteTitle__function__tel__description">受付時間 9:00～18:00 （土日祝日除く）</p>
+                </div>
+            </div>
 		</div>
 		<div class="navDrawer_btn_wrapper">
 			<button class="navDrawer_btn" id="data-menuBtn" aria-labelledby="aria-menuBtnLabel" aria-controls="js-navDrawer"><span></span></button>
@@ -24,7 +27,7 @@
 			<div class="siteTitle">
 				<a href="<%= path %>" aria-label="トップページへのリンク"><img src="<%= path %>images/common/logo_globalheader.png" alt=""></a>
 				<a class="btn-detail block-contact__button" href="<%= path %>request/">資料請求はこちら</a>
-				<a class="btn-detail block-contact__button" href="<%= path %>inquiry/">お問い合わせ</a>
+				<a class="btn-detail block-contact__button" href="<%= path %>entry-seminar/">セミナー申込みはこちら</a>
 			</div>
 			<nav class="gNavi">
 				<ul class="gNavi__body" role="menubar">
