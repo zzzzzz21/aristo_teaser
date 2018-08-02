@@ -38,26 +38,69 @@
     </head>
 <body class="aristo-inquiry page-complete" id="top">
 <div class="page" id="data-page">
-	<header class="globalHeader" id="data-header">
-		<div class="globalHeader__inner">
-			<div class="globalHeader__top" id="data-navDrawer" aria-hidden="true">
-				<div class="siteTitle">
-					<dl>
-						<dt class="siteTitle__logo"><a href="../" aria-label="トップページへのリンク"><img src="../images/common/logo.jpg" alt="ロゴ：ARISTO（アリスト）"></a></dt>
-						<dd class="siteTitle__catch">エー・ディー・ワークスの<br class="is-sp">不動産小口化商品 ARISTO</dd>
-					</dl>
-				</div>
-				<div class="siteTitle__function">
-					<div class="siteTitle__function__tel is--tel">
-						<p class="siteTitle__function__tel__number"><a href="tel:0120540949">0120-540-949</a></p>
-						<p class="siteTitle__function__tel__description">受付時間 9:00～18:00 （土日祝日除く）</p>
-					</div>
-					<div class="siteTitle__function__form"><a href="../request/" class="btn-contact">資料請求はこちら</a></div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- /[.globalHeader] -->
+    <header class="globalHeader" id="data-header">
+        <div class="globalHeader__inner">
+            <div class="globalHeader__top">
+                <div class="siteTitle">
+                    <dl>
+                        <dt class="siteTitle__logo"><a href="../" aria-label="トップページへのリンク"><img src="../images/common/logo.jpg" alt="ロゴ：ARISTO（アリスト）"></a></dt>
+                        <dd class="siteTitle__catch">東証一部上場　<br class="is-sp">株式会社エー・ディー・ワークスの<br>不動産小口化商品 ARISTO</dd>
+                    </dl>
+                </div>
+                <div class="siteTitle__function">
+                    <div class="siteTitle__function__form">
+                        <a href="../request/" class="btn-contact">資料請求はこちら</a>
+                        <a href="../entry-seminar/" class="btn-seminar">セミナー申込みはこちら</a>
+                    </div>
+                    <div class="siteTitle__function__tel is--tel">
+                        <p class="siteTitle__function__tel__number"><a href="tel:0120540949">0120-540-949</a></p>
+                        <p class="siteTitle__function__tel__description">受付時間 9:00～18:00 （土日祝日除く）</p>
+                    </div>
+                </div>
+            </div>
+            <div class="navDrawer_btn_wrapper">
+                <button class="navDrawer_btn" id="data-menuBtn" aria-labelledby="aria-menuBtnLabel" aria-controls="js-navDrawer"><span></span></button>
+            </div>
+        </div>
+        <div class="globalHeader__body" id="data-navDrawer" aria-hidden="true">
+            <div class="globalHeader__body__inner">
+                <div class="siteTitle">
+                    <a href="../" aria-label="トップページへのリンク"><img src="../images/common/logo_globalheader.png" alt=""></a>
+                    <a class="btn-detail block-contact__button" href="../entry-seminar/">セミナー申込みはこちら</a>
+                    <a class="btn-detail block-contact__button" href="../request/">資料請求はこちら</a>
+                </div>
+                <nav class="gNavi">
+                    <ul class="gNavi__body" role="menubar">
+                        <li class="gNavi__item" role="presentation">
+                            <a role="menuitem" href="#section-point"><span>好立地の優良不動産に投資することのメリット</span></a>
+                        </li>
+                        <li class="gNavi__item" role="presentation">
+                            <a role="menuitem" href="#section-merit"><span>小口化することによる更なるメリット</span></a>
+                        </li>
+                        <li class="gNavi__item" role="presentation">
+                            <a role="menuitem" href="#section-instruments"><span>ARISTO 第一号商品　「ARISTO 京都」</span></a>
+                            <ul>
+                                <li class="gNavi__item" role="presentation">
+                                    <a role="menuitem" href="#section-kyoto--merit"><span>京都不動産投資のメリット</span></a>
+                                </li>
+                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-location"><span>ロケーション</span></a></li>
+                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-shinkyougoku"><span>新京極通</span></a></li>
+                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-characteristic"><span>対象不動産の特性</span></a></li>
+                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-surroundings"><span>商業ビルとしての価値の高まり</span></a></li>
+                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-products"><span>商品概要</span></a></li>
+                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-property"><span>物件概要</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-flow"><span>ご契約の流れ</span></a></li>
+                        <li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-faq"><span>よくあるご質問</span></a></li>
+                        <li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-information"><span>ご注意事項</span></a></li>
+                        <li class="gNavi__item" role="presentation"><a role="menuitem" href="#section-company"><span>事業者 エー・ディー・ワークスについて</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- /[.globalHeader] -->
 
 	<main class="main contents">
 		<header class="page-head">
@@ -129,11 +172,92 @@
 </div><!-- /[.page] -->
 
 <noscript>
-<p class="data-noscript">JavaScriptの設定を有効にしてご利用ください。無効の場合、当サイトを正常にご利用できません。</p>
+    <p class="data-noscript">JavaScriptの設定を有効にしてご利用ください。無効の場合、当サイトを正常にご利用できません。</p>
 </noscript>
 
 <script src="../js/lib.js?201805100000"></script>
 <script src="../js/main.js?201805100000"></script>
+
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 797422406;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/797422406/?guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+
+<!-- Yahoo Code for your Target List -->
+<script type="text/javascript" language="javascript">
+    /* <![CDATA[ */
+    var yahoo_retargeting_id = '7XWYNEE8OJ';
+    var yahoo_retargeting_label = '';
+    var yahoo_retargeting_page_type = '';
+    var yahoo_retargeting_items = [{item_id: '', category_id: '', price: '', quantity: ''}];
+    /* ]]> */
+</script>
+<script type="text/javascript" language="javascript" src="https://b92.yahoo.co.jp/js/s_retargeting.js"></script>
+
+<script type="text/javascript" language="javascript">
+    /* <![CDATA[ */
+    var yahoo_ydn_conv_io = "H.pOUBUOLDXAWYvjHmeo";
+    var yahoo_ydn_conv_label = "O6LQIHDMIVBSLVYRNVR500373";
+    var yahoo_ydn_conv_transaction_id = "";
+    var yahoo_ydn_conv_value = "0";
+    /* ]]> */
+</script>
+<script type="text/javascript" language="javascript" charset="UTF-8" src="https://b90.yahoo.co.jp/conv.js"></script>
+
+<!-- Yahoo Code for your Conversion Page -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var yahoo_conversion_id = 1001016146;
+    var yahoo_conversion_label = "Q-0WCO2m04YBEOPl3PsC";
+    var yahoo_conversion_value = 0;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="https://s.yimg.jp/images/listing/tool/cv/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="https://b91.yahoo.co.jp/pagead/conversion/1001016146/?value=0&label=Q-0WCO2m04YBEOPl3PsC&guid=ON&script=0&disvt=true"/>
+    </div>
+</noscript>
+
+<script type="text/javascript" language="javascript">
+    /* <![CDATA[ */
+    var yahoo_ydn_conv_io = "H.pOUBUOLDXAWYvjHmeo";
+    var yahoo_ydn_conv_label = "O6LQIHDMIVBSLVYRNVR500373";
+    var yahoo_ydn_conv_transaction_id = "";
+    var yahoo_ydn_conv_value = "0";
+    /* ]]> */
+</script>
+<script type="text/javascript" language="javascript" charset="UTF-8" src="https://b90.yahoo.co.jp/conv.js"></script>
+
+<!-- Google Code for &#21839;&#21512;&#12379; Conversion Page -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 797422406;
+    var google_conversion_label = "A8P1CLC004YBEMbmnvwC";
+    var google_remarketing_only = false;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/797422406/?label=A8P1CLC004YBEMbmnvwC&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+
+<script src="//conf.f-tra.com/fcconf/fcconf_0556_0002.js" charset="utf-8" type="text/javascript"></script>
+<script src="//asset.f-tra.com/track/cta2.js" charset="utf-8" type="text/javascript"></script>
 
 </body>
 </html>

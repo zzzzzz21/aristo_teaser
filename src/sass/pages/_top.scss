@@ -518,7 +518,9 @@ $title_color: #20428c;
 			top: 20%;
 			@include element(inner) {
 				position: relative;
-				max-width: calc(#{$site_width} + 20px);
+                box-sizing: border-box;
+				max-width: $site_width;
+                width: 100%;
 				margin: 0 auto;
 				padding: 0 10px;
 				display: flex;
