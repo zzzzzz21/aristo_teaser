@@ -2570,8 +2570,8 @@ a.btn-target:after {
 .unit-merit.-regulation1 .unit-merit__body__main .main,
 .unit-merit.-regulation2 .unit-merit__body__main .main {
   font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "メイリオ", Meiryo, serif;
-  font-size: 28px;
-  font-size: 2.8rem;
+  font-size: 22px;
+  font-size: 2.2rem;
 }
 
 .unit-merit.-regulation1 .unit-merit__body__main .note,
@@ -3248,6 +3248,39 @@ a.btn-target:after {
 
 label + .element-input-checkbox {
   margin-left: 1em;
+}
+
+.element-radio {
+  vertical-align: middle;
+}
+
+.element-radio + .element-radio {
+  margin-top: .6em;
+}
+
+.element-radio:last-child {
+  margin-bottom: 2em;
+}
+
+.element-radio input[type=radio] {
+  vertical-align: top;
+  margin: .6em .6em 0 0;
+}
+
+.label-for-radio {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 90%;
+  padding: .4em .6em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all ease .3s;
+}
+
+.element-input-radio:hover + .label-for-radio,
+.element-input-radio:checked + .label-for-radio {
+  background: #003466;
+  color: #fff;
 }
 
 .element--name {

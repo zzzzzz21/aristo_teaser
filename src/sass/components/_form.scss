@@ -58,7 +58,7 @@
 	min-height: 10em;
 }
 
-//	.element-checkbox
+//	.element-input-checkbox
 // ----------------------------------------
 .element-input-checkbox {
 	margin-right: .6em;
@@ -66,6 +66,42 @@
 		margin-left: 1em;
 	}
 }
+
+
+//	.element-input-radio
+// ----------------------------------------
+.element-radio {
+    vertical-align: middle;
+    & + & {
+        margin-top: .6em;
+    }
+    &:last-child {
+        margin-bottom: 2em;
+    }
+    input[type=radio] {
+        vertical-align: top;
+        margin: .6em .6em 0 0;
+    }
+}
+.element-input-radio {
+}
+.label-for-radio {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 90%;
+    padding: .4em .6em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+.element-input-radio {
+    &:hover + .label-for-radio,
+    &:checked + .label-for-radio {
+        background: $base_corporate_color;
+        color: $base_white_color;
+    }
+}
+
 
 //	.element--name
 // ----------------------------------------

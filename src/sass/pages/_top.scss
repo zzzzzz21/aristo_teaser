@@ -1196,7 +1196,7 @@ $title_color: #20428c;
 			}
 			.main {
 				font-family: $base_font_family_noto;
-				@include fontsize(28);
+				@include fontsize(22);
 				//	[media queries SP]
 				// ----------------------------------------
 				@include media(sp) {
