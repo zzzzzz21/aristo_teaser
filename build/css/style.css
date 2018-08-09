@@ -1410,12 +1410,12 @@ a.btn-target:after {
 }
 
 .globalHeader__body .siteTitle .btn-detail {
-  color: #999;
+  color: #fff;
   font-size: 16px;
   font-size: 1.6rem;
   width: 100%;
   margin-left: 0;
-  border: 1px solid #999;
+  border: 1px solid #fff;
   background-color: transparent;
 }
 
@@ -1520,12 +1520,12 @@ a.btn-target:after {
 
 .gNavi__item > a:link,
 .gNavi__item > a:visited {
-  color: #999;
+  color: #fff;
 }
 
 .gNavi__item > a:hover,
 .gNavi__item > a:active {
-  color: #666;
+  color: #999;
 }
 
 .navDrawer_btn_wrapper {
@@ -4394,7 +4394,7 @@ body.rtl .formError .formErrorArrow {
   .gNavi {
     box-sizing: border-box;
     width: calc( 540 / 800 * 100%);
-    border-left: 1px solid #999;
+    border-left: 1px solid #fff;
   }
 
   .fixed-button a:hover {

@@ -138,11 +138,11 @@
 			//	.btn-detail
 			// ----------------------------------------
 			.btn-detail {
-				color: #999;
+				color: $base_white_color;
 				@include fontsize(16);
 				width: 100%;
 				margin-left: 0;
-				border: 1px solid #999;
+				border: 1px solid $base_white_color;
 				background-color: transparent;
 				& + .btn-detail {
 					margin-top: 2em;
@@ -317,7 +317,7 @@
 	@include media(pc-tb) {
 		box-sizing: border-box;
 		width: calc( 540 / 800 * 100% );
-		border-left: 1px solid #999;
+		border-left: 1px solid $base_white_color;
 	}
 	//	[media queries SP]
 	// ----------------------------------------
@@ -345,10 +345,10 @@
 			padding: .4em 0;
 			transition: all .3s ease;
 			&:link, &:visited {
-				color: #999;
+				color: $base_white_color;
 			}
 			&:hover, &:active {
-				color: #666;
+				color: #999;
 			}
 		}
 	}
