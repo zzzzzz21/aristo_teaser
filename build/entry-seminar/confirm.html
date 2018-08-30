@@ -6,24 +6,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="format-detection" content="telephone=no">
 <!-- [TDK] -->
-<title>確認：お問い合わせ | エー・ディー・ワークスの不動産小口化商品 ARISTO｜株式会社エー・ディー・ワークス</title>
-<meta name="description" content="確認：お問い合わせ。収益不動産の仕入れ・バリューアップ・販売から、プロパティマネジメント・資産コンサルティングまで、一貫して提供するオンリーワン・カンパニー。">
+<title>確認：セミナー申し込み | エー・ディー・ワークスの不動産小口化商品 ARISTO｜株式会社エー・ディー・ワークス</title>
+<meta name="description" content="確認：セミナー申し込み。収益不動産の仕入れ・バリューアップ・販売から、プロパティマネジメント・資産コンサルティングまで、一貫して提供するオンリーワン・カンパニー。">
 <meta name="keywords" content="ADW,エー・ディー・ワークス,不動産,小口,商品,投資,収益,相続,ポートフォリオ">
 <!-- [icon] -->
 <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://www.re-adworks.com/favicon.ico">
 <link rel="icon" type="image/vnd.microsoft.icon" href="https://www.re-adworks.com/favicon.ico">
 <!-- [page_info] -->
-<link rel="canonical" href="https://www.re-adworks.com/business/aristo/inquiry/confirm.html">
+<link rel="canonical" href="https://www.re-adworks.com/business/aristo/entry-seminar/confirm.html">
 <link rel="start" href="https://www.re-adworks.com/" title="Home">
 <!-- [ogp] -->
 <meta property="og:locale" content="ja_JP">
 <meta property="fb:app_id" content="">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="エー・ディー・ワークスの不動産小口化商品 ARISTO｜株式会社エー・ディー・ワークス">
-<meta property="og:title" content="確認：お問い合わせ | エー・ディー・ワークスの不動産小口化商品 ARISTO｜株式会社エー・ディー・ワークス">
-<meta property="og:description" content="確認：お問い合わせ。収益不動産の仕入れ・バリューアップ・販売から、プロパティマネジメント・資産コンサルティングまで、一貫して提供するオンリーワン・カンパニー。">
+<meta property="og:title" content="確認：セミナー申し込み | エー・ディー・ワークスの不動産小口化商品 ARISTO｜株式会社エー・ディー・ワークス">
+<meta property="og:description" content="確認：セミナー申し込み。収益不動産の仕入れ・バリューアップ・販売から、プロパティマネジメント・資産コンサルティングまで、一貫して提供するオンリーワン・カンパニー。">
 <meta property="og:image" content="https://www.re-adworks.com/images/logo_opg.png">
-<meta property="og:url" content="https://www.re-adworks.com/business/aristo/inquiry/confirm.html">
+<meta property="og:url" content="https://www.re-adworks.com/business/aristo/entry-seminar/confirm.html">
 <!-- [css] -->
 <link rel="stylesheet" href="../css/style.css?201805291700" media="all">
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -36,7 +36,7 @@
    gtag('config', 'UA-61020271-5');
 </script>
     </head>
-<body class="aristo-inquiry page-confirm" id="top">
+<body class="aristo-entry-seminar page-confirm" id="top">
 <div class="page" id="data-page">
     <header class="globalHeader" id="data-header">
         <div class="globalHeader__inner">
@@ -105,7 +105,7 @@
 	<main class="main contents">
 		<header class="page-head">
 			<div class="container">
-				<h1 class="page-title">確認：お問い合わせ</h1>
+				<h1 class="page-title">確認：セミナー申し込み</h1>
 			</div>
 		</header>
 		<div class="page-body">
@@ -136,16 +136,18 @@
 					</nav>
 					<!-- /[.step-indicator] -->
 					
-					<h2 class="section-title">確認：お問い合わせ</h2>
+					<h2 class="section-title">確認：セミナー申し込み</h2>
 					<p class="contact-form__note">※内容を確認して問題なければ「送信する」ボタンを押してください。<br>
 					　修正したい場合は、「修正する」ボタンを押してください。</p>
                     <form action="confirm.html" method="post" name="form-contact" class="form-body h-adr" id="form-contact">
 						<input type="hidden" class="p-country-name" value="Japan">
 						<div class="form-field required">
-							<div class="form-field__label"><label for="question">お問い合わせ内容</label></div>
+							<div class="form-field__label">
+								<label for="seminarSchedule">参加希望日時</label>
+							</div>
 							<div class="form-field__element">
-								<input type="hidden" name="question" id="data-question" value="<?php echo $_POST['question']?>">
-								<div class="form-value"><?php echo str_replace("\n","<br>",$_POST['question'])?></div>
+								<input id="data-seminarSchedule" name="seminarSchedule" type="hidden" value="<?php echo $_POST['seminarSchedule']?>">
+								<div class="form-value"><?php echo $seminar_date?>　<?php echo $seminar_place?></div>
 							</div>
 						</div>
 						<div class="form-field required">
@@ -197,16 +199,16 @@
 							</div>
 						</div>
 						<div class="form-field">
-							<div class="form-field__label"><label for="">ご住所</label></div>
+							<div class="form-field__label required"><label for="">ご住所</label></div>
 							<div class="form-field__element">
-								<div class="form-field--child">
+								<div class="form-field--child required">
 									<div class="form-field__label"><label for="zipcode">郵便番号</label></div>
 									<div class="form-field__element">
 										<input type="hidden" id="data-zipcode" name="zipcode" value="<?php echo $_POST['zipcode']?>">
 										<div class="form-value"><?php echo $_POST['zipcode']?></div>
 									</div>
 								</div>
-								<div class="form-field--child">
+								<div class="form-field--child required">
 									<div class="form-field__label"><label for="address1">住所</label></div>
 									<div class="form-field__element">
 										<input type="hidden" id="data-address1" name="address1" value="<?php echo $_POST['address1']?>">
@@ -252,6 +254,7 @@
 								<div class="form-value">foo@re-adworks.com</div>
 							</div>
 						</div>
+                        */ ?>
 						<div class="form-field required">
 							<div class="form-field__label"><label for="number">参加人数</label></div>
 							<div class="form-field__element">
@@ -259,7 +262,6 @@
 								<div class="form-value"><?php echo $_POST['number']?>名</div>
 							</div>
 						</div>
-                        */ ?>
 						<div class="form-field">
 							<div class="form-field__label"><label for="generation">年代</label></div>
 							<div class="form-field__element -checkbox">
@@ -273,11 +275,17 @@
                                 <div class="form-value"><?php echo $generations ?></div>
 							</div>
 						</div>
+						<div class="form-field">
+							<div class="form-field__label"><label for="question">ご質問</label></div>
+							<div class="form-field__element">
+								<input type="hidden" name="question" id="data-question" value="<?php echo $_POST['question']?>">
+								<div class="form-value"><?php echo str_replace("\n","<br>",$_POST['question'])?></div>
+							</div>
+						</div>
 						<div class="form-field--confirm">
 							<input type="submit" id="data-submit" class="form-submit" value="送信する">
 							<input type="button" class="form-back" onclick="history.back()" value="修正する">
-                            <input type="hidden" name="mode" value="confirm">
-                            <input type="hidden" name="kind" value="inquiry">
+                            <input type="hidden" name="kind" value="entry">
 						</div>
 					</form>
 				</div>
