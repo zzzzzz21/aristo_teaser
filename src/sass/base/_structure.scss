@@ -65,7 +65,18 @@ body {
 	margin: 0 auto;
 	position: relative;
 }
-
+@mixin wrapper-1000 {
+	width: 100%;
+	max-width: $design_width;
+	margin: 0 auto;
+	position: relative;
+}
+@mixin wrapper-1200 {
+	width: 100%;
+	max-width: $site_width;
+	margin: 0 auto;
+	position: relative;
+}
 .container {
 	box-sizing: border-box;
 	width: 100%;
@@ -133,7 +144,9 @@ body {
 .alignR {
 	@include alignR;
 }
-
+.alignC {
+	@include alignC;
+}
 button {
 	cursor: pointer;
 	/* when tapping or clicking the button */

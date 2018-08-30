@@ -100,6 +100,10 @@
 		@at-root .aristo-inquiry & {
 			background-image: url(#{$image_path}form/bg_header.jpg);
 		}
+        @at-root .aristo-seminar & {
+            margin-bottom: 0;
+            background-image: url(#{$image_path}form/bg_header.jpg);
+        }
         @at-root &.teaser {
             margin-bottom: 0;
         }
@@ -214,5 +218,156 @@
 			@include calcvw(90, 'margin-bottom', 640);
 			@include fontsize(24);
 		}
+	}
+}
+
+// ----------------------------------------
+//	seminar/index.html
+// ----------------------------------------
+.seminar-list {
+	@include wrapper-1000;
+	margin-bottom: 120px;
+}
+
+.seminar-detail {
+	box-sizing: border-box;
+	@include calcvw(20, 'padding', 640);
+	background: $base_white_color;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px 0;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		padding: 4rem 2rem;
+	}
+	& + & {
+		@include calcvw(60, 'margin-top', 640);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-top: 80px;
+		}
+	}
+	//	.seminar-detail__title
+	// ----------------------------------------
+	@include element(title) {
+		@include calcvw(40, 'margin-bottom', 640);
+		text-align: center;
+		@include calcvw(28, 'font-size', 640);
+		line-height: 1.2;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-bottom: 40px;
+			@include fontsize(32);
+		}
+		span {
+			font-size: 70%;
+			font-weight: normal;
+		}
+	}
+	//	.seminar-detail__body
+	// ----------------------------------------
+	@include element(body) {
+		display: flex;
+		flex-wrap: wrap;
+		@include calcvw(60, 'margin-bottom', 640);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			margin-bottom: 60px;
+		}
+	}
+	//	.seminar-detail__meta
+	// ----------------------------------------
+	@include element(meta) {
+		width: 100%;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			max-width: 320px;
+		}
+		p + p {
+			margin-top: .4em;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	//	.seminar-detail__categories
+	// ----------------------------------------
+	@include element(categories) {
+		span {
+			display: inline-block;
+			padding: .2em .6em;
+			@include fontsize(12);
+			color: $base_white_color;
+			& + span {
+				margin-left: .6em;
+			}
+		}
+		&-kyoto {
+			background-color: $base_corporate_color;
+			border: 1px solid $base_corporate_color;
+		}
+		&-inheritance {
+			background-color: $base_black_color;
+			border: 1px solid $base_black_color;
+		}
+		&-management {
+			background-color: lighten($base_black_color, 20%);
+			border: 1px solid lighten($base_black_color, 20%);
+		}
+	}
+	//	.seminar-detail__information
+	// ----------------------------------------
+	@include element(information) {
+		width: 100%;
+		margin-top: 1.6em;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			width: 100%;
+			max-width: calc( 100% - 320px - 30px);
+			margin-top: 0;
+		}
+	}
+}
+//	.seminar-information
+// ----------------------------------------
+.seminar-information {
+	width: 100%;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		display: table;
+	}
+	& + & {
+		margin-top: 1.2em;
+	}
+	dt, dd {
+		display: block;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			display: table-cell;
+		}
+	}
+	dt {
+		font-weight: bold;
+		white-space: nowrap;
+		min-width: 7em;
+	}
+	dd {
+		width: 100%;
+		p + p {
+			margin-top: 1em;
+		}
+	}
+	.date {
+		@include fontsize(20);
+		font-weight: bold;
 	}
 }

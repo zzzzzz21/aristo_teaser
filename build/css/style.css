@@ -668,6 +668,10 @@ body {
   text-align: right;
 }
 
+.alignC {
+  text-align: center;
+}
+
 button {
   cursor: pointer;
   /* when tapping or clicking the button */
@@ -3155,6 +3159,11 @@ a.btn-target:after {
   background-image: url(../images/form/bg_header.jpg);
 }
 
+.aristo-seminar .contents .page-head {
+  margin-bottom: 0;
+  background-image: url(../images/form/bg_header.jpg);
+}
+
 .contents .page-head.teaser {
   margin-bottom: 0;
 }
@@ -3206,6 +3215,123 @@ a.btn-target:after {
   text-align: center;
   font-size: 36px;
   font-size: 3.6rem;
+}
+
+.seminar-list {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 120px;
+}
+
+.seminar-detail {
+  box-sizing: border-box;
+  padding: 3.125vw;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px 0;
+}
+
+.seminar-detail + .seminar-detail {
+  margin-top: 9.375vw;
+}
+
+.seminar-detail__title {
+  margin-bottom: 6.25vw;
+  text-align: center;
+  font-size: 4.375vw;
+  line-height: 1.2;
+}
+
+.seminar-detail__title span {
+  font-size: 70%;
+  font-weight: normal;
+}
+
+.seminar-detail__body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 9.375vw;
+}
+
+.seminar-detail__meta {
+  width: 100%;
+}
+
+.seminar-detail__meta p + p {
+  margin-top: .4em;
+}
+
+.seminar-detail__meta img {
+  width: 100%;
+  height: auto;
+}
+
+.seminar-detail__categories span {
+  display: inline-block;
+  padding: .2em .6em;
+  font-size: 12px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.seminar-detail__categories span + span {
+  margin-left: .6em;
+}
+
+.seminar-detail__categories-kyoto {
+  background-color: #003466;
+  border: 1px solid #003466;
+}
+
+.seminar-detail__categories-inheritance {
+  background-color: #000;
+  border: 1px solid #000;
+}
+
+.seminar-detail__categories-management {
+  background-color: #333333;
+  border: 1px solid #333333;
+}
+
+.seminar-detail__information {
+  width: 100%;
+  margin-top: 1.6em;
+}
+
+.seminar-information {
+  width: 100%;
+}
+
+.seminar-information + .seminar-information {
+  margin-top: 1.2em;
+}
+
+.seminar-information dt,
+.seminar-information dd {
+  display: block;
+}
+
+.seminar-information dt {
+  font-weight: bold;
+  white-space: nowrap;
+  min-width: 7em;
+}
+
+.seminar-information dd {
+  width: 100%;
+}
+
+.seminar-information dd p + p {
+  margin-top: 1em;
+}
+
+.seminar-information .date {
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .element-select,
@@ -4457,6 +4583,47 @@ body.rtl .formError .formErrorArrow {
     overflow: hidden;
   }
 
+  .seminar-detail {
+    padding: 4rem 2rem;
+  }
+
+  .seminar-detail + .seminar-detail {
+    margin-top: 80px;
+  }
+
+  .seminar-detail__title {
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-size: 3.2rem;
+  }
+
+  .seminar-detail__body {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+  .seminar-detail__meta {
+    max-width: 320px;
+  }
+
+  .seminar-detail__information {
+    width: 100%;
+    max-width: calc( 100% - 320px - 30px);
+    margin-top: 0;
+  }
+
+  .seminar-information {
+    display: table;
+  }
+
+  .seminar-information dt,
+  .seminar-information dd {
+    display: table-cell;
+  }
+
   .is-sp {
     display: none;
   }
@@ -4515,6 +4682,14 @@ body.rtl .formError .formErrorArrow {
 }
 
 @media screen and (max-width: 1100px) {
+  .block-contact {
+    width: 80%;
+  }
+
+  .block-contact__button.btn-detail {
+    width: 80%;
+  }
+
   .siteTitle__function {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;

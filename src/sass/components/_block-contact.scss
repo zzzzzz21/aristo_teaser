@@ -15,6 +15,11 @@
 	padding: 20px 40px;
     border: 2px solid $base_btn_color;
 	text-align: center;
+	//	[media queries PC-min]
+	// ----------------------------------------
+	@include media(pc-min) {
+		width: 80%;
+	}
 	//	[media queries SP]
 	// ----------------------------------------
 	@include media(sp) {
@@ -75,6 +80,11 @@
             padding: 70px 1.2em;
 			@include fontsize(36);
             font-weight: bold;
+			//	[media queries PC-min]
+			// ----------------------------------------
+			@include media(pc-min) {
+				width: 80%;
+			}
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
