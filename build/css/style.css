@@ -693,6 +693,10 @@ img {
   text-align: center;
 }
 
+.aristo-seminar .block-contact {
+  width: 720px;
+}
+
 .block-contact__tel {
   font-size: 36px;
   font-size: 3.6rem;
@@ -714,6 +718,14 @@ img {
   font-size: 3.6rem;
   text-align: center;
   color: #06c;
+}
+
+.aristo-seminar .block-contact__title {
+  margin-top: 0;
+}
+
+.block-contact__info {
+  text-align: center;
 }
 
 .block-contact__button.btn-detail {
@@ -2218,10 +2230,29 @@ a.btn-target:after {
   line-height: 1.4;
 }
 
+.-horizontal .top-carousel__title {
+  -webkit-writing-mode: horizontal-tb;
+  -ms-writing-mode: lr-tb;
+  writing-mode: horizontal-tb;
+}
+
+.top-carousel__body .note {
+  display: block;
+  margin-top: 2em;
+  padding-left: 1em;
+  font-size: 75%;
+  line-height: 1.4;
+  text-indent: -1em;
+}
+
 .top-carousel__map {
   position: absolute;
   right: 40px;
   bottom: -40px;
+}
+
+.-horizontal .top-carousel__map {
+  bottom: -120px;
 }
 
 .block-title {
@@ -2233,6 +2264,13 @@ a.btn-target:after {
 
 .block-title__logo {
   text-align: center;
+}
+
+.block-title__lead {
+  margin-top: 1em;
+  text-align: center;
+  font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "メイリオ", Meiryo, serif;
+  font-size: 4.375vw;
 }
 
 .block-title .unit-kyoto {
@@ -2592,6 +2630,20 @@ a.btn-target:after {
 .block-location__logo {
   margin-bottom: 120px;
   text-align: center;
+}
+
+.block-location .block-point {
+  padding: 120px 0 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.block-location .block-point .-point3:before {
+  content: 'メリット1';
+}
+
+.block-location .block-point .-point4:before {
+  content: 'メリット2';
 }
 
 .unit-map__body {
@@ -3194,6 +3246,15 @@ a.btn-target:after {
   text-align: right;
 }
 
+.contents .page-title--alert {
+  display: block;
+  font-size: 14px;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: .2;
+  color: #c00;
+}
+
 .contents .page-body {
   padding-top: 48px;
 }
@@ -3223,6 +3284,10 @@ a.btn-target:after {
   margin: 0 auto;
   position: relative;
   margin-bottom: 120px;
+}
+
+.seminar-list.-single {
+  max-width: 800px;
 }
 
 .seminar-detail {
@@ -3475,10 +3540,13 @@ label + .element-input-checkbox {
 }
 
 .label-required {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 2.8em;
+  padding: .2em .4em;
   content: '必須';
   background: #cb3333;
   border-radius: 4px;
-  padding: .2em .4em;
   font-size: 14px;
   font-size: 1.4rem;
   color: #fff;
@@ -3509,10 +3577,13 @@ label + .element-input-checkbox {
 }
 
 .required .form-field__label:after {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 2.8em;
+  padding: .2em .4em;
   content: '必須';
   background: #cb3333;
   border-radius: 4px;
-  padding: .2em .4em;
   font-size: 14px;
   font-size: 1.4rem;
   color: #fff;
@@ -3755,7 +3826,7 @@ label + .element-input-checkbox {
 }
 
 .is--attention {
-  color: #666;
+  color: #c00;
 }
 
 .notice-text {
@@ -4495,6 +4566,10 @@ body.rtl .formError .formErrorArrow {
     color: #000;
   }
 
+  .aristo-seminar .block-contact__button.btn-detail {
+    width: 720px;
+  }
+
   .block-contact__button.btn-detail:after {
     width: 20px;
     height: 20px;
@@ -4542,6 +4617,10 @@ body.rtl .formError .formErrorArrow {
     top: 20%;
   }
 
+  .top-carousel__message.-horizontal {
+    top: 13%;
+  }
+
   .top-carousel__message__inner {
     position: relative;
     box-sizing: border-box;
@@ -4560,6 +4639,14 @@ body.rtl .formError .formErrorArrow {
     color: #fff;
   }
 
+  .-horizontal .top-carousel__message__inner {
+    padding-left: 35%;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
   .top-carousel__title {
     -ms-writing-mode: tb-rl;
     -webkit-writing-mode: vertical-rl;
@@ -4573,6 +4660,19 @@ body.rtl .formError .formErrorArrow {
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
     line-height: 2.4;
+  }
+
+  .-horizontal .top-carousel__body {
+    -webkit-writing-mode: horizontal-tb;
+    -ms-writing-mode: lr-tb;
+    writing-mode: horizontal-tb;
+    font-size: 18px;
+    font-size: 1.8rem;
+  }
+
+  .block-title__lead {
+    font-size: 24px;
+    font-size: 2.4rem;
   }
 
   .unit-merit__head:after {
@@ -4615,6 +4715,10 @@ body.rtl .formError .formErrorArrow {
     margin-top: 0;
   }
 
+  .-single .seminar-detail__information {
+    max-width: 100%;
+  }
+
   .seminar-information {
     display: table;
   }
@@ -4622,6 +4726,22 @@ body.rtl .formError .formErrorArrow {
   .seminar-information dt,
   .seminar-information dd {
     display: table-cell;
+  }
+
+  .form-field--child.required .form-field__label:after {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 2.8em;
+    padding: .2em .4em;
+    content: '必須';
+    background: #cb3333;
+    border-radius: 4px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    color: #fff;
+    position: absolute;
+    top: -.2em;
+    left: -100px;
   }
 
   .is-sp {
@@ -4683,6 +4803,10 @@ body.rtl .formError .formErrorArrow {
 
 @media screen and (max-width: 1100px) {
   .block-contact {
+    width: 80%;
+  }
+
+  .aristo-seminar .block-contact {
     width: 80%;
   }
 
@@ -4789,6 +4913,10 @@ body.rtl .formError .formErrorArrow {
     width: 100%;
     margin-top: 6.25vw;
     padding: 3.125vw;
+  }
+
+  .aristo-seminar .block-contact {
+    width: 100%;
   }
 
   .block-contact__tel {
@@ -5155,7 +5283,9 @@ body.rtl .formError .formErrorArrow {
   }
 
   .block-point .unit-point__body .unit-point--sub:nth-child(n+2) {
+    margin-top: 10vw;
     margin-left: 0;
+    padding-top: 0;
   }
 
   .block-point .unit-point__body .unit-point--sub__inner {
@@ -5356,6 +5486,10 @@ body.rtl .formError .formErrorArrow {
   .block-location__logo img {
     width: auto;
     max-width: 100%;
+  }
+
+  .block-location .block-point {
+    padding-top: 15.625vw;
   }
 
   .unit-map__nav {
@@ -5624,8 +5758,13 @@ body.rtl .formError .formErrorArrow {
     font-size: 1rem;
   }
 
+  .contents .page-title--alert {
+    font-size: 10px;
+    font-size: 1rem;
+  }
+
   .contents .page-body {
-    padding-top: 15.625vw;
+    padding-top: 9.375vw;
   }
 
   .contents .page-lead {

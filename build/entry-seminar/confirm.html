@@ -63,42 +63,32 @@
             </div>
         </div>
         <div class="globalHeader__body" id="data-navDrawer" aria-hidden="true">
-            <div class="globalHeader__body__inner">
-                <div class="siteTitle">
-                    <a href="../" aria-label="トップページへのリンク"><img src="../images/common/logo_globalheader.png" alt=""></a>
-                    <a class="btn-detail block-contact__button" href="../entry-seminar/">セミナー申込みはこちら</a>
-                    <a class="btn-detail block-contact__button" href="../request/">資料請求はこちら</a>
-                </div>
-                <nav class="gNavi">
-                    <ul class="gNavi__body" role="menubar">
-                        <li class="gNavi__item" role="presentation">
-                            <a role="menuitem" href="../#section-point"><span>好立地の優良不動産に投資することのメリット</span></a>
-                        </li>
-                        <li class="gNavi__item" role="presentation">
-                            <a role="menuitem" href="../#section-merit"><span>小口化することによる更なるメリット</span></a>
-                        </li>
-                        <li class="gNavi__item" role="presentation">
-                            <a role="menuitem" href="../#section-instruments"><span>ARISTO 第一号商品　「ARISTO 京都」</span></a>
-                            <ul>
-                                <li class="gNavi__item" role="presentation">
-                                    <a role="menuitem" href="../#section-kyoto--merit"><span>京都不動産投資のメリット</span></a>
-                                </li>
-                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-location"><span>ロケーション</span></a></li>
-                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-shinkyougoku"><span>新京極通</span></a></li>
-                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-characteristic"><span>対象不動産の特性</span></a></li>
-                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-surroundings"><span>商業ビルとしての価値の高まり</span></a></li>
-                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-products"><span>商品概要</span></a></li>
-                                <li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-property"><span>物件概要</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-flow"><span>ご契約の流れ</span></a></li>
-                        <li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-faq"><span>よくあるご質問</span></a></li>
-                        <li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-information"><span>ご注意事項</span></a></li>
-                        <li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-company"><span>事業者 エー・ディー・ワークスについて</span></a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+			<div class="globalHeader__body__inner">
+				<div class="siteTitle">
+					<a href="../" aria-label="トップページへのリンク"><img src="../images/common/logo_globalheader.png" alt=""></a>
+					<a class="btn-detail block-contact__button" href="../seminar/">セミナー詳細はこちら</a>
+					<a class="btn-detail block-contact__button" href="../request/#form-contact">資料請求はこちら</a>
+				</div>
+				<nav class="gNavi">
+					<ul class="gNavi__body" role="menubar">
+						<li class="gNavi__item" role="presentation">
+							<a role="menuitem" href="../#section-instruments"><span>ARISTO 第一号商品　「ARISTO 京都」</span></a>
+							<ul>
+								<li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-location"><span>ロケーション</span></a></li>
+								<li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-shinkyougoku"><span>新京極通</span></a></li>
+								<li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-surroundings"><span>物件周辺でのホテル開発動向</span></a></li>
+								<li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-products"><span>商品概要</span></a></li>
+								<li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-property"><span>物件概要</span></a></li>
+							</ul>
+						</li>
+						<li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-flow"><span>ご契約の流れ</span></a></li>
+						<li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-faq"><span>よくあるご質問</span></a></li>
+						<li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-information"><span>ご注意事項</span></a></li>
+						<li class="gNavi__item" role="presentation"><a role="menuitem" href="../#section-company"><span>事業者 エー・ディー・ワークスについて</span></a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
     </header>
     <!-- /[.globalHeader] -->
 
@@ -185,20 +175,6 @@
 							</div>
 						</div>
 						<div class="form-field">
-							<div class="form-field__label"><label for="companyName">会社名</label></div>
-							<div class="form-field__element">
-								<input type="hidden" id="data-companyName" name="companyName" value="<?php echo $_POST['companyName']?>">
-								<div class="form-value"><?php echo $_POST['companyName']?></div>
-							</div>
-						</div>
-						<div class="form-field">
-							<div class="form-field__label"><label for="divisionName">部署名</label></div>
-							<div class="form-field__element">
-								<input type="hidden" id="data-divisionName" name="divisionName" value="<?php echo $_POST['divisionName']?>">
-								<div class="form-value"><?php echo $_POST['divisionName']?></div>
-							</div>
-						</div>
-						<div class="form-field">
 							<div class="form-field__label required"><label for="">ご住所</label></div>
 							<div class="form-field__element">
 								<div class="form-field--child required">
@@ -229,13 +205,6 @@
 							<div class="form-field__element">
 								<input type="hidden" id="data-tel" class="element-input-text validate[required]" name="tel" value="<?php echo $_POST['tel']?>">
 								<div class="form-value"><?php echo $_POST['tel']?></div>
-							</div>
-						</div>
-						<div class="form-field">
-							<div class="form-field__label"><label for="fax">FAX番号</label></div>
-							<div class="form-field__element">
-								<input type="hidden" id="data-fax" name="fax" value="<?php echo $_POST['fax']?>">
-								<div class="form-value"><?php echo $_POST['fax']?></div>
 							</div>
 						</div>
 						<div class="form-field required">

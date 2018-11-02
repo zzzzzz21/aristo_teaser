@@ -162,6 +162,21 @@
 				@include fontsize(10);
 			}
 		}
+		
+		//	.page-title--alert
+		// ----------------------------------------
+		@include modifier(alert) {
+			display: block;
+			@include fontsize(14);
+			text-align: center;
+			line-height: .2;
+			color: $base_text_color_red;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include fontsize(10);
+			}
+		}
 	}
 	
 	// ----------------------------------------
@@ -172,7 +187,7 @@
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			@include calcvw(100, 'padding-top', 640);
+			@include calcvw(60, 'padding-top', 640);
 		}
 	}
 
@@ -227,6 +242,9 @@
 .seminar-list {
 	@include wrapper-1000;
 	margin-bottom: 120px;
+	&.-single {
+		max-width: 800px;
+	}
 }
 
 .seminar-detail {
@@ -332,6 +350,9 @@
 			width: 100%;
 			max-width: calc( 100% - 320px - 30px);
 			margin-top: 0;
+			@at-root .-single & {
+				max-width: 100%;
+			}
 		}
 	}
 }

@@ -23,6 +23,7 @@ window.addEventListener('load', function () {
 		checkScrollDir();
 		loadingWindow();
 		windowScroll();
+		checkUA();
 		disableLink();
 		gallery();
 		mapSwitch();

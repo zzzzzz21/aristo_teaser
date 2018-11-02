@@ -15,10 +15,16 @@
 	padding: 20px 40px;
     border: 2px solid $base_btn_color;
 	text-align: center;
+	@at-root .aristo-seminar & {
+		width: 720px;
+	}
 	//	[media queries PC-min]
 	// ----------------------------------------
 	@include media(pc-min) {
 		width: 80%;
+		@at-root .aristo-seminar & {
+			width: 80%;
+		}
 	}
 	//	[media queries SP]
 	// ----------------------------------------
@@ -26,6 +32,9 @@
 		width: 100%;
         @include calcvw(40, 'margin-top', 640);
 		@include calcvw(20, 'padding', 640);
+		@at-root .aristo-seminar & {
+			width: 100%;
+		}
 	}
 
 	// .block-contact__tel
@@ -68,6 +77,17 @@
 			@include calcvw(160, 'margin-top', 640);
 			@include calcvw(28, 'font-size', 640);
 		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@at-root .aristo-seminar & {
+			margin-top: 0;
+		}
+	}
+	
+	// .block-contact__info
+	// ----------------------------------------
+	@include element(info) {
+		text-align: center;
 	}
 
 	// .block-contact__button
@@ -80,6 +100,13 @@
             padding: 70px 1.2em;
 			@include fontsize(36);
             font-weight: bold;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@at-root .aristo-seminar & {
+					width: 720px;
+				}
+			}
 			//	[media queries PC-min]
 			// ----------------------------------------
 			@include media(pc-min) {

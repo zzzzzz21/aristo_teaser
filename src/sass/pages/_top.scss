@@ -341,7 +341,9 @@ $title_color: #20428c;
 			@include media(sp) {
 				width: 100%;
 				&:nth-child(n+2) {
+					margin-top: 10vw;
 					margin-left: 0;
+					padding-top: 0;
 				}
 			}
 
@@ -516,6 +518,9 @@ $title_color: #20428c;
 		@include media(pc-tb) {
 			position: absolute;
 			top: 20%;
+			&.-horizontal {
+				top: 13%;
+			}
 			@include element(inner) {
 				position: relative;
                 box-sizing: border-box;
@@ -528,6 +533,11 @@ $title_color: #20428c;
 				flex-direction: row-reverse;
 				flex-wrap: nowrap;
 				color: $base_white_color;
+				.-horizontal & {
+					padding-left: 35%;
+					flex-direction: column;	
+					flex-wrap: wrap;
+				}
 			}
 		}
 		//	[media queries SP]
@@ -551,6 +561,9 @@ $title_color: #20428c;
 			writing-mode: vertical-rl;
 			@include fontsize(72);
 		}
+		.-horizontal & {
+			writing-mode: horizontal-tb;
+		}
 	}
 
 	//	.top-carousel__body
@@ -562,6 +575,18 @@ $title_color: #20428c;
 			-ms-writing-mode: tb-rl;
 			writing-mode: vertical-rl;
 			line-height: 2.4;
+			.-horizontal & {
+				writing-mode: horizontal-tb;
+				@include fontsize(18);
+			}
+		}
+		.note {
+			display: block;
+			margin-top: 2em;
+			padding-left: 1em;
+			font-size: 75%;
+			line-height: 1.4;
+			text-indent: -1em;
 		}
 	}
 	
@@ -571,6 +596,9 @@ $title_color: #20428c;
 		position: absolute;
 		right: 40px;
 		bottom: -40px;
+		.-horizontal & {
+			bottom: -120px;
+		}
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
@@ -598,6 +626,20 @@ $title_color: #20428c;
 	// ----------------------------------------
 	@include element(logo) {
 		text-align: center;
+	}
+
+	//	.block-title__lead
+	// ----------------------------------------
+	@include element(lead) {
+		margin-top: 1em;
+		text-align: center;
+		font-family: $base_font_family_noto;
+		@include calcvw(28, 'font-size', 640);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			@include fontsize(24);
+		}
 	}
 
 	//	.unit-kyoto
@@ -1236,6 +1278,31 @@ $title_color: #20428c;
 			img {
 				width: auto;
 				max-width: 100%;
+			}
+		}
+	}
+	.block-point {
+		padding: 120px 0 0;
+		line-height: 1.6;
+		text-align: center;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(100, 'padding-top', 640);
+		}
+		//	.block-point .-point3
+		// ----------------------------------------
+		.-point3 {
+			&:before {
+				content: 'メリット1';
+			}
+		}
+
+		//	.block-point .-point4
+		// ----------------------------------------
+		.-point4 {
+			&:before {
+				content: 'メリット2';
 			}
 		}
 	}

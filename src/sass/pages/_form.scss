@@ -1,3 +1,4 @@
+
 @charset "utf-8";
 // ===================================================================
 //  File:	pages/_form.scss
@@ -7,10 +8,13 @@
 @import 'components/form';
 
 @mixin required {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 2.8em;
+	padding: .2em .4em;
 	content: '必須';
 	background: $base_label_color;
 	border-radius: 4px;
-	padding: .2em .4em;
 	@include fontsize(14);
 	color: $base_white_color;
 }
@@ -137,6 +141,16 @@
 				width: 100%;
 				border: none;
 			//	padding-left: calc(.75em + 12px);
+			}
+		}
+		&.required .form-field__label:after {
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include required;
+				position: absolute;
+				top: -.2em;
+				left: -100px;
 			}
 		}
 		//	.form-field__element

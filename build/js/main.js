@@ -22,6 +22,7 @@ window.addEventListener('load', function () {
 		checkScrollDir();
 		loadingWindow();
 		windowScroll();
+		checkUA();
 		disableLink();
 		gallery();
 		mapSwitch();
@@ -394,8 +395,11 @@ var colorbox = function colorbox() {
 // PCで電話リンクを無効にする
 // ----------------------------------------
 var disableLink = function disableLink() {
-	if (!checkUA.SP && !checkUA.TB) {
-		$('a[href^="tel:"]').on('click', function (e) {
+	var ua = navigator.userAgent.toLowerCase();
+	var isMobile = /iphone/.test(ua)||/android(.+)?mobile/.test(ua);
+
+	if (!isMobile) {
+		$('a[href^="tel:"]').on('click', function(e) {
 			e.preventDefault();
 		});
 	}
