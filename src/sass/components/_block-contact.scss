@@ -15,14 +15,14 @@
 	padding: 20px 40px;
     border: 2px solid $base_btn_color;
 	text-align: center;
-	@at-root .aristo-seminar & {
+	@at-root .aristo-seminar .main & {
 		width: 720px;
 	}
 	//	[media queries PC-min]
 	// ----------------------------------------
 	@include media(pc-min) {
 		width: 80%;
-		@at-root .aristo-seminar & {
+		@at-root .aristo-seminar .main & {
 			width: 80%;
 		}
 	}
@@ -103,7 +103,7 @@
 			//	[media queries PC-tablet]
 			// ----------------------------------------
 			@include media(pc-tb) {
-				@at-root .aristo-seminar & {
+				@at-root .aristo-seminar .main & {
 					width: 720px;
 				}
 			}

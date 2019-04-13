@@ -15,15 +15,14 @@ page = '';
 	<header class="page-head">
 		<div class="container">
 			<h1 class="page-title">
-				<span class="page-title--alert">現在開催予定のセミナーはございません。</span> <%= meta.title %>
+				<%= meta.title %>
 			</h1>
 		</div>
 	</header>
 	<div class="page-body">
 		<div class="container">
 			<div class="seminar-list -single">
-				<h2 class="block-contact__title">セミナー申込み・資料請求・お問い合わせはこちら</h2>
-				<p class="block-contact__info is--attention">現在開催予定のセミナーはございません。<br>資料請求・お問い合わせは受付けております。</p>
+				<h2 class="block-contact__title is--attention">現在開催予定のセミナーはございません。<br>資料請求・お問い合わせは受付けております。</h2>
 				<%#            <a href="./seminar/" class="btn-detail block-contact__button">セミナー詳細はこちら</a> %>
 				<a href="<%= path %>request/#form-contact" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
 <% include ../include/_block-contact %>

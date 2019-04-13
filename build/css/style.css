@@ -693,7 +693,7 @@ img {
   text-align: center;
 }
 
-.aristo-seminar .block-contact {
+.aristo-seminar .main .block-contact {
   width: 720px;
 }
 
@@ -2370,7 +2370,7 @@ a.btn-target:after {
   top: -2em;
   left: 10px;
   display: block;
-  content: '販売中';
+  content: '運用中';
   padding: .2em .4em;
   border: 4px solid #003466;
   color: #003466;
@@ -4566,7 +4566,7 @@ body.rtl .formError .formErrorArrow {
     color: #000;
   }
 
-  .aristo-seminar .block-contact__button.btn-detail {
+  .aristo-seminar .main .block-contact__button.btn-detail {
     width: 720px;
   }
 
@@ -4806,7 +4806,7 @@ body.rtl .formError .formErrorArrow {
     width: 80%;
   }
 
-  .aristo-seminar .block-contact {
+  .aristo-seminar .main .block-contact {
     width: 80%;
   }
 
