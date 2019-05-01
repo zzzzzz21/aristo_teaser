@@ -1,0 +1,32 @@
+<%
+update = '201805291700';
+siteTitle = '東証一部上場　株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO京都（アリスト京都）｜株式会社エー・ディー・ワークス';
+siteDescription = '東証一部上場　株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO京都（アリスト京都）。収益不動産の仕入れ・バリューアップ・販売から、プロパティマネジメント・資産コンサルティングまで、一貫して提供するオンリーワン・カンパニー。';
+siteKeywords = 'ADW,エー・ディー・ワークス,不動産,小口,商品,投資,収益,相続,ポートフォリオ,ARISTO京都,アリスト京都';
+siteURL = 'https://www.re-adworks.com/';
+parentDirectory ='business/aristo/';
+%><meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<!-- [TDK] -->
+<title><% if (directory!=='') { %><%= meta.title %> | <% } %><%= siteTitle %></title>
+<meta name="description" content="<% if (directory!=='') { %><%= meta.title %>。<% } %><%= siteDescription %>">
+<meta name="keywords" content="<%= siteKeywords %>">
+<!-- [icon] -->
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<%= siteURL %>favicon.ico">
+<link rel="icon" type="image/vnd.microsoft.icon" href="<%= siteURL %>favicon.ico">
+<!-- [page_info] -->
+<link rel="canonical" href="<%= siteURL %><%= parentDirectory %><%= directory %><% if (directory!=='') { %>/<% } %><%= directoryLv2 %><% if (directoryLv2!=='') { %>/<% } %><%= page %><% if (page!=='') { %>.html<% } %>">
+<link rel="start" href="<%= siteURL %>" title="Home">
+<!-- [ogp] -->
+<meta property="og:locale" content="ja_JP">
+<meta property="fb:app_id" content="">
+<meta property="og:type" content="<% if (directory=='') { %>website<% } else { %>article<% } %>">
+<meta property="og:site_name" content="<%= siteTitle %>">
+<meta property="og:title" content="<% if (directory!=='') { %><%= meta.title %> | <% } %><%= siteTitle %>">
+<meta property="og:description" content="<% if (directory!=='') { %><%= meta.title %>。<% } %><%= siteDescription %>">
+<meta property="og:image" content="<%= siteURL %>images/logo_opg.png">
+<meta property="og:url" content="<%= siteURL %><%= parentDirectory %><%= directory %><% if (directory!=='') { %>/<% } %><%= directoryLv2 %><% if (directoryLv2!=='') { %>/<% } %><%= page %><% if (page!=='') { %>.html<% } %>">
+<!-- [css] -->
+<link rel="stylesheet" href="<%= path %>css/style.css" media="all">

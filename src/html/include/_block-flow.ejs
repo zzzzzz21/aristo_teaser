@@ -1,0 +1,62 @@
+		<section class="block-flow" id="section-flow">
+			<h2 class="block__title"><span>ご契約の流れ</span></h2>
+			<div class="block">
+				<div class="block-flow__body">
+					<div class="unit-flow">
+						<h3 class="unit-flow__title">
+							<span class="step">STEP1</span>
+							<span class="title">資料請求・セミナーご来訪</span>
+						</h3>
+						<div class="unit-flow__body">
+							<a href="<%= path %>request/" class="btn-detail">資料請求はこちら</a><% if (seminar!=='') { %><a href="<%= path %>entry-seminar/" class="btn-detail -reverse">セミナー申込みはこちら</a><% } else {%><% } %>
+						</div>
+					</div>
+					<div class="unit-flow">
+						<h3 class="unit-flow__title">
+							<span class="step">STEP2</span>
+							<span class="title">申込書のご提出</span>
+						</h3>
+						<div class="unit-flow__body">
+							<p>商品内容をご理解のうえ、お申込をしてください。</p>
+						</div>
+					</div>
+					<div class="unit-flow">
+						<h3 class="unit-flow__title">
+							<span class="step">STEP3</span>
+							<span class="title">ご契約のお手続き</span>
+						</h3>
+						<div class="unit-flow__body">
+							<p>※契約にかかる時間は約１～２時間を予定しております。<br>
+								クーリングオフ期間は契約締結後８日間です。</p>
+						</div>
+					</div>
+					<div class="unit-flow">
+						<h3 class="unit-flow__title">
+							<span class="step">STEP4</span>
+							<span class="title">出資金のお振り込み</span>
+						</h3>
+						<div class="unit-flow__body">
+							<p>出資金のお振込期日・振込先等の詳細につきましては<br class="is-pc">ご契約時にご説明いたします。</p>
+						</div>
+					</div>
+					<div class="unit-flow">
+						<h3 class="unit-flow__title">
+							<span class="step">STEP 5</span>
+							<span class="title">組合加入・契約成立</span>
+						</h3>
+					</div>
+				</div>
+				<h2 class="block-contact__title">資料請求・お問い合わせはこちら</h2>
+				<a href="<%= path %>request/" class="btn-detail block-contact__button">Webお問い合わせフォーム</a>
+				<div class="block-contact">
+					<dl>
+						<dt class="block-contact__lead"> お電話でのお問い合わせの方はこちら</dt>
+						<dd class="block-contact__tel is--tel"><a href="tel:0120540949">0120-540-949</a></dd>
+						<dd class="block-contact__conditions">
+							<span class="business-hours">受付時間 9:00～18:00 （土日祝日除く）</span>
+							<span class="in-charge">株式会社エー・ディー・ワークス事業企画本部　アリスト事業部</span></dd>
+					</dl>
+				</div>
+				<!-- /[.block-contact] -->
+			</div>
+		</section>

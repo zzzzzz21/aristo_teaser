@@ -91,6 +91,13 @@
                 @include calcvw(674, 'height', 640);
             }
         }
+        @at-root .aoyama & {
+            height: 674px;
+            background-image: url(#{$image_path}index/bg_header-aoyama.jpg);
+            @include media(sp) {
+                @include calcvw(674, 'height', 640);
+            }
+        }
         @at-root .aristo-entry-seminar & {
 			background-image: url(#{$image_path}form/bg_header.jpg);
 		}
@@ -119,14 +126,21 @@
 		@include fontsize(48);
 		color: $base_corporate_color;
 
+		ruby > rt {
+			font-family: $base_font_family_noto;
+		}
+
 		//	.home .contents .page-title
 		// ----------------------------------------
 		@at-root .home & {
+			margin-top: 72px;
 			@include fontsize(30);
 			color: $base_text_color;
+			font-weight: normal;
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
+				@include calcvw(72, 'margin-top', 640);
 				@include calcvw(30, 'font-size', 640);
 			}
 		}
@@ -141,6 +155,19 @@
                 @include calcvw(30, 'font-size', 640);
             }
         }
+		//	.aoyama .contents .page-title
+		// ----------------------------------------
+		@at-root .aoyama & {
+			margin-top: 142px;
+			font-weight: normal;
+			@include fontsize(30);
+			color: $base_white_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(30, 'font-size', 640);
+			}
+		}
         //	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
@@ -160,6 +187,20 @@
 			// ----------------------------------------
 			@include media(sp) {
 				@include fontsize(10);
+			}
+			@at-root .home & {
+				position: absolute;
+				bottom: -3.2em;
+				right: .6em;
+			}
+			@at-root .aoyama & {
+				position: absolute;
+				bottom: -3.2em;
+				right: .6em;
+			}
+			@at-root .teaser & {
+				bottom: .6em;
+				color: #999;
 			}
 		}
 		
@@ -234,6 +275,51 @@
 			@include fontsize(24);
 		}
 	}
+
+	// ----------------------------------------
+	//	.block__lead
+	// ----------------------------------------
+	.block__lead {
+		margin-bottom: 70px;
+		text-align: center;
+		@include fontsize(30);
+		font-family: $base_font_family_noto;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(70, 'margin-bottom', 640);
+			@include fontsize(20);
+		}
+	}
+}
+
+// ----------------------------------------
+//	#section-seminars
+// ----------------------------------------
+.seminar-item {
+	& + & {
+		@include calcvw(100, 'margin-top', 640);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-top: 100px;
+		}
+	}
+	.btn {
+		text-align: center;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			text-align: right;
+		}
+		.btn-seminar {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+			}
+		}
+	}
 }
 
 // ----------------------------------------
@@ -243,7 +329,8 @@
 	@include wrapper-1000;
 	margin-bottom: 120px;
 	&.-single {
-		max-width: 800px;
+		//max-width: 800px;
+		
 	}
 }
 
@@ -271,16 +358,36 @@
 		@include calcvw(40, 'margin-bottom', 640);
 		text-align: center;
 		@include calcvw(28, 'font-size', 640);
-		line-height: 1.2;
+		line-height: 1.4;
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
 			margin-bottom: 40px;
 			@include fontsize(32);
 		}
+		@at-root .seminar-item & {
+			font-weight: normal;
+			@include fontsize(16);
+			text-align: left;
+		}
 		span {
+			display: block;
 			font-size: 70%;
 			font-weight: normal;
+			@at-root .seminar-item & {
+				display: inline;
+				font-size: 100%;
+			}
+		}
+	}
+	.btn {
+		text-align: center;
+		.btn-seminar {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+			}
 		}
 	}
 	//	.seminar-detail__body
@@ -326,7 +433,7 @@
 				margin-left: .6em;
 			}
 		}
-		&-kyoto {
+		&-kyoto,&-aoyama {
 			background-color: $base_corporate_color;
 			border: 1px solid $base_corporate_color;
 		}
@@ -351,7 +458,7 @@
 			max-width: calc( 100% - 320px - 30px);
 			margin-top: 0;
 			@at-root .-single & {
-				max-width: 100%;
+//				max-width: 100%;
 			}
 		}
 	}
@@ -380,6 +487,9 @@
 		font-weight: bold;
 		white-space: nowrap;
 		min-width: 7em;
+		@at-root .seminar-item & {
+			font-weight: normal;
+		}
 	}
 	dd {
 		width: 100%;
@@ -390,5 +500,9 @@
 	.date {
 		@include fontsize(20);
 		font-weight: bold;
+		@at-root .seminar-item & {
+			@include fontsize(16);
+			font-weight: normal;
+		}
 	}
 }

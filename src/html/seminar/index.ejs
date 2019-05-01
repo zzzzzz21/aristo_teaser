@@ -1,39 +1,97 @@
 <%
 meta = { title:'セミナー詳細', desc:'' };
 path = '../';
+srcPath ='../../';
 directory = 'seminar';
 directoryLv2 = '';
 page = '';
 %><!DOCTYPE html>
 <html lang="ja">
-<% include ../include/_head %>
+<%- include(srcPath + 'html/include/_head') %>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } else { %> page-input<% } %>" id="top">
-<% include ../include/_gtag %>
+<%- include(srcPath + 'html/include/_gtag') %>
 <div class="page" id="data-page">
-<% include ../include/_header %>
-<main class="main contents">
-	<header class="page-head">
-		<div class="container">
-			<h1 class="page-title">
-				<%= meta.title %>
-			</h1>
-		</div>
-	</header>
-	<div class="page-body">
-		<div class="container">
-			<div class="seminar-list -single">
-				<h2 class="block-contact__title is--attention">現在開催予定のセミナーはございません。<br>資料請求・お問い合わせは受付けております。</h2>
-				<%#            <a href="./seminar/" class="btn-detail block-contact__button">セミナー詳細はこちら</a> %>
-				<a href="<%= path %>request/#form-contact" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
-<% include ../include/_block-contact %>
+<%- include(srcPath + 'html/include/_header') %>
+	<main class="main contents">
+		<header class="page-head">
+			<div class="container">
+				<h1 class="page-title">
+					<%= meta.title %>
+				</h1>
 			</div>
+		</header>
+		<div class="page-body">
+			<div class="container">
+				<div class="page-lead">
+					<p class="contact-form__link"><a href="<%= path %>entry-seminar/" class="btn-detail">セミナー申込み</a></p>
+				</div>
+				<!-- /[.page-lead] -->
+				<div class="seminar-list -single">
+					<% seminarList.forEach(function(item) {%><article class="seminar-detail">
+						<h2 class="seminar-detail__title"><%- item.seminarTitle %></h2>
+						<div class="seminar-detail__body">
+							<div class="seminar-detail__meta">
+								<p><img src="<%= path %>images/seminar/<%- item.seminarImage %>.jpg" alt="<%- item.seminarTitle %>"></p>
+								<% if (item.seminarCategories) { %><p class="seminar-detail__categories">
+									<% item.seminarCategories.forEach(function(item) {%><span class="seminar-detail__categories-<%= item.categoryClass %>"><%= item.categoryLabel %></span><%})%>
+								</p><% } %>
+							</div>
+							<div class="seminar-detail__information">
+								<% if (item.seminarDate) {%><dl class="seminar-information">
+									<dt>開催日時</dt>
+									<dd class="date"><%- item.seminarDate %></dd>
+								</dl><% } %>
+								<% if (item.seminarTime) {%><dl class="seminar-information">
+									<dt>開催時間</dt>
+									<dd><%- item.seminarTime %></dd>
+								</dl><% } %>
+								<% if (item.seminarPlace) {%><dl class="seminar-information">
+									<dt>開催場所</dt>
+									<dd>
+										<p><%- item.seminarPlace %></p>
+										<% if (item.seminarPlace) {%><p><a class="btn-detail" href="<%- item.seminarGoogleMap %>" target="_blank">Googleマップ</a></p><% } %>
+									</dd>
+								</dl><% } %>
+								<% if (item.seminarFee) {%><dl class="seminar-information">
+									<dt>参加費</dt>
+									<dd><%- item.seminarFee %></dd>
+								</dl><% } %>
+								<% if (item.seminarCapacity) {%><dl class="seminar-information">
+									<dt>定員</dt>
+									<dd><%- item.seminarCapacity %></dd>
+								</dl><% } %>
+								<% if (item.seminarOutline) {%><dl class="seminar-information">
+									<dt>開催概要</dt>
+									<dd><%- item.seminarOutline %></dd>
+								</dl><% } %>
+								<% if (item.seminarTarget) {%><dl class="seminar-information">
+									<dt>対象となる方</dt>
+									<dd><%- item.seminarTarget %></dd>
+								</dl><% } %>
+								<% if (item.seminarContactName) {%><dl class="seminar-information">
+									<dt>問合せ先</dt>
+									<dd><%- item.seminarContactName %><br>
+										<% if (item.seminarContactTel) {%>TEL: <a href="tel:<%- item.seminarContactTel %>"><%- item.seminarContactTel %></a><% } %><% if (item.seminarContactMail) {%><br>Mail: <a href="mailto:<%- item.seminarContactMail %>"><%- item.seminarContactMail %></a><% } %>
+									</dd>
+								</dl><% } %>
+								<% if (item.seminarOrganizer) {%><dl class="seminar-information">
+									<dt>主催</dt>
+									<dd><%- item.seminarOrganizer %></dd>
+								</dl><% } %>
+							</div>
+						</div>
+						<% if (item.seminarLink) {%><p class="btn"><a href="<%= path %>seminar-entry/<%- item.seminarLink %>" class="btn-seminar">セミナー申込み</a></p><% } %>
+					</article>
+					<%}); %>
+				</div>
+	<%- include(srcPath + 'html/include/_block-contact') %>
+			</div>
+			<!-- /[.container] -->
 		</div>
-		<!-- /[.container] -->
-	</div>
-</main>	<!-- /[.contents] -->
-<% include ../include/_footer %>
+	</main><!-- /[.contents] -->
+<%- include(srcPath + 'html/include/_footer') %>
 </div><!-- /[.page] -->
 
-<% include ../include/_body_last %>
+<%- include(srcPath + 'html/include/_body_last') %>
 </body>
 </html>

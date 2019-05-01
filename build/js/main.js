@@ -25,6 +25,7 @@ window.addEventListener('load', function () {
 		checkUA();
 		disableLink();
 		gallery();
+		galleryLabel();
 		mapSwitch();
 		goPageTop();
 		fixedButton();
@@ -329,6 +330,7 @@ var fixedButton = function fixedButton() {
 	function init() {
 		$(window).on('scroll', scrollEvent);
 		$goTopBtn.on('click', goPageTop);
+		$fixedBtn.attr('aria-hidden', 'true');
 	}
 
 	function switchDisplay() {
@@ -395,16 +397,15 @@ var colorbox = function colorbox() {
 // PCで電話リンクを無効にする
 // ----------------------------------------
 var disableLink = function disableLink() {
-	var ua = navigator.userAgent.toLowerCase();
-	var isMobile = /iphone/.test(ua)||/android(.+)?mobile/.test(ua);
-
-	if (!isMobile) {
-		$('a[href^="tel:"]').on('click', function(e) {
+	if (!checkUA.SP && !checkUA.TB) {
+		$('a[href^="tel:"]').on('click', function (e) {
 			e.preventDefault();
 		});
 	}
 };
 
+// 写真ギャラリー
+// ----------------------------------------
 var gallery = function gallery() {
 	$(function () {
 		$('.gallery-images__thumbnail').each(function () {
@@ -412,18 +413,41 @@ var gallery = function gallery() {
 			var defaultimg = "<img src='" + firstimg.attr('src') + "' alt='" + firstimg.attr('alt') + "'>";
 			firstimg.parent().parent().prev().html(defaultimg);
 		});
-		$('.gallery-images__thumbnail li:first-child').addClass('current');
+		$('.gallery-images__thumbnail li:first-child').addClass('-current');
 
 		$('.gallery-images__thumbnail img').on('click', function () {
 			var main = "<img src='" + $(this).attr('src') + "' alt='" + $(this).attr('alt') + "'  class='data-image-main' style='display: none'>";
 			$(this).parent().parent().prev().html(main);
 			$('.data-image-main').animate({ opacity: 'show' }, 'slow');
-			$(this).parent().addClass('current').siblings().removeClass('current');
+			$(this).parent().addClass('-current').siblings().removeClass('-current');
 			return false;
 		});
 	});
 };
 
+// 写真ギャラリー：ラベルあり
+// ----------------------------------------
+var galleryLabel = function galleryLabel() {
+	$(function () {
+		$('.-label.gallery-images__thumbnail').each(function () {
+			var firstimg = $(this).find('.gallery-images__thumbnail__item:first-child img');
+			var defaultimg = "<img src='" + firstimg.attr('src') + "' alt='" + firstimg.attr('alt') + "'>";
+			var defaultLabel = "<span class='-label'>" + firstimg.attr('alt') + "</span>";
+			firstimg.parent().parent().prev().html(defaultimg).append(defaultLabel);
+		});
+		$('.-label.gallery-images__thumbnail li:first-child').addClass('-current');
+
+		$('.-label.gallery-images__thumbnail img').on('click', function () {
+			var main = "<img src='" + $(this).attr('src') + "' alt='" + $(this).attr('alt') + "'  class='data-image-main' style='display: none'><span class='-label'>" + $(this).attr('alt') + "</span>";
+			$(this).parent().parent().prev().html(main);
+			$('.data-image-main').animate({ opacity: 'show' }, 'slow');
+			$(this).parent().addClass('-current').siblings().removeClass('-current');
+		});
+	});
+};
+
+// 地図切り替え
+// ----------------------------------------
 var mapSwitch = function mapSwitch() {
 	var mapMain = $('.unit-map__main'),
 	    mainImg = $('.unit-map__main img'),

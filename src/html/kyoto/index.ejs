@@ -1,0 +1,346 @@
+<%
+meta = { title:'東証一部上場株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO京都公式サイト', desc:'' };
+seminar = 'on';
+path = '../';
+srcPath ='../../';
+directory = 'kyoto';
+directoryLv2 = '';
+page = '';
+%><!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath + 'html/include/kyoto/_head') %>
+</head>
+<body class="<% if (directory!=='') { %> <%= directory %><% } else {%>home<% } %>" id="top">
+<%- include(srcPath + 'html/include/_gtag') %>
+<div class="page" id="data-page">
+<%- include(srcPath + 'html/include/kyoto/_header') %>
+	<main class="main contents">
+		<header class="block-instruments" id="section-instruments">
+			<div class="top-carousel">
+				<div class="top-carousel__inner" id="data-carousel">
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_kyoto01.jpg" alt=""></div>
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_kyoto02.jpg" alt=""></div>
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_kyoto03.jpg" alt=""></div>
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_kyoto04.jpg" alt=""></div>
+				</div>
+				<div class="top-carousel__message">
+					<div class="top-carousel__message__inner">
+						<h3 class="top-carousel__title">歴史に<br class="is-pc">守られながら<br class="is-pc">進化する<br class="is-pc">京都という<br class="is-pc">価値。</h3>
+						<p class="top-carousel__body">世界が注目する観光都市、京都。<br>
+							歴史に導かれ、文化を刻み<br class="is-pc">今も人々を魅了し続けています。<br>
+							世界を魅き付けるここ京都の地から<br class="is-pc">エー・ディー・ワークスの不動産小口化商品を<br class="is-pc">お届けします。</p>
+						<p class="top-carousel__map"><img src="<%= path %>images/index/map_kyoto.png" alt=""></p>
+					</div>
+				</div>
+			</div>
+			<!-- /[.top-carousel] -->
+			
+			<div class="block-title" id="section-title">
+				<div class="block -available">
+					<h2 class="block-title__logo"><img src="<%= path %>images/common/logo_aristo-kyoto.jpg" alt="ARISTO京都"></h2>
+					<p class="block-title__lead">「ARISTO 京都」は、京都中心部の商業ビルに対して<br class="is-pc">最低出資金額「500万円」からの投資が可能な<br class="is-pc">不動産小口化商品です。</p>
+				</div>
+			</div>
+			<!-- /[.block-title#section-title] -->
+		</header>
+		<!-- /[.block-instruments#section-instruments] -->
+
+		<div class="block block-others">
+			<div class="block-catalogue__body"><% catalogue.forEach(function(item) {%>
+				<% if(item.catalogueID!=='kyoto') {%><div class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
+				<a href="<%= path %><%= item.catalogueID %>">
+					<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
+						<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %>
+					</div>
+					<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
+						<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
+						<% if(item.catalogueInformation) {%><p class="catalogue__information"><%- item.catalogueInformation %></p><% } %>
+					</div>
+				</a>
+				</div><%}%><%}); %>
+			</div>
+		</div>
+		<!-- /[.block-catalogue] -->
+
+
+		<section class="block block-location" id="section-location">
+			<h2 class="unit__title"><span>ロケーション</span></h2>
+			<div class="unit-map__body">
+				<p class="unit-map__main"><img src="<%= path %>images/index/map_aristo_wide.jpg" alt="地図"></p>
+				<ul class="unit-map__nav">
+					<li class="unit-map__nav__item"><a href="<%= path %>images/index/map_aristo_wide.jpg">広域<br>地図</a></li>
+					<li class="unit-map__nav__item"><a href="<%= path %>images/index/map_aristo_around.jpg">周辺<br>地図</a></li>
+				</ul>
+			</div>
+			<p>ARISTO京都は「田の字エリア」に位置します。<br>
+				「田の字エリア」は、ターミナル駅や観光名所へのアクセスが良く京都市の中枢で資産価値の高いブランドエリアと言えます。<br>
+				またインバウンド需要の恩恵を受けやすいエリアと考えられます。</p>
+		</section>
+		<!-- /[.block.block-location#section-location] -->
+
+		<section class="block block-shinkyougoku" id="section-shinkyougoku">
+			<h2 class="unit__title"><span>新京極通</span></h2>
+			<div class="block-shinkyougoku__body">
+				<div class="block-shinkyougoku__body__items">
+					<div class="block-shinkyogoku-images">
+						<div class="gallery-images__main"></div>
+						<ul class="gallery-images__thumbnail">
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/photo_shinkyougoku01.jpg" alt="新京極通：写真01"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/photo_shinkyougoku02.jpg" alt="新京極通：写真02"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/photo_shinkyougoku03.jpg" alt="新京極通：写真03"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/photo_shinkyougoku04.jpg" alt="新京極通：写真04"></li>
+						</ul>
+						<p class="gallery-images__caption">撮影日：2018年5月</p>
+					</div>
+				</div>
+				<div class="block-shinkyougoku__body__items">
+					<h3 class="block-shinkyougoku__body__title">田の字エリア（三条通～四条通）を南北に貫く商店街。</h3>
+					<p>天正年間（1573年~1592年）、豊臣秀吉が市中の多くの寺院を寺町通りに集めたことで、各寺院の境内が縁日の舞台として利用され、周辺が見世物や催し物を中心に発展していきました。</p>
+					<p>その後、明治5年（1872年）に京都府参事槇村正直により、寺院の境内を整理し、新たな通りが作られ、新京極通りとなりました。</p>
+					<p>明治10年（1877年）ごろには芝居座、浄瑠璃、寄席などの興行場や飲食店など、多くの店舗が立ち並び、明治30年代には東京の浅草、大阪の千日前とともににほんを代表する盛り場として知られるようになりました。</p>
+					<p>その後も、劇場・映画館・園芸場が多く立ち並び、京都座、京都松竹座、京都宝塚劇場など娯楽の通りとして発展し、近年では地元向け、観光客向けの商店が混在する商店街として賑わいが続いています。</p>
+				</div>
+			</div>	
+		</section>
+		<!-- /[.block.block-shinkyougokut#section-shinkyougoku] -->
+
+		<div class="block block-characteristic" id="section-characteristic">
+			<div class="gallery-images__main"></div>
+			<ul class="gallery-images__thumbnail">
+				<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/image_perspective01.jpg" alt="ARISTO京都：イメージ01"></li>
+				<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/image_perspective02.jpg" alt="ARISTO京都：イメージ02"></li>
+				<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/image_perspective03.jpg" alt="ARISTO京都：イメージ03"></li>
+				<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/index/image_perspective04.jpg" alt="ARISTO京都：イメージ04"></li>
+			</ul>
+			<p class="gallery-images__caption">※撮影日：2018年7月　株式会社トレード社より取得</p>
+		</div>
+		<!-- /[.block.block-characteristic#section-characteristic] -->
+
+		<section class="block block-surroundings" id="section-surroundings">
+			<h2 class="unit__title"><span>物件周辺でのホテル開発動向</span></h2>
+			<p class="block-surroundings__lead">本件周辺ではホテル開発が進んでいるため、 今後も本件ではインバウンド需要の恩恵を受けやすい<br class="is-pc">飲食・物販テナントの出店ニーズが高まる可能性。</p>
+			<div class="block-surroundings__body">
+				<div class="block-surroundings__items"><img src="<%= path %>images/index/image_surroundings.jpg" alt="「田の字エリア」地区概念図"></div>
+				<div class="block-surroundings__items">
+					<ol class="list-hotels">
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_hotelgracery.jpg" alt="ホテルグレイスリー京都三条写真：2018年5月撮影"></p>
+							<p class="name">ホテルグレイスリー京都三条<br>（2017年5月開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_themillenials.jpg" alt="ザミレニアルズ京都写真：2018年5月撮影"></p>
+							<p class="name">ザミレニアルズ京都<br>（2017年7月開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_thegate.jpg" alt="ザ・ゲート立誠京都写真：2018年5月撮影"></p>
+							<p class="name">ザ・ゲート立誠京都<br>（2020年春開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_honnouji.jpg" alt="ホテル本能寺本館写真：2018年5月撮影"></p>
+							<p class="name">ホテル本能寺本館<br>（2019年秋開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_firstcabin.jpg" alt="ファーストキャビン京都河原町三条写真：2018年5月撮影"></p>
+							<p class="name">ファーストキャビン京都河原町三条<br>（2017年12月開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_hotelresol.jpg" alt="ホテルリソル京都河原町三条写真：2018年5月撮影"></p>
+							<p class="name">ホテルリソル京都河原町三条<br>（2018年6月開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル</p>
+							<p><img src="<%= path %>images/index/photo_crosshotel.jpg" alt="クロスホテル京都写真：2018年5月撮影"></p>
+							<p class="name">クロスホテル京都<br>（2018年秋開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル等</p>
+							<p><img src="<%= path %>images/index/photo_sakaiza.jpg" alt="京都松竹阪井座ビル写真：2018年5月撮影"></p>
+							<p class="name">京都松竹阪井座ビル<br>（2018年秋開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル等</p>
+							<p><img src="<%= path %>images/index/photo_biostyle.jpg" alt="BIO-Style京都写真：2018年5月撮影"></p>
+							<p class="name">BIO-Style京都<br>（2019年春開業）</p>
+						</li>
+						<li class="list-hotels__item">
+							<p class="label">ホテル等</p>
+							<p><img src="<%= path %>images/index/photo_shinpuhkan.jpg" alt="新風館写真：2018年5月撮影"></p>
+							<p class="name">新風館<br>（2019年秋開業）</p>
+						</li>
+					</ol>
+					<p class="caption">撮影日：2018年5月</p>
+				</div>
+			</div>
+			<h2 class="block-contact__title">資料請求・お問い合わせはこちら</h2>
+<%#			<p class="block-contact__info is--attention">現在開催予定のセミナーはございません。<br>資料請求・お問い合わせは受付けております。</p> %>
+<%#            <a href="./seminar/" class="btn-detail block-contact__button">セミナー詳細はこちら</a> %>
+            <a href="<%= path %>request/#form-contact" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
+<%- include(srcPath + 'html/include/_block-contact_0801') %>
+		</section>
+		<!-- /[.block.block-surroundings#section-surroundings] -->
+
+		<section class="block block-products" id="section-products">
+			<h2 class="unit__title"><span>商品概要</span></h2>
+			<div class="block-products__body">
+				<table class="outline-table">
+					<tr>
+						<th>募集総額</th>
+						<td>12億2千万円</td>
+					</tr>
+					<tr>
+						<th>募集総口数</th>
+						<td>1220口</td>
+					</tr>
+					<tr>
+						<th>組合組成予定日</th>
+						<td>2018年12月21日予定</td>
+					</tr>
+					<tr>
+						<th>予定運用期間</th>
+						<td>15年間</td>
+					</tr>
+					<tr>
+						<th>お申込単位</th>
+						<td>
+							<dl>
+								<dt>1口100万円単位</dt>
+								<dd class="indent">最低出資金額500万円（5口）<br>
+									最高出資金額3億円（300口）<br>
+									（500万円以上であれば、100万円単位で出資額をお決め頂けます。）</dd>
+							</dl>
+						</td>
+					</tr>
+					<tr>
+						<th>必要経費</th>
+						<td>不動産取得税等（1口あたりの目安約7,341円）</td>
+					</tr>
+					<tr>
+						<th>支払期日</th>
+						<td>2018年12月14日予定</td>
+					</tr>
+					<tr>
+						<th>売買代金に代金に対する賃料利回り</th>
+						<td>
+							<p>4.46％</p>
+							<p>※売買代金に対する賃料利回りとは、「満室時の年間の賃料収入等の総額」÷「募集総額」で算出しています。なお売買代金に対する賃料利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
+						</td>
+					</tr>
+					<tr>
+						<th>投資コストに対する分配金利回り</th>
+						<td>
+							<p>3.91％</p>
+							<p>※投資コストに対する分配金利回りとは、「年間の現金分配額」÷「（募集総額＋必要経費）」で算出しています。なお投資コストに対する分配金利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
+						</td>
+					</tr>
+					<tr>
+						<th>収益分配</th>
+						<td>年1回（2月）</td>
+					</tr>
+					<tr>
+						<th>不動産特定共同事業者</th>
+						<td>株式会社エー・ディー・ワークス<br>東京都知事　第96号</td>
+					</tr>
+					<tr>
+						<th>事業者との関係</th>
+						<td>事業者株式会社エー・ディー・ワークス自らが不動産特定共同事業契約の当事者となります。</td>
+					</tr>
+					<tr>
+						<th>契約形態</th>
+						<td>不動産特定共同事業法に基づく任意組合契約</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- /[.block.block-products#section-products] -->
+
+		<section class="block block-property" id="section-property">
+			<h2 class="unit__title"><span>物件概要</span></h2>
+			<div class="block-property__body">
+				<table class="outline-table multi-head">
+					<tr>
+						<th>物件</th>
+						<td>
+							<dl class="in-table"><dt>名称</dt><dd>ARISTO新京極</dd></dl>
+							<dl class="in-table"><dt>権利</dt><dd>所有権</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>所在地</th>
+						<td>
+							<dl class="in-table"><dt>地番</dt><dd>京都府京都市中京区新京極通六角下る桜之町441番2</dd></dl>
+							<dl class="in-table"><dt>住居表示</dt><dd>京都府京都市中京区新京極通六角下る桜之町441－2</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>交通</th>
+						<td>
+							<dl class="in-table"><dt> </dt><dd>阪急京都線「河原町」駅　徒歩5分 </dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>土地</th>
+						<td>
+							<dl class="in-table"><dt>公簿面積 </dt><dd>161.89m<sup>2</sup> （48.97坪） </dd></dl>
+							<dl class="in-table"><dt>実測面積 </dt><dd>162.32m<sup>2</sup> （49.10坪）</dd></dl>
+							<dl class="in-table"><dt>地目</dt><dd>宅地</dd></dl>
+							<dl class="in-table"><dt>接道</dt><dd><p>北側幅員約5m公道</p><p>西側幅員約6m公道</p></dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>建物</th>
+						<td>
+							<dl class="in-table"><dt>家屋番号</dt><dd>441番2の2</dd></dl>
+							<dl class="in-table"><dt>種類</dt><dd>店舗</dd></dl>
+							<dl class="in-table"><dt>構造規模</dt><dd>鉄骨造陸屋根3階建</dd></dl>
+							<dl class="in-table"><dt>延床面積</dt><dd>411.95m<sup>2</sup>（公簿）　</dd></dl>
+							<dl class="in-table"><dt>竣工</dt><dd>1998年6月</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>公法上の制限</th>
+						<td>
+							<dl class="in-table"><dt>都市計画区域</dt><dd>市街化区域</dd></dl>
+							<dl class="in-table"><dt>用途地域</dt><dd>商業地域</dd></dl>
+							<dl class="in-table"><dt>地域・地区</dt><dd><p>防火地域</p><p>31m高度地区</p><p>駐車場整備地区</p><p>既成都市区域</p></dd></dl>
+							<dl class="in-table"><dt>建蔽率</dt><dd>80%</dd></dl>
+							<dl class="in-table"><dt>容積率</dt><dd>700%</dd></dl>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- /[.unit.block-property#section-property] -->	
+
+<%- include(srcPath + 'html/include/_block-flow') %>
+		<!-- /[.block-flow#section-flow] -->
+
+<%- include(srcPath + 'html/include/_block-faq') %>
+		<!-- /[.block-flow#section-faq] -->
+		
+<%- include(srcPath + 'html/include/_block-footer-information') %>
+		<!-- /[.block.footer-information] -->
+
+	</main>
+	<!-- /[.main] -->
+<%- include(srcPath + 'html/include/_footer') %>
+
+    <div class="fixed-button" id="data-fixedButton">
+        <p class="button-entry"><a href="<%= path %>seminar/" class="btn-detail">セミナー詳細はこちら</a></p>
+        <p class="button-request"><a href="<%= path %>request/#form-contact" class="btn-detail">資料請求はこちら</a></p>
+    </div>
+    <!--　/[.fixed-button] -->
+</div><!-- /.page -->
+
+<%- include(srcPath + 'html/include/_loading') %>
+
+<%- include(srcPath + 'html/include/_body_last') %>
+
+</body>
+</html>

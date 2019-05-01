@@ -2,6 +2,7 @@
 // ===================================================================
 //  File:	pages/_top.scss
 //  Date:	2018-06-16(UTC+9)
+//	Revise: 2019-04-30(UTC+9)
 //  Note:	
 // ===================================================================
 $title_color: #20428c;
@@ -20,31 +21,104 @@ $title_color: #20428c;
 	margin-bottom: 3.2em;
 }
 
-//	.page-title
+//	.block-movie
 // ----------------------------------------
-.home .page-title {
-	margin-top: 72px;
-	font-weight: normal;
+.block-movie {
 	//	[media queries SP]
 	// ----------------------------------------
 	@include media(sp) {
-		@include calcvw(72, 'margin-top', 640);
 	}
-	ruby > rt {
-		font-family: $base_font_family_noto;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		max-width: 840px;
+		width: 100%;
+		margin: 0 auto;
 	}
-	@include modifier(note) {
-		position: absolute;
-		bottom: -3.2em;
-		right: .6em;
+	@at-root .aoyama & {
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-top: -3.2em;
+		}
 	}
 }
-
-.teaser .page-title--note {
-    bottom: .6em;
-    color: #999;
+.movie-unit {
+	& + & {
+		@include calcvw(60, 'margin-top', 640);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-top: 100px;
+		}
+	}
+	a {
+		display: flex;
+		&:link,&:visited {
+			color: $base_text_color;
+		}
+		&:hover {
+			color: $base_hover_color;
+		}
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			flex-direction: column-reverse;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+			align-items: center;
+		}
+	}
+	//	.movie-unit__image
+	// ----------------------------------------
+	@include element(image) {
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			width: 320px;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	//	.movie-unit__title
+	// ----------------------------------------
+	@include element(title) {
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			margin-top: 1em;
+			text-align: center;
+			@include fontsize(18);
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-left: 50px;
+			@include fontsize(36);
+		}
+		span {
+			font-weight: normal;
+			@include fontsize(14);
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				display: block;
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+			}
+		}
+	}
 }
-
 //	.block-point
 //	好立地の優良不動産へ投資することのメリットとは？
 // ----------------------------------------
@@ -421,12 +495,60 @@ $title_color: #20428c;
 	}
 }
 
-//	.block-instruments
-//	ARISTO第一弾商品
+//	.block-instruments, .block-catalogue
+//	ARISTO第一弾商品、ARISTO物件情報
 // ----------------------------------------
-.block-instruments {
+.block-instruments,.block-catalogue {
 	//	.block-instruments .block__title
 	// ----------------------------------------
+	@at-root .aoyama & .block__title {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-items:center;
+		min-height: 280px;
+		background: url(#{$image_path}index/bg_header_instruments.jpg) 0 0 no-repeat;
+		background-size: cover;
+		margin-bottom: 0;
+		@include fontsize(60);
+		font-family: $base_font_family_noto;
+		font-weight: normal;
+		color: $base_white_color;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding: 1em 0;
+			@include calcvw(94, 'min-height', 640);
+			@include calcvw(40, 'font-size', 640);
+		}
+		&:before,
+		&:after {
+			position: relative;
+			display: inline-block;
+			content: '';
+			width: 36px;
+			height: 36px;
+			border: 2px solid $base_white_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 1.2em;
+				height: 1.2em;
+				border-width: 1px;
+			}
+		}
+		&:before {
+			top: -.6em;
+			border-right: none;
+			border-bottom: none;
+		}
+		&:after {
+			bottom: -.6em;
+			border-top: none;
+			border-left: none;
+		}
+	}
 	@at-root .home & .block__title {
 		position: relative;
 		display: flex;
@@ -476,6 +598,87 @@ $title_color: #20428c;
 		}
 	}
 }
+.block-catalogue__body {
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		@include clearfix;
+		max-width: 1080px;
+		margin: 0 auto;
+		padding: 0;
+	}
+}
+@import 'catalogue';
+
+//	.block-seminars
+//	セミナー情報
+// ----------------------------------------
+.block-seminars {
+	* + & {
+		margin: 240px 0 40px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(240, 'margin-top', 640);
+			@include calcvw(40, 'margin-bottom', 640);
+		}		
+	}
+	//	.block-seminars .block__title
+	// ----------------------------------------
+	& .block__title {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-items:center;
+		min-height: 280px;
+		background: url(#{$image_path}index/bg_header_seminars.jpg) 0 0 no-repeat;
+		background-size: cover;
+		margin-bottom: 0;
+		@include fontsize(60);
+		font-family: $base_font_family_noto;
+		font-weight: normal;
+		color: $title_color;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding: 1em 0;
+			@include calcvw(94, 'min-height', 640);
+			@include calcvw(40, 'font-size', 640);
+		}
+		&:before,
+		&:after {
+			position: relative;
+			display: inline-block;
+			content: '';
+			width: 36px;
+			height: 36px;
+			border: 2px solid $title_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 1.2em;
+				height: 1.2em;
+				border-width: 1px;
+			}
+		}
+		&:before {
+			top: -.6em;
+			border-right: none;
+			border-bottom: none;
+		}
+		&:after {
+			bottom: -.6em;
+			border-top: none;
+			border-left: none;
+		}
+	}
+	//	.block-seminars__body
+	// ----------------------------------------
+	@include element(body) {
+		@extend .container__inner;
+	}
+}
 
 //	.top-carousel
 //	歴史に守られながら進化する京都という価値。
@@ -518,8 +721,8 @@ $title_color: #20428c;
 		@include media(pc-tb) {
 			position: absolute;
 			top: 20%;
-			&.-horizontal {
-				top: 13%;
+			@at-root .-horizontal & {
+				top: 23%;
 			}
 			@include element(inner) {
 				position: relative;
@@ -534,9 +737,9 @@ $title_color: #20428c;
 				flex-wrap: nowrap;
 				color: $base_white_color;
 				.-horizontal & {
-					padding-left: 35%;
 					flex-direction: column;	
 					flex-wrap: wrap;
+					align-items: center;
 				}
 			}
 		}
@@ -563,6 +766,11 @@ $title_color: #20428c;
 		}
 		.-horizontal & {
 			writing-mode: horizontal-tb;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include fontsize(100);
+			}
 		}
 	}
 
@@ -577,7 +785,9 @@ $title_color: #20428c;
 			line-height: 2.4;
 			.-horizontal & {
 				writing-mode: horizontal-tb;
-				@include fontsize(18);
+				@include fontsize(36);
+				font-family: $base_font_family_noto;
+				text-align: center;
 			}
 		}
 		.note {
@@ -644,7 +854,8 @@ $title_color: #20428c;
 
 	//	.unit-kyoto
 	// ----------------------------------------
-	.unit-kyoto {
+	.unit-kyoto,
+	.unit-aoyama {
 		padding: 100px 10px;
 		background: #f8f8f2;
 		//	[media queries SP]
@@ -740,8 +951,12 @@ $title_color: #20428c;
 				font-family: $base_font_family;
 				content: 'Merit1';
 				text-align: center;
+				@at-root .aoyama & {
+					content: '魅力 その1';
+				}
 			}
-			& + .unit-kyoto--merit2 {
+			& + .unit-kyoto--merit2,
+			& + .unit-aoyama--merit2 {
 				margin-top: 100px;
 				//	[media queries SP]
 				// ----------------------------------------
@@ -768,6 +983,9 @@ $title_color: #20428c;
 				font-family: $base_font_family;
 				content: 'Merit2';
 				text-align: center;
+				@at-root .aoyama & {
+					content: '魅力 その2';
+				}
 			}
 		}
 	}
@@ -805,7 +1023,7 @@ $title_color: #20428c;
 }
 
 //	.unit-merit
-//	京都不動産投資のメリット
+//	不動産投資のメリット
 // ----------------------------------------
 .unit-merit {
 	margin-top: 60px;
@@ -915,22 +1133,38 @@ $title_color: #20428c;
 			justify-content: center;
 		}
 	}
+	
+	//	.unit-merit--population
+	//	インバウンド需要の拡大
+	// ----------------------------------------
+	@include modifier(population) {
+		display: flex;
+		justify-content: space-between;
+		//	[media queries PC-min]
+		// ----------------------------------------
+		@include media(site-width) {
+			flex-wrap: wrap;					
+			justify-content: center;
+		}
+	}
 
 	//	.unit-merit__item
 	// ----------------------------------------
 	@include element(item) {
+		width: 48%;
+		text-align: center;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+			text-align: center;
+		}
 		//	.unit-merit.-inbound
 		//	インバウンド需要の拡大
 		// ----------------------------------------
 		&.-inbound {
 			width: 400px;
 			text-align: center;
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				width: 100%;
-				text-align: center;
-			}
 		}
 
 		//	.unit-merit.-consumption
@@ -1143,8 +1377,89 @@ $title_color: #20428c;
 				@include calcvw(30, 'margin-bottom', 640);
 			}
 		}
+		@at-root .aoyama & {
+			text-align: left;
+		}
 	}
-	
+
+	//	.-brand-image
+	//	良好なブランドイメージを有する「青山」という街
+	// ----------------------------------------
+	.-brand-image {
+		//	.-brand-image__item
+		// ----------------------------------------
+		@include element(item) {
+			display: flex;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				flex-wrap: wrap;
+				flex-direction: column-reverse;
+				@include calcvw(50, 'margin-top', 640);
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				flex-shrink: 0;
+				flex-direction: row-reverse;
+				margin-top: 50px;
+			}
+		}
+		//	.-brand-image__body
+		// ----------------------------------------
+		@include element(body) {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include fontsize(14);
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				flex: 1 1 690px;
+				@include fontsize(18);
+			}
+		}
+		//	.-brand-image__title
+		// ----------------------------------------
+		@include element(title) {
+			margin-bottom: 1em;
+			color: $base_corporate_color;
+			@include fontsize(24);
+			font-weight: normal;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				margin-top: 1em;
+				margin-bottom: 0;
+				@include fontsize(18);
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include fontsize(24);
+			}
+		}
+		//	.-brand-image__photo
+		// ----------------------------------------
+		@include element(photo) {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				flex: 1 1 480px;
+				margin-right: 30px;
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+
 	//	.unit-merit__subtitle
 	// ----------------------------------------
 	@include element(subtitle) {
@@ -1319,11 +1634,44 @@ $title_color: #20428c;
 		width: 100%;
 		max-width: 1200px;
 		margin-bottom: 1.6em;
+		margin-right: auto;
+		margin-left: auto;
+		@at-root .aoyama & {
+			max-width: 855px;
+		}
 		img {
 			width: 100%;
 			height: auto;
 		}
 	}
+	//	.unit-map__nav
+	// ----------------------------------------
+	@include element(information) {
+		display: flex;
+		max-width: 855px;
+		width: 100%;
+		margin: auto;
+		text-align: left;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			flex-direction: column-reverse;
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+		}
+		p {
+			text-align: left;
+			line-height: 1.6;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				margin-top: 1em;
+			}
+		}
+	}
+
 	//	.unit-map__nav
 	// ----------------------------------------
 	@include element(nav) {
@@ -1332,6 +1680,17 @@ $title_color: #20428c;
 		position: absolute;
 		bottom: 12px;
 		right: 12px;
+		@at-root .aoyama & {
+			position: static;
+			width: 100%;
+			margin: auto;
+			justify-content: space-between;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				//max-width: 320px;
+			}
+		}
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
@@ -1343,30 +1702,48 @@ $title_color: #20428c;
 		// ----------------------------------------
 		@include element(item) {
 			margin: 0 .3em;
+			@at-root .aoyama & {
+				margin: 0;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: 25%;
+				}
+			}
 			a {
+				position: relative;
 				display: block;
 				padding: .4em;
-				background: $base_corporate_color;
+				background: $base_white_color;
 				border-radius: .4em;
 				line-height: 1;
 				font-weight: bold;
 				//	[media queries SP]
 				// ----------------------------------------
 				@include media(sp) {
-					border: 1px solid $base_corporate_color;
+					border: 1px solid $base_white_color;
+					border-right: 0;
 				}
 				&:link,&:visited {
-					color: $base_white_color;
+					color: $base_corporate_color;
 				}
 				&:hover,&:active,&.-active {
-					background-color: $base_white_color;
-					color: $base_corporate_color;
+					background-color: $base_corporate_color;
+					color: $base_white_color;
 					//	[media queries SP]
 					// ----------------------------------------
 					@include media(sp) {
 						border-color: $base_corporate_color;
 					}
 				}
+				@at-root .aoyama & {
+					border-radius: 0;
+					padding: .4em;
+				}
+			}
+			img {
+				max-width: 98%;
+				height: auto;
 			}
 		}
 	}
@@ -1423,54 +1800,157 @@ $title_color: #20428c;
 				}
 			}
 		}
+	}
+}
 
-		//	.gallery-images
+//	.block-gallery
+// ----------------------------------------
+.block-gallery {
+	//	.block-agllery__body
+	// ----------------------------------------
+	@include element(body) {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		//	[media queries SP]
 		// ----------------------------------------
-		.gallery-images {
-			//	.gallery-images__main
+		@include media(sp) {
+			flex-wrap: wrap;
+		}
+	}
+
+	//	.block-gallery__title
+	// ----------------------------------------
+	@include element(title) {
+		margin-bottom: .8em;
+		@include fontsize(28);
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(28, 'font-size', 640);
+		}
+	}
+
+	//	.block-gallery__item
+	// ----------------------------------------
+	@include element(item) {
+		width: calc(640 / 1200 * 100%);
+		@at-root .aoyama & {
+			width: calc(562 / 1200 * 100%);
+			//	[media queries SP]
 			// ----------------------------------------
-			@include element(main) {
-				//min-height: 380px;
+			@include media(sp) {
+				width: 100%;
+			}
+			&:nth-child(n+2) {
+				width: calc(596 / 1200 * 100%);
 				//	[media queries SP]
 				// ----------------------------------------
 				@include media(sp) {
-					@include calcvw(300, 'min-height', 640);
+					width: 100%;
 				}
 			}
-
-			//	.gallery-images__thumbnail
+		}
+		//	max-width: 640px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+		&:nth-child(n+2) {
+			width: calc(500 / 1200 * 100%);
+			//	[media queries SP]
 			// ----------------------------------------
-			@include element(thumbnail) {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: space-between;
-				margin-top: 4%;
-				//	.gallery-images__thumbnail__item
-				// ----------------------------------------
-				@include element(item) {
-					cursor: pointer;
-					width: 22%;
-					//	[media queries SP]
-					// ----------------------------------------
-					@include media(sp) {
-						width: 22%;
-					}
-					img {
-						width: 100%;
-						height: auto;
-					}
-				}
-			}
-
-			//	.gallery-images__caption
-			// ----------------------------------------
-			@include element(caption) {
-				margin-top: .5em;
-				@include fontsize(14);
+			@include media(sp) {
+				width: 100%;
+				margin-top: 2em;
 			}
 		}
 	}
 }
+
+//	.gallery-images
+// ----------------------------------------
+.gallery-images {
+	//	.gallery-images__main
+	// ----------------------------------------
+	@include element(main) {
+		//min-height: 380px;
+		position: relative;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(300, 'min-height', 640);
+		}		
+		.-label {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: inline-block;
+			background: #20428c;
+			padding: .1em .6em;
+			color: $base_white_color;
+			font-weight: bold;
+		}
+	}
+
+	//	.gallery-images__thumbnail
+	// ----------------------------------------
+	@include element(thumbnail) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-top: 4%;
+		//	.gallery-images__thumbnail__item
+		// ----------------------------------------
+		@include element(item) {
+			position: relative;
+			cursor: pointer;
+			width: 24%;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 24%;
+			}
+			img {
+				width: 100%;
+				height: auto;
+			}
+			&.-current {
+				&:before {
+					position: absolute;
+					display: block;
+					content: '';
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					border: 4px solid $base_corporate_color;
+				}
+			}
+			&:nth-child(n+5) {
+				margin-top: 1.4%;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					margin-top: 1%;
+				}
+			}
+		}
+	}
+
+	//	.gallery-images__caption
+	// ----------------------------------------
+	@include element(caption) {
+		margin-top: .5em;
+		@include fontsize(14);
+	}
+}
+
 
 //	.block-characteristic
 //	対象不動産の特性
@@ -1485,6 +1965,56 @@ $title_color: #20428c;
 		// ----------------------------------------
 		@include media(sp) {
 			flex-wrap: wrap;
+		}
+		@at-root .aoyama & {
+			display: block;
+		}
+	}
+	
+	//	.block-characterisistic__images
+	// ----------------------------------------
+	@include element(images) {
+		@at-root .aoyama & {
+			width: 100%;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				display: grid;
+				grid-template-columns: 50% 50%;
+				grid-template-rows: auto;
+
+			}
+		}
+		//	.block-characterisistic__images__item
+		// ----------------------------------------
+		@include element(item) {
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				&.-item01 {
+					grid-row: 1/4;
+					grid-column: 1;
+					-ms-grid-row-span: 2;
+				}
+				&.-item02 {
+					grid-row: 1;
+					grid-column: 2;
+				}
+				&.-item03 {
+					grid-row: 2;
+					grid-column: 2;
+				}
+				&.-note {
+					text-align: right;
+					grid-row: 3;
+					grid-column: 2;
+					@include fontsize(14);
+				}
+			}
+			&.-note {
+				margin-top: .6em;
+				@include fontsize(12);
+			}
 		}
 	}
 	
@@ -1522,6 +2052,16 @@ $title_color: #20428c;
 			width: 100%;
 			margin-left: 0;
 			@include calcvw(50, 'margin-top', 640);
+		}
+		@at-root .aoyama & {
+			width: 100%;
+			margin-left: 0;
+			margin-top: 130px;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(100, 'margin-top',640);
+			}
 		}
 		.title {
 			position: relative;
@@ -1576,6 +2116,57 @@ $title_color: #20428c;
 		}
 	}
 
+	//	.block-characterisistic__photo
+	// ----------------------------------------
+	@include element(photo) {
+		& + & {
+			margin-top: 80px;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(80, 'margin-top', 640);
+			}
+		}
+		dt {
+			margin-bottom: 60px;
+			@include fontsize(32);
+			font-family: $base_font_family_noto;
+			text-align: center;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(60, 'margin-bottom',640);
+				@include fontsize(18);
+			}
+		}
+		dd {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			figcaption {
+				margin-top: 1em;
+				@include fontsize(16);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include fontsize(14);
+				}
+			}
+			.-wide {
+				margin-bottom: 46px;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(40, 'margin-bottom', 640);
+				}
+			}
+		}
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+		}
+	}
+
 	&-images {
 		margin-top: 100px;
 		@include calcvw(100, 'margin-top', 640);
@@ -1587,6 +2178,7 @@ $title_color: #20428c;
 		//	.gallery-images__main
 		// ----------------------------------------
 		@include element(main) {
+			position: relative;
 			//min-height: 380px;
 			//	[media queries SP]
 			// ----------------------------------------
@@ -1823,7 +2415,7 @@ $title_color: #20428c;
 	
 	//	.block-flow .block__title
 	// ----------------------------------------
-	@at-root .home & .block__title {
+	& .block__title {
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -1835,7 +2427,7 @@ $title_color: #20428c;
 		@include fontsize(60);
 		font-family: $base_font_family_noto;
 		font-weight: normal;
-		color: $base_corporate_color;
+		color: $title_color;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
@@ -1850,7 +2442,7 @@ $title_color: #20428c;
 			content: '';
 			width: 36px;
 			height: 36px;
-			border: 2px solid $base_corporate_color;
+			border: 2px solid $title_color;
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
@@ -2110,6 +2702,8 @@ $title_color: #20428c;
 @media all and (-ms-high-contrast:none){
 	*::-ms-backdrop,
 	.block-instruments .block__title,
+	.block-catalogue .block__title,
+	.block-seminars .block__title,
 	.block-flow .block__title	{
 		min-height: inherit;
 		height: 280px;

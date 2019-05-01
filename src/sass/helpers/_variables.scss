@@ -81,7 +81,7 @@ $base_font_size:		16;
 $base_font_family:	"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
 $base_font_family_mincho:	"Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "メイリオ", Meiryo, serif;
 $base_font_family_meiryo:	Meiryo,"メイリオ","ＭＳ Ｐゴシック",'Hiragino Kaku Gothic Pro',"ヒラギノ角ゴ Pro W3",Osaka,sans-serif;
-$base_font_family_noto:	$base_font_family_mincho;//"Noto Serif";
+$base_font_family_noto:	'Noto Serif JP', serif;
 $base_font_family_helvetica: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1";
 $base_font_family_m1: "Mplus 1p";
 

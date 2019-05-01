@@ -1,0 +1,264 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_catalogue.scss
+//  Date:	2019-05-01(UTC+9)
+//  Note:	
+// ===================================================================
+.catalogue {
+	//	.catalogue-item
+	// ----------------------------------------
+	&-item {
+		position: relative;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+		}
+		
+		& + & {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(100,'margin-top',640);
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 100px;
+			}
+		}
+		.btn-detail {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+				@include calcvw(50,'margin-top',640);
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 50px;
+			}
+		}
+	}
+	//	.catalogue__body
+	// ----------------------------------------
+	@include element(body) {
+		position: relative;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			width: 520px;
+		}
+		.btn-detail {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 80%;
+			@include fontsize(24);
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				display: none;
+			}
+		}
+	}
+	//	.catalogue__title
+	// ----------------------------------------
+	@include element(title) {
+		margin-bottom: 1.2em;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding: .2em 0 .2em 5em;
+			@include fontsize(18);
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			padding: .2em 0 .2em 4.5em;
+			@include fontsize(32);
+		}
+		@at-root .block-others & {
+			display: block;
+			margin-bottom: .6em;
+			padding: 0;
+		}
+		span {
+			display: block;
+			@include fontsize(14);
+			font-weight: normal;
+		}
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: inline-block;
+			margin-right: .6em;
+			padding: .2em .4em;
+			border: 4px solid $base_corporate_color;
+			color: $base_corporate_color;
+			text-align: center;
+			@include fontsize(32);
+			font-weight: bold;
+			line-height: 1;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(32, 'font-size', 640);
+			}
+			@at-root .catalogue-available & {
+				content: '販売中';
+				border: 4px solid $base_corporate_color;
+				background-color: $base_corporate_color;
+				color: $base_white_color;
+			}
+			@at-root .catalogue-investment & {
+				content: '運用中';
+			}
+			@at-root .block-others & {
+				position: relative;
+				display: block;
+				width: 4em;
+				margin-bottom: .2em;
+				@include fontsize(20);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include fontsize(18);
+				}
+			}
+		}
+	}
+	//	.catalogue__access
+	// ----------------------------------------
+	@include element(access) {
+		position: relative;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+		}
+	}
+	//	.catalogue__outline
+	// ----------------------------------------
+	@include element(outline) {
+		font-family: $base_font_family_noto;
+		font-weight: bold;
+		color: $base_corporate_color;
+		letter-spacing: -.03em;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include fontsize(18);
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			@include fontsize(24);
+		}
+	}
+	//	.catalogue__photo
+	// ----------------------------------------
+	@include element(photo) {
+		position: relative;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(50, 'margin-top', 640);
+			@at-root .block-others & {
+				margin-top: 0;
+				@include calcvw(30, 'margin-bottom', 640);
+			}
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			max-width: 522px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			@at-root .block-others & {
+				width: 343px;
+				margin-right: 32px;
+			}
+		}
+		//	.catalogue__photo__item
+		// ----------------------------------------
+		@include element(item) {
+			position: relative;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				//width: 100%;
+			}
+			&.-item01 {
+				width: 100%;
+			}
+			&.-item02, &.-item03 {
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					display: none;
+				}
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					margin-top: 25px;
+				}
+			}
+		}
+		.btn-detail {
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				display: none;
+			}
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
+.block-others {
+	width: 100%;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		max-width: 972px;
+	}
+	a {
+		display: flex;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 2em;
+		border: 1px solid $base_border_color;
+		&:link, &:visited {
+			color: $base_text_color;
+		}
+		&:hover, &:active {
+			color: $base_hover_color;
+		}
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			flex-wrap: wrap;
+		}
+	}
+}
+
+
+//	[media queries SP]
+// ----------------------------------------
+@include media(sp) {
+}
+//	[media queries PC-tablet]
+// ----------------------------------------
+@include media(pc-tb) {
+}

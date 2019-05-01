@@ -1,18 +1,19 @@
 <%
 meta = { title:'東証一部上場株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO公式サイト', desc:'' };
 path = './';
+srcPath ='../';
 directory = '';
 directoryLv2 = '';
 page = '';
 %><!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
-<% include include/_head %>
+<%- include(srcPath + 'html/include/_head') %>
 </head>
 <body class="<% if (directory!=='') { %> <%= directory %><% } else {%>home<% } %>" id="top">
-<% include include/_gtag %>
+<%- include(srcPath + 'html/include/_gtag') %>
 <div class="page" id="data-page">
-<% include include/_header %>
+<%- include(srcPath + 'html/include/_header') %>
 	<main class="main contents">
 		<header class="page-head">
 			<div class="container">
@@ -75,7 +76,7 @@ page = '';
 			</div>
 			<h2 class="block-contact__title">資料請求・お問い合わせはこちら</h2>
             <a href="<%= path %>request/" class="btn-detail block-contact__button">Webお問い合わせフォーム</a>
-<% include include/_block-contact %>
+<%- include(srcPath + 'html/include/_block-contact') %>
 		</section>
 		<!-- /[.block-point#section-point] -->
 		
@@ -374,7 +375,7 @@ page = '';
 			</div>
 			<h2 class="block-contact__title">資料請求・お問い合わせはこちら</h2>
             <a href="<%= path %>request/" class="btn-detail block-contact__button">Webお問い合わせフォーム</a>
-<% include include/_block-contact %>
+<%- include(srcPath + 'html/include/_block-contact') %>
 		</section>
 		<!-- /[.block.block-surroundings#section-surroundings] -->
 
@@ -509,126 +510,24 @@ page = '';
 			</div>
 		</section>
 		<!-- /[.unit.block-property#section-property] -->	
-			
-		<section class="block-flow" id="section-flow">
-			<h2 class="block__title"><span>ご契約の流れ</span></h2>
-			<div class="block">
-				<div class="block-flow__body">
-					<div class="unit-flow">
-						<h3 class="unit-flow__title">
-							<span class="step">STEP1</span>
-							<span class="title">資料請求・セミナーご来訪</span>
-						</h3>
-						<div class="unit-flow__body">
-							<a href="<%= path %>request/" class="btn-detail">資料請求はこちら</a>
-							<!--<a href="<%= path %>entry-seminar/" class="btn-detail -reverse">セミナー申込みはこちら</a>-->
-						</div>
-					</div>
-					<div class="unit-flow">
-						<h3 class="unit-flow__title">
-							<span class="step">STEP2</span>
-							<span class="title">申込書のご提出</span>
-						</h3>
-						<div class="unit-flow__body">
-							<p>商品内容をご理解のうえ、お申込をしてください。</p>
-						</div>
-					</div>
-					<div class="unit-flow">
-						<h3 class="unit-flow__title">
-							<span class="step">STEP3</span>
-							<span class="title">ご契約のお手続き</span>
-						</h3>
-						<div class="unit-flow__body">
-							<p>※契約にかかる時間は約１～２時間を予定しております。<br>
-							クーリングオフ期間は契約締結後８日間です。</p>
-						</div>
-					</div>
-					<div class="unit-flow">
-						<h3 class="unit-flow__title">
-							<span class="step">STEP4</span>
-							<span class="title">出資金のお振り込み</span>
-						</h3>
-						<div class="unit-flow__body">
-							<p>出資金のお振込期日・振込先等の詳細につきましては<br class="is-pc">ご契約時にご説明いたします。</p>
-						</div>
-					</div>
-					<div class="unit-flow">
-						<h3 class="unit-flow__title">
-							<span class="step">STEP 5</span>
-							<span class="title">組合加入・契約成立</span>
-						</h3>
-					</div>
-				</div>
-				<h2 class="block-contact__title">資料請求・お問い合わせはこちら</h2>
-                <a href="<%= path %>request/" class="btn-detail block-contact__button">Webお問い合わせフォーム</a>
-<% include include/_block-contact %>
-			</div>
-		</section>
+
+<%- include(srcPath + 'html/include/_block-flow') %>
 		<!-- /[.block-flow#section-flow] -->
 
-		<section class="block-faq" id="section-faq">
-			<h2 class="block__title"><span>よくあるご質問</span></h2>
-			<div class="block">
-				<dl class="block-faq__body">
-					<dt>なぜ任意組合なのですか？</dt>
-					<dd>不動産特定共同事業法に基づき事業を行う上で、 不動産特定共同事業法に基づいた仕組みでの事業化が必要であり、そのひとつの仕組みが「任意組合型」です。</dd>
-					<dt>出資金の元本保証はされていますか？</dt>
-					<dd>元本の保証は致しません。<br>また対象不動産の価格の変動により、出資元本の欠損が生じることがあります。</dd>
-					<dt>出資金は現金のみですか？</dt>
-					<dd>現金のみでの払込になります。<br>また出資により保有された共有持分の移転登記はせず、共有持分に対し抵当権や質権等の担保権の設定はできません。</dd>
-					<dt>分配金の保証はされていますか？</dt>
-					<dd>分配金の保証は致しません。対象不動産の賃貸運営状況により分配金は変動致します。</dd>
-					<dt>分配金はどのように計算されますか？</dt>
-					<dd>組合での各計算期間の間に得られた賃料等の収入から、管理運営費用、理事長報酬や修繕積立金等を控除した金員を各組合員の出資持分に応じた割合で計算します。</dd>
-					<dt>事業期間はどれくらいですか？</dt>
-					<dd>実際の商品により異なりますが、出来るだけ長期間の運用を前提としています。<br>但し、事業期間中に市況の変化等に鑑み、 理事長の判断にて事業期間の中途で対象不動産を売却し事業を終了させる場合があります。<br>なお、その場合は理事長から投資家のみなさまに対し、事前に通知をさせていただきます。</dd>
-				</dl>
-			</div>
-		</section>
-		<!-- /[.block-flow#section-flow] -->
-		
-		<footer class="block footer-information" id="section-information">
-			<h2 class="block__title"><span>ご注意事項</span></h2>
-			<div class="block__body">
-				<ul class="disc-list">
-					<li class="list__item">本商品の契約の種別は不動産特定共同事業法第2条第3項第1号に掲げる不動産特定共同事業契約（民法上の任意組合契約）であり、不動産特定共同事業者であるエー・ディー・ワークスは不動産特定共同事業契約の当事者となります。</li>
-					<li class="list__item">本資料は不動産特定共同事業契約の締結の勧誘を意図するものではなく、本商品に関する費用等の負担やリスクを全て特定・示唆するものではありません。</li>
-					<li class="list__item">投資判断にあたっては、不動産特定共同事業契約成立前交付書面等を入手熟読され、十分に内容をご理解された上で、必要に応じて、 顧問弁護士や顧問税理士等の専門家に意見を求めるなどし、自らのご判断で行ってください。</li>
-					<li class="list__item">投資家のみなさまからの出資金が出資予定総額に満たなかった場合又はその他の事由によって取得予定日までに組合が不動産を取得できなかった場合には契約は直ちに終了し、出資金を返還する場合があります。</li>
-					<li class="list__item">組合での事業の実施によって生じる損失について、投資家のみなさまは組合員として対外的に無限責任を負います。</li>
-					<li class="list__item">不動産市場の変動により、組合財産である不動産を売却した場合に、売却損が発生し、出資元本の欠損が生じるおそれがあります。</li>
-					<li class="list__item">経済情勢、不動産市況、組合財産である不動産の運営状況、組合財産である不動産の特性、テナントの賃料減額請求や倒産等の状況の変化により、不動産相場や賃料相場の下落、空室率の上昇、賃料の下落、賃料滞納等が発生し、賃貸利益が減少し、その結果期待された分配金の減少や出資元本の欠損、組合員の地位の譲渡価格が出資元本を下回るおそれがあります。</li>
-					<li class="list__item">組合財産である不動産を管理運営するための費用の増加により、賃貸利益が減少し、その結果期待された分配金の減少や出資元本の欠損、組合員の地位の譲渡価格が出資元本を下回るおそれがあります。</li>
-					<li class="list__item">税制の変更による不動産に関する税金の増加、又は組合財産である不動産に係る法令等の変更により、期待された分配金の減少や損失の発生あるいは出資元本の欠損や出資元本を上回る損失を被るおそれ、及び組合からの脱退時や組合員の地位の譲渡時に期待された税効果を得られなくなるおそれがあります。</li>
-					<li class="list__item">地震等の災害により、組合財産である不動産の全部又は一部が滅失・毀損または劣化した場合及び土壌汚染等の隠れたる瑕疵が見つかった場合に、 期待された分配金の減少や出資元本の欠損、あるいは出資元本を上回る損失を被るおそれがあります。</li>
-					<li class="list__item">万が一、組合財産である不動産に予期せぬ不具合が起こり、組合事業遂行のために必要不可欠な修繕等により組合の資金が不足する場合には、組合員全員の同意の下、追加出資して頂くことがあります。</li>
-					<li class="list__item">店舗完成予定のイメージ図は計画段階の図面をもとに描き起こされたもので、実際完成した店舗と異なる場合があります。また一部再現されていない設備等がある場合があります。</li>
-				</ul>
-			</div>
-			<h2 class="block__title" id="section-company"><span>事業者 エー・ディー・ワークスについて</span></h2>
-			<div class="block__body footer-information__body">
-				<div class="footer-information__outline">
-					<p class="footer-information__outline__item"><span class="label">社名</span><span class="body">株式会社エー・ディー・ワークス</span></p>
-					<p class="footer-information__outline__item"><span class="label">所在地</span><span class="body">東京都千代田区内幸町1-1-7　日比谷U-1ビル</span></p>
-					<p class="footer-information__outline__item"><span class="label">創業</span><span class="body">1886年（明治19年) 2月</span></p>
-					<p class="footer-information__outline__item"><span class="label">資本金</span><span class="body">38億9,107万円</span></p>
-					<p class="footer-information__outline__item"><span class="label">代表者</span><span class="body">代表取締役社長　田中秀夫</span></p>
-					<p class="footer-information__outline__item"><span class="label">事業内容</span><span class="body">収益不動産賃貸・販売事業/プロパティ・マネジメント事業 /不動産コンサルティング/建築・工事事業/不動産テック事業</span></p>
-					<p class="footer-information__outline__item"><span class="label">許認可</span><span class="body">宅地建物取引業　国土交通大臣（1）8550号<br>不動産鑑定業　東京都知事（4）1620号<br>金融商品取引業　関東財務局長（金商）第597号<br>※第二種金融商品取引業、投資助言・代理業<br>一般不動産投資顧問業 国土交通大臣（一般）第424号<br>不動産特定共同事業 東京都知事 第96号</span></p>
-					<p class="alignR">※2018年3月31日現在</p>
-				</div>
-			</div>
-		</footer>
+<%- include(srcPath + 'html/include/_block-faq') %>
+		<!-- /[.block-faq#section-faq] -->
+
+<%- include(srcPath + 'html/include/_block-footer-information') %>
 		<!-- /[.block.footer-information] -->
 
 	</main>
 	<!-- /[.main] -->
-<% include include/_footer %>
+<%- include(srcPath + 'html/include/_footer') %>
 </div><!-- /.page -->
 
-<% include include/_loading %>
+<%- include(srcPath + 'html/include/_loading') %>
 
-<% include include/_body_last %>
+<%- include(srcPath + 'html/include/_body_last') %>
 
 </body>
 </html>
