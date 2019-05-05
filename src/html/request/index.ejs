@@ -1,16 +1,20 @@
 <%
 meta = { title:'資料請求', desc:'' };
+isForm = 'y';
 path = '../';
+srcPath = '../../';
 directory = 'request';
 directoryLv2 = '';
 page = '';
 %><!DOCTYPE html>
 <html lang="ja">
-<% include ../include/_head %>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath +'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } else { %> page-input<% } %>" id="top">
-<% include ../include/_gtag %>
 <div class="page" id="data-page">
-<% include ../include/_header %>
+<%- include(srcPath +'html/include/_header') %>
 	<main class="main contents">
 		<header class="page-head">
 			<div class="container">
@@ -25,8 +29,8 @@ page = '';
 					<span class="is--notice">必須項目は、すべて選択または入力してください。</span></p>
 				</div>
 				<!-- /[.page-lead] -->
-<% include ../include/_block-contact %>
-				<div class="contact-form">
+<%- include(srcPath +'html/include/_block-contact') %>
+				<div id="form-contact" class="contact-form">
 					<nav class="step-indicator">
 						<ul>
 							<li class="step-indicator__item -input"><span>入力</span></li>
@@ -37,9 +41,9 @@ page = '';
 					<!-- /[.step-indicator] -->
 					
 					<h2 class="section-title"><%= meta.title %></h2>
-					<p class="contact-form__link"><a href="<%= path %>inquiry/" class="btn-detail">お問い合わせ</a></p>
+					<p class="contact-form__link"><a href="<%= path %>inquiry/#form-contact" class="btn-detail">お問い合わせ</a></p>
 					<p class="contact-form__note">※<span class="label-required">必須</span>の入力欄は入力しなければフォームを完了できません。</p>
-					<form action="" id="form-contact" name="form-contact" class="form-body h-adr">
+					<form action="confirm.html" method="post" name="form-contact" class="form-body h-adr">
 						<input type="hidden" class="p-country-name" value="Japan">
 						<div class="form-field required">
 							<div class="form-field__label"><label for="name-familyName">お名前</label></div>
@@ -72,18 +76,6 @@ page = '';
 							</div>
 						</div>
 						<div class="form-field">
-							<div class="form-field__label"><label for="companyName">会社名</label></div>
-							<div class="form-field__element">
-								<input type="text" id="data-companyName" class="element-input-text" name="companyName" placeholder="株式会社エー・ディーワークス">
-							</div>
-						</div>
-						<div class="form-field">
-							<div class="form-field__label"><label for="divisionName">部署名</label></div>
-							<div class="form-field__element">
-								<input type="text" id="data-divisionName" class="element-input-text" name="divisionName" placeholder="総務部">
-							</div>
-						</div>
-						<div class="form-field">
 							<div class="form-field__label required"><label for="">ご住所</label></div>
 							<div class="form-field__element">
 								<div class="form-field--child required">
@@ -101,7 +93,7 @@ page = '';
 								<div class="form-field--child">
 									<div class="form-field__label"><label for="address2">建物名、部屋番号等</label></div>
 									<div class="form-field__element">
-										<input type="text" id="data-address2" class="element-input-text" name="addres2" placeholder="建物名、部屋番号等を入力">
+										<input type="text" id="data-address2" class="element-input-text" name="address2" placeholder="建物名、部屋番号等を入力">
 									</div>
 								</div>
 							</div>
@@ -110,12 +102,6 @@ page = '';
 							<div class="form-field__label"><label for="tel">電話番号</label></div>
 							<div class="form-field__element">
 								<input type="text" id="data-tel" class="element-input-text validate[required]" name="tel" placeholder="電話番号を半角数字で入力">
-							</div>
-						</div>
-						<div class="form-field">
-							<div class="form-field__label"><label for="fax">FAX番号</label></div>
-							<div class="form-field__element">
-								<input type="text" id="data-fax" class="element-input-text" name="fax" placeholder="FAX番号を半角数字で入力">
 							</div>
 						</div>
 						<div class="form-field required">
@@ -133,13 +119,13 @@ page = '';
 						<div class="form-field">
 							<div class="form-field__label"><label for="generation">年代</label></div>
 							<div class="form-field__element -checkbox">
-								<span class="-checkbox__item"><input type="checkbox" id="data-generation20" class="element-input-checkbox" name="genaration20" value="20代"><label for="data-generation20">20代</label></span>
-								<span class="-checkbox__item"><input type="checkbox" id="data-generation30" class="element-input-checkbox" name="genaration30" value="30代"><label for="data-generation30">30代</label></span>
-								<span class="-checkbox__item"><input type="checkbox" id="data-generation40" class="element-input-checkbox" name="genaration40" value="40代"><label for="data-generation40">40代</label></span>
-								<span class="-checkbox__item"><input type="checkbox" id="data-generation50" class="element-input-checkbox" name="genaration50" value="50代"><label for="data-generation50">50代</label></span>
-								<span class="-checkbox__item"><input type="checkbox" id="data-generation60" class="element-input-checkbox" name="genaration60" value="60代"><label for="data-generation60">60代</label></span>
-								<span class="-checkbox__item"><input type="checkbox" id="data-generation70" class="element-input-checkbox" name="genaration70" value="70代"><label for="data-generation70">70代</label></span>
-								<span class="-checkbox__item"><input type="checkbox" id="data-generation80" class="element-input-checkbox" name="genaration80" value="80代"><label for="data-generation80">80代</label></span>
+								<span class="-checkbox__item"><input type="checkbox" id="data-generation20" class="element-input-checkbox" name="generation20" value="20代"><label for="data-generation20">20代</label></span>
+								<span class="-checkbox__item"><input type="checkbox" id="data-generation30" class="element-input-checkbox" name="generation30" value="30代"><label for="data-generation30">30代</label></span>
+								<span class="-checkbox__item"><input type="checkbox" id="data-generation40" class="element-input-checkbox" name="generation40" value="40代"><label for="data-generation40">40代</label></span>
+								<span class="-checkbox__item"><input type="checkbox" id="data-generation50" class="element-input-checkbox" name="generation50" value="50代"><label for="data-generation50">50代</label></span>
+								<span class="-checkbox__item"><input type="checkbox" id="data-generation60" class="element-input-checkbox" name="generation60" value="60代"><label for="data-generation60">60代</label></span>
+								<span class="-checkbox__item"><input type="checkbox" id="data-generation70" class="element-input-checkbox" name="generation70" value="70代"><label for="data-generation70">70代</label></span>
+								<span class="-checkbox__item"><input type="checkbox" id="data-generation80" class="element-input-checkbox" name="generation80" value="80代"><label for="data-generation80">80代</label></span>
 							</div>
 						</div>
 						<div class="form-field">
@@ -150,8 +136,8 @@ page = '';
 						</div>
 						<div class="form-field--submit">
 							<p class="submit__information"><a href="https://www.re-adworks.com/contact/rule.html" target="_blank">利用規約</a>をお読みのうえ、内容に同意いただきましたら、<br>チェックして「入力内容を確認する」ボタンを押してください。</p>
-							<div class="submit__privacy validate[required]">
-								<input type="checkbox" id="data-submit-privacy" class="element-input-checkbox" value="同意"><label for="data-submit-privacy">利用規約の内容に同意します。</label>
+							<div class="submit__privacy">
+								<input type="checkbox" id="data-submit-privacy" name="privacy" class="element-input-checkbox validate[required]" value="同意"><label for="data-submit-privacy">利用規約の内容に同意します。</label>
 							</div>
 							<input type="submit" id="data-submit" class="form-submit" value="入力内容を確認する">
 						</div>
@@ -163,10 +149,10 @@ page = '';
 		</div>
 	</main>
 	<!-- /[.contents] -->
-<% include ../include/_footer %>
+<%- include(srcPath +'html/include/_footer') %>
 </div><!-- /[.page] -->
 
-<% include ../include/_body_last %>
+<%- include(srcPath +'html/include/_body_last') %>
 <script type="text/javascript">
 	$(function(){
 		$('.form-body').validationEngine(

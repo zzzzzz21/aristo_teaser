@@ -10,7 +10,7 @@
 				<div class="siteTitle__function">
 					<div class="siteTitle__function__form">
 						<a href="<%= path %>request/#form-contact" class="btn-contact">資料請求はこちら</a>
-						<a href="<%= path %>seminar/" class="btn-seminar">セミナー詳細はこちら</a>
+						<% if (isForm == '') { %><a href="<%= path %>seminar/" class="btn-seminar">セミナー詳細はこちら</a><% } else { %><a href="<%= path %>entry-seminar/" class="btn-seminar">セミナー申込みはこちら</a><% } %>
 					</div>
 					<div class="siteTitle__function__tel is--tel">
 						<p class="siteTitle__function__tel__number"><a href="tel:0120540949">0120-540-949</a></p>

@@ -1,16 +1,20 @@
 <%
-meta = { title:'セミナー申し込み', desc:'' };
+meta = { title:'セミナー申込み', desc:'' };
 path = '../';
+srcPath = '../../';
+isForm = 'y';
 directory = 'entry-seminar';
 directoryLv2 = '';
 page = '';
 %><!DOCTYPE html>
 <html lang="ja">
-<% include ../include/_head %>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath +'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } else { %> page-input<% } %>" id="top">
-<% include ../include/_gtag %>
 <div class="page" id="data-page">
-<% include ../include/_header %>
+<%- include(srcPath +'html/include/_header') %>
 	<main class="main contents">
 		<header class="page-head">
 			<div class="container">
@@ -25,7 +29,7 @@ page = '';
 					<span class="is--notice">必須項目は、すべて選択または入力してください。</span></p>
 				</div>
 				<!-- /[.page-lead] -->
-<% include ../include/_block-contact %>
+<%- include(srcPath +'html/include/_block-contact') %>
 				<div class="contact-form">
 					<nav class="step-indicator">
 						<ul>
@@ -38,37 +42,17 @@ page = '';
 					
 					<h2 class="section-title"><%= meta.title %></h2>
 					<p class="contact-form__note">※<span class="label-required">必須</span>の入力欄は入力しなければフォームを完了できません。</p>
-                    <form action="confirm.html" method="post" name="form-contact" class="form-body h-adr" id="form-contact">
+					<form action="confirm.html" method="post" name="form-contact" class="form-body h-adr" id="form-contact">
                         <input type="hidden" class="p-country-name" value="Japan">
                         <div class="form-field required">
                             <div class="form-field__label">
-                                <label for="seminarSchedule">参加希望日時</label>
+								<label for="seminarSchedule">参加希望日時<br>※参加費無料</label>
                             </div>
                             <div class="form-field__element">
-                                <div id="data-seminarSchedule">
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="8月 8日（水）18時_東京会場" id="201808081800_tokyo"><label for="201808081800_tokyo" class="label-for-radio">8/8（水）18時【アリスト京都ご案内会（定員5名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="8月22日（水）14時_東京会場" id="201808221400_tokyo"><label for="201808221400_tokyo" class="label-for-radio">8/22（水）14時【自社商品ご案内会（定員5名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="8月22日（水）18時_東京会場" id="201808221800_tokyo"><label for="201808221800_tokyo" class="label-for-radio">8/22（水）18時【自社商品ご案内会（定員5名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="8月25日（土）14時_東京会場" id="201808251400_tokyo"><label for="201808251400_tokyo" class="label-for-radio">8/25（土）14時【税理士登壇相続対策セミナー（定員15名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="8月29日（水）14時_東京会場" id="201808291400_tokyo"><label for="201808291400_tokyo" class="label-for-radio">8/29（水）14時【自社商品ご案内会（定員5名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="8月29日（水）18時_東京会場" id="201808291800_tokyo"><label for="201808291800_tokyo" class="label-for-radio">8/29（水）18時【自社商品ご案内会（定員5名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月 5日（水）18時_東京会場" id="201809051800_tokyo"><label for="201809051800_tokyo" class="label-for-radio">9/5（水）18時【税理士登壇相続対策セミナー（定員15名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月 8日（土）14時_東京会場" id="201809081400_tokyo"><label for="201809081400_tokyo" class="label-for-radio">9/8（土）14時【税理士登壇相続対策セミナー（定員40名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月 9日（日）14時_大阪会場" id="201809091400_osaka"><label for="201809091400_osaka" class="label-for-radio">9/9（日）14時【税理士登壇相続対策セミナー（定員40名）】大阪会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月12日（水）18時_東京会場" id="201809121800_tokyo"><label for="201809121800_tokyo" class="label-for-radio">9/12（水）18時【税理士登壇相続対策セミナー（定員40名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月15日（土）14時_名古屋会場" id="201809151400_nagoya"><label for="201809151400_nagoya" class="label-for-radio">9/15（土）14時【税理士登壇相続対策セミナー（定員40名）】名古屋会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月16日（日）14時_京都会場" id="201809161400_kyoto"><label for="201809161400_kyoto" class="label-for-radio">9/16（日）14時【税理士登壇相続対策セミナー（定員40名）】京都会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月19日（水）14時_東京会場" id="201809191400_tokyo"><label for="201809191400_tokyo" class="label-for-radio">9/19（水）14時【アリスト京都ご案内会（定員5名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月19日（水）18時_東京会場" id="201809191800_tokyo"><label for="201809191800_tokyo" class="label-for-radio">9/19（水）18時【アリスト京都ご案内会（定員5名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月22日（土）14時_東京会場" id="201809221400_tokyo"><label for="201809221400_tokyo" class="label-for-radio">9/22（土）14時【アリスト京都ご案内会（定員5名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月26日（水）14時_東京会場" id="201809261400_tokyo"><label for="201809261400_tokyo" class="label-for-radio">9/26（水）14時【アリスト京都ご案内会（定員5名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月26日（水）18時_東京会場" id="201809261800_tokyo"><label for="201809261800_tokyo" class="label-for-radio">9/26（水）18時【アリスト京都ご案内会（定員5名）】東京会場</label></p>
-                                    <p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="9月29日（土）14時_東京会場" id="201809291400_tokyo"><label for="201809291400_tokyo" class="label-for-radio">9/29（土）14時【アリスト京都ご案内会（定員5名）】東京会場</label></p>
+                                <div id="data-seminarSchedule"><%_ seminarList.forEach(function(item){%>
+									<p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="<%- item.seminarDate %>_<%- item.seminarRegion %>" id="<%- item.seminarLink %>"><label for="<%- item.seminarLink %>" class="label-for-radio"><%- item.seminarDate %>　<%- item.seminarRegion %><br><%- item.seminarTitle%><br>（定員<%- item.seminarCapacity %>）　※参加費<%- item.seminarFee %></label></p><% }) _%>
+									
                                 </div>
-                                <p><strong>東京会場</strong>：株式会社エー・ディー・ワークス本社<br>東京都千代田区内幸町1-1-7 日比谷U-1ビル13階<br><a href="https://www.google.co.jp/maps/place/%E3%80%92100-0011+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E5%86%85%E5%B9%B8%E7%94%BA%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%E2%88%92%EF%BC%97/@35.671836,139.757767,16z/data=!4m5!3m4!1s0x60188bee7710c09f:0x1981e723fed7cfa7!8m2!3d35.6717666!4d139.7576817?hl=ja" target="_blank">→ Googleマップ</a></p>
-                                <p><strong>大阪会場</strong>：TKPガーデンシティ東梅田　カンファレスルーム5B<br>大阪府大阪市北区曾根崎2丁目11−16<br><a href="https://www.google.co.jp/maps/place/TKP%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%B7%E3%83%86%E3%82%A3%E6%9D%B1%E6%A2%85%E7%94%B0/@34.7007119,135.4999624,16z/data=!4m5!3m4!1s0x0:0xdfe22ee93ffebe4f!8m2!3d34.7007119!4d135.4999624" target="_blank">→ Googleマップ</a></p>
-                                <p><strong>名古屋会場</strong>：TKPガーデンシティPREMIUM名古屋ルーセントタワー　B<br>愛知県名古屋市西区 牛島町6-1 名古屋ルーセントタワー<br><a href="https://www.google.co.jp/maps/place/TKP%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%B7%E3%83%86%E3%82%A3PREMIUM%E5%90%8D%E5%8F%A4%E5%B1%8B%E3%83%AB%E3%83%BC%E3%82%BB%E3%83%B3%E3%83%88%E3%82%BF%E3%83%AF%E3%83%BC/@35.174955,136.881203,16z/data=!4m5!3m4!1s0x0:0xeacd8bcbcdf5aa6f!8m2!3d35.174955!4d136.881203" target="_blank">→ Googleマップ</a></p>
-                                <p><strong>京都会場</strong>：TKP京都四条駅前カンファレンスセンター　カンファレンスルーム8GM<br>京都府京都市下京区立売中之町100-1 四条KMビル<br><a href="https://www.google.co.jp/maps/place/TKP%E4%BA%AC%E9%83%BD%E5%9B%9B%E6%9D%A1%E9%A7%85%E5%89%8D%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC/@35.0040148,135.7634994,16z/data=!4m5!3m4!1s0x0:0x7e8b92a9625175c2!8m2!3d35.0040148!4d135.7634994" target="_blank">→ Googleマップ</a></p>
                             </div>
                         </div>
                         <div class="form-field required">
@@ -102,18 +86,6 @@ page = '';
                             </div>
                         </div>
                         <div class="form-field">
-                            <div class="form-field__label"><label for="companyName">会社名</label></div>
-                            <div class="form-field__element">
-                                <input type="text" id="data-companyName" class="element-input-text" name="companyName" placeholder="株式会社エー・ディーワークス">
-                            </div>
-                        </div>
-                        <div class="form-field">
-                            <div class="form-field__label"><label for="divisionName">部署名</label></div>
-                            <div class="form-field__element">
-                                <input type="text" id="data-divisionName" class="element-input-text" name="divisionName" placeholder="総務部">
-                            </div>
-                        </div>
-                        <div class="form-field">
                             <div class="form-field__label required"><label for="">ご住所</label></div>
                             <div class="form-field__element">
                                 <div class="form-field--child required">
@@ -140,12 +112,6 @@ page = '';
                             <div class="form-field__label"><label for="tel">電話番号</label></div>
                             <div class="form-field__element">
                                 <input type="text" id="data-tel" class="element-input-text validate[required,custom[phone]]" name="tel" placeholder="電話番号を半角数字で入力">
-                            </div>
-                        </div>
-                        <div class="form-field">
-                            <div class="form-field__label"><label for="fax">FAX番号</label></div>
-                            <div class="form-field__element">
-                                <input type="text" id="data-fax" class="element-input-text validate[optional,custom[phone]]" name="fax" placeholder="FAX番号を半角数字で入力">
                             </div>
                         </div>
                         <div class="form-field required">
@@ -199,16 +165,30 @@ page = '';
 		</div>
 	</main>
 	<!-- /[.contents] -->
-<% include ../include/_footer %>
+<%- include(srcPath +'html/include/_footer') %>
 </div><!-- /[.page] -->
 
-<% include ../include/_body_last %>
+<%- include(srcPath +'html/include/_body_last') %>
 <script type="text/javascript">
 	$(function(){
 		$('.form-body').validationEngine(
 			'attach', {
 				promptPosition:"bottomLeft"
 			});
+		// LS 2018.8.30
+		var myVal = $(location).attr('search').substr(1);
+		if(myVal){
+			// var position = $('#' + myVal).offset().top;
+			var position = $('#form-contact').offset().top;
+
+			$('#' + myVal).prop('checked', true);
+
+			$('p.element-radio').css('display', 'none');
+			$('#' + myVal).parent().css('display','block');
+			$('#' + myVal).parent().css('margin-bottom','2em');
+
+			$("html,body").animate({scrollTop : position}, {queue : false});
+		}
 	});
 </script>
 <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>

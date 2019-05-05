@@ -1,14 +1,18 @@
 <%
 meta = { title:'セミナー詳細', desc:'' };
+isForm = 'y';
 path = '../';
+srcPath = '../../';
 directory = 'seminar';
 directoryLv2 = '';
 page = '';
 %><!DOCTYPE html>
 <html lang="ja">
-<% include ../include/_head %>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath + 'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } else { %> page-input<% } %>" id="top">
-<% include ../include/_gtag %>
 <div class="page" id="data-page">
 <% include ../include/_header %>
 <main class="main contents">
@@ -25,15 +29,15 @@ page = '';
 				<h2 class="block-contact__title is--attention">現在開催予定のセミナーはございません。<br>資料請求・お問い合わせは受付けております。</h2>
 				<%#            <a href="./seminar/" class="btn-detail block-contact__button">セミナー詳細はこちら</a> %>
 				<a href="<%= path %>request/#form-contact" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
-<% include ../include/_block-contact %>
+<%- include(srcPath + 'html/include/_block-contact') %>
 			</div>
 		</div>
 		<!-- /[.container] -->
 	</div>
 </main>	<!-- /[.contents] -->
-<% include ../include/_footer %>
+<%- include(srcPath + 'html/include/_footer') %>
 </div><!-- /[.page] -->
 
-<% include ../include/_body_last %>
+<%- include(srcPath + 'html/include/_body_last') %>
 </body>
 </html>

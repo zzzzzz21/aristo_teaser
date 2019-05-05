@@ -27,7 +27,7 @@
 							</dl><% } %>
 						</div>
 					</div>
-					<% if (item.seminarLink) {%><p class="btn"><a href="<%= path %>seminar-entry/<%- item.seminarLink %>" class="btn-seminar">セミナー申込み</a></p><% } %>
+					<% if (item.seminarLink) {%><p class="btn"><a href="<%= path %>entry-seminar/?<%- item.seminarLink %>" class="btn-seminar">セミナー申込み</a></p><% } %>
 					</article>
 					<% } %><% _counter++; %><% })%>
 				</div>

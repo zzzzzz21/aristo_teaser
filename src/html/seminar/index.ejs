@@ -1,5 +1,6 @@
 <%
 meta = { title:'セミナー詳細', desc:'' };
+isForm = 'y';
 path = '../';
 srcPath ='../../';
 directory = 'seminar';
@@ -7,9 +8,11 @@ directoryLv2 = '';
 page = '';
 %><!DOCTYPE html>
 <html lang="ja">
-<%- include(srcPath + 'html/include/_head') %>
-<body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } else { %> page-input<% } %>" id="top">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
 <%- include(srcPath + 'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
+<body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } else { %> page-input<% } %>" id="top">
 <div class="page" id="data-page">
 <%- include(srcPath + 'html/include/_header') %>
 	<main class="main contents">
@@ -80,7 +83,7 @@ page = '';
 								</dl><% } %>
 							</div>
 						</div>
-						<% if (item.seminarLink) {%><p class="btn"><a href="<%= path %>seminar-entry/<%- item.seminarLink %>" class="btn-seminar">セミナー申込み</a></p><% } %>
+						<% if (item.seminarLink) {%><p class="btn"><a href="<%= path %>entry-seminar/?<%- item.seminarLink %>" class="btn-seminar">セミナー申込み</a></p><% } %>
 					</article>
 					<%}); %>
 				</div>

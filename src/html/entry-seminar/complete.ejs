@@ -1,16 +1,20 @@
 <%
 meta = { title:'完了：セミナー申し込み', desc:'' };
 path = '../';
+srcPath = '../../';
+isForm = 'y';
 directory = 'entry-seminar';
 directoryLv2 = '';
 page = 'complete';
 %><!DOCTYPE html>
 <html lang="ja">
-<% include ../include/_head %>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath + 'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } %>" id="top">
-<% include ../include/_gtag %>
 <div class="page" id="data-page">
-<% include ../include/_header %>
+<%- include(srcPath + 'html/include/_header') %>
 	<main class="main contents">
 		<header class="page-head">
 			<div class="container">
@@ -19,7 +23,7 @@ page = 'complete';
 		</header>
 		<div class="page-body">
 			<div class="container">
-<% include ../include/_block-contact %>
+<%- include(srcPath + 'html/include/_block-contact') %>
 				<div class="contact-form">
 					<nav class="step-indicator">
 						<ul>
@@ -43,9 +47,9 @@ page = 'complete';
 		</div>
 	</main>
 	<!-- /[.contents] -->
-<% include ../include/_footer %>
+<%- include(srcPath + 'html/include/_footer') %>
 </div><!-- /[.page] -->
 
-<% include ../include/_body_last %>
+<%- include(srcPath + 'html/include/_body_last') %>
 </body>
 </html>

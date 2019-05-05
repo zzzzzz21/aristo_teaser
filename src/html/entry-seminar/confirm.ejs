@@ -1,16 +1,20 @@
 <%
 meta = { title:'確認：セミナー申し込み', desc:'' };
 path = '../';
+srcPath = '../../';
+isForm = 'y';
 directory = 'entry-seminar';
 directoryLv2 = '';
 page = 'confirm';
-%><!DOCTYPE html>
+%><?php require_once "{$_SERVER['DOCUMENT_ROOT']}/common/php/aristo.php" ?><!DOCTYPE html>
 <html lang="ja">
-<% include ../include/_head %>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath + 'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } %>" id="top">
-<% include ../include/_gtag %>
 <div class="page" id="data-page">
-<% include ../include/_header %>
+<%- include(srcPath + 'html/include/_header') %>
 	<main class="main contents">
 		<header class="page-head">
 			<div class="container">
@@ -24,7 +28,7 @@ page = 'confirm';
 					修正したい場合は、「修正する」ボタンを押してください。</p>
 				</div>
 				<!-- /[.page-lead] -->
-<% include ../include/_block-contact %>
+<%- include(srcPath + 'html/include/_block-contact') %>
 				<div class="contact-form">
 					<nav class="step-indicator">
 						<ul>
@@ -38,15 +42,15 @@ page = 'confirm';
 					<h2 class="section-title"><%= meta.title %></h2>
 					<p class="contact-form__note">※内容を確認して問題なければ「送信する」ボタンを押してください。<br>
 					　修正したい場合は、「修正する」ボタンを押してください。</p>
-					<form action="" id="form-contact" name="form-contact" class="form-body form-confirm h-adr">
+					<form action="confirm.html" method="post" name="form-contact" class="form-body h-adr" id="form-contact">
 						<input type="hidden" class="p-country-name" value="Japan">
 						<div class="form-field required">
 							<div class="form-field__label">
 								<label for="seminarSchedule">参加希望日時</label>
 							</div>
 							<div class="form-field__element">
-								<input id="data-seminarSchedule" name="seminarSchedule" type="hidden" value="201807041900_tokyo">
-								<div class="form-value">2018年7月4日（水）19:00～東京会場</div>
+								<input id="data-seminarSchedule" name="seminarSchedule" type="hidden" value="<?php echo $_POST['seminarSchedule']?>">
+								<div class="form-value"><?php echo $seminar_date?>　<?php echo $seminar_place?></div>
 							</div>
 						</div>
 						<div class="form-field required">
@@ -55,13 +59,13 @@ page = 'confirm';
 								<ul class="element--name">
 									<li class="element--name__item">
 										<label for="name-familyName">姓</label>
-										<input type="hidden" id="data-name-familyName" name="name-familyName" value="青木">
-										<div class="form-value">青木</div>
+										<input type="hidden" id="data-name-familyName" name="name-familyName" value="<?php echo $_POST['name-familyName']?>">
+										<div class="form-value"><?php echo $_POST['name-familyName']?></div>
 									</li>
 									<li class="element--name__item">
 										<label for="name-lastName">名</label>
-										<input type="hidden" id="data-name-lastName" name="name-lastName" value="太郎">
-										<div class="form-value">太郎</div>
+										<input type="hidden" id="data-name-lastName" name="name-lastName" value="<?php echo $_POST['name-lastName']?>">
+										<div class="form-value"><?php echo $_POST['name-lastName']?></div>
 									</li>
 								</ul>
 							</div>
@@ -72,29 +76,15 @@ page = 'confirm';
 								<ul class="element--name">
 									<li class="element--name__item">
 										<label for="name-familyName">姓</label>
-										<input type="hidden" id="data-kana-familyName" name="kana-familyName" value="アオキ">
-										<div class="form-value">アオキ</div>
+										<input type="hidden" id="data-kana-familyName" name="kana-familyName" value="<?php echo $_POST['kana-familyName']?>">
+										<div class="form-value"><?php echo $_POST['kana-familyName']?></div>
 									</li>
 									<li class="element--name__item">
 										<label for="name-lastName">名</label>
-										<input type="hidden" id="data-kana-lastName" name="kana-lastName" value="タロウ">
-										<div class="form-value">タロウ</div>
+										<input type="hidden" id="data-kana-lastName" name="kana-lastName" value="<?php echo $_POST['kana-lastName']?>">
+										<div class="form-value"><?php echo $_POST['kana-lastName']?></div>
 									</li>
 								</ul>
-							</div>
-						</div>
-						<div class="form-field">
-							<div class="form-field__label"><label for="companyName">会社名</label></div>
-							<div class="form-field__element">
-								<input type="hidden" id="data-companyName" name="companyName" value="株式会社エー・ディーワークス">
-								<div class="form-value">株式会社エー・ディー・ワークス</div>
-							</div>
-						</div>
-						<div class="form-field">
-							<div class="form-field__label"><label for="divisionName">部署名</label></div>
-							<div class="form-field__element">
-								<input type="hidden" id="data-divisionName" name="divisionName" value="総務部">
-								<div class="form-value">総務部</div>
 							</div>
 						</div>
 						<div class="form-field">
@@ -103,8 +93,8 @@ page = 'confirm';
 								<div class="form-field--child required">
 									<div class="form-field__label"><label for="zipcode">郵便番号</label></div>
 									<div class="form-field__element">
-										<input type="hidden" id="data-zipcode" name="zipcode" value="1000011">
-										<div class="form-value">1000011</div>
+										<input type="hidden" id="data-zipcode" name="zipcode" value="<?php echo $_POST['zipcode']?>">
+										<div class="form-value"><?php echo $_POST['zipcode']?></div>
 									</div>
 								</div>
 								<div class="form-field--child required">
@@ -117,8 +107,8 @@ page = 'confirm';
 								<div class="form-field--child">
 									<div class="form-field__label"><label for="address2">建物名、部屋番号等</label></div>
 									<div class="form-field__element">
-										<input type="hidden" id="data-address2" name="addres2" value="日比谷U-1ビル13階">
-										<div class="form-value">日比谷U-1ビル13階</div>
+										<input type="hidden" id="data-address2" name="address2" value="<?php echo $_POST['address2']?>">
+										<div class="form-value"><?php echo $_POST['address2']?></div>
 									</div>
 								</div>
 							</div>
@@ -126,55 +116,50 @@ page = 'confirm';
 						<div class="form-field required">
 							<div class="form-field__label"><label for="tel">電話番号</label></div>
 							<div class="form-field__element">
-								<input type="hidden" id="data-tel" class="element-input-text validate[required]" name="tel" value="0352517561">
-								<div class="form-value">03-5251-7561</div>
-							</div>
-						</div>
-						<div class="form-field">
-							<div class="form-field__label"><label for="fax">FAX番号</label></div>
-							<div class="form-field__element">
-								<input type="hidden" id="data-fax" name="fax" value="0352517562">
-								<div class="form-value">03-5251-7562</div>
+								<input type="hidden" id="data-tel" class="element-input-text validate[required]" name="tel" value="<?php echo $_POST['tel']?>">
+								<div class="form-value"><?php echo $_POST['tel']?></div>
 							</div>
 						</div>
 						<div class="form-field required">
 							<div class="form-field__label"><label for="email">E-mail</label></div>
 							<div class="form-field__element">
-								<input type="hidden" id="data-email" name="email" value="foo@example.com">
-								<div class="form-value">foo@re-adworks.com</div>
-							</div>
-						</div>
-						<div class="form-field required">
-							<div class="form-field__label"><label for="email2">E-mail（確認用）</label></div>
-							<div class="form-field__element">
-								<input type="hidden" id="data-email2" name="email2" value="foo@example.com">
-								<div class="form-value">foo@re-adworks.com</div>
+								<input type="hidden" id="data-email" name="email" value="<?php echo $_POST['email']?>">
+								<input type="hidden" id="data-email" name="email2" value="<?php echo $_POST['email2']?>">
+								<div class="form-value"><?php echo $_POST['email']?></div>
 							</div>
 						</div>
 						<div class="form-field required">
 							<div class="form-field__label"><label for="number">参加人数</label></div>
 							<div class="form-field__element">
-								<input type="hidden" id="data-number" name="number" value="5">
-								<div class="form-value">5名</div>
+								<input type="hidden" id="data-number" name="number" value="<?php echo $_POST['number']?>">
+								<div class="form-value"><?php echo $_POST['number']?>名</div>
 							</div>
 						</div>
 						<div class="form-field">
 							<div class="form-field__label"><label for="generation">年代</label></div>
 							<div class="form-field__element -checkbox">
-								<input type="hidden" id="data-generation40" name="genaration40" value="40代">
-								<div class="form-value">40代</div>
+								<?php if($_POST['generation20']): ?><input type="hidden" id="data-generation20" name="generation20" value="<?php echo $_POST['generation20']?>"><?php endif; ?>
+								<?php if($_POST['generation30']): ?><input type="hidden" id="data-generation30" name="generation30" value="<?php echo $_POST['generation30']?>"><?php endif; ?>
+								<?php if($_POST['generation40']): ?><input type="hidden" id="data-generation40" name="generation40" value="<?php echo $_POST['generation40']?>"><?php endif; ?>
+								<?php if($_POST['generation50']): ?><input type="hidden" id="data-generation50" name="generation50" value="<?php echo $_POST['generation50']?>"><?php endif; ?>
+								<?php if($_POST['generation60']): ?><input type="hidden" id="data-generation60" name="generation60" value="<?php echo $_POST['generation60']?>"><?php endif; ?>
+								<?php if($_POST['generation70']): ?><input type="hidden" id="data-generation70" name="generation70" value="<?php echo $_POST['generation70']?>"><?php endif; ?>
+								<?php if($_POST['generation80']): ?><input type="hidden" id="data-generation80" name="generation80" value="<?php echo $_POST['generation80']?>"><?php endif; ?>
+
+								<div class="form-value"><?php echo $generations ?></div>
 							</div>
 						</div>
 						<div class="form-field">
 							<div class="form-field__label"><label for="question">ご質問</label></div>
 							<div class="form-field__element">
-								<input type="hidden" name="question" id="data-question" value="ご質問などがありましたらご記入ください">
-								<div class="form-value">ご質問などがありましたらご記入ください</div>
+								<input type="hidden" name="question" id="data-question" value="<?php echo $_POST['question']?>">
+								<div class="form-value"><?php echo str_replace("\n","<br>",$_POST['question'])?></div>
 							</div>
 						</div>
 						<div class="form-field--confirm">
 							<input type="submit" id="data-submit" class="form-submit" value="送信する">
 							<input type="button" class="form-back" onclick="history.back()" value="修正する">
+							<input type="hidden" name="kind" value="entry">
 						</div>
 					</form>
 				</div>
@@ -184,9 +169,9 @@ page = 'confirm';
 		</div>
 	</main>
 	<!-- /[.contents] -->
-<% include ../include/_footer %>
+<%- include(srcPath + 'html/include/_footer') %>
 </div><!-- /[.page] -->
 
-<% include ../include/_body_last %>
+<%- include(srcPath + 'html/include/_body_last') %>
 </body>
 </html>
