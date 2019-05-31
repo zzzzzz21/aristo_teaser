@@ -2,7 +2,7 @@
 					<% var _counter = 0; %><% seminarList.forEach(function(item){%><%if (_counter < 5){%><article class="seminar-item">
 					<div class="seminar-detail__body">
 						<div class="seminar-detail__meta">
-							<p><img src="<%= path %>images/seminar/<%- item.seminarImage %>.jpg" alt="<%- item.seminarTitle %>"></p>
+							<p><a href="<%= path %>entry-seminar/?<%- item.seminarLink %>"><img src="<%= path %>images/seminar/<%- item.seminarImage %>.jpg" alt="<%- item.seminarTitle %>"></a></p>
 							<% if (item.seminarCategories) { %><p class="seminar-detail__categories">
 							<% item.seminarCategories.forEach(function(item) {%><span class="seminar-detail__categories-<%= item.categoryClass %>"><%= item.categoryLabel %></span><%})%>
 							</p><% } %>

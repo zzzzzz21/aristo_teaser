@@ -9,14 +9,15 @@
 	top: -140px;
 	left: 100px;
 }
+
 // -------------------------------------------------------------------
 // 	.goPageTop
 // -------------------------------------------------------------------
 .goPageTop {
 	position: fixed;
 	z-index: 999;
-//	bottom: 100px;
-    bottom: 20px;
+	//	bottom: 100px;
+	bottom: 20px;
 	right: 10px;
 	transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 	&[aria-hidden="true"] {
@@ -64,70 +65,83 @@
 // -------------------------------------------------------------------
 // 	.fixed-button
 // -------------------------------------------------------------------
+@keyframes ghost {
+	0% {transform: translateX(0)}
+	60% {transform: translateX(0)}
+	100% {transform: translateX(200px)}
+}
 .fixed-button {
-    position: fixed;
-    z-index: 999;
-    bottom: 240px;
-    right: 0;
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-    &[aria-hidden="true"] {
-        opacity: 0;
-        transform: translateX(240px);
-    }
-    //	[media queries SP]
-    // ----------------------------------------
-    @include media(sp) {
-        @include calcvw(320, 'bottom', 640);
-    }
-    & a {
-        position: relative;
-        min-width: 252px;
-        padding-left: 3em;
-        border-radius: 4px 0 0 4px;
-        transform: translateX(200px);
-        //	[media queries SP]
-        // ----------------------------------------
-        @include media(sp) {
-            transform: translateX(210px);
-            opacity: .8;
-            &:link,
-            &:visited {
-                color: $base_corporate_color;
-            }
-            &:hover {
-                color: $base_btn_color_hover;
-            }
-        }
-        //	[media queries PC-tablet]
-        // ----------------------------------------
-        @include media(pc-tb) {
-            &:hover {
-                transform: translateX(0);
-            }
-        }
-        &:before {
-            position: absolute;
-            left: .6em;
-            width: 38px;
-            height: 24px;
-            padding-right: .2em;
-        }
-        &:after {
-
-        }
-    }
-    .button-request a:before {
-        content: url(#{$image_path}common/icon_form.png);
-    }
-    .button-entry {
-        transition: all ease .3s .3s;
-        a:before {
-            content: url(#{$image_path}common/icon_entry.png);
-        }
-    }
-    p + p {
-        margin-top: 1.2em;
-    }
+	position: fixed;
+	z-index: 999;
+	bottom: 240px;
+	right: 0;
+	transition: opacity 1s ease-out;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		transition: opacity 0.3s ease-out;
+	}
+	&[aria-hidden="true"] {
+		opacity: 0;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			transform: translateX(300px);
+		}
+	} 
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include calcvw(320, 'bottom', 640);
+	}
+	& a {
+		position: relative;
+		min-width: 252px;
+		padding-left: 3em;
+		border-radius: 4px 0 0 4px;
+		transform: translateX(200px); 
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+//			transform: translateX(200px);
+			opacity: .8;
+			&:link,
+			&:visited {
+				color: $base_corporate_color;
+			}
+			&:hover {
+				color: $base_btn_color_hover;
+			}
+		} 
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			animation: ghost 5s linear;
+			&:hover {
+				transform: translateX(0);
+			}
+		}
+		&:before {
+			position: absolute;
+			left: .6em;
+			width: 38px;
+			height: 24px;
+			padding-right: .2em;
+		}
+		&:after {}
+	}
+	.button-request a:before {
+		content: url(#{$image_path}common/icon_form.png);
+	}
+	.button-entry {
+		transition: all ease .3s .3s;
+		a:before {
+			content: url(#{$image_path}common/icon_entry.png);
+		}
+	}
+	p + p {
+		margin-top: 1.2em;
+	}
 }
 
 // -------------------------------------------------------------------
@@ -150,23 +164,24 @@
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-//			padding: 0 4px;
+			//			padding: 0 4px;
 		}
 	}
 	a {
 		@include fontsize(14);
-		&:link, &:visited {
+		&:link,
+		&:visited {
 			color: $base_white_color;
 		}
 		&:hover {
 			text-decoration: underline;
-		}
+		} 
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
 			font-size: 1.2rem;
 		}
-	}
+	} 
 	// 	.globalFooter__wrapper
 	// -------------------------------------------------
 	@include element(wrapper) {
@@ -181,7 +196,7 @@
 // -------------------------------------------------
 .footer-navi {
 	display: flex;
-	justify-content: center;
+	justify-content: center; 
 	//	[media queries SP]
 	// ----------------------------------------
 	@include media(sp) {
@@ -196,7 +211,7 @@
 		@include media(sp) {
 			flex-wrap: wrap;
 		}
-	}
+	} 
 	//	.footer-navi__item
 	// ----------------------------------------
 	@include element(item) {
@@ -233,12 +248,12 @@
 		@include media(sp) {
 			margin-top: 0;
 		}
-	}
+	} 
 	//	.footer-copyright__title
 	// ----------------------------------------
 	@include element(title) {
 		@include fontsize(14);
-		font-weight: normal;
+		font-weight: normal; 
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
@@ -249,7 +264,7 @@
 			font-size: 1.2rem;
 		}
 		span {
-			margin-left: 3em;
+			margin-left: 3em; 
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
@@ -257,9 +272,8 @@
 				margin: 0;
 			}
 		}
-	}
+	} 
 	//	.footer-copyright__credit
 	// ----------------------------------------
-	@include element(credit) {
-	}
+	@include element(credit) {}
 }

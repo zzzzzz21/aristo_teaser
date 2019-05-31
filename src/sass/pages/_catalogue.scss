@@ -82,14 +82,42 @@
 			@include fontsize(32);
 		}
 		@at-root .block-others & {
-			display: block;
 			margin-bottom: .6em;
 			padding: 0;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				padding-left: 6em;
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				display: flex;
+				align-items: center;
+			}
 		}
 		span {
 			display: block;
+			margin-top: -.4em;
 			@include fontsize(14);
 			font-weight: normal;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: -6px;
+				margin-left: 0;
+			}
+			@at-root .block-others & {
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					margin-left: 2em;
+				}
+			}
 		}
 		&::before {
 			position: absolute;
@@ -110,7 +138,7 @@
 				@include calcvw(32, 'font-size', 640);
 			}
 			@at-root .catalogue-available & {
-				content: '販売中';
+				content: '募集中';
 				border: 4px solid $base_corporate_color;
 				background-color: $base_corporate_color;
 				color: $base_white_color;
@@ -119,8 +147,6 @@
 				content: '運用中';
 			}
 			@at-root .block-others & {
-				position: relative;
-				display: block;
 				width: 4em;
 				margin-bottom: .2em;
 				@include fontsize(20);
@@ -128,6 +154,11 @@
 				// ----------------------------------------
 				@include media(sp) {
 					@include fontsize(18);
+				}
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					position: relative;
 				}
 			}
 		}
@@ -231,7 +262,7 @@
 	//	[media queries PC-tablet]
 	// ----------------------------------------
 	@include media(pc-tb) {
-		max-width: 972px;
+		max-width: 640px;
 	}
 	a {
 		display: flex;

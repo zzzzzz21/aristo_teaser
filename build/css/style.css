@@ -660,6 +660,11 @@ body {
   padding-bottom: 0;
 }
 
+.page-catalogue .block,
+.page-catalogue .block-title {
+  padding: 0;
+}
+
 .unit + .unit {
   margin-top: 100px;
 }
@@ -1787,17 +1792,30 @@ a.btn-target:after {
   top: 12px;
 }
 
+@keyframes ghost {
+  0% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(200px);
+  }
+}
+
 .fixed-button {
   position: fixed;
   z-index: 999;
   bottom: 240px;
   right: 0;
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transition: opacity 1s ease-out;
 }
 
 .fixed-button[aria-hidden="true"] {
   opacity: 0;
-  transform: translateX(240px);
 }
 
 .fixed-button a {
@@ -1943,6 +1961,7 @@ a.btn-target:after {
 }
 
 .movie-unit__title span {
+  display: block;
   font-weight: normal;
   font-size: 14px;
   font-size: 1.4rem;
@@ -2022,6 +2041,12 @@ a.btn-target:after {
 .block-point .unit-point__image .caption {
   font-size: 16px;
   font-size: 1.6rem;
+}
+
+.block-point .unit-point__image.-width {
+  max-width: 662px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .block-point .unit-point .is--notice {
@@ -2181,14 +2206,14 @@ a.btn-target:after {
   align-items: center;
   align-items: center;
   min-height: 280px;
-  background: url(../images/index/bg_header_instruments.jpg) 0 0 no-repeat;
+  background: url(../images/index/bg_header_flow.jpg) 0 0 no-repeat;
   background-size: cover;
   margin-bottom: 0;
   font-size: 60px;
   font-size: 6rem;
   font-family: "Noto Serif JP", serif;
   font-weight: normal;
-  color: #fff;
+  color: #20428c;
 }
 
 .aoyama .block-instruments .block__title:before,
@@ -2200,7 +2225,7 @@ a.btn-target:after {
   content: '';
   width: 36px;
   height: 36px;
-  border: 2px solid #fff;
+  border: 2px solid #20428c;
 }
 
 .aoyama .block-instruments .block__title:before,
@@ -2286,13 +2311,13 @@ a.btn-target:after {
 }
 
 .block-others .catalogue__title {
-  display: block;
   margin-bottom: .6em;
   padding: 0;
 }
 
 .catalogue__title span {
   display: block;
+  margin-top: -.4em;
   font-size: 14px;
   font-size: 1.4rem;
   font-weight: normal;
@@ -2315,7 +2340,7 @@ a.btn-target:after {
 }
 
 .catalogue-available .catalogue__title::before {
-  content: '販売中';
+  content: '募集中';
   border: 4px solid #003466;
   background-color: #003466;
   color: #fff;
@@ -2326,8 +2351,6 @@ a.btn-target:after {
 }
 
 .block-others .catalogue__title::before {
-  position: relative;
-  display: block;
   width: 4em;
   margin-bottom: .2em;
   font-size: 20px;
@@ -2622,10 +2645,11 @@ a.btn-target:after {
   top: -2em;
   left: 10px;
   display: block;
-  content: '販売中';
+  content: '募集中';
   padding: .2em .4em;
-  border: 4px solid #003466;
-  color: #003466;
+  border: 4px solid #fff;
+  background-color: #003466;
+  color: #fff;
   text-align: center;
   font-size: 32px;
   font-size: 3.2rem;
@@ -2635,6 +2659,13 @@ a.btn-target:after {
 
 .-available.pre-open:before {
   content: '先行案内中';
+}
+
+.-available.-investment:before {
+  content: '運用中';
+  border: 4px solid #003466;
+  color: #003466;
+  background: #fff;
 }
 
 .unit-merit {
@@ -2978,8 +3009,6 @@ a.btn-target:after {
   position: static;
   width: 100%;
   margin: auto;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
 .unit-map__nav__item {
@@ -3270,8 +3299,16 @@ a.btn-target:after {
   font-size: 1.6rem;
 }
 
-.block-characteristic__photo dd .-wide {
-  margin-bottom: 46px;
+.block-characteristic__photo__item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.block-characteristic__photo__item__description {
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  text-align: right;
 }
 
 .block-characteristic-images {
@@ -3606,6 +3643,10 @@ a.btn-target:after {
   padding: 0 0 320px;
 }
 
+.page-catalogue .contents {
+  padding: 2%;
+}
+
 .contents .breadcrumb__inner {
   box-sizing: border-box;
   position: relative;
@@ -3808,9 +3849,9 @@ a.btn-target:after {
 }
 
 .seminar-item .seminar-detail__title {
-  font-weight: normal;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-weight: bold;
+  font-size: 18px;
+  font-size: 1.8rem;
   text-align: left;
 }
 
@@ -3822,7 +3863,8 @@ a.btn-target:after {
 
 .seminar-item .seminar-detail__title span {
   display: inline;
-  font-size: 100%;
+  padding-left: 1em;
+  font-size: 90%;
 }
 
 .seminar-detail .btn {
@@ -5127,6 +5169,18 @@ body.rtl .formError .formErrorArrow {
     border-left: 1px solid #fff;
   }
 
+  .fixed-button {
+    transition: opacity 0.3s ease-out;
+  }
+
+  .fixed-button[aria-hidden="true"] {
+    transform: translateX(300px);
+  }
+
+  .fixed-button a {
+    animation: ghost 5s linear;
+  }
+
   .fixed-button a:hover {
     transform: translateX(0);
   }
@@ -5162,6 +5216,10 @@ body.rtl .formError .formErrorArrow {
     margin-left: 50px;
     font-size: 36px;
     font-size: 3.6rem;
+  }
+
+  .block-point .unit-point__image.-width .caption {
+    text-align: right;
   }
 
   .block-point .-point1 .unit-point__title {
@@ -5213,6 +5271,26 @@ body.rtl .formError .formErrorArrow {
     font-size: 3.2rem;
   }
 
+  .block-others .catalogue__title {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .catalogue__title span {
+    margin-top: -6px;
+    margin-left: 0;
+  }
+
+  .block-others .catalogue__title span {
+    margin-left: 2em;
+  }
+
+  .block-others .catalogue__title::before {
+    position: relative;
+  }
+
   .catalogue__outline {
     font-size: 24px;
     font-size: 2.4rem;
@@ -5243,7 +5321,7 @@ body.rtl .formError .formErrorArrow {
   }
 
   .block-others {
-    max-width: 972px;
+    max-width: 640px;
   }
 
   .top-carousel__message {
@@ -5351,8 +5429,24 @@ body.rtl .formError .formErrorArrow {
     margin-right: 30px;
   }
 
+  .unit-map__information {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .unit-map__information p {
+    margin-right: 2em;
+    width: 640px;
+  }
+
+  .aoyama .unit-map__nav {
+    width: calc(100% - 640px);
+    margin-right: -6px;
+  }
+
   .aoyama .unit-map__nav__item {
-    width: 25%;
+    width: 48%;
+    margin-left: 2%;
   }
 
   .aoyama .block-characteristic__images {
@@ -5393,6 +5487,18 @@ body.rtl .formError .formErrorArrow {
     grid-column: 2;
     font-size: 14px;
     font-size: 1.4rem;
+  }
+
+  .block-characteristic__photo__item {
+    width: calc(374 / 1200 * 100%);
+  }
+
+  .block-characteristic__photo__item img + img {
+    margin-top: 42px;
+  }
+
+  .-wide .block-characteristic__photo__item {
+    width: 100%;
   }
 
   .seminar-item + .seminar-item {
@@ -5851,7 +5957,6 @@ body.rtl .formError .formErrorArrow {
   }
 
   .fixed-button a {
-    transform: translateX(210px);
     opacity: .8;
   }
 
@@ -5938,10 +6043,6 @@ body.rtl .formError .formErrorArrow {
     text-align: center;
     font-size: 18px;
     font-size: 1.8rem;
-  }
-
-  .movie-unit__title span {
-    display: block;
   }
 
   .block-point {
@@ -6083,6 +6184,10 @@ body.rtl .formError .formErrorArrow {
     padding: .2em 0 .2em 5em;
     font-size: 18px;
     font-size: 1.8rem;
+  }
+
+  .block-others .catalogue__title {
+    padding-left: 6em;
   }
 
   .catalogue__title::before {
@@ -6469,8 +6574,16 @@ body.rtl .formError .formErrorArrow {
     font-size: 1.4rem;
   }
 
-  .block-characteristic__photo dd .-wide {
-    margin-bottom: 6.25vw;
+  .block-characteristic__photo__item + .block-characteristic__photo__item {
+    margin-top: 2em;
+  }
+
+  .block-characteristic__photo__item.-half img {
+    width: 48%;
+  }
+
+  .block-characteristic__photo__item.-half.-caption figcaption {
+    padding-left: 48%;
   }
 
   .block-characteristic .gallery-images__main {

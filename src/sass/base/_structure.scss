@@ -122,6 +122,9 @@ body {
 	&:last-child {
 		padding-bottom: 0;
 	}
+	@at-root .page-catalogue & {
+		padding: 0;
+	}
 }
 
 .unit + .unit {

@@ -38,7 +38,7 @@ page = '';
 			<!-- /[.top-carousel] -->
 			
 			<div class="block-title" id="section-title">
-				<div class="block -available">
+				<div class="block -available -investment">
 					<h2 class="block-title__logo"><img src="<%= path %>images/common/logo_aristo-kyoto.jpg" alt="ARISTO京都"></h2>
 					<p class="block-title__lead">「ARISTO 京都」は、京都中心部の商業ビルに対して<br class="is-pc">最低出資金額「500万円」からの投資が可能な<br class="is-pc">不動産小口化商品です。</p>
 				</div>
@@ -47,23 +47,8 @@ page = '';
 		</header>
 		<!-- /[.block-instruments#section-instruments] -->
 
-		<div class="block block-others">
-			<div class="block-catalogue__body"><% catalogue.forEach(function(item) {%>
-				<% if(item.catalogueID!=='kyoto') {%><div class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
-				<a href="<%= path %><%= item.catalogueID %>">
-					<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
-						<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %>
-					</div>
-					<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
-						<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
-						<% if(item.catalogueInformation) {%><p class="catalogue__information"><%- item.catalogueInformation %></p><% } %>
-					</div>
-				</a>
-				</div><%}%><%}); %>
-			</div>
-		</div>
-		<!-- /[.block-catalogue] -->
-
+<%- include(srcPath + 'html/include/kyoto/_block-others') %>
+		<!-- /[.block-others] -->
 
 		<section class="block block-location" id="section-location">
 			<h2 class="unit__title"><span>ロケーション</span></h2>

@@ -16,6 +16,9 @@
 		@include calcvw(240, 'padding-bottom', 640);
 		font-size: 1.4rem;
 	}
+	@at-root .page-catalogue & {
+		padding: 2%;
+	}
 
 	// ----------------------------------------
 	//	.contents__inner
@@ -366,8 +369,8 @@
 			@include fontsize(32);
 		}
 		@at-root .seminar-item & {
-			font-weight: normal;
-			@include fontsize(16);
+			font-weight: bold;
+			@include fontsize(18);
 			text-align: left;
 		}
 		span {
@@ -376,7 +379,8 @@
 			font-weight: normal;
 			@at-root .seminar-item & {
 				display: inline;
-				font-size: 100%;
+				padding-left: 1em;
+				font-size: 90%;
 			}
 		}
 	}

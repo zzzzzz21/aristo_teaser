@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		drawerNav();
 		topCarousel();
 		colorbox();
+		colorboxModal();
 	}
 
 	// 初期処理 呼び出し
@@ -392,6 +393,22 @@ var colorbox = function colorbox() {
 	$('.youtube').colorbox({
 		iframe: true,
 		scrolling: false,
+		maxWidth: '1280px',
+		maxHeight: '90%',
+		width: '90%',
+		height: ($(window).width() * 0.9) * 0.7,
+		opacity: 0.9,
+		speed: 600,
+		fixed: true
+	});
+}
+
+// colorboxでモーダルを表示する(overflow=scroll)
+// ----------------------------------------
+var colorboxModal = function colorboxModal() {
+	$('.-modal').colorbox({
+		iframe: true,
+		scrolling: true,
 		maxWidth: '1280px',
 		maxHeight: '90%',
 		width: '90%',

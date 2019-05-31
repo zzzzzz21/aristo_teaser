@@ -11,6 +11,10 @@ page = 'complete';
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
 <%- include(srcPath + 'html/include/_gtag') %>
 <%- include(srcPath + 'html/include/_head') %>
+<!-- Event snippet for 新　資料請求 conversion page -->
+<script>
+	gtag('event', 'conversion', {'send_to': 'AW-797422406/kr09CM--sp8BEMbmnvwC'});
+</script>
 </head>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } %>" id="top">
 <div class="page" id="data-page">
@@ -51,5 +55,6 @@ page = 'complete';
 </div><!-- /[.page] -->
 
 <%- include(srcPath + 'html/include/_body_last') %>
+<%- include(srcPath + 'html/include/_body_last_request') %>
 </body>
 </html>

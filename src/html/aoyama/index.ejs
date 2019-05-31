@@ -20,7 +20,7 @@ page = '';
 		<header class="page-head">
 			<div class="container">
 				<h1 class="page-title"><ruby>ARISTO <rp>(</rp><rt>アリスト</rt><rp>)</rp></ruby>は、好立地の優良不動産に対して<br>少額からの投資が可能な<br class="is-sp">不動産小口化商品です。</h1>
-				<p class="page-title--note">ARISTO(アリスト)は、株式会社エー・ディー・ワークスが提供する、<br class="is-pc">不動産特定共同事業法に基づく不動産小口化商品の登録商標です。
+				<p class="page-title--note">ARISTO(アリスト)は、株式会社エー・ディー・ワークスが提供する、<br class="is-pc">不動産特定共同事業法に基づく不動産小口化商品です。
 				</p>
 			</div>
 		</header>
@@ -52,89 +52,8 @@ page = '';
 				<div class="block -available">
 					<h2 class="block-title__logo"><img src="<%= path %>images/common/logo_aristo-aoyama.jpg" alt="ARISTO青山"></h2>
 				</div>
-
-				<div class="block block-others">
-					<div class="block-catalogue__body"><% catalogue.forEach(function(item) {%>
-						<% if(item.catalogueID!=='aoyama') {%><div class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
-							<a href="<%= path %><%= item.catalogueID %>">
-								<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
-									<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %>
-								</div>
-								<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
-									<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
-									<% if(item.catalogueInformation) {%><p class="catalogue__information"><%- item.catalogueInformation %></p><% } %>
-								</div>
-							</a>
-						</div><%}%><%}); %>
-					</div>
-				</div>
-				<!-- /[.block-catalogue] -->
-				
-				<section class="unit-<%- directory %>" id="section-<%- directory %>-merit">
-					<h3 class="unit-<%- directory %>__title">ARSITO青山への投資の魅力</h3>
-					<div class="block unit-<%- directory %>__body">
-						<div class="unit-<%- directory %>--merit1" id="section-<%- directory %>-merit1">
-							<p class="unit-<%- directory %>--merit__title">東京都心に位置する事務所ビルマーケットへの投資。</p>
-							<div class="unit unit-merit -merit1" id="section-merit1">
-								<h4 class="unit-merit__head unit-merit1">都心区（千代田・中央港）は、政府機関大企業本社金融等が集しています。<br class="is-pc">2000年前後以降の都心回帰・職住近接の考え浸透等に起因。<br class="is-pc">3区人口は増加傾向。商業地価も5年連続で上昇中。</h4>
-								<div class="block--merit1">
-									<div class="unit-merit unit-merit--population">
-										<section class="unit-merit__item" id="section-growth-population">
-											<h5 class="unit-merit__title">都心人口は顕著な増加傾向に</h5>
-											<div class="unit-point__image">
-												<p><img src="<%= path %>images/aoyama/figure_population01.png" alt=""></p>
-												<p><img src="<%= path %>images/aoyama/figure_population02.png" alt=""></p>
-												<p class="caption">※都心3区の商業地価が下落しないことを保証するものではありません。</p>
-											</div>
-										</section>
-										<!-- /[.unit-merit__item#section-growth-population] -->
-										<section class="unit-merit__item unit-merit--market" id="section-growth-market">
-											<h5 class="unit-merit__title">都心事務所ビルの良好なマーケット環境</h5>
-											<div class="unit-merit__body">
-												<div class="unit-point__image">
-													<p><img src="<%= path %>images/aoyama/figure_market01.png" alt=""></p>
-													<p><img src="<%= path %>images/aoyama/figure_market02.png" alt=""></p>
-													<p class="caption">いずれも三鬼商事株式会社「オフィスマーケットデータ」より当社作成</p>
-												</div>
-											</div>
-										</section>
-										<!-- /[.unit-merit__item#section-growth-market] -->
-									</div>
-								</div>
-								<!-- /[.unit.unit-merit#section-growth] -->
-							</div>
-							<!-- /[.unit-merit.-merit1#section-merit1] -->
-
-						</div>
-						<div class="unit-<%- directory %>--merit2" id="section-<%- directory %>-merit2">
-							<p class="unit-<%- directory %>--merit__title">良好なブランドイメージを有する「青山」という街</p>
-							<div class="unit unit-merit -merit2" id="section-merit2">
-								<h3 class="unit-merit__head unit-merit1">皇居を望む三宅坂交差点から渋谷駅前までを貫く青山通り。<br class="is-pc">永田町、赤坂、青山、表参道等、都内でも有数の繁華街・オフィス街をつなぐ<br class="is-pc">洗練された通りのオフィス・住宅街に位置するARISTO青山</h3>
-								<div class="block--merit2">
-									<div class="unit-merit -brand-image" id="section-brand-image">
-										<section class="-brand-image__item">
-											<div class="-brand-image__body">
-												<h4 class="-brand-image__title">青山通り</h4>
-												<p>有数のブランドイメージを誇る表参道や、多くの海外の高級ブランドが出店するみゆき通り、洗練されたセレクトショップが立ち並ぶ骨董通りが交差するファッションやトレンドの発信基地と言えるエリア。<br>青山通りの地下には東京メトロ銀座線と半蔵門線が通る、東京都心の大動脈の一つと言える。</p>
-											</div>
-											<div class="-brand-image__photo"><img src="<%= path %>images/aoyama/photo_aoyama01.jpg" alt=""></div>
-										</section>
-										<section class="-brand-image__item">
-											<div class="-brand-image__body">
-												<h4 class="-brand-image__title">緑多い都心のオアシス</h4>
-												<p>青山通りは、赤坂御用地、明治神宮外苑銀杏並木、青山霊園等、豊かな緑に囲まれるエリアでもある。桜を愛でる春、緑深まる夏、紅葉が目にまぶしい秋、凛とした空気が心地よい冬と、四季折々の表情を見せる。休日には様々なイベントが開催されることも多く、近隣のみならず遠方からも多くの人が集まる都心のオアシス。</p>
-											</div>
-											<div class="-brand-image__photo"><img src="<%= path %>images/aoyama/photo_aoyama02.jpg" alt=""></div>
-										</section>
-									</div>
-									<!-- /[.unit-merit.-brand-image#section-brand-image] -->
-								</div>
-							</div>
-							<!-- /[.unit-merit.-merit1#section-merit2] -->
-						</div>
-					</div>
-				</section>
-				<!-- /[.unit-aoyama#section-aoyama--merit] -->
+<%- include(srcPath + 'html/include/aoyama/_block-others') %>
+				<!-- /[.block-others] -->
 			</div>
 			<!-- /[.block-title#section-title] -->
 		</section>
@@ -146,12 +65,10 @@ page = '';
 				<p class="unit-map__main" id="data-map-aoyama-main"><img src="<%= path %>images/aoyama/map_super-wide.jpg" alt="地図"></p>
 			</div>
 			<div class="unit-map__information">
-				<p>皇居を望む三宅坂交差点から渋谷駅前までを貫く青山通り。<br>永田町、赤坂、青山、表参道等、都内でも有数の繁華街・オフィス街をつなぐ洗練された通りのオフィス・住宅街に位置するARISTO青山</p>
+				<p>青山通りとは‥‥皇居を望む三宅坂交差点から渋谷駅前までの大通りで、永田町・赤坂・青山・表参道等・都内でも有数の繁華街・オフィス街をつなぐ洗練された通り</p>
 				<ul class="unit-map__nav" id="data-map-aoyama">
-					<li class="unit-map__nav__item"><a href="<%= path %>images/aoyama/map_super-wide.jpg"><img src="<%= path %>images/aoyama/map_super-wide.jpg"></a></li>
 					<li class="unit-map__nav__item"><a href="<%= path %>images/aoyama/map_wide.jpg"><img src="<%= path %>images/aoyama/map_wide.jpg"></a></li>
 					<li class="unit-map__nav__item"><a href="<%= path %>images/aoyama/map_middle.jpg"><img src="<%= path %>images/aoyama/map_middle.jpg"></a></li>
-					<li class="unit-map__nav__item"><a href="<%= path %>images/aoyama/map_around.jpg"><img src="<%= path %>images/aoyama/map_around.jpg"></a></li>
 				</ul>
 			</div>
 		</section>
@@ -163,9 +80,9 @@ page = '';
 					<div class="block-aoyama-images">
 						<div class="gallery-images__main"></div>
 						<ul class="gallery-images__thumbnail -label">
-							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/aoyama/photo_national-stadium.jpg" alt="新国立競技場"></li>
 							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/aoyama/photo_ginkgo.jpg" alt="銀杏並木"></li>
-							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/aoyama/photo_imperial-land.jpg" alt="赤坂御用地"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/aoyama/photo_national-stadium.jpg" alt="新国立競技場"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/aoyama/photo_imperial-land.jpg" alt="迎賓館赤坂離宮"></li>
 							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/aoyama/photo_omotesando.jpg" alt="表参道"></li>
 							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/aoyama/photo_aoyama-street.jpg" alt="青山通り"></li>
 							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/aoyama/photo_national-art-center.jpg" alt="国立新美術館"></li>
@@ -175,7 +92,7 @@ page = '';
 					</div>
 				</div>
 				<div class="block-gallery__item">
-					<img src="<%= path %>images/aoyama/map_middle.jpg" alt="周辺地図">
+					<img src="<%= path %>images/aoyama/map_middle-green.jpg" alt="周辺地図">
 				</div>
 			</div>	
 		</div>
@@ -183,7 +100,7 @@ page = '';
 
 		<section class="block block-characteristic" id="section-characteristic">
 			<h2 class="unit__title"><span>ARISTO青山の特性</span></h2>
-			<p class="block__lead">ARISTO青山は、 用途境に位置するため建物上層階から南側へ眺望が極て良く、<br class="is-pc">加えて美観整備された道路に面し、特徴あるアプローチを有しています。</p>
+			<p class="block__lead">ARISTO青山は、 用途境に位置するため建物上層階から南側への眺望が極めてよく、<br class="is-pc">加えて美観整備された道路に面し、特徴あるアプローチを有しています。</p>
 			<div class="block__body">
 				<div class="block-characteristic__images">
 					<div class="block-characteristic__images__item -item01"><img src="<%= path %>images/aoyama/photo_appearance.jpg" alt=""></div>
@@ -192,33 +109,56 @@ page = '';
 					<p class="block-characteristic__images__item -note">※青山通り以南のみ加工。正確性を保証するものではありません。</p>
 				</div>
 				<div class="block-characteristic__body">
+					<dl class="block-characteristic__photo -wide">
+						<dt>建物上層階から南側への眺望</dt>
+						<dd>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/aoyama/photo_23.jpg" alt="">
+							</figure>
+						</dd>
+					</dl>
 					<dl class="block-characteristic__photo">
 						<dt>外観</dt>
 						<dd>
-							<figure class="block-characteristic__photo__item -wide">
-								<img src="<%= path %>images/aoyama/photo_view.jpg" alt="">
-								<figcaption>建物上層階からの眺望　2019年2月竣工時撮影</figcaption>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/aoyama/photo_02.jpg" alt="">
 							</figure>
-							<figure class="characteristic__photo__item -half">
-								<img src="<%= path %>images/aoyama/photo_front.jpg" alt="">
-								<figcaption>建物の前面道路　2019年2月竣工時撮影</figcaption>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/aoyama/photo_03.jpg" alt="">
 							</figure>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/aoyama/photo_08.jpg" alt="">
+								<img src="<%= path %>images/aoyama/photo_09.jpg" alt="">
+							</figure>
+							<span class="block-characteristic__photo__item__description">2019年2月竣工時撮影</span>
 						</dd>
 					</dl>
 					<dl class="block-characteristic__photo">
 						<dt>内観</dt>
 						<dd>
-							<figure class="characteristic__photo__item">
-								<img src="<%= path %>images/aoyama/photo_kitchen.jpg" alt="">
-								<figcaption>各回専用の水回りスペース（奥に男女別のトイレ）　2019年2月竣工時撮影</figcaption>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/aoyama/photo_21.jpg" alt="">
+								<figcaption>各階専用の水回りスペース（奥に男女別のトイレ）</figcaption>
 							</figure>
-							<figure class="characteristic__photo__item">
-								<img src="<%= path %>images/aoyama/photo_room.jpg" alt="">
-								<figcaption>事務所内全景　2019年2月竣工時撮影</figcaption>
+							<figure class="block-characteristic__photo__item -half">
+								<img src="<%= path %>images/aoyama/photo_15.jpg" alt="">
+								<img src="<%= path %>images/aoyama/photo_16.jpg" alt="">
+								<figcaption>事務所内全景</figcaption>
 							</figure>
+							<figure class="block-characteristic__photo__item -half -caption">
+								<img src="<%= path %>images/aoyama/photo_18.jpg" alt="">
+								<img src="<%= path %>images/aoyama/photo_19.jpg" alt="">
+								<figcaption>7階オフィス</figcaption>
+							</figure>
+							<span class="block-characteristic__photo__item__description">2019年2月竣工時撮影</span>
 						</dd>
 					</dl>
 				</div>
+			</div>
+			<div class="block">
+				<h3 class="block-contact__title">資料請求・お問い合わせはこちら</h3>
+				<a href="<%= path %>request/" class="btn-detail block-contact__button">Webお問い合わせフォーム</a>
+				<%- include(srcPath + 'html/include/_block-contact') %>
 			</div>
 		</section>
 		<!-- /[.block.block-characteristic#section-characteristic] -->
@@ -229,15 +169,15 @@ page = '';
 				<table class="outline-table">
 					<tr>
 						<th>募集総額</th>
-						<td>12億2千万円</td>
+						<td>9.0億円</td>
 					</tr>
 					<tr>
 						<th>募集総口数</th>
-						<td>1220口</td>
+						<td>900口</td>
 					</tr>
 					<tr>
 						<th>組合組成予定日</th>
-						<td>2018年12月21日予定</td>
+						<td>2019年9月20日予定</td>
 					</tr>
 					<tr>
 						<th>予定運用期間</th>
@@ -249,31 +189,32 @@ page = '';
 							<dl>
 								<dt>1口100万円単位</dt>
 								<dd class="indent">最低出資金額500万円（5口）<br>
-									最高出資金額3億円（300口）<br>
+									最高出資金額2.25億円（225口）<br>
 									（500万円以上であれば、100万円単位で出資額をお決め頂けます。）</dd>
 							</dl>
 						</td>
 					</tr>
 					<tr>
 						<th>必要経費</th>
-						<td>不動産取得税等（1口あたりの目安約7,341円）</td>
+						<td>不動産取得税等（1口あたりの目安約22,515円）</td>
 					</tr>
 					<tr>
 						<th>支払期日</th>
-						<td>2018年12月14日予定</td>
+						<td>2019年9月13日予定</td>
 					</tr>
 					<tr>
-						<th>売買代金に代金に対する賃料利回り</th>
+						<th>売買代金に対する予定賃料利回り</th>
 						<td>
-							<p>4.46％</p>
-							<p>※売買代金に対する賃料利回りとは、「満室時の年間の賃料収入等の総額」÷「募集総額」で算出しています。なお売買代金に対する賃料利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
+							<p>満室稼動想定　4.69%<br>95%稼動想定　4.46%</p>
+							<p>※売買代金に対する予定賃料利回りとは、「満室時の年間の賃料収入等の総額」÷「募集総額」で算出しています。なお売買代金に対する予定賃料利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
 						</td>
 					</tr>
 					<tr>
-						<th>投資コストに対する分配金利回り</th>
+						<th>投資コストに対する予定分配金利回り</th>
 						<td>
-							<p>3.91％</p>
-							<p>※投資コストに対する分配金利回りとは、「年間の現金分配額」÷「（募集総額＋必要経費）」で算出しています。なお投資コストに対する分配金利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
+							<p>満室稼動想定　3.39%<br>95%稼動想定　3.17%</p>
+							<p>※投資コストに対する予定分配金利回りとは、「年間の現金分配額」÷「（募集総額＋必要経費）」で算出しています。なお投資コストに対する予定分配金利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
+							<p>※不動産市況等により賃料収入は変動します。例えば、賃料収入が現在想定賃料から『10％上昇』・『10％下落』した場合の満室稼動想定予定分配金利回りは、『3.81％』・『2.96％』となります。</p>
 						</td>
 					</tr>
 					<tr>
@@ -304,50 +245,48 @@ page = '';
 					<tr>
 						<th>物件</th>
 						<td>
-							<dl class="in-table"><dt>名称</dt><dd>ARISTO新京極</dd></dl>
-							<dl class="in-table"><dt>権利</dt><dd>所有権</dd></dl>
+							<dl class="in-table"><dt>名称</dt><dd>ARISTO青山<br>ビル名称（物件名称）はARISTO南青山</dd></dl>
 						</td>
 					</tr>
 					<tr>
 						<th>所在地</th>
 						<td>
-							<dl class="in-table"><dt>地番</dt><dd>京都府京都市中京区新京極通六角下る桜之町441番2</dd></dl>
-							<dl class="in-table"><dt>住居表示</dt><dd>京都府京都市中京区新京極通六角下る桜之町441－2</dd></dl>
+							<dl class="in-table"><dt>地番</dt><dd>東京都港区南青山二丁目62番2</dd></dl>
+							<dl class="in-table"><dt>住居表示</dt><dd>東京都港区南青山二丁目11番11号</dd></dl>
 						</td>
 					</tr>
 					<tr>
 						<th>交通</th>
 						<td>
-							<dl class="in-table"><dt> </dt><dd>阪急京都線「河原町」駅　徒歩5分 </dd></dl>
+							<dl class="in-table"><dt> </dt><dd>東京メトロ「外苑前」駅徒歩4分<br>東京メトロ・都営地下鉄「青山一丁目」駅徒歩6分</dd></dl>
 						</td>
 					</tr>
 					<tr>
 						<th>土地</th>
 						<td>
-							<dl class="in-table"><dt>公簿面積 </dt><dd>161.89m<sup>2</sup> （48.97坪） </dd></dl>
-							<dl class="in-table"><dt>実測面積 </dt><dd>162.32m<sup>2</sup> （49.10坪）</dd></dl>
-							<dl class="in-table"><dt>地目</dt><dd>宅地</dd></dl>
-							<dl class="in-table"><dt>接道</dt><dd><p>北側幅員約5m公道</p><p>西側幅員約6m公道</p></dd></dl>
+							<dl class="in-table"><dt>実測面積 </dt><dd>170.39m<sup>2</sup> （51.54坪）</dd></dl>
+							<dl class="in-table"><dt>権利</dt><dd>所有権</dd></dl>
+							<dl class="in-table"><dt>地目</dt><dd>宅地・公衆用道路</dd></dl>
 						</td>
 					</tr>
 					<tr>
 						<th>建物</th>
 						<td>
-							<dl class="in-table"><dt>家屋番号</dt><dd>441番2の2</dd></dl>
-							<dl class="in-table"><dt>種類</dt><dd>店舗</dd></dl>
-							<dl class="in-table"><dt>構造規模</dt><dd>鉄骨造陸屋根3階建</dd></dl>
-							<dl class="in-table"><dt>延床面積</dt><dd>411.95m<sup>2</sup>（公簿）　</dd></dl>
-							<dl class="in-table"><dt>竣工</dt><dd>1998年6月</dd></dl>
+							<dl class="in-table"><dt>構造・規模</dt><dd>鉄筋コンクリート造・地上7階</dd></dl>
+							<dl class="in-table"><dt>竣工</dt><dd>2019年2月</dd></dl>
+							<dl class="in-table"><dt>延床面積</dt><dd>473.65m<sup>2</sup>（143.27坪）　</dd></dl>
+							<dl class="in-table"><dt>賃貸面積</dt><dd>430.46m<sup>2</sup>（130.16坪）</dd></dl>
+							<dl class="in-table"><dt>用途</dt><dd>事務所・店舗</dd></dl>
 						</td>
 					</tr>
 					<tr>
 						<th>公法上の制限</th>
 						<td>
 							<dl class="in-table"><dt>都市計画区域</dt><dd>市街化区域</dd></dl>
-							<dl class="in-table"><dt>用途地域</dt><dd>商業地域</dd></dl>
-							<dl class="in-table"><dt>地域・地区</dt><dd><p>防火地域</p><p>31m高度地区</p><p>駐車場整備地区</p><p>既成都市区域</p></dd></dl>
-							<dl class="in-table"><dt>建蔽率</dt><dd>80%</dd></dl>
-							<dl class="in-table"><dt>容積率</dt><dd>700%</dd></dl>
+							<dl class="in-table"><dt>用途地域</dt><dd>商業地域・第2種住居地域</dd></dl>
+							<dl class="in-table"><dt>指定建蔽率</dt><dd>80%・60%</dd></dl>
+							<dl class="in-table"><dt>防火指定</dt><dd>防火地域</dd></dl>
+							<dl class="in-table"><dt>指定容積率</dt><dd>700%・400%</dd></dl>
 						</td>
 					</tr>
 				</table>
