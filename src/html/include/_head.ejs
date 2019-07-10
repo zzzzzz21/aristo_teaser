@@ -1,8 +1,14 @@
 <%
 update = '201905070000';
-siteTitle = '東証一部上場　株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO（アリスト）｜株式会社エー・ディー・ワークス';
-siteDescription = '東証一部上場　株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO（アリスト）。収益不動産の仕入れ・バリューアップ・販売から、プロパティマネジメント・資産コンサルティングまで、一貫して提供するオンリーワン・カンパニー。';
-siteKeywords = 'ADW,エー・ディー・ワークス,不動産,小口,商品,投資,収益,相続,ポートフォリオ,ARISTO,アリスト,ARISTO京都,アリスト京都,ARISTO青山,アリスト青山';
+siteTitle = '不動産小口化商品ARISTO（アリスト）｜株式会社エーディーワークス';
+siteDescription = '不動産小口化商品ARISTO（アリスト）｜株式会社エーディーワークス';
+siteTitleKyoto = '不動産小口化商品ARISTO京都（アリスト京都）｜株式会社エーディーワークス';
+siteKeywords = 'アリスト青山,ARISTO青山,青山,不動産小口化商品,アリスト京都,ARISTO京都,京都,エーディーワークス';
+siteDescriptionKyoto = '不動産小口化商品ARISTO京都（アリスト京都）｜株式会社エーディーワークス';
+siteKeywordsKyoto = 'アリスト京都,ARISTO京都,不動産小口化商品,京都,エーディーワークス';
+siteTitleAoyama = '不動産小口化商品ARISTO青山（アリスト青山）｜株式会社エーディーワークス';
+siteDescriptionAoyama = '不動産小口化商品ARISTO青山（アリスト青山）｜株式会社エーディーワークス';
+siteKeywordsAoyama = 'アリスト青山,ARISTO青山,不動産小口化商品,青山,エーディーワークス';
 siteURL = 'https://www.re-adworks.com/';
 parentDirectory ='business/aristo/';
 %><meta charset="UTF-8">
@@ -10,9 +16,9 @@ parentDirectory ='business/aristo/';
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="format-detection" content="telephone=no">
 <!-- [TDK] -->
-<title><% if (directory!=='') { %><%= meta.title %> | <% } %><%= siteTitle %></title>
-<meta name="description" content="<% if (directory!=='') { %><%= meta.title %>。<% } %><%= siteDescription %>">
-<meta name="keywords" content="<%= siteKeywords %>">
+<title><% if (directory=='aoyama') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleAoyama %><% } else if (directory=='kyoto') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleKyoto %><% } else { %><% if (directory!=='') { %><%= meta.title %> | <% } %><% if (directory=='seminar' || directory=='entry-seminar' || directory=='request' || directory=='inquiry') {%><%= siteTitleAoyama %><% } else { %><%= siteTitle %><% } %><% } %></title>
+<meta name="description" content="<% if (directory=='aoyama') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionAoyama %><% } else if (directory=='kyoto') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionKyoto %><% } else { %><% if (directory!=='') { %><%= meta.title %> | <% } %><% if (directory=='seminar' || directory=='entry-seminar' || directory=='request' || directory=='inquiry') {%><%= siteDescriptionAoyama %><% } else { %><%= siteDescription %><% } %><% } %>">
+<meta name="keywords" content="<% if (directory=='aoyama') { %><%= siteKeywordsAoyama %><% } else if (directory=='kyoto') { %><%= siteKeywordsKyoto %><% } else {%><%= siteKeywords %><% } %>">
 <%_ if (isForm!=='') { %><meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0"><% } _%>
@@ -26,9 +32,10 @@ parentDirectory ='business/aristo/';
 <meta property="og:locale" content="ja_JP">
 <meta property="fb:app_id" content="">
 <meta property="og:type" content="<% if (directory=='') { %>website<% } else { %>article<% } %>">
-<meta property="og:site_name" content="<%= siteTitle %>">
-<meta property="og:title" content="<% if (directory!=='') { %><%= meta.title %> | <% } %><%= siteTitle %>">
-<meta property="og:description" content="<% if (directory!=='') { %><%= meta.title %>。<% } %><%= siteDescription %>">
+<meta property="og:site_name" content="<% if (directory=='seminar' || directory=='entry-seminar') {%><%= siteTitleAoyama %><% } else { %><%= siteTitle %><% } %>">
+<meta property="og:title" content="<% if (directory=='aoyama') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleAoyama %><% } else if (directory=='kyoto') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleKyoto %><% } else { %><% if (directory!=='') { %><%= meta.title %> | <% } %><% if (directory=='seminar' || directory=='entry-seminar' || directory=='request' || directory=='inquiry') {%><%= siteTitleAoyama %><% } else { %><%= siteTitle %><% } %><% } %>">
+<meta property="og:description" content="<% if (directory=='aoyama') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionAoyama %><% } else if (directory=='kyoto') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionKyoto %><% } else { %><% if (directory!=='') { %><%= meta.title %> | <% } %><% if (directory=='seminar' || directory=='entry-seminar' || directory=='request' || directory=='inquiry') {%><%= siteDescriptionAoyama %><% } else { %><%= siteDescription %><% } %><% } %>">
+<meta name="keywords" content="<% if (directory=='aoyama') { %><%= siteKeywordsAoyama %><% } else if (directory=='kyoto') { %><%= siteKeywordsKyoto %><% } else {%><%= siteKeywords %><% } %>">
 <meta property="og:image" content="<%= siteURL %>images/logo_opg.png">
 <meta property="og:url" content="<%= siteURL %><%= parentDirectory %><%= directory %><% if (directory!=='') { %>/<% } %><%= directoryLv2 %><% if (directoryLv2!=='') { %>/<% } %><%= page %><% if (page!=='') { %>.html<% } %>">
 <!-- [css] -->
