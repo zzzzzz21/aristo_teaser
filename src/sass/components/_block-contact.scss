@@ -36,6 +36,9 @@
 			width: 100%;
 		}
 	}
+	.seminar-list + & {
+		margin-top: 120px!important;
+	}
 
 	// .block-contact__tel
 	// ----------------------------------------
@@ -76,10 +79,19 @@
 		@include media(sp) {
 			@include calcvw(160, 'margin-top', 640);
 			@include calcvw(28, 'font-size', 640);
+			@at-root .block-seminars & {
+				margin-top: 0;
+			}
 		}
 		//	[media queries PC-tablet]
 		// ----------------------------------------
+		@at-root .block-seminars & {
+			margin-top: 0;
+		}
 		@at-root .aristo-seminar & {
+			margin-top: 0;
+		}
+		@at-root .aristo-entry-seminar & {
 			margin-top: 0;
 		}
 	}

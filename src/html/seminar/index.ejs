@@ -1,6 +1,7 @@
 <%
 meta = { title:'セミナー詳細', desc:'' };
 isForm = 'y';
+seminar = 'finish';
 path = '../';
 srcPath ='../../';
 directory = 'seminar';
@@ -25,12 +26,15 @@ page = '';
 		</header>
 		<div class="page-body">
 			<div class="container">
-				<div class="page-lead">
+				<%if (seminar!=='finish') { %><div class="page-lead">
 					<p class="contact-form__link"><a href="<%= path %>entry-seminar/" class="btn-detail">セミナー申込み</a></p>
 				</div>
-				<!-- /[.page-lead] -->
+				<!-- /[.page-lead] --><% } %>
 				<div class="seminar-list -single">
-					<% seminarList.forEach(function(item) {%><article class="seminar-detail">
+					<%if (seminar=='finish') { %><h2 class="block-contact__title is--attention">現在開催予定のセミナーはございません。<br>資料請求・お問い合わせは受付けております。</h2>
+					<%#            <a href="./seminar/" class="btn-detail block-contact__button">セミナー詳細はこちら</a> %>
+					<a href="<%= path %>request/#form-contact" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
+					<%- include(srcPath + 'html/include/_block-contact') %><% } else { %><% seminarList.forEach(function(item) {%><article class="seminar-detail">
 						<h2 class="seminar-detail__title"><%- item.seminarTitle %></h2>
 						<div class="seminar-detail__body">
 							<div class="seminar-detail__meta">
@@ -85,9 +89,9 @@ page = '';
 						</div>
 						<% if (item.seminarLink) {%><p class="btn"><a href="<%= path %>entry-seminar/?<%- item.seminarLink %>" class="btn-seminar">セミナー申込み</a></p><% } %>
 					</article>
-					<%}); %>
+					<%}); %><% } %>
 				</div>
-	<%- include(srcPath + 'html/include/_block-contact') %>
+	<%if (seminar!=='finish') { %><%- include(srcPath + 'html/include/_block-contact') %><% } %>
 			</div>
 			<!-- /[.container] -->
 		</div>

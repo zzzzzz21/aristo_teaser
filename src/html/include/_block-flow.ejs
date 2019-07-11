@@ -8,7 +8,7 @@
 							<span class="title">資料請求・セミナーご来訪</span>
 						</h3>
 						<div class="unit-flow__body">
-							<a href="<%= path %>request/" class="btn-detail">資料請求はこちら</a><% if (seminar!=='') { %><a href="<%= path %>entry-seminar/" class="btn-detail -reverse">セミナー申込みはこちら</a><% } else {%><% } %>
+							<a href="<%= path %>request/" class="btn-detail">資料請求はこちら</a><% if (seminar!=='finish') { %><a href="<%= path %>entry-seminar/" class="btn-detail -reverse">セミナー申込みはこちら</a><% } else {%><% } %>
 						</div>
 					</div>
 					<div class="unit-flow">
@@ -47,7 +47,7 @@
 					</div>
 				</div>
 				<h2 class="block-contact__title">資料請求・お問い合わせはこちら</h2>
-				<a href="<%= path %>request/" class="btn-detail block-contact__button">Webお問い合わせフォーム</a>
+				<a href="<%= path %>request/" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
 				<div class="block-contact">
 					<dl>
 						<dt class="block-contact__lead"> お電話でのお問い合わせの方はこちら</dt>

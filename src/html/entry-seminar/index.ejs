@@ -23,7 +23,10 @@ page = '';
 		</header>
 		<div class="page-body">
 			<div class="container">
-				<div class="page-lead">
+				<%if (seminar=='finish') { %><h2 class="block-contact__title is--attention">現在開催予定のセミナーはございません。<br>資料請求・お問い合わせは受付けております。</h2>
+				<%#            <a href="./seminar/" class="btn-detail block-contact__button">セミナー詳細はこちら</a> %>
+				<a href="<%= path %>request/#form-contact" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
+<%- include(srcPath + 'html/include/_block-contact') %><% } else { %><div class="page-lead">
 					<p>ARISTOに関するセミナー申し込みを下記フォームより受け付けております。<br>
 					必要事項をご記入いただき、「入力内容を確認する」ボタンを押してください。<br>
 					<span class="is--notice">必須項目は、すべて選択または入力してください。</span></p>
@@ -159,7 +162,7 @@ page = '';
                         </div>
                     </form>
                 </div>
-				<!-- /[.contact-form]-->	
+				<!-- /[.contact-form]--><% } %>
 			</div>
 			<!-- /[.container] -->
 		</div>

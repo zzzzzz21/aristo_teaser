@@ -1,5 +1,6 @@
 				<div class="block-seminars__body">
-					<% var _counter = 0; %><% seminarList.forEach(function(item){%><%if (_counter < 5){%><article class="seminar-item">
+					<% if (seminar=='finish') {%><h2 class="block-contact__title is--attention">現在開催予定のセミナーはございません。<br>資料請求・お問い合わせは受付けております。</h2><% } else { 
+						%><% var _counter = 0; %><% seminarList.forEach(function(item){%><%if (_counter < 5){%><article class="seminar-item">
 					<div class="seminar-detail__body">
 						<div class="seminar-detail__meta">
 							<p><a href="<%= path %>entry-seminar/?<%- item.seminarLink %>"><img src="<%= path %>images/seminar/<%- item.seminarImage %>.jpg" alt="<%- item.seminarTitle %>"></a></p>
@@ -29,5 +30,8 @@
 					</div>
 					<% if (item.seminarLink) {%><p class="btn"><a href="<%= path %>entry-seminar/?<%- item.seminarLink %>" class="btn-seminar">セミナー申込み</a></p><% } %>
 					</article>
-					<% } %><% _counter++; %><% })%>
+					<% } %><% _counter++; %><% })%><% } %>
 				</div>
+				<%if (seminar=='finish') { %>
+				<a href="<%= path %>request/#form-contact" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
+<%include _block-contact %><% } %>

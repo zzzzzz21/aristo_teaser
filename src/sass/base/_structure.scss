@@ -119,6 +119,9 @@ body {
 		padding-right: $base_padding_sp;
 		padding-left: $base_padding_sp;
 	}
+	.block-seminars & {
+		padding-top: 0;
+	}
 	&:last-child {
 		padding-bottom: 0;
 	}
