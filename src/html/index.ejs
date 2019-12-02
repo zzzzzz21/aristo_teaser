@@ -1,6 +1,7 @@
 <%
 meta = { title:"東証一部上場株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO公式サイト", desc:"" };
 seminar = "finish";
+isOnsale = "";
 isForm ="";
 path = "./";
 srcPath ="../";
@@ -600,12 +601,12 @@ seminarList = [
 catalogue = [
 	{
 		"catalogueID":"aoyama",
-		"catalogueStatus":"available",
+		"catalogueStatus":"investment",
 		"catalogueTitle":"ARISTO青山",
-		"catalogueCaption":"2019年6月販売開始予定",
+		"catalogueCaption":"2019年9月運用開始",
 		"catalogueAccess":"東京都港区南青山2丁目11番11号<br>東京メトロ銀座線「外苑前」駅　徒歩4分<br>東京メトロ銀座線・半蔵門線・都営地下鉄大江戸線「青山一丁目」駅<br>徒歩6分",
 		"catalogueOutline":"都心の中心「港区青山」の新築ビル",
-		"catalogueInformation":"第2号商品の「ARISTO青山」は、2019年5月下旬に販売開始予定です。<br>どうぞお気軽にお問い合わせくださいませ。",
+		"catalogueInformation":"第2号商品の「ARISTO青山」は、予定通り完売し現在運用中となりました。<br>多数のお問い合わせをいただき、ありがとうございました。",
 		"cataloguePhoto":["01"],
 		"cataloguePhotoSub":["02","03",]
 	},
@@ -640,7 +641,7 @@ catalogue = [
 		</header>
 		<!-- /[.page-head] -->
 
-		<div class="block">
+		<% if(isOnsale!== ''){%><div class="block">
 			<div class="block-catalogue__body"><% catalogue.forEach(function(item) {%>
 				<% if(item.catalogueID=='aoyama') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
 					<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
@@ -659,7 +660,7 @@ catalogue = [
 					</div>
 				</article><%} %><%}); %>
 			</div>
-		</div>
+		</div><%} %>
 
 <%- include(srcPath + 'html/include/_block-movie-aristo') %>
 		<!-- /[.block-movie] -->
@@ -679,12 +680,6 @@ catalogue = [
 					<p class="is--notice">※物件の資産価値が下落しないことを保証するものではありません。</p>
 				</section>
 				<!-- /[.unit.unit-point#point1] -->
-				<section class="unit unit-point -point2" id="point2">
-					<h3 class="unit-point__title">不動産は、相続・贈与時に時価と<br class="is-sp">評価額の差が大きいことから<br>資産の圧縮効果を得ることができる。</h3>
-					<p class="unit-point__image"><img src="<%= path %>images/index/image_point2.jpg" alt="イメージ：不動産は、相続・贈与時に時価と評価額の差が大きいことから資産の圧縮効果を得ることができる。"></p>
-					<p class="is--notice">※図はあくまでもイメージであり、圧縮効果は不動産によって異なります。  また、税制の変更等により効果の幅も変わります。</p>
-				</section>
-				<!-- /[.unit.unit-point#point2] -->
 				<div class="unit aristo-note">
 					<p>好立地の優良不動産に投資をするためには大きな資本が必要となります。<br>ARISTOは、不動産を小口化することで、メリットをそのままに、少額からの投資が可能です。</p>
 					<p class="aristo-note__appendix">（一口100万円で最低5口からの投資になります）</p>

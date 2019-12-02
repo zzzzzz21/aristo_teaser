@@ -265,7 +265,10 @@ $title_color: #20428c;
 	// ----------------------------------------
 	.-point1 {
 		&:before {
-			content: 'POINT 1';
+//			content: 'POINT 1';
+			margin: 0;
+			padding: 0;
+			background: none;
 		}
 		.unit-point__title {
 			//	[media queries PC-tablet]

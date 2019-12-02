@@ -2071,7 +2071,9 @@ a.btn-target:after {
 }
 
 .block-point .-point1:before {
-  content: 'POINT 1';
+  margin: 0;
+  padding: 0;
+  background: none;
 }
 
 .block-point .-point1 .unit-point__image {
