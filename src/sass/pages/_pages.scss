@@ -114,6 +114,10 @@
             margin-bottom: 0;
             background-image: url(#{$image_path}form/bg_header.jpg);
         }
+        @at-root .aristo-guidance & {
+            margin-bottom: 0;
+            background-image: url(#{$image_path}form/bg_header.jpg);
+        }
         @at-root &.teaser {
             margin-bottom: 0;
         }

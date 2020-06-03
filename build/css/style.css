@@ -764,6 +764,59 @@ img {
   padding: .6em 1.2em;
 }
 
+.btn-guidance {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: .6em 1.2em;
+  background-color: #003466;
+  border-radius: 4px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  transition: all ease .3s;
+  font-weight: bold;
+}
+
+.btn-guidance:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-guidance:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-guidance:hover {
+  text-decoration: none;
+  background-color: #09f;
+}
+
+.btn-guidance:after {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 4px;
+  content: '';
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate3d(0, 0, 1, 45deg);
+}
+
+.btn-guidance:before {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 24px;
+  content: url(../images/common/icon_entry.png);
+  margin-right: .4em;
+  vertical-align: middle;
+}
+
 .btn-contact {
   position: relative;
   box-sizing: border-box;
@@ -1392,7 +1445,6 @@ a.btn-target:after {
   box-sizing: border-box;
   position: relative;
   width: 100%;
-  max-width: calc(1200px + 20px);
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -1438,7 +1490,7 @@ a.btn-target:after {
 
 .globalHeader__body .siteTitle {
   box-sizing: border-box;
-  width: calc( 260 / 800 * 100%);
+  width: calc( 280 / 800 * 100%);
   padding: 0 20px;
   text-align: center;
 }
@@ -3732,6 +3784,11 @@ a.btn-target:after {
   background-image: url(../images/form/bg_header.jpg);
 }
 
+.aristo-guidance .contents .page-head {
+  margin-bottom: 0;
+  background-image: url(../images/form/bg_header.jpg);
+}
+
 .contents .page-head.teaser {
   margin-bottom: 0;
 }
@@ -5177,13 +5234,18 @@ body.rtl .formError .formErrorArrow {
     -webkit-transform: translateZ(999px);
   }
 
+  .globalHeader__body .siteTitle {
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+  }
+
   .siteTitle__function__tel__number a {
     color: #000;
   }
 
   .gNavi {
     box-sizing: border-box;
-    width: calc( 540 / 800 * 100%);
+    width: calc( 520 / 800 * 100%);
     border-left: 1px solid #fff;
   }
 

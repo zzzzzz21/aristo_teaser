@@ -1,9 +1,9 @@
 <%
-meta = { title:'セミナー申込み', desc:'' };
+meta = { title:'Web個別案内会', desc:'' };
 path = '../';
 srcPath = '../../';
 isForm = '';
-directory = 'entry-seminar';
+directory = 'guidance';
 directoryLv2 = '';
 page = '';
 %><!DOCTYPE html>
@@ -23,12 +23,13 @@ page = '';
 		</header>
 		<div class="page-body">
 			<div class="container">
-				<%if (seminar=='finish') { %><h2 class="block-contact__title is--attention">現在開催予定のセミナーはございません。<br>資料請求・お問い合わせは受付けております。</h2>
+				<%if (guidance=='finish') { %><h2 class="block-contact__title is--attention">現在開催予定のWeb個別案内会はございません。<br>資料請求・お問い合わせは受付けております。</h2>
 				<%#            <a href="./seminar/" class="btn-detail block-contact__button">セミナー詳細はこちら</a> %>
 				<a href="<%= path %>request/#form-contact" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
 <%- include(srcPath + 'html/include/_block-contact') %><% } else { %><div class="page-lead">
-					<p>ARISTOに関するセミナー申し込みを下記フォームより受け付けております。<br>
-					必要事項をご記入いただき、「入力内容を確認する」ボタンを押してください。<br>
+					<p>面倒な操作やアプリのインストールは不要です。<br>
+					詳細は「Web面談の流れ」をご確認ください。<br>
+					尚、ご希望の場合は、対面形式でのご面談も受け付けております。<br>
 					<span class="is--notice">必須項目は、すべて選択または入力してください。</span></p>
 				</div>
 				<!-- /[.page-lead] -->
@@ -45,19 +46,8 @@ page = '';
 					
 					<h2 class="section-title"><%= meta.title %></h2>
 					<p class="contact-form__note">※<span class="label-required">必須</span>の入力欄は入力しなければフォームを完了できません。</p>
-					<form action="confirm.html" method="post" name="form-contact" class="form-body h-adr" id="form-contact">
+					<form action="" method="post" name="form-contact" class="form-body h-adr" id="form-contact">
                         <input type="hidden" class="p-country-name" value="Japan">
-                        <div class="form-field required">
-                            <div class="form-field__label">
-								<label for="seminarSchedule">参加希望日時<br>※参加費無料</label>
-                            </div>
-                            <div class="form-field__element">
-                                <div id="data-seminarSchedule"><%_ seminarList.forEach(function(item){%>
-									<p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="<%- item.seminarDate %>_<%- item.seminarRegion %>" id="<%- item.seminarLink %>"><label for="<%- item.seminarLink %>" class="label-for-radio"><%- item.seminarDate %>　<%- item.seminarRegion %><br><%- item.seminarTitle%><br>（定員<%- item.seminarCapacity %>）　※参加費<%- item.seminarFee %></label></p><% }) _%>
-									
-                                </div>
-                            </div>
-                        </div>
                         <div class="form-field required">
                             <div class="form-field__label"><label for="name-familyName">お名前</label></div>
                             <div class="form-field__element">
@@ -129,12 +119,6 @@ page = '';
                                 <input type="text" id="data-email2" class="element-input-text validate[required,custom[email]],equals[data-email]" name="email2" placeholder="foo@example.com">
                             </div>
                         </div>
-                        <div class="form-field required">
-                            <div class="form-field__label"><label for="number">参加人数</label></div>
-                            <div class="form-field__element">
-                                <input type="text" id="data-number" class="element-input-number validate[required,custom[number]]" name="number" placeholder="半角数字">名
-                            </div>
-                        </div>
                         <div class="form-field">
                             <div class="form-field__label"><label for="generation">年代</label></div>
                             <div class="form-field__element -checkbox">
@@ -146,6 +130,81 @@ page = '';
                                 <span class="-checkbox__item"><input type="checkbox" id="data-generation70" class="element-input-checkbox" name="generation70" value="70代"><label for="data-generation70">70代</label></span>
                                 <span class="-checkbox__item"><input type="checkbox" id="data-generation80" class="element-input-checkbox" name="generation80" value="80代"><label for="data-generation80">80代</label></span>
                             </div>
+                        </div>
+                        <div class="form-field required">
+							<div class="form-field__label"><label for="month">面談希望日（1）</label></div>
+                        	<div class="form-field__element">
+								2020年 <select name="month" id="data-month" class="element-input-number validate[required]">
+									<option value="">選択</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>月
+								<input type="text" id="data-date" class="element-input-number validate[required]" name="date" placeholder="日にち"> 日 
+								<select name="startTime" id="data-startTime" class="element-input-number validate[required]" placeholder="開始時間">
+									<option value="">選択</option>
+									<option value="10:00">10:00～</option>
+									<option value="11:00">11:00～</option>
+									<option value="12:00">12:00～</option>
+									<option value="13:00">13:00～</option>
+									<option value="14:00">14:00～</option>
+									<option value="15:00">15:00～</option>
+									<option value="16:00">16:00～</option>
+									<option value="17:00">17:00～</option>
+									<option value="18:00">18:00～</option>
+								</select> ～<br>
+                       			※土日祝を除く
+                        	</div>
+                        </div>
+                        <div class="form-field">
+							<div class="form-field__label"><label for="month">面談希望日（2）</label></div>
+                        	<div class="form-field__element">
+								2020年 <select name="month" id="data-month2" class="element-input-number">
+									<option value="">選択</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>月
+								<input type="text" id="data-date2" class="element-input-number" name="date2" placeholder="日にち"> 日 
+								<select name="startTime2" id="data-startTime2" class="element-input-number" placeholder="開始時間">
+									<option value="">選択</option>
+									<option value="10:00">10:00～</option>
+									<option value="11:00">11:00～</option>
+									<option value="12:00">12:00～</option>
+									<option value="13:00">13:00～</option>
+									<option value="14:00">14:00～</option>
+									<option value="15:00">15:00～</option>
+									<option value="16:00">16:00～</option>
+									<option value="17:00">17:00～</option>
+									<option value="18:00">18:00～</option>
+								</select> ～<br>
+                       			※土日祝を除く
+                        	</div>
+                        </div>
+                        <div class="form-field">
+                        	<div class="fom-field__label">対面形式を希望</div>
+                        	<div class="form-field__element">
+                       			<p>対面形式を希望される方はチェックを入れて下さい。</p>
+								<span class="-checkbox__item"><input type="checkbox" id="data-interview" class="element-input-checkbox" name="interview" value="対面形式を希望する"><label for="data-interview">対面形式を希望する</label></span>
+                        	</div>
                         </div>
                         <div class="form-field">
                             <div class="form-field__label"><label for="question">ご質問</label></div>

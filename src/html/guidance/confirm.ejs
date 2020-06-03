@@ -1,9 +1,9 @@
 <%
-meta = { title:'確認：お問い合わせ', desc:'' };
+meta = { title:'確認：Web個別案内会申し込み', desc:'' };
 path = '../';
 srcPath = '../../';
 isForm = '';
-directory = 'inquiry';
+directory = 'guidance';
 directoryLv2 = '';
 page = 'confirm';
 %><?php require_once "{$_SERVER['DOCUMENT_ROOT']}/common/php/aristo.php" ?><!DOCTYPE html>
@@ -40,17 +40,8 @@ page = 'confirm';
 					<!-- /[.step-indicator] -->
 					
 					<h2 class="section-title"><%= meta.title %></h2>
-					<p class="contact-form__note">※内容を確認して問題なければ「送信する」ボタンを押してください。<br>
-					　修正したい場合は、「修正する」ボタンを押してください。</p>
 					<form action="confirm.html" method="post" name="form-contact" class="form-body h-adr" id="form-contact">
 						<input type="hidden" class="p-country-name" value="Japan">
-						<div class="form-field required">
-							<div class="form-field__label"><label for="question">お問い合わせ内容</label></div>
-							<div class="form-field__element">
-								<input type="hidden" name="question" id="data-question" value="<?php echo $_POST['question']?>">
-								<div class="form-value"><?php echo str_replace("\n","<br>",$_POST['question'])?></div>
-							</div>
-						</div>
 						<div class="form-field required">
 							<div class="form-field__label"><label for="name-familyName">お名前</label></div>
 							<div class="form-field__element">
@@ -86,16 +77,16 @@ page = 'confirm';
 							</div>
 						</div>
 						<div class="form-field">
-							<div class="form-field__label"><label for="">ご住所</label></div>
+							<div class="form-field__label required"><label for="">ご住所</label></div>
 							<div class="form-field__element">
-								<div class="form-field--child">
+								<div class="form-field--child required">
 									<div class="form-field__label"><label for="zipcode">郵便番号</label></div>
 									<div class="form-field__element">
 										<input type="hidden" id="data-zipcode" name="zipcode" value="<?php echo $_POST['zipcode']?>">
 										<div class="form-value"><?php echo $_POST['zipcode']?></div>
 									</div>
 								</div>
-								<div class="form-field--child">
+								<div class="form-field--child required">
 									<div class="form-field__label"><label for="address1">住所</label></div>
 									<div class="form-field__element">
 										<input type="hidden" id="data-address1" name="address1" value="<?php echo $_POST['address1']?>">
@@ -136,15 +127,28 @@ page = 'confirm';
 								<?php if($_POST['generation60']): ?><input type="hidden" id="data-generation60" name="generation60" value="<?php echo $_POST['generation60']?>"><?php endif; ?>
 								<?php if($_POST['generation70']): ?><input type="hidden" id="data-generation70" name="generation70" value="<?php echo $_POST['generation70']?>"><?php endif; ?>
 								<?php if($_POST['generation80']): ?><input type="hidden" id="data-generation80" name="generation80" value="<?php echo $_POST['generation80']?>"><?php endif; ?>
-							
+
 								<div class="form-value"><?php echo $generations ?></div>
+							</div>
+						</div>
+						<div class="form-field required">
+							<div class="form-field__label"><label for="">面談希望日（1）</label></div>
+							<div class="form-field__element">
+								<input type="hidden" id="data-date" name="date" value="<?php echo $_POST['date']?>">
+								<div class="form-value">2020年6月15日18:00～</div>
+							</div>
+						</div>
+						<div class="form-field">
+							<div class="form-field__label"><label for="question">ご質問</label></div>
+							<div class="form-field__element">
+								<input type="hidden" name="question" id="data-question" value="<?php echo $_POST['question']?>">
+								<div class="form-value"><?php echo str_replace("\n","<br>",$_POST['question'])?></div>
 							</div>
 						</div>
 						<div class="form-field--confirm">
 							<input type="submit" id="data-submit" class="form-submit" value="送信する">
 							<input type="button" class="form-back" onclick="history.back()" value="修正する">
-							<input type="hidden" name="mode" value="confirm">
-							<input type="hidden" name="kind" value="inquiry">
+							<input type="hidden" name="kind" value="entry">
 						</div>
 					</form>
 				</div>

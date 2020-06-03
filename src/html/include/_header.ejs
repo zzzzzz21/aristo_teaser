@@ -4,11 +4,12 @@
 				<div class="siteTitle">
 					<dl>
 						<dt class="siteTitle__logo"><a href="<%= path %>" aria-label="トップページへのリンク"><img src="<%= path %>images/common/logo.jpg" alt="ロゴ：ARISTO（アリスト）"></a></dt>
-						<dd class="siteTitle__catch">東証一部上場　<br class="is-sp">株式会社エー・ディー・ワークスの<br>不動産小口化商品 ARISTO</dd>
+						<dd class="siteTitle__catch">株式会社エー・ディー・ワークスの<br>不動産小口化商品 ARISTO</dd>
 					</dl>
 				</div>
 				<div class="siteTitle__function">
 					<div class="siteTitle__function__form">
+						<a href="<%= path %>guidance/" class="btn-guidance">Web個別案内会はこちら</a>
 						<a href="<%= path %>request/#form-contact" class="btn-contact">資料請求はこちら</a>
 						<% if (isForm == '') { %><a href="<%= path %>seminar/" class="btn-seminar">セミナー詳細はこちら</a><% } else { %><a href="<%= path %>entry-seminar/" class="btn-seminar">セミナー申込みはこちら</a><% } %>
 					</div>
@@ -26,6 +27,7 @@
 			<div class="globalHeader__body__inner">
 				<div class="siteTitle">
 					<a href="<%= path %>" aria-label="トップページへのリンク"><img src="<%= path %>images/common/logo_globalheader.png" alt=""></a>
+					<a class="btn-detail block-contact__button" href="<%= path %>guidance/">Web個別案内会はこちら</a>
 					<a class="btn-detail block-contact__button" href="<%= path %>seminar/">セミナー詳細はこちら</a>
 					<a class="btn-detail block-contact__button" href="<%= path %>request/#form-contact">資料請求はこちら</a>
 				</div>

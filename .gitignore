@@ -83,3 +83,4 @@ node_modules
 
 /release/css
 release
+/*.node-version

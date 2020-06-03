@@ -1,9 +1,9 @@
 <%
-meta = { title:'完了：お問い合わせ', desc:'' };
+meta = { title:'完了：Web個別案内会申し込み', desc:'' };
 path = '../';
-srcPath = '../../'
+srcPath = '../../';
 isForm = '';
-directory = 'inquiry';
+directory = 'guidance';
 directoryLv2 = '';
 page = 'complete';
 %><!DOCTYPE html>
@@ -11,9 +11,9 @@ page = 'complete';
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
 <%- include(srcPath + 'html/include/_gtag') %>
 <%- include(srcPath + 'html/include/_head') %>
-<!-- Event snippet for 新　問合せ conversion page -->
+<!-- Event snippet for 新　セミナー申込 conversion page -->
 <script>
-	gtag('event', 'conversion', {'send_to': 'AW-797422406/J0AwCNXfsp8BEMbmnvwC'});
+	gtag('event', 'conversion', {'send_to': 'AW-797422406/weSgCIuxxJ8BEMbmnvwC'});
 </script>
 </head>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } %>" id="top">
@@ -40,7 +40,7 @@ page = 'complete';
 					
 					<h2 class="section-title"><%= meta.title %></h2>
 					<div class="form-complete">
-						<p>お問い合わせ内容を送信いたしました。<br>
+						<p>Web個別案内会の申込を受付けました。<br>
 						ありがとうございました。</p>
 						<a href="<%= path %>index.html" class="btn-back">ARISTOトップページに戻る</a>
 					</div>
@@ -55,6 +55,6 @@ page = 'complete';
 </div><!-- /[.page] -->
 
 <%- include(srcPath + 'html/include/_body_last') %>
-<%- include(srcPath + 'html/include/_body_last_inquiry') %>
+<%- include(srcPath + 'html/include/_body_last_entry-seminar') %>
 </body>
 </html>

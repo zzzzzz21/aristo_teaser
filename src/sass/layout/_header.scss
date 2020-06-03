@@ -46,7 +46,7 @@
 		box-sizing: border-box;
 		position: relative;
 		width: 100%;
-		max-width: calc(#{$site_width} + 20px);
+//		max-width: calc(#{$site_width} + 20px);
 		margin: 0 auto;
 		padding: 0 $base_padding;
 		//	[media queries SP]
@@ -123,7 +123,7 @@
 		}
 		.siteTitle {
 			box-sizing: border-box;
-			width: calc( 260 / 800 * 100% );
+			width: calc( 280 / 800 * 100% );
 			padding: 0 20px;
 			text-align: center;
 			//	[media queries SP]
@@ -131,6 +131,11 @@
 			@include media(sp) {
 				width: 100%;
 				padding: 0 36px;
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				flex: 1 0 auto;
 			}
 			img {
 				width: auto;
@@ -316,7 +321,7 @@
 	// ----------------------------------------
 	@include media(pc-tb) {
 		box-sizing: border-box;
-		width: calc( 540 / 800 * 100% );
+		width: calc( 520 / 800 * 100% );
 		border-left: 1px solid $base_white_color;
 	}
 	//	[media queries SP]

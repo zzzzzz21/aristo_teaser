@@ -4,10 +4,12 @@
 //  Date:	2017-06-02(UTC+9)
 //  Note:	
 // ===================================================================
+.btn-guidance {
+    @include btn-seminar;
+}
 .btn-contact {
 	@include btn-mail;
 }
-
 
 .btn-seminar {
     @include btn-seminar;
