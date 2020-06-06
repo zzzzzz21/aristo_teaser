@@ -2,6 +2,7 @@
 // ===================================================================
 //  File:	layout/_block-contact.scss
 //  Date:	2017-06-02(UTC+9)
+//	Modified:	2020-06-05
 //  Note:	
 // ===================================================================
 // -------------------------------------------------------------------
@@ -102,6 +103,50 @@
 		text-align: center;
 	}
 
+	// .block-contact__buttons
+	// ----------------------------------------
+	@include element(buttons) {
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			display: flex;
+			justify-content: space-between;
+		}
+		.btn-detail {
+			margin: 0;
+		}
+		&.-two-buttons {
+			.btn-detail {
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+				}
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: 48%!important;
+				}
+			}
+		}
+		&.-three-buttons {
+			.btn-detail {
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+				}
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: 32%!important;
+				}
+			}
+		}
+	}
+
 	// .block-contact__button
 	// ----------------------------------------
 	@include element(button) {
@@ -110,7 +155,7 @@
 			width: 60%;
 			margin: 50px auto 0;
             padding: 70px 1.2em;
-			@include fontsize(36);
+			@include fontsize(32);
             font-weight: bold;
 			//	[media queries PC-tablet]
 			// ----------------------------------------
@@ -152,6 +197,16 @@
                     }
                 }
             }
+			.-two-buttons &,
+			.-three-buttons & {
+				margin: 0;
+				padding: 1em 1.2em;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					@include fontsize(24);
+				}
+			}
         }
 	}
 }

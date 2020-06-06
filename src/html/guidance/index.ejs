@@ -33,8 +33,10 @@ page = '';
 					<span class="is--notice">必須項目は、すべて選択または入力してください。</span></p>
 				</div>
 				<!-- /[.page-lead] -->
-<%- include(srcPath +'html/include/_block-contact') %>
-				<div class="contact-form">
+			</div>
+<%- include(srcPath + 'html/include/_block-guidanceFlow') %>
+			<div class="container">
+				<div class="contact-form" id="form-contact">
 					<nav class="step-indicator">
 						<ul>
 							<li class="step-indicator__item -input"><span>入力</span></li>
@@ -46,7 +48,7 @@ page = '';
 					
 					<h2 class="section-title"><%= meta.title %></h2>
 					<p class="contact-form__note">※<span class="label-required">必須</span>の入力欄は入力しなければフォームを完了できません。</p>
-					<form action="" method="post" name="form-contact" class="form-body h-adr" id="form-contact">
+					<form action="" method="post" name="form-contact" class="form-body h-adr">
                         <input type="hidden" class="p-country-name" value="Japan">
                         <div class="form-field required">
                             <div class="form-field__label"><label for="name-familyName">お名前</label></div>

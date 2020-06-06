@@ -31,9 +31,8 @@ page = '';
 				</div>
 				<!-- /[.page-lead] --><% } %>
 				<div class="seminar-list -single">
-					<%if (seminar=='finish') { %><h2 class="block-contact__title is--attention">現在開催予定のセミナーはございません。<br>資料請求・お問い合わせは受付けております。</h2>
-					<%#            <a href="./seminar/" class="btn-detail block-contact__button">セミナー詳細はこちら</a> %>
-					<a href="<%= path %>request/#form-contact" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
+					<%if (seminar=='finish') { %><h2 class="block-contact__title is--attention">近日中にご案内予定でございます。<br>Web個別案内会・資料請求は随時受け付けております。</h2>
+<%- include(srcPath + 'html/include/_block-contact__buttons') %>
 					<%- include(srcPath + 'html/include/_block-contact') %><% } else { %><% seminarList.forEach(function(item) {%><article class="seminar-detail">
 						<h2 class="seminar-detail__title"><%- item.seminarTitle %></h2>
 						<div class="seminar-detail__body">

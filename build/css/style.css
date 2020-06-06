@@ -750,18 +750,28 @@ img {
   text-align: center;
 }
 
+.block-contact__buttons .btn-detail {
+  margin: 0;
+}
+
 .block-contact__button.btn-detail {
   display: block;
   width: 60%;
   margin: 50px auto 0;
   padding: 70px 1.2em;
-  font-size: 36px;
-  font-size: 3.6rem;
+  font-size: 32px;
+  font-size: 3.2rem;
   font-weight: bold;
 }
 
 .globalHeader .block-contact__button.btn-detail {
   padding: .6em 1.2em;
+}
+
+.-two-buttons .block-contact__button.btn-detail,
+.-three-buttons .block-contact__button.btn-detail {
+  margin: 0;
+  padding: 1em 1.2em;
 }
 
 .btn-guidance {
@@ -3538,6 +3548,24 @@ a.btn-target:after {
   margin: 200px 0;
 }
 
+.block-flow.-guidance {
+  margin: 0;
+}
+
+.block-flow.-guidance .block__title {
+  margin: 0;
+}
+
+.block-flow.-guidance .unit-flow {
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.block-flow.-guidance .unit-flow__title {
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
 .block-flow .block__title {
   position: relative;
   display: -ms-flexbox;
@@ -3597,6 +3625,12 @@ a.btn-target:after {
 
 .block-flow .unit-flow + .unit-flow {
   margin-top: 60px;
+}
+
+.block-flow .unit-flow img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
 
 .block-flow .unit-flow__title {
@@ -5212,6 +5246,21 @@ body.rtl .formError .formErrorArrow {
     color: #000;
   }
 
+  .block-contact__buttons {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .block-contact__buttons.-two-buttons .btn-detail {
+    width: 48% !important;
+  }
+
+  .block-contact__buttons.-three-buttons .btn-detail {
+    width: 32% !important;
+  }
+
   .aristo-seminar .main .block-contact__button.btn-detail {
     width: 720px;
   }
@@ -5224,6 +5273,12 @@ body.rtl .formError .formErrorArrow {
   .globalHeader .block-contact__button.btn-detail:after {
     width: 10px;
     height: 10px;
+  }
+
+  .-two-buttons .block-contact__button.btn-detail,
+  .-three-buttons .block-contact__button.btn-detail {
+    font-size: 24px;
+    font-size: 2.4rem;
   }
 
   .fixed .header--home {
@@ -5579,6 +5634,15 @@ body.rtl .formError .formErrorArrow {
 
   .-wide .block-characteristic__photo__item {
     width: 100%;
+  }
+
+  .block-flow.-guidance .unit-flow__title {
+    width: 20%;
+  }
+
+  .block-flow.-guidance .unit-flow__body {
+    width: 80%;
+    padding: .6em 0 0;
   }
 
   .seminar-item + .seminar-item {
