@@ -127,32 +127,15 @@ page = 'confirm';
 								<?php if($_POST['generation60']): ?><input type="hidden" id="data-generation60" name="generation60" value="<?php echo $_POST['generation60']?>"><?php endif; ?>
 								<?php if($_POST['generation70']): ?><input type="hidden" id="data-generation70" name="generation70" value="<?php echo $_POST['generation70']?>"><?php endif; ?>
 								<?php if($_POST['generation80']): ?><input type="hidden" id="data-generation80" name="generation80" value="<?php echo $_POST['generation80']?>"><?php endif; ?>
+
 								<div class="form-value"><?php echo $generations ?></div>
 							</div>
 						</div>
 						<div class="form-field required">
 							<div class="form-field__label"><label for="">面談希望日（1）</label></div>
 							<div class="form-field__element">
-								<input type="hidden" id="data-month" name="month" value="<?php echo $_POST['month']?>">
 								<input type="hidden" id="data-date" name="date" value="<?php echo $_POST['date']?>">
-								<input type="hidden" id="data-startTime" name="startTime" value="<?php echo $_POST['startTime']?>">
-								<div class="form-value">2020年<?php echo $_POST['month']?>月<?php echo $_POST['date']?>日<?php echo $_POST['startTime']?>～</div>
-							</div>
-						</div>
-						<div class="form-field">
-							<div class="form-field__label"><label for="">面談希望日（2）</label></div>
-							<div class="form-field__element">
-								<input type="hidden" id="data-month2" name="month2" value="<?php echo $_POST['month2']?>">
-								<input type="hidden" id="data-date2" name="date2" value="<?php echo $_POST['date2']?>">
-								<input type="hidden" id="data-startTime2" name="startTime2" value="<?php echo $_POST['startTime2']?>">
-								<div class="form-value">2020年<?php echo $_POST['month2']?>月<?php echo $_POST['date2']?>日<?php echo $_POST['startTime2']?>～</div>
-							</div>
-						</div>
-						<div class="form-field">
-							<div class="fom-field__label">対面形式を希望</div>
-							<div class="form-field__element">
-								<input type="hidden" id="data-interview" name="interview" value="<?php echo $_POST['interview']?>">
-								<p><?php if($_POST['interview']) echo "希望する"; //else echo "希望しない" ?></p>
+								<div class="form-value">2020年6月15日18:00～</div>
 							</div>
 						</div>
 						<div class="form-field">
@@ -165,7 +148,7 @@ page = 'confirm';
 						<div class="form-field--confirm">
 							<input type="submit" id="data-submit" class="form-submit" value="送信する">
 							<input type="button" class="form-back" onclick="history.back()" value="修正する">
-							<input type="hidden" name="kind" value="guidance">
+							<input type="hidden" name="kind" value="entry">
 						</div>
 					</form>
 				</div>
