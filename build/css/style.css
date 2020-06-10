@@ -3576,7 +3576,7 @@ a.btn-target:after {
 }
 
 .block-flow .-guidance__image__base {
-  opacity: .6;
+  opacity: .8;
   display: block;
 }
 
@@ -3760,13 +3760,13 @@ a.btn-target:after {
 
 .footer-information__outline__item .label {
   display: inline-block;
-  width: 22%;
+  width: 18%;
   vertical-align: top;
 }
 
 .footer-information__outline__item .body {
   display: inline-block;
-  width: 78%;
+  width: 82%;
 }
 
 .contents {

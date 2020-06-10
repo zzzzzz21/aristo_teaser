@@ -5,7 +5,7 @@
 					<div class="unit-flow">
 						<h3 class="unit-flow__title">
 							<span class="step">STEP1</span>
-							<span class="title">資料請求・セミナーご来訪</span>
+							<span class="title">Web個別案内会・資料請求</span>
 						</h3>
 						<div class="unit-flow__body">
 							<% if (guidance!=='finish') { %><a href="<%= path %>guidance/#form-contact" class="btn-detail -reverse">Web個別案内会はこちら</a><% } else {%><% } %><a href="<%= path %>request/" class="btn-detail">資料請求はこちら</a><% if (seminar!=='finish') { %><a href="<%= path %>entry-seminar/" class="btn-detail -reverse">セミナー申込みはこちら</a><% } else {%><% } %>
@@ -46,7 +46,7 @@
 						</h3>
 					</div>
 				</div>
-				<h2 class="block-contact__title">資料請求・お問い合わせはこちら</h2>
+				<h2 class="block-contact__title">各種お問い合わせはこちら</h2>
 <%- include('_block-contact__buttons') %>
 <%- include('_block-contact') %>
 			</div>

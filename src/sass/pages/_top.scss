@@ -2559,7 +2559,7 @@ $title_color: #20428c;
 				width: 48%;
 			}
 			&__base {
-				opacity: .6;
+				opacity: .8;
 				display: block;
 			}
 		}
@@ -2844,7 +2844,7 @@ $title_color: #20428c;
 		@include element(item) {
 			.label {
 				display: inline-block;
-				width: 22%;
+				width: 18%;
 				vertical-align: top;
 				//	[media queries SP]
 				// ----------------------------------------
@@ -2857,7 +2857,7 @@ $title_color: #20428c;
 			}
 			.body {
 				display: inline-block;
-				width: 78%;
+				width: 82%;
 				//	[media queries SP]
 				// ----------------------------------------
 				@include media(sp) {
