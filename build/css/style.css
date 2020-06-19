@@ -4040,7 +4040,8 @@ a.btn-target:after {
 }
 
 .seminar-detail__categories-kyoto,
-.seminar-detail__categories-aoyama {
+.seminar-detail__categories-aoyama,
+.seminar-detail__categories-kouenji {
   background-color: #003466;
   border: 1px solid #003466;
 }
@@ -4276,7 +4277,7 @@ label + .element-input-checkbox {
 
 .form-field__label {
   position: relative;
-  width: calc(100% - 500px - 60px);
+  width: calc(100% - 570px - 60px);
   padding-top: .5em;
 }
 
@@ -4297,8 +4298,8 @@ label + .element-input-checkbox {
 }
 
 .form-field__element {
-  -ms-flex-preferred-size: 500px;
-  flex-basis: 500px;
+  -ms-flex-preferred-size: 570px;
+  flex-basis: 570px;
 }
 
 .page-confirm .form-field__element {

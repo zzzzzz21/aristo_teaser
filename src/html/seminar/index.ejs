@@ -1,7 +1,7 @@
 <%
 meta = { title:'セミナー詳細', desc:'' };
-isForm = 'y';
-seminar = 'finish';
+isForm = '';
+seminar = '';
 path = '../';
 srcPath ='../../';
 directory = 'seminar';
@@ -44,48 +44,48 @@ page = '';
 							</div>
 							<div class="seminar-detail__information">
 								<% if (item.seminarDate) {%><dl class="seminar-information">
-									<dt>開催日時</dt>
-									<dd class="date"><%- item.seminarDate %></dd>
+								<dt>開催日時</dt>
+								<dd class="date"><%- item.seminarDate %></dd>
 								</dl><% } %>
 								<% if (item.seminarTime) {%><dl class="seminar-information">
-									<dt>開催時間</dt>
-									<dd><%- item.seminarTime %></dd>
+								<dt>開始時間</dt>
+								<dd><%- item.seminarTime %></dd>
 								</dl><% } %>
 								<% if (item.seminarPlace) {%><dl class="seminar-information">
-									<dt>開催場所</dt>
-									<dd>
-										<p><%- item.seminarPlace %></p>
-										<% if (item.seminarPlace) {%><p><a class="btn-detail" href="<%- item.seminarGoogleMap %>" target="_blank">Googleマップ</a></p><% } %>
-									</dd>
+								<dt>開催場所</dt>
+								<dd>
+									<p><%- item.seminarPlace %></p>
+									<% if (item.seminarGoogleMap) {%><p><a class="btn-detail" href="<%- item.seminarGoogleMap %>" target="_blank">Googleマップ</a></p><% } %>
+								</dd>
 								</dl><% } %>
 								<% if (item.seminarFee) {%><dl class="seminar-information">
-									<dt>参加費</dt>
-									<dd><%- item.seminarFee %></dd>
+								<dt>参加費</dt>
+								<dd><%- item.seminarFee %></dd>
 								</dl><% } %>
 								<% if (item.seminarCapacity) {%><dl class="seminar-information">
-									<dt>定員</dt>
-									<dd><%- item.seminarCapacity %></dd>
+								<dt>定員</dt>
+								<dd><%- item.seminarCapacity %></dd>
 								</dl><% } %>
 								<% if (item.seminarOutline) {%><dl class="seminar-information">
-									<dt>開催概要</dt>
-									<dd><%- item.seminarOutline %></dd>
+								<dt>開催概要</dt>
+								<dd><%- item.seminarOutline %></dd>
 								</dl><% } %>
 								<% if (item.seminarTarget) {%><dl class="seminar-information">
-									<dt>対象となる方</dt>
-									<dd><%- item.seminarTarget %></dd>
+								<dt>対象となる方</dt>
+								<dd><%- item.seminarTarget %></dd>
 								</dl><% } %>
 								<% if (item.seminarContactName) {%><dl class="seminar-information">
-									<dt>問合せ先</dt>
-									<dd><%- item.seminarContactName %><br>
-										<% if (item.seminarContactTel) {%>TEL: <a href="tel:<%- item.seminarContactTel %>"><%- item.seminarContactTel %></a><% } %><% if (item.seminarContactMail) {%><br>Mail: <a href="mailto:<%- item.seminarContactMail %>"><%- item.seminarContactMail %></a><% } %>
-									</dd>
+								<dt>問合せ先</dt>
+								<dd><%- item.seminarContactName %><br>
+									<% if (item.seminarContactTel) {%>TEL: <a href="tel:<%- item.seminarContactTel %>"><%- item.seminarContactTel %></a><% } %><% if (item.seminarContactMail) {%><br>Mail: <a href="mailto:<%- item.seminarContactMail %>"><%- item.seminarContactMail %></a><% } %>
+								</dd>
 								</dl><% } %>
 								<% if (item.seminarOrganizer) {%><dl class="seminar-information">
-									<dt>主催</dt>
-									<dd><%- item.seminarOrganizer %></dd>
+								<dt>主催</dt>
+								<dd><%- item.seminarOrganizer %></dd>
 								</dl><% } %>
 							</div>
-						</div>
+					</div>
 						<% if (item.seminarLink) {%><p class="btn"><a href="<%= path %>entry-seminar/?<%- item.seminarLink %>" class="btn-seminar">セミナー申込み</a></p><% } %>
 					</article>
 					<%}); %><% } %>

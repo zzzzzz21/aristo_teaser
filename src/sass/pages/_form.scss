@@ -1,8 +1,8 @@
-
 @charset "utf-8";
 // ===================================================================
 //  File:	pages/_form.scss
-//  Date:	2018-06-04(UTC+9)
+//  Date:		2018-06-04(UTC+9)
+// 	Revised:	2020-06-23(UTC+9)
 //  Note:	
 // ===================================================================
 @import 'components/form';
@@ -73,7 +73,7 @@
 	// ----------------------------------------
 	@include element(label) {
 		position: relative;
-		width: calc(100% - 500px - 60px);
+		width: calc(100% - 570px - 60px);
 		padding-top: .5em;
 		//	[media queries SP]
 		// ----------------------------------------
@@ -96,7 +96,7 @@
 	//	.form-field__element
 	// ----------------------------------------
 	@include element(element) {
-		flex-basis: 500px;
+		flex-basis: 570px;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
