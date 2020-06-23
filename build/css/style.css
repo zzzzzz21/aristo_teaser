@@ -3813,7 +3813,7 @@ a.btn-target:after {
 }
 
 .home .contents .page-head {
-  height: 674px;
+  height: calc(674 / 1080 * 100vh);
   background-image: url(../images/index/bg_header.jpg);
 }
 
@@ -4325,7 +4325,7 @@ label + .element-input-checkbox {
 }
 
 .form-field--child .form-field__label {
-  width: 140px;
+  width: 150px;
   padding-top: 0;
 }
 

@@ -81,7 +81,7 @@
 			@include calcvw(300, 'height', 640);
 		}
 		@at-root .home & {
-			height: 674px;
+			height: calc(674 / 1080 * 100vh );
 			background-image: url(#{$image_path}index/bg_header.jpg);
 			@include media(sp) {
 				@include calcvw(674, 'height', 640);
