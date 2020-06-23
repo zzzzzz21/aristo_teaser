@@ -100,8 +100,14 @@
         background: $base_corporate_color;
         color: $base_white_color;
     }
+	&[disabled] + .label-for-radio {
+		color: #888;
+	}
+	&[disabled]:hover + .label-for-radio {
+		background: transparent;
+//		color: $base_text_color;
+	}
 }
-
 
 //	.element--name
 // ----------------------------------------

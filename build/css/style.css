@@ -4179,6 +4179,14 @@ label + .element-input-checkbox {
   color: #fff;
 }
 
+.element-input-radio[disabled] + .label-for-radio {
+  color: #888;
+}
+
+.element-input-radio[disabled]:hover + .label-for-radio {
+  background: transparent;
+}
+
 .element--name {
   display: -ms-flexbox;
   display: flex;
