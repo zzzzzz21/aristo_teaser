@@ -52,12 +52,12 @@ page = '';
                         <input type="hidden" class="p-country-name" value="Japan">
                         <div class="form-field required">
                             <div class="form-field__label">
-								<label for="seminarSchedule">参加希望日時<br>※参加費無料</label>
+								<label for="seminarSchedule">参加希望日時</label>
                             </div>
                             <div class="form-field__element">
                                 <div id="data-seminarSchedule"><%_ seminarList.forEach(function(item){%>
-									<p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="<%- item.seminarDate %>_<%- item.seminarRegion %>" id="<%- item.seminarLink %>"><label for="<%- item.seminarLink %>" class="label-for-radio"><%- item.seminarDate %>　<%- item.seminarRegion %><br><%- item.seminarTitle%><br>（定員<%- item.seminarCapacity %>）　※参加費<%- item.seminarFee %></label></p><% }) _%>
-									
+									<p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="<%- item.seminarDate %>_<%- item.seminarRegion %>" id="<%- item.seminarLink %>"><label for="<%- item.seminarLink %>" class="label-for-radio"><%- item.seminarDate %>　<%- item.seminarRegion %><br><%- item.seminarTitle%><br>（定員<%- item.seminarCapacity %>）　</label></p><% }) _%>
+									※参加費無料<br>※各回とも同じ内容です。
                                 </div>
                             </div>
                         </div>
