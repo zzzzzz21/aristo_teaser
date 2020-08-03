@@ -2276,6 +2276,53 @@ a.btn-target:after {
   line-height: 1.8;
 }
 
+.kouenji .block-instruments .block__title,
+.kouenji .block-catalogue .block__title {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  align-items: center;
+  min-height: 280px;
+  background: url(../images/index/bg_header_flow.jpg) 0 0 no-repeat;
+  background-size: cover;
+  margin-bottom: 0;
+  font-size: 60px;
+  font-size: 6rem;
+  font-family: "Noto Serif JP", serif;
+  font-weight: normal;
+  color: #20428c;
+}
+
+.kouenji .block-instruments .block__title:before,
+.kouenji .block-instruments .block__title:after,
+.kouenji .block-catalogue .block__title:before,
+.kouenji .block-catalogue .block__title:after {
+  position: relative;
+  display: inline-block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border: 2px solid #20428c;
+}
+
+.kouenji .block-instruments .block__title:before,
+.kouenji .block-catalogue .block__title:before {
+  top: -.6em;
+  border-right: none;
+  border-bottom: none;
+}
+
+.kouenji .block-instruments .block__title:after,
+.kouenji .block-catalogue .block__title:after {
+  bottom: -.6em;
+  border-top: none;
+  border-left: none;
+}
+
 .aoyama .block-instruments .block__title,
 .aoyama .block-catalogue .block__title {
   position: relative;
@@ -2421,7 +2468,7 @@ a.btn-target:after {
 }
 
 .catalogue-available .catalogue__title::before {
-  content: '募集中';
+  content: '販売中';
   border: 4px solid #003466;
   background-color: #003466;
   color: #fff;
@@ -3030,6 +3077,13 @@ a.btn-target:after {
   text-align: center;
 }
 
+.kouenji .block-location__body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .block-location .block-point {
   padding: 120px 0 0;
   line-height: 1.6;
@@ -3051,6 +3105,10 @@ a.btn-target:after {
   margin-bottom: 1.6em;
   margin-right: auto;
   margin-left: auto;
+}
+
+.kouenji .unit-map__body {
+  max-width: 855px;
 }
 
 .aoyama .unit-map__body {
@@ -3187,6 +3245,14 @@ a.btn-target:after {
   width: calc(596 / 1200 * 100%);
 }
 
+.kouenji .block-gallery__item {
+  width: calc(580 / 1200 * 100%);
+}
+
+.kouenji .block-gallery__item:nth-child(n+2) {
+  width: calc(580 / 1200 * 100%);
+}
+
 .block-gallery__item img {
   width: 100%;
   height: auto;
@@ -3194,6 +3260,19 @@ a.btn-target:after {
 
 .block-gallery__item:nth-child(n+2) {
   width: calc(500 / 1200 * 100%);
+}
+
+.block-gallery__item__informations {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.block-gallery__item__information {
+  width: 50%;
 }
 
 .gallery-images__main {
@@ -3260,8 +3339,16 @@ a.btn-target:after {
   flex-wrap: nowrap;
 }
 
+.kouenji .block-characteristic .block__body {
+  display: block;
+}
+
 .aoyama .block-characteristic .block__body {
   display: block;
+}
+
+.kouenji .block-characteristic__images {
+  width: 100%;
 }
 
 .aoyama .block-characteristic__images {
@@ -3291,6 +3378,12 @@ a.btn-target:after {
   box-sizing: border-box;
   width: calc( 670 / 1200 * 100%);
   margin-left: 4.16667%;
+}
+
+.kouenji .block-characteristic__body {
+  width: 100%;
+  margin-left: 0;
+  margin-top: 130px;
 }
 
 .aoyama .block-characteristic__body {
@@ -3822,6 +3915,11 @@ a.btn-target:after {
   background-image: url(../images/index/bg_header-teaser.jpg);
 }
 
+.kouenji .contents .page-head {
+  height: 674px;
+  background-image: url(../images/index/bg_header-kouenji.jpg);
+}
+
 .aoyama .contents .page-head {
   height: 674px;
   background-image: url(../images/index/bg_header-aoyama.jpg);
@@ -3874,6 +3972,14 @@ a.btn-target:after {
 }
 
 .teaser .contents .page-title {
+  font-size: 30px;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.kouenji .contents .page-title {
+  margin-top: 142px;
+  font-weight: normal;
   font-size: 30px;
   font-size: 3rem;
   color: #fff;
@@ -5435,6 +5541,10 @@ body.rtl .formError .formErrorArrow {
     width: 520px;
   }
 
+  .block-others .catalogue__body {
+    width: 100%;
+  }
+
   .catalogue__title {
     padding: .2em 0 .2em 4.5em;
     font-size: 32px;
@@ -5619,6 +5729,15 @@ body.rtl .formError .formErrorArrow {
     margin-left: 2%;
   }
 
+  .kouenji .block-characteristic__images {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+    grid-template-columns: 50% 50%;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+  }
+
   .aoyama .block-characteristic__images {
     display: -ms-grid;
     display: grid;
@@ -5661,6 +5780,10 @@ body.rtl .formError .formErrorArrow {
 
   .block-characteristic__photo__item {
     width: calc(374 / 1200 * 100%);
+  }
+
+  .kouenji .block-characteristic__photo__item {
+    width: calc((100% - 60px) / 2);
   }
 
   .block-characteristic__photo__item img + img {
@@ -5959,6 +6082,11 @@ body.rtl .formError .formErrorArrow {
     font-size: 1.8rem;
     padding-top: 9.33333vw;
     padding-bottom: 9.33333vw;
+  }
+
+  .-two-buttons .block-contact__button.btn-detail:nth-child(n+2),
+  .-three-buttons .block-contact__button.btn-detail:nth-child(n+2) {
+    margin-top: 1em;
   }
 
   .loading__body {
@@ -6329,6 +6457,22 @@ body.rtl .formError .formErrorArrow {
     font-size: 4.375vw;
   }
 
+  .kouenji .block-instruments .block__title,
+  .kouenji .block-catalogue .block__title {
+    padding: 1em 0;
+    min-height: 14.6875vw;
+    font-size: 6.25vw;
+  }
+
+  .kouenji .block-instruments .block__title:before,
+  .kouenji .block-instruments .block__title:after,
+  .kouenji .block-catalogue .block__title:before,
+  .kouenji .block-catalogue .block__title:after {
+    width: 1.2em;
+    height: 1.2em;
+    border-width: 1px;
+  }
+
   .aoyama .block-instruments .block__title,
   .aoyama .block-catalogue .block__title {
     padding: 1em 0;
@@ -6634,6 +6778,11 @@ body.rtl .formError .formErrorArrow {
     max-width: 100%;
   }
 
+  .kouenji .block-location__body {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
   .block-location .block-point {
     padding-top: 15.625vw;
   }
@@ -6700,6 +6849,14 @@ body.rtl .formError .formErrorArrow {
     width: 100%;
   }
 
+  .kouenji .block-gallery__item {
+    width: 100%;
+  }
+
+  .kouenji .block-gallery__item:nth-child(n+2) {
+    width: 100%;
+  }
+
   .block-gallery__item {
     width: 100%;
   }
@@ -6707,6 +6864,10 @@ body.rtl .formError .formErrorArrow {
   .block-gallery__item:nth-child(n+2) {
     width: 100%;
     margin-top: 2em;
+  }
+
+  .block-gallery__item__information {
+    width: 100%;
   }
 
   .gallery-images__main {
@@ -6739,6 +6900,10 @@ body.rtl .formError .formErrorArrow {
     width: 100%;
     margin-left: 0;
     margin-top: 7.8125vw;
+  }
+
+  .kouenji .block-characteristic__body {
+    margin-top: 15.625vw;
   }
 
   .aoyama .block-characteristic__body {
@@ -6961,6 +7126,10 @@ body.rtl .formError .formErrorArrow {
     height: 105.3125vw;
   }
 
+  .kouenji .contents .page-head {
+    height: 105.3125vw;
+  }
+
   .aoyama .contents .page-head {
     height: 105.3125vw;
   }
@@ -6971,6 +7140,10 @@ body.rtl .formError .formErrorArrow {
   }
 
   .teaser .contents .page-title {
+    font-size: 4.6875vw;
+  }
+
+  .kouenji .contents .page-title {
     font-size: 4.6875vw;
   }
 

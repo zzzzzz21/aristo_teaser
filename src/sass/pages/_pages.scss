@@ -94,6 +94,13 @@
                 @include calcvw(674, 'height', 640);
             }
         }
+        @at-root .kouenji & {
+            height: 674px;
+            background-image: url(#{$image_path}index/bg_header-kouenji.jpg);
+            @include media(sp) {
+                @include calcvw(674, 'height', 640);
+            }
+        }
         @at-root .aoyama & {
             height: 674px;
             background-image: url(#{$image_path}index/bg_header-aoyama.jpg);
@@ -162,6 +169,19 @@
                 @include calcvw(30, 'font-size', 640);
             }
         }
+		//	.kouenji .contents .page-title
+		// ----------------------------------------
+		@at-root .kouenji & {
+			margin-top: 142px;
+			font-weight: normal;
+			@include fontsize(30);
+			color: $base_white_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(30, 'font-size', 640);
+			}
+		}
 		//	.aoyama .contents .page-title
 		// ----------------------------------------
 		@at-root .aoyama & {

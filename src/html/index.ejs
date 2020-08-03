@@ -1,8 +1,8 @@
 <%
 meta = { title:"株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO公式サイト", desc:"" };
-seminar = "";
+seminar = "finish";
 guidance = "";
-isOnsale = "";
+isOnsale = "y";
 isForm ="";
 path = "./";
 srcPath ="../";
@@ -10,33 +10,6 @@ directory = "";
 directoryLv2 = "";
 page = "";
 seminarList = [
-	{
-		"seminarTitle": "不動産小口化商品「ARISTO高円寺」説明会",
-		"seminarImage": "image_online",
-		"seminarCategories": [
-			{
-				categoryClass: "kouenji",
-				categoryLabel: "ARISTO高円寺"
-			},
-			{
-				categoryClass: "inheritance",
-				categoryLabel: "相続"
-			},
-		],
-		"seminarDate": "2020年7月1日（水）12時30分～13時30分",
-		"seminarTime": "12時30分",
-		"seminarRegion": "オンライン開催",
-		"seminarPlace": "オンライン開催",
-		"seminarGoogleMap": "",
-		"seminarFee": "無料",
-		"seminarCapacity": "50名",
-		"seminarOutline": "",
-		"seminarContactName": "株式会社エー・ディー・ワークス　投資不動産事業本部　資産運用部",
-		"seminarContactTel": "0120-540-949",
-		"seminarContactMail": "&#97;&#114;&#105;&#115;&#116;&#111;&#64;&#114;&#101;&#45;&#97;&#100;&#119;&#111;&#114;&#107;&#115;&#46;&#99;&#111;&#109;",
-		"seminarOrganizer": "株式会社エー・ディー・ワークス",
-		"seminarLink": "202007011230_online"
-	},
 	{
 		"seminarTitle": "不動産小口化商品「ARISTO高円寺」説明会",
 		"seminarImage": "image_online",
@@ -94,8 +67,21 @@ seminarList = [
 ];
 catalogue = [
 	{
+		"catalogueID":"kouenji",
+		"catalogueStatus":"available",
+		"catalogueStatusJP":"販売中",
+		"catalogueTitle":"ARISTO高円寺",
+		"catalogueCaption":"2020年●月××××",
+		"catalogueAccess":"東京都杉並区高円寺南3丁目58番22号<br>JR中央・総武線「高円寺」駅　徒歩1分<br>東京メトロ 丸の内線「新高円寺」駅　徒歩12分",
+		"catalogueOutline":"東京主要路線JR中央線「高円寺駅」から「徒歩1分」の「新築店舗ビル」",
+		"catalogueInformation":"第3号商品の「ARISTO高円寺」は、紹介文章が入る。",
+		"cataloguePhoto":["01"],
+		"cataloguePhotoSub":["02","03",]
+	},
+	{
 		"catalogueID":"aoyama",
 		"catalogueStatus":"investment",
+		"catalogueStatusJP":"運用中",
 		"catalogueTitle":"ARISTO青山",
 		"catalogueCaption":"2019年9月運用開始",
 		"catalogueAccess":"東京都港区南青山2丁目11番11号<br>東京メトロ銀座線「外苑前」駅　徒歩4分<br>東京メトロ銀座線・半蔵門線・都営地下鉄大江戸線「青山一丁目」駅<br>徒歩6分",
@@ -108,6 +94,7 @@ catalogue = [
 		"catalogueType":"",
 		"catalogueID":"kyoto",
 		"catalogueStatus":"investment",
+		"catalogueStatusJP":"運用中",
 		"catalogueTitle":"ARISTO京都",
 		"catalogueCaption":"2018年12月運用開始",
 		"catalogueAccess":"京都府京都市中京区新京極通六角下る桜之町441－2<br>阪急京都線「河原町」駅　徒歩5分",
@@ -137,7 +124,7 @@ catalogue = [
 
 		<% if(isOnsale!== ''){%><div class="block">
 			<div class="block-catalogue__body"><% catalogue.forEach(function(item) {%>
-				<% if(item.catalogueID=='aoyama') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
+				<% if(item.catalogueID=='kouenji') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
 					<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
 						<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
 						<% if(item.catalogueAccess) {%><p class="catalogue__access"><%- item.catalogueAccess %></p><% } %>

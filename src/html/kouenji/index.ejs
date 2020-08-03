@@ -1,0 +1,302 @@
+<%
+meta = { title:'', desc:'' };
+isForm = '';
+path = '../';
+srcPath ='../../';
+directory = 'kouenji';
+directoryLv2 = '';
+page = '';
+%><!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath + 'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
+<body class="<% if (directory!=='') { %> <%= directory %><% } else {%>home<% } %>" id="top">
+<div class="page" id="data-page">
+<%- include(srcPath + 'html/include/kouenji/_header') %>
+	<main class="main contents">
+		<header class="page-head">
+			<div class="container">
+				<h1 class="page-title"><ruby>ARISTO <rp>(</rp><rt>アリスト</rt><rp>)</rp></ruby>は、好立地の優良不動産に対して<br>少額からの投資が可能な<br class="is-sp">不動産小口化商品です。</h1>
+				<p class="page-title--note">ARISTO(アリスト)は、株式会社エー・ディー・ワークスが提供する、<br class="is-pc">不動産特定共同事業法に基づく不動産小口化商品です。
+				</p>
+			</div>
+		</header>
+		<!-- /[.page-head] -->
+
+		<section class="block-instruments" id="section-instruments">
+			<h2 class="block__title"><span>ARISTO第3号商品</span></h2>
+			<div class="top-carousel -horizontal">
+				<div class="top-carousel__inner" id="data-carousel">
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_kouenji01.jpg" alt=""></div>
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_kouenji02.jpg" alt=""></div>
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_kouenji03.jpg" alt=""></div>
+				</div>
+				<div class="top-carousel__message">
+					<div class="top-carousel__message__inner">
+						<h3 class="top-carousel__title">ARISTO高円寺</h3>
+						<p class="top-carousel__body">東京主要路線JR中央線「高円寺駅」から「徒歩1分」の<br>
+						「新築店舗ビル」に「少額から投資が可能」な商品です。</p>
+					</div>
+				</div>
+			</div>
+			<!-- /[.top-carousel] -->
+
+			<div class="block-title" id="section-title">
+				<div class="block -available">
+					<h2 class="block-title__logo"><img src="<%= path %>images/common/logo_aristo-kouenji.jpg" alt="ARISTO高円寺"></h2>
+				</div>
+<%- include(srcPath + 'html/include/kouenji/_block-others') %>
+				<!-- /[.block-others] -->
+			</div>
+			<!-- /[.block-title#section-title] -->
+		</section>
+		<!-- /[.block-instruments#section-instruments] -->
+
+		<section class="block block-location" id="section-location">
+			<h2 class="unit__title"><span>ロケーション</span></h2>
+			<p class="block__lead">ARISTO高円寺は、都心5区の新宿区・渋谷区近傍の杉並区に位置します。<br>『高円寺』は都心近接住宅地を背景に、駅周辺に10の商店街が広がり、<br class="is-pc">日用品から古着・雑貨等の嗜好品まで幅広い業種の店舗が集積しています。</p>
+			<div class="block-location__body">
+				<div class="block-gallery__item">
+					<div class="block-gallery__item__images">
+						<img src="<%= path %>images/kouenji/map_wide.jpg" alt="広域地図">
+					</div>
+				</div>
+				<div class="block-gallery__item">
+					<div class="block-gallery__item__images">
+					<img src="<%= path %>images/kouenji/map_around.jpg" alt="周辺地図">
+					</div>
+					<ul class="block-gallery__item__informations">
+						<li class="block-gallery__item__information">①大場通り商和会</li>
+						<li class="block-gallery__item__information">②高円寺あづま通り商店会</li>
+						<li class="block-gallery__item__information">③高円寺庚申通り商店街</li>
+						<li class="block-gallery__item__information">④高円寺北中通り商栄会</li>
+						<li class="block-gallery__item__information">⑤丸互高円寺中通商栄会</li>
+						<li class="block-gallery__item__information">⑥高円寺銀座商店会(純情商店街)</li>
+						<li class="block-gallery__item__information">⑦高円寺南商店会</li>
+						<li class="block-gallery__item__information">⑧高円寺駅西商店会</li>
+						<li class="block-gallery__item__information">⑨エトアール通り商店会</li>
+						<li class="block-gallery__item__information">※新高円寺通商店街（ルック商店街）</li>
+					</ul>
+				</div>
+			</div>	
+		</section>
+		<!-- /[.block.block-location#section-location] -->
+
+		<section class="block block-characteristic" id="section-characteristic">
+			<h2 class="unit__title"><span>ARISTO高円寺の特性</span></h2>
+			<p class="block__lead">ARISTO高円寺は、近隣では唯一のアーケード商店街であり、<br class="is-pc">住民の主要動線となる「パル商店街」に面しております。<br>
+			加えて、駅徒歩１分の通行量の期待できる商店街入口至近に位置しています。</p>
+			<div class="block__body">
+				<div class="block-characteristic__images">
+					<div class="block-characteristic__images__item -item01">
+						<p>
+							<img src="<%= path %>images/kouenji/figure_detail.jpg" alt="">
+						</p>
+						<p class="block-characteristic__images__item">※青い点線は、高円寺駅からARISTO高円寺までの経路を表しています。</p>
+					</div>
+					<div class="block-characteristic__images__item -item02">
+						<img src="<%= path %>images/kouenji/photo_station.jpg" alt="">
+					</div>
+					<div class="block-characteristic__images__item -item03">
+						<p>
+							<img src="<%= path %>images/kouenji/photo_pal.jpg" alt="">
+						</p>
+						<p class="block-characteristic__images__item">パル商店街は、JR中央線「高円寺駅」から東京メトロ丸の内線「新高円寺駅」方面へ約250m続く商店街であり、100店舗以上が出店する活気のある商店街です。</p>
+					</div>
+				</div>
+				<div class="block-characteristic__body">
+					<dl class="block-characteristic__photo">
+						<dt>外観</dt>
+						<dd>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/kouenji/photo_appearance_01.jpg" alt="">
+								
+							</figure>
+							<figure class="block-characteristic__photo__item">
+								<p>
+									<img src="<%= path %>images/kouenji/photo_appearance_02.jpg" alt="">
+								</p>
+								<p class="block-characteristic__images__item -note">左：商店街側外観　右：裏側外観<br>いずれも2019年12月撮影（竣工時）</p>
+							</figure>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="block">
+				<h3 class="block-contact__title">資料請求・お問い合わせはこちら</h3>
+<%- include(srcPath + 'html/include/_block-contact__buttons') %>
+<%- include(srcPath + 'html/include/_block-contact') %>
+			</div>
+		</section>
+		<!-- /[.block.block-characteristic#section-characteristic] -->
+
+		<section class="block block-products" id="section-products">
+			<h2 class="unit__title"><span>商品概要</span></h2>
+			<div class="block-products__body">
+				<table class="outline-table">
+					<tr>
+						<th>募集総額</th>
+						<td>12.0億円</td>
+					</tr>
+					<tr>
+						<th>募集総口数</th>
+						<td>1200口</td>
+					</tr>
+					<tr>
+						<th>組合組成日</th>
+						<td>2020年12月25日（予定）</td>
+					</tr>
+					<tr>
+						<th>予定運用期間</th>
+						<td>15年間</td>
+					</tr>
+					<tr>
+						<th>お申込単位</th>
+						<td>
+							<dl>
+								<dt>1口100万円単位</dt>
+								<dd class="indent">最低出資金額500万円（5口）<br>
+									最高出資金額3億円（300口）<br>
+									（500万円以上であれば、100万円単位で出資額をお決め頂けます。）</dd>
+							</dl>
+						</td>
+					</tr>
+					<tr>
+						<th>必要経費</th>
+						<td>不動産取得税等（1口当たりの目安約17,628円）</td>
+					</tr>
+					<tr>
+						<th>支払期日</th>
+						<td>2020年12月18日（予定）</td>
+					</tr>
+					<tr>
+						<th>売買代金に対する予定賃料利回り</th>
+						<td>
+							<p>満室稼働想定3.61％、95％稼働想定4.20%</p>
+							<p>※売買代金に対する予定賃料利回りとは「賃料収入」÷「募集総額」で算出しています。なお売買代金に対する予定賃料利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
+						</td>
+					</tr>
+					<tr>
+						<th>投資コストに対する予定分配金利回り</th>
+						<td>
+							<p>満室稼働想定4.20％、95%稼働想定3.58％</p>
+							<p>※投資コストに対する予定分配金利回りとは分配金÷全投資コストで算出しています。分配金とは、賃料収入から公租公課、維持管理費、修繕積立金等を控除後の金額です。</p>
+							<p>※95%稼動想定とは、3階テナントが、3年毎に入れ替わりかつ空室期間が1.5ヶ月間だった場合を想定して算出しております。なお、1階・2階は長期の定期建物賃貸借契約のため、空室期間はないものと想定して算出しております。</p>
+							<p>※不動産市況等により賃料収入は変動します。例えば、賃料収入が現在想定賃料から『10％上昇』・『10％下落』した場合の満室稼動想定予定分配金利回りは、『4.00％』・『3.22％』となります。</p>
+							<p>※組合組成（2020年12月を予定）以後、新型コロナウイルスの影響の長期化又は再拡大による東京都からの営業自粛要請があり、テナントがその要請に従い営業自粛する場合等に起因して、当該テナントが退去し、かつ退去後に次のテナントが見つからない場合等においては、記載の利回りを下回る可能性があります。</p>
+
+						</td>
+					</tr>
+					<tr>
+						<th>収益分配</th>
+						<td>年1回（2月）</td>
+					</tr>
+					<tr>
+						<th>不動産特定共同事業者</th>
+						<td>株式会社エー・ディー・ワークス<br>東京都知事　第96号</td>
+					</tr>
+					<tr>
+						<th>事業者との関係</th>
+						<td>事業者である株式会社エー・ディー・ワークス自らが不動産特定共同事業契約の当事者となります。</td>
+					</tr>
+					<tr>
+						<th>契約形態</th>
+						<td>不動産特定共同事業法に基づく任意組合契約</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- /[.block.block-products#section-products] -->
+
+		<section class="block block-property" id="section-property">
+			<h2 class="unit__title"><span>物件概要</span></h2>
+			<div class="block-property__body">
+				<table class="outline-table multi-head">
+					<tr>
+						<th>物件</th>
+						<td>
+							<dl class="in-table"><dt>名称</dt><dd>ARISTO高円寺</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>所在地</th>
+						<td>
+							<dl class="in-table"><dt>地番</dt><dd>東京都杉並区高円寺南三丁目983番8</dd></dl>
+							<dl class="in-table"><dt>住居表示</dt><dd>東京都杉並区高円寺南三丁目58番22号</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>交通</th>
+						<td>
+							<dl class="in-table"><dt> </dt><dd>ＪＲ中央・総武線「高円寺」駅　徒歩1分<br>東京メトロ 丸の内線「新高円寺」駅　徒歩12分</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>土地</th>
+						<td>
+							<dl class="in-table"><dt>実測面積 </dt><dd>181.54m<sup>2</sup> （54.91坪）</dd></dl>
+							<dl class="in-table"><dt>権利</dt><dd>所有権</dd></dl>
+							<dl class="in-table"><dt>地目</dt><dd>宅地</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>建物</th>
+						<td>
+							<dl class="in-table"><dt>構造・規模</dt><dd>鉄骨造・地上3階</dd></dl>
+							<dl class="in-table"><dt>竣工</dt><dd>2019年11月</dd></dl>
+							<dl class="in-table"><dt>延床面積</dt><dd>433.09m<sup>2</sup>（131.01坪）　</dd></dl>
+							<dl class="in-table"><dt>賃貸面積</dt><dd>377.57m<sup>2</sup>（114.21坪）</dd></dl>
+							<dl class="in-table"><dt>用途</dt><dd>店舗（物販・飲食）</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>公法上の制限</th>
+						<td>
+							<dl class="in-table"><dt>都市計画区域</dt><dd>市街化区域</dd></dl>
+							<dl class="in-table"><dt>用途地域</dt><dd>商業地域</dd></dl>
+							<dl class="in-table"><dt>指定建蔽率</dt><dd>80%</dd></dl>
+							<dl class="in-table"><dt>防火指定</dt><dd>防火地域</dd></dl>
+							<dl class="in-table"><dt>指定容積率</dt><dd>500%</dd></dl>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- /[.unit.block-property#section-property] -->	
+
+		<section class="block-seminars" id="section-seminars">
+			<h2 class="block__title"><span>セミナー情報</span></h2>
+			<div class="block">
+<%- include(srcPath + 'html/include/_block-seminar-body') %>
+			</div>
+		</section>
+		<!-- /[.block-seminars#section-seminars] -->
+
+<%- include(srcPath + 'html/include/_block-flow') %>
+		<!-- /[.block-flow#section-flow] -->
+
+<%- include(srcPath + 'html/include/_block-faq') %>
+		<!-- /[.block-flow#section-faq] -->
+		
+<%- include(srcPath + 'html/include/_block-footer-information') %>
+		<!-- /[.block.footer-information] -->
+
+	</main>
+	<!-- /[.main] -->
+<%- include(srcPath + 'html/include/_footer') %>
+
+    <div class="fixed-button" id="data-fixedButton">
+        <p class="button-entry"><a href="<%= path %>seminar/" class="btn-detail">セミナー詳細はこちら</a></p>
+        <p class="button-request"><a href="<%= path %>request/#form-contact" class="btn-detail">資料請求はこちら</a></p>
+    </div>
+    <!--　/[.fixed-button] -->
+</div><!-- /.page -->
+
+<%- include(srcPath + 'html/include/_loading') %>
+
+<%- include(srcPath + 'html/include/_body_last') %>
+
+</body>
+</html>

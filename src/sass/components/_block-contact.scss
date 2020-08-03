@@ -206,6 +206,13 @@
 				@include media(pc-tb) {
 					@include fontsize(24);
 				}
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					&:nth-child(n+2) {
+						margin-top: 1em;
+					}
+				}
 			}
         }
 	}

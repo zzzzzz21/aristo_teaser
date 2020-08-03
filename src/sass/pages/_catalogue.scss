@@ -51,6 +51,9 @@
 		// ----------------------------------------
 		@include media(pc-tb) {
 			width: 520px;
+			.block-others & {
+				width: 100%;
+			}
 		}
 		.btn-detail {
 			position: absolute;
@@ -138,7 +141,7 @@
 				@include calcvw(32, 'font-size', 640);
 			}
 			@at-root .catalogue-available & {
-				content: '募集中';
+				content: '販売中';
 				border: 4px solid $base_corporate_color;
 				background-color: $base_corporate_color;
 				color: $base_white_color;
