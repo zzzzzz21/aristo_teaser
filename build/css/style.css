@@ -3355,6 +3355,10 @@ a.btn-target:after {
   width: 100%;
 }
 
+.block-characteristic__images__item.-full {
+  margin-top: 1em;
+}
+
 .block-characteristic__images__item.-note {
   margin-top: .6em;
   font-size: 12px;
@@ -3839,7 +3843,8 @@ a.btn-target:after {
   padding-top: 100px;
 }
 
-.contents .footer-information .block__lead {
+.contents .footer-information .block__lead,
+.contents .footer-information .block-characteristic__images__item.-full {
   margin-bottom: 70px;
   text-align: center;
   font-size: 18px;
@@ -4005,6 +4010,12 @@ a.btn-target:after {
   right: .6em;
 }
 
+.kouenji .contents .page-title--note {
+  position: absolute;
+  bottom: -3.2em;
+  right: .6em;
+}
+
 .aoyama .contents .page-title--note {
   position: absolute;
   bottom: -3.2em;
@@ -4048,7 +4059,8 @@ a.btn-target:after {
   font-size: 3.6rem;
 }
 
-.contents .block__lead {
+.contents .block__lead,
+.contents .block-characteristic__images__item.-full {
   margin-bottom: 70px;
   text-align: center;
   font-size: 30px;
@@ -5778,6 +5790,15 @@ body.rtl .formError .formErrorArrow {
     font-size: 1.4rem;
   }
 
+  .block-characteristic__images__item.-full {
+    width: 100%;
+  }
+
+  .block-characteristic__images__item.-note {
+    display: block;
+    text-align: right;
+  }
+
   .block-characteristic__photo__item {
     width: calc(374 / 1200 * 100%);
   }
@@ -7084,7 +7105,8 @@ body.rtl .formError .formErrorArrow {
     padding-top: 20vw;
   }
 
-  .contents .footer-information .block__lead {
+  .contents .footer-information .block__lead,
+  .contents .footer-information .block-characteristic__images__item.-full {
     margin-bottom: 10.9375vw;
     font-size: 14px;
     font-size: 1.4rem;
@@ -7193,7 +7215,8 @@ body.rtl .formError .formErrorArrow {
     font-size: 2.4rem;
   }
 
-  .contents .block__lead {
+  .contents .block__lead,
+  .contents .block-characteristic__images__item.-full {
     margin-bottom: 10.9375vw;
     font-size: 20px;
     font-size: 2rem;

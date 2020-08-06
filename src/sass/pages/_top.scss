@@ -2175,10 +2175,26 @@ $title_color: #20428c;
 					@include fontsize(14);
 				}
 			}
+			&.-full {
+				@extend .block__lead;
+				margin-top: 1em;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: 100%;
+				}
+			}
 			&.-note {
 				margin-top: .6em;
 				@include fontsize(12);
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					display: block;
+					text-align: right;
+				}
 			}
+
 		}
 	}
 	
