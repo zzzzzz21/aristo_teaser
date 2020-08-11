@@ -128,9 +128,12 @@
 		</header>
 		<div class="page-body">
 			<div class="container">
-				<h2 class="block-contact__title is--attention">現在開催予定のセミナーはございません。<br>資料請求・お問い合わせは受付けております。</h2>
-				
-				<a href="../request/#form-contact" class="btn-detail block-contact__button">資料請求・お問い合わせはこちら</a>
+				<div class="page-lead">
+					<p>ARISTOに関するセミナー申し込みを下記フォームより受け付けております。<br>
+					必要事項をご記入いただき、「入力内容を確認する」ボタンを押してください。<br>
+					<span class="is--notice">必須項目は、すべて選択または入力してください。</span></p>
+				</div>
+				<!-- /[.page-lead] -->
 			<div class="block-contact">
 				<dl>
 					<dt class="block-contact__lead">お電話でのお問い合わせも受け付けております。</dt>
@@ -143,6 +146,131 @@
 			</div>
 			<!-- /[.block-contact] -->
 
+				<div class="contact-form">
+					<nav class="step-indicator">
+						<ul>
+							<li class="step-indicator__item -input"><span>入力</span></li>
+							<li class="step-indicator__item -confirm"><span>確認</span></li>
+							<li class="step-indicator__item -complete"><span>完了</span></li>
+						</ul>
+					</nav>
+					<!-- /[.step-indicator] -->
+					
+					<h2 class="section-title">セミナー申込み</h2>
+					<p class="contact-form__note">※<span class="label-required">必須</span>の入力欄は入力しなければフォームを完了できません。</p>
+					<form action="confirm.html" method="post" name="form-contact" class="form-body h-adr" id="form-contact">
+                        <input type="hidden" class="p-country-name" value="Japan">
+                        <div class="form-field required">
+                            <div class="form-field__label">
+								<label for="seminarSchedule">参加希望日時</label>
+                            </div>
+                            <div class="form-field__element">
+                                <div id="data-seminarSchedule">
+									<p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="2020年8月25日（火）18時00分～19時00分_オンライン開催" id="202008251800_online"><label for="202008251800_online" class="label-for-radio">2020年8月25日（火）18時00分～19時00分　オンライン開催<br>不動産小口化商品「ARISTO高円寺」説明会<br>（定員50名）　</label></p>
+									<p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="2020年8月29日（土）14時00分～15時00分_オンライン開催" id="202008291400_online"><label for="202008291400_online" class="label-for-radio">2020年8月29日（土）14時00分～15時00分　オンライン開催<br>不動産小口化商品「ARISTO高円寺」説明会<br>（定員50名）　</label></p>
+									<p class="element-radio"><input type="radio" class="element-input-radio validate[required]" name="seminarSchedule" value="2020年9月9日（水）14時00分～15時00分_オンライン開催" id="202009091400_online"><label for="202009091400_online" class="label-for-radio">2020年9月9日（水）14時00分～15時00分　オンライン開催<br>不動産小口化商品「ARISTO高円寺」説明会<br>（定員50名）　</label></p>									※参加費無料<br>※各回とも同じ内容です。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-field required">
+                            <div class="form-field__label"><label for="name-familyName">お名前</label></div>
+                            <div class="form-field__element">
+                                <ul class="element--name">
+                                    <li class="element--name__item">
+                                        <label for="name-familyName">姓</label>
+                                        <input type="text" id="data-name-familyName" class="element-input validate[required]" name="name-familyName" placeholder="姓を入力">
+                                    </li>
+                                    <li class="element--name__item">
+                                        <label for="name-lastName">名</label>
+                                        <input type="text" id="data-name-lastName" class="element-input validate[required]" name="name-lastName" placeholder="名を入力">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <div class="form-field__label"><label for="kana-familyName">お名前（フリガナ）</label></div>
+                            <div class="form-field__element">
+                                <ul class="element--name">
+                                    <li class="element--name__item">
+                                        <label for="name-familyName">姓</label>
+                                        <input type="text" id="data-kana-familyName" class="element-input" name="kana-familyName" placeholder="アオキ">
+                                    </li>
+                                    <li class="element--name__item">
+                                        <label for="name-lastName">名</label>
+                                        <input type="text" id="data-kana-lastName" class="element-input" name="kana-lastName" placeholder="タロウ">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <div class="form-field__label required"><label for="">ご住所</label></div>
+                            <div class="form-field__element">
+                                <div class="form-field--child required">
+                                    <div class="form-field__label"><label for="zipcode">郵便番号</label></div>
+                                    <div class="form-field__element">
+                                        <input type="text" id="data-zipcode" class="element-input-zip p-postal-code validate[required]" name="zipcode" placeholder="郵便番号を入力">
+                                    </div>
+                                </div>
+                                <div class="form-field--child required">
+                                    <div class="form-field__label"><label for="address1">住所</label></div>
+                                    <div class="form-field__element">
+                                        <input type="text" id="data-address1" class="element-input-text p-region p-locality p-street-address p-extended-address validate[required]" name="address1" placeholder="住所を入力">
+                                    </div>
+                                </div>
+                                <div class="form-field--child">
+                                    <div class="form-field__label"><label for="address2">建物名、部屋番号等</label></div>
+                                    <div class="form-field__element">
+                                        <input type="text" id="data-address2" class="element-input-text" name="address2" placeholder="建物名、部屋番号等を入力">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-field required">
+                            <div class="form-field__label"><label for="tel">電話番号</label></div>
+                            <div class="form-field__element">
+                                <input type="text" id="data-tel" class="element-input-text validate[required,custom[phone]]" name="tel" placeholder="電話番号を半角数字で入力">
+                            </div>
+                        </div>
+                        <div class="form-field required">
+                            <div class="form-field__label"><label for="email">E-mail</label></div>
+                            <div class="form-field__element">
+                                <input type="text" id="data-email" class="element-input-text validate[required,custom[email]]" name="email" placeholder="foo@example.com">
+                            </div>
+                        </div>
+                        <div class="form-field required">
+                            <div class="form-field__label"><label for="email2">E-mail（確認用）</label></div>
+                            <div class="form-field__element">
+                                <input type="text" id="data-email2" class="element-input-text validate[required,custom[email]],equals[data-email]" name="email2" placeholder="foo@example.com">
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <div class="form-field__label"><label for="generation">年代</label></div>
+                            <div class="form-field__element -checkbox">
+                                <span class="-checkbox__item"><input type="checkbox" id="data-generation20" class="element-input-checkbox" name="generation20" value="20代"><label for="data-generation20">20代</label></span>
+                                <span class="-checkbox__item"><input type="checkbox" id="data-generation30" class="element-input-checkbox" name="generation30" value="30代"><label for="data-generation30">30代</label></span>
+                                <span class="-checkbox__item"><input type="checkbox" id="data-generation40" class="element-input-checkbox" name="generation40" value="40代"><label for="data-generation40">40代</label></span>
+                                <span class="-checkbox__item"><input type="checkbox" id="data-generation50" class="element-input-checkbox" name="generation50" value="50代"><label for="data-generation50">50代</label></span>
+                                <span class="-checkbox__item"><input type="checkbox" id="data-generation60" class="element-input-checkbox" name="generation60" value="60代"><label for="data-generation60">60代</label></span>
+                                <span class="-checkbox__item"><input type="checkbox" id="data-generation70" class="element-input-checkbox" name="generation70" value="70代"><label for="data-generation70">70代</label></span>
+                                <span class="-checkbox__item"><input type="checkbox" id="data-generation80" class="element-input-checkbox" name="generation80" value="80代"><label for="data-generation80">80代</label></span>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <div class="form-field__label"><label for="question">ご質問</label></div>
+                            <div class="form-field__element">
+                                <textarea name="question" id="data-question" class="element-textarea" placeholder="ご質問などがありましたらご記入ください"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-field--submit">
+                            <p class="submit__information"><a href="https://www.re-adworks.com/contact/rule.html" target="_blank">利用規約</a>をお読みのうえ、内容に同意いただきましたら、<br>チェックして「入力内容を確認する」ボタンを押してください。</p>
+                            <div class="submit__privacy">
+                                <input type="checkbox" id="data-submit-privacy" name="privacy" class="element-input-checkbox validate[required]" value="同意"><label for="data-submit-privacy">利用規約の内容に同意します。</label>
+                            </div>
+                            <input type="submit" id="data-submit" class="form-submit" value="入力内容を確認する">
+                        </div>
+                    </form>
+                </div>
+				<!-- /[.contact-form]-->
 			</div>
 			<!-- /[.container] -->
 		</div>
