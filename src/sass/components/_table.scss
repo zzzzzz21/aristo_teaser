@@ -105,8 +105,13 @@
 				line-height: 2;
 			}
 			dt {
-				width: 25%;
+				width: 22%;
 				color: #94725c;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					width: 32%;
+				}
 			}
 		}
 	}

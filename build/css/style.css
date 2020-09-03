@@ -1410,7 +1410,7 @@ a.btn-target:after {
 }
 
 .outline-table.multi-head .in-table dt {
-  width: 25%;
+  width: 22%;
   color: #94725c;
 }
 
@@ -2323,6 +2323,53 @@ a.btn-target:after {
   border-left: none;
 }
 
+.toranomon .block-instruments .block__title,
+.toranomon .block-catalogue .block__title {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  align-items: center;
+  min-height: 280px;
+  background: url(../images/index/bg_header_flow.jpg) 0 0 no-repeat;
+  background-size: cover;
+  margin-bottom: 0;
+  font-size: 60px;
+  font-size: 6rem;
+  font-family: "Noto Serif JP", serif;
+  font-weight: normal;
+  color: #20428c;
+}
+
+.toranomon .block-instruments .block__title:before,
+.toranomon .block-instruments .block__title:after,
+.toranomon .block-catalogue .block__title:before,
+.toranomon .block-catalogue .block__title:after {
+  position: relative;
+  display: inline-block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border: 2px solid #20428c;
+}
+
+.toranomon .block-instruments .block__title:before,
+.toranomon .block-catalogue .block__title:before {
+  top: -.6em;
+  border-right: none;
+  border-bottom: none;
+}
+
+.toranomon .block-instruments .block__title:after,
+.toranomon .block-catalogue .block__title:after {
+  bottom: -.6em;
+  border-top: none;
+  border-left: none;
+}
+
 .aoyama .block-instruments .block__title,
 .aoyama .block-catalogue .block__title {
   position: relative;
@@ -3107,6 +3154,10 @@ a.btn-target:after {
   margin-left: auto;
 }
 
+.toranomon .unit-map__body {
+  max-width: 855px;
+}
+
 .kouenji .unit-map__body {
   max-width: 855px;
 }
@@ -3142,6 +3193,12 @@ a.btn-target:after {
   position: absolute;
   bottom: 12px;
   right: 12px;
+}
+
+.toranomon .unit-map__nav {
+  position: static;
+  width: 100%;
+  margin: auto;
 }
 
 .aoyama .unit-map__nav {
@@ -3237,6 +3294,11 @@ a.btn-target:after {
   width: calc(640 / 1200 * 100%);
 }
 
+.toranomon .block-gallery__item {
+  width: calc(855 / 1200 * 100%);
+  margin: 0 auto;
+}
+
 .aoyama .block-gallery__item {
   width: calc(562 / 1200 * 100%);
 }
@@ -3300,10 +3362,19 @@ a.btn-target:after {
   margin-top: 4%;
 }
 
+.toranomon .gallery-images__thumbnail {
+  margin-top: 20px;
+}
+
 .gallery-images__thumbnail__item {
   position: relative;
   cursor: pointer;
   width: 24%;
+}
+
+.toranomon .gallery-images__thumbnail__item {
+  width: calc((100% - 20px) / 6);
+  margin-top: 0 !important;
 }
 
 .gallery-images__thumbnail__item img {
@@ -3332,11 +3403,87 @@ a.btn-target:after {
   font-size: 1.4rem;
 }
 
+.-stories {
+  display: inline-block;
+  content: '';
+  width: 2.1em;
+  height: .9em;
+  margin-right: .2em;
+}
+
+.-stories.-ov7 {
+  background-color: #f4ebe0;
+}
+
+.-stories.-ov12 {
+  background-color: #ebd4b9;
+}
+
+.block-images__body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.block-images__unit {
+  position: relative;
+}
+
+.block-images__unit.-wide {
+  width: 100%;
+}
+
+.block-images__unit.-half {
+  width: calc((100% - 40px) / 2);
+}
+
+.block-images__unit:nth-child(n+2) {
+  margin-top: 40px;
+}
+
+.block-images__unit__body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.block-images__unit__title {
+  display: inline-block;
+  background: #20428c;
+  margin: 0 0 .6em;
+  padding: .1em .6em;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.block-images__unit__photo.-main {
+  width: 70%;
+}
+
+.block-images__unit__photo.-sub {
+  width: 30%;
+}
+
+.block-images__unit__photo img {
+  width: 100%;
+  height: auto;
+}
+
 .block-characteristic .block__body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+}
+
+.toranomon .block-characteristic .block__body {
+  display: block;
 }
 
 .kouenji .block-characteristic .block__body {
@@ -3345,6 +3492,15 @@ a.btn-target:after {
 
 .aoyama .block-characteristic .block__body {
   display: block;
+}
+
+.block-characteristic .block__body img {
+  max-width: 100%;
+}
+
+.toranomon .block-characteristic__images {
+  width: calc(855 / 1200 * 100%);
+  margin: 0 auto;
 }
 
 .kouenji .block-characteristic__images {
@@ -3382,6 +3538,12 @@ a.btn-target:after {
   box-sizing: border-box;
   width: calc( 670 / 1200 * 100%);
   margin-left: 4.16667%;
+}
+
+.toranomon .block-characteristic__body {
+  width: 100%;
+  margin-left: 0;
+  margin-top: 130px;
 }
 
 .kouenji .block-characteristic__body {
@@ -3469,6 +3631,11 @@ a.btn-target:after {
   flex-wrap: wrap;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.toranomon .block-characteristic__photo dd {
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .block-characteristic__photo dd figcaption {
@@ -3560,6 +3727,14 @@ a.btn-target:after {
   width: 45%;
 }
 
+.toranomon .block-surroundings__items {
+  width: 48%;
+}
+
+.toranomon .block-surroundings__items:nth-child(n+2) {
+  width: 50%;
+}
+
 .block-surroundings .list-hotels {
   display: -ms-flexbox;
   display: flex;
@@ -3630,6 +3805,87 @@ a.btn-target:after {
 }
 
 .block-surroundings .list-hotels__item .caption {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.block-surroundings .list-surroundings {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.block-surroundings .list-surroundings__item {
+  position: relative;
+  width: calc(( 100% - 40px ) / 3);
+  margin-right: 20px;
+  counter-increment: list;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.block-surroundings .list-surroundings__item:nth-child(n+4) {
+  margin-top: 20px;
+}
+
+.block-surroundings .list-surroundings__item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.block-surroundings .list-surroundings__item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.block-surroundings .list-surroundings__item .label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  padding: .2em .4em;
+  background: #003466;
+  font-size: 11px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.block-surroundings .list-surroundings__item .label + p {
+  margin-top: 0;
+}
+
+.block-surroundings .list-surroundings__item p + p {
+  margin-top: .6em;
+}
+
+.block-surroundings .list-surroundings__item .name {
+  position: relative;
+  margin-left: 1.8em;
+}
+
+.block-surroundings .list-surroundings__item .name:before {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -28px;
+  content: counter(list);
+  width: 24px;
+  height: 24px;
+  padding: .5em .25em;
+  background: #414a8d;
+  border-radius: 50%;
+  color: #fff;
+  line-height: 1;
+  font-size: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.block-surroundings .list-surroundings__item .caption {
   font-size: 14px;
   font-size: 1.4rem;
 }
@@ -3920,6 +4176,11 @@ a.btn-target:after {
   background-image: url(../images/index/bg_header-teaser.jpg);
 }
 
+.toranomon .contents .page-head {
+  height: 674px;
+  background-image: url(../images/index/bg_header-toranomon.jpg);
+}
+
 .kouenji .contents .page-head {
   height: 674px;
   background-image: url(../images/index/bg_header-kouenji.jpg);
@@ -3982,6 +4243,14 @@ a.btn-target:after {
   color: #fff;
 }
 
+.toranomon .contents .page-title {
+  margin-top: 142px;
+  font-weight: normal;
+  font-size: 30px;
+  font-size: 3rem;
+  color: #fff;
+}
+
 .kouenji .contents .page-title {
   margin-top: 142px;
   font-weight: normal;
@@ -4005,6 +4274,12 @@ a.btn-target:after {
 }
 
 .home .contents .page-title--note {
+  position: absolute;
+  bottom: -3.2em;
+  right: .6em;
+}
+
+.toranomon .contents .page-title--note {
   position: absolute;
   bottom: -3.2em;
   right: .6em;
@@ -5731,6 +6006,11 @@ body.rtl .formError .formErrorArrow {
     width: 640px;
   }
 
+  .toranomon .unit-map__nav {
+    width: calc(100% - 640px);
+    margin-right: -6px;
+  }
+
   .aoyama .unit-map__nav {
     width: calc(100% - 640px);
     margin-right: -6px;
@@ -5739,6 +6019,13 @@ body.rtl .formError .formErrorArrow {
   .aoyama .unit-map__nav__item {
     width: 48%;
     margin-left: 2%;
+  }
+
+  .toranomon .block-characteristic__images {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: flex-end;
   }
 
   .kouenji .block-characteristic__images {
@@ -5803,12 +6090,16 @@ body.rtl .formError .formErrorArrow {
     width: calc(374 / 1200 * 100%);
   }
 
+  .toranomon .block-characteristic__photo__item {
+    width: 60%;
+  }
+
   .kouenji .block-characteristic__photo__item {
     width: calc((100% - 60px) / 2);
   }
 
-  .block-characteristic__photo__item img + img {
-    margin-top: 42px;
+  .toranomon .block-characteristic__photo__item + .block-characteristic__photo__item {
+    width: 40%;
   }
 
   .-wide .block-characteristic__photo__item {
@@ -6021,6 +6312,18 @@ body.rtl .formError .formErrorArrow {
   .block-surroundings .list-hotels__item:nth-child(n+3) {
     margin-top: 20px;
   }
+
+  .block-surroundings .list-surroundings__item {
+    width: calc( 250 / 540 * 100%);
+  }
+
+  .block-surroundings .list-surroundings__item:nth-child(n+4) {
+    margin-top: 0;
+  }
+
+  .block-surroundings .list-surroundings__item:nth-child(n+3) {
+    margin-top: 20px;
+  }
 }
 
 @media screen and (max-width: 920px) {
@@ -6199,6 +6502,10 @@ body.rtl .formError .formErrorArrow {
 
   .outline-table.multi-head th {
     width: 100%;
+  }
+
+  .outline-table.multi-head .in-table dt {
+    width: 32%;
   }
 
   .unit__title {
@@ -6489,6 +6796,22 @@ body.rtl .formError .formErrorArrow {
   .kouenji .block-instruments .block__title:after,
   .kouenji .block-catalogue .block__title:before,
   .kouenji .block-catalogue .block__title:after {
+    width: 1.2em;
+    height: 1.2em;
+    border-width: 1px;
+  }
+
+  .toranomon .block-instruments .block__title,
+  .toranomon .block-catalogue .block__title {
+    padding: 1em 0;
+    min-height: 14.6875vw;
+    font-size: 6.25vw;
+  }
+
+  .toranomon .block-instruments .block__title:before,
+  .toranomon .block-instruments .block__title:after,
+  .toranomon .block-catalogue .block__title:before,
+  .toranomon .block-catalogue .block__title:after {
     width: 1.2em;
     height: 1.2em;
     border-width: 1px;
@@ -6862,6 +7185,10 @@ body.rtl .formError .formErrorArrow {
     font-size: 4.375vw;
   }
 
+  .toranomon .block-gallery__item {
+    width: 100%;
+  }
+
   .aoyama .block-gallery__item {
     width: 100%;
   }
@@ -6903,9 +7230,17 @@ body.rtl .formError .formErrorArrow {
     margin-top: 1%;
   }
 
+  .block-images__unit.-half {
+    width: 100%;
+  }
+
   .block-characteristic .block__body {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+  }
+
+  .toranomon .block-characteristic__images {
+    width: 100%;
   }
 
   .block-characteristic__image {
@@ -6921,6 +7256,10 @@ body.rtl .formError .formErrorArrow {
     width: 100%;
     margin-left: 0;
     margin-top: 7.8125vw;
+  }
+
+  .toranomon .block-characteristic__body {
+    margin-top: 15.625vw;
   }
 
   .kouenji .block-characteristic__body {
@@ -6955,6 +7294,7 @@ body.rtl .formError .formErrorArrow {
   }
 
   .block-characteristic__photo__item + .block-characteristic__photo__item {
+    width: 100%;
     margin-top: 2em;
   }
 
@@ -7001,6 +7341,15 @@ body.rtl .formError .formErrorArrow {
     margin-top: 2em;
   }
 
+  .toranomon .block-surroundings__items {
+    width: 100%;
+  }
+
+  .toranomon .block-surroundings__items:nth-child(n+2) {
+    width: 100%;
+    margin-top: 2em;
+  }
+
   .block-surroundings .list-hotels__item {
     width: 48%;
     margin-top: 0;
@@ -7015,6 +7364,30 @@ body.rtl .formError .formErrorArrow {
   }
 
   .block-surroundings .list-hotels__item .caption {
+    font-size: 11px;
+    font-size: 1.1rem;
+  }
+
+  .block-surroundings .list-surroundings {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .block-surroundings .list-surroundings__item {
+    width: 48%;
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .block-surroundings .list-surroundings__item:nth-child(n+3) {
+    margin-top: 4%;
+  }
+
+  .block-surroundings .list-surroundings__item .label {
+    font-size: 2.8125vw;
+  }
+
+  .block-surroundings .list-surroundings__item .caption {
     font-size: 11px;
     font-size: 1.1rem;
   }
@@ -7148,6 +7521,10 @@ body.rtl .formError .formErrorArrow {
     height: 105.3125vw;
   }
 
+  .toranomon .contents .page-head {
+    height: 105.3125vw;
+  }
+
   .kouenji .contents .page-head {
     height: 105.3125vw;
   }
@@ -7162,6 +7539,10 @@ body.rtl .formError .formErrorArrow {
   }
 
   .teaser .contents .page-title {
+    font-size: 4.6875vw;
+  }
+
+  .toranomon .contents .page-title {
     font-size: 4.6875vw;
   }
 

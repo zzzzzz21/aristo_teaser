@@ -566,6 +566,54 @@ $title_color: #20428c;
 	}
 	//	.block-instruments .block__title
 	// ----------------------------------------
+	@at-root .toranomon & .block__title {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-items:center;
+		min-height: 280px;
+		background: url(#{$image_path}index/bg_header_flow.jpg) 0 0 no-repeat;
+		background-size: cover;
+		margin-bottom: 0;
+		@include fontsize(60);
+		font-family: $base_font_family_noto;
+		font-weight: normal;
+		color: $title_color;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding: 1em 0;
+			@include calcvw(94, 'min-height', 640);
+			@include calcvw(40, 'font-size', 640);
+		}
+		&:before,
+		&:after {
+			position: relative;
+			display: inline-block;
+			content: '';
+			width: 36px;
+			height: 36px;
+			border: 2px solid $title_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 1.2em;
+				height: 1.2em;
+				border-width: 1px;
+			}
+		}
+		&:before {
+			top: -.6em;
+			border-right: none;
+			border-bottom: none;
+		}
+		&:after {
+			bottom: -.6em;
+			border-top: none;
+			border-left: none;
+		}
+	}
 	@at-root .aoyama & .block__title {
 		position: relative;
 		display: flex;
@@ -1727,6 +1775,9 @@ $title_color: #20428c;
 		margin-bottom: 1.6em;
 		margin-right: auto;
 		margin-left: auto;
+		@at-root .toranomon & {
+			max-width: 855px;
+		}
 		@at-root .kouenji & {
 			max-width: 855px;
 		}
@@ -1781,6 +1832,19 @@ $title_color: #20428c;
 		position: absolute;
 		bottom: 12px;
 		right: 12px;
+		@at-root .toranomon & {
+			position: static;
+			width: 100%;
+			margin: auto;
+//			justify-content: space-between;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				width: calc(100% - 640px);
+				margin-right: -6px;
+				//justify-content: space-between;
+			}
+		}
 		@at-root .aoyama & {
 			position: static;
 			width: 100%;
@@ -1939,6 +2003,15 @@ $title_color: #20428c;
 	// ----------------------------------------
 	@include element(item) {
 		width: calc(640 / 1200 * 100%);
+		@at-root .toranomon & {
+			width: calc(855 / 1200 * 100%);
+			margin: 0 auto;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+			}
+		}
 		@at-root .aoyama & {
 			width: calc(562 / 1200 * 100%);
 			//	[media queries SP]
@@ -2055,6 +2128,9 @@ $title_color: #20428c;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		margin-top: 4%;
+		.toranomon & {
+			margin-top: 20px;
+		}
 		//	.gallery-images__thumbnail__item
 		// ----------------------------------------
 		@include element(item) {
@@ -2065,6 +2141,10 @@ $title_color: #20428c;
 			// ----------------------------------------
 			@include media(sp) {
 				width: 24%;
+			}
+			.toranomon & {
+				width: calc((100% - 20px) / 6);
+				margin-top: 0!important;
 			}
 			img {
 				width: 100%;
@@ -2102,6 +2182,87 @@ $title_color: #20428c;
 }
 
 
+//	.-stories
+// ----------------------------------------
+.-stories {
+	display: inline-block;
+	content: '';
+	width: 2.1em;
+	height: .9em;
+	margin-right: .2em;
+	&.-ov7 {
+		background-color: #f4ebe0;
+	}
+	&.-ov12 {
+		background-color: #ebd4b9;
+	}
+}
+
+
+//	.block-images
+//	外観と改修工事後の物件イメージパース
+// ----------------------------------------
+.block-images {
+	//	.block-images__body
+	// ----------------------------------------
+	@include element(body) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	//	.block-images__unit
+	// ----------------------------------------
+	@include element(unit) {
+		position: relative;
+		&.-wide {
+			width: 100%;
+		}
+		&.-half {
+			width: calc((100% - 40px) / 2);
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+			}
+		}
+		&:nth-child(n+2) {
+			margin-top: 40px;
+		}
+		//	.block-images__unit__body
+		// ----------------------------------------
+		@include element(body) {
+			display: flex;
+			align-items: flex-end;
+		}
+		//	.block-images__unit__title
+		// ----------------------------------------
+		@include element(title) {
+			display: inline-block;
+			background: #20428c;
+			margin: 0 0 .6em;
+			padding: .1em .6em;
+			color: #fff;
+			font-weight: bold;
+			@include fontsize(14);
+		}
+		//	.block-images__unit__photo
+		// ----------------------------------------
+		@include element(photo) {
+			&.-main {
+				width: 70%;
+			}
+			&.-sub {
+				width: 30%;
+			}
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+
 //	.block-characteristic
 //	対象不動産の特性
 // ----------------------------------------
@@ -2116,17 +2277,39 @@ $title_color: #20428c;
 		@include media(sp) {
 			flex-wrap: wrap;
 		}
+		@at-root .toranomon & {
+			display: block;
+		}
 		@at-root .kouenji & {
 			display: block;
 		}
 		@at-root .aoyama & {
 			display: block;
 		}
+		img {
+			max-width: 100%;
+		}
 	}
 	
 	//	.block-characterisistic__images
 	// ----------------------------------------
 	@include element(images) {
+		@at-root .toranomon & {
+			width: calc(855 / 1200 * 100%);
+			margin: 0 auto;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				display: flex;
+				align-items: flex-end;
+
+			}
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+			}
+		}
 		@at-root .kouenji & {
 			width: 100%;
 			//	[media queries PC-tablet]
@@ -2233,6 +2416,16 @@ $title_color: #20428c;
 			margin-left: 0;
 			@include calcvw(50, 'margin-top', 640);
 		}
+		@at-root .toranomon & {
+			width: 100%;
+			margin-left: 0;
+			margin-top: 130px;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(100, 'margin-top',640);
+			}
+		}
 		@at-root .kouenji & {
 			width: 100%;
 			margin-left: 0;
@@ -2333,6 +2526,9 @@ $title_color: #20428c;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
+			.toranomon & {
+				justify-content: center;
+			}
 			figcaption {
 				margin-top: 1em;
 				@include fontsize(16);
@@ -2351,14 +2547,25 @@ $title_color: #20428c;
 			// ----------------------------------------
 			@include media(pc-tb) {
 				width: calc(374 / 1200 * 100%);
+				.toranomon & {
+					width: 60%;
+				}
 				.kouenji & {
 					width: calc((100% - 60px) / 2);
 				}
 			}
 			& + & {
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					.toranomon & {
+						width: 40%;
+					}
+				}
 				//	[media queries SP]
 				// ----------------------------------------
 				@include media(sp) {
+					width: 100%;
 					margin-top: 2em;
 				}
 			}
@@ -2369,7 +2576,7 @@ $title_color: #20428c;
 					//	[media queries PC-tablet]
 					// ----------------------------------------
 					@include media(pc-tb) {
-						margin-top: 42px;
+//						margin-top: 42px;
 					}					
 				}
 			}
@@ -2544,6 +2751,25 @@ $title_color: #20428c;
 				margin-top: 2em;
 			}
 		}
+		.toranomon & {
+			width: 48%;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+			}
+			&:nth-child(n+2) {
+				//max-width: 540px;
+				width: 50%;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					width: 100%;
+					margin-top: 2em;
+				}
+			}
+			
+		}
 	}
 	//	.list-hotels
 	// ----------------------------------------
@@ -2576,6 +2802,109 @@ $title_color: #20428c;
 			@include media(sp) {
 				width: 48%;
 				margin-top: 0;
+				&:nth-child(n+3) {
+					margin-top: 4%;
+				}
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+			.label {
+				position: absolute;
+				top: 0;
+				right: 0;
+				display: block;
+				padding: .2em .4em;
+				background: $base_corporate_color;
+				@include fontsize(11);
+				color: $base_white_color;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include calcvw(18, 'font-size', 640);
+				}
+				& + p {
+					margin-top: 0;
+				}
+			}
+			p + p {
+				margin-top: .6em;
+			}
+			.name {
+				position: relative;
+				margin-left: 1.8em;
+				&:before {
+					box-sizing: border-box;
+					display: block;
+					position: absolute;
+					top: 0;
+					left: -28px;
+					content: counter(list);
+					width: 24px;
+					height: 24px;
+					padding: .5em .25em;
+					background: #414a8d;
+					border-radius: 50%;
+					color: $base_white_color;
+					line-height: 1;
+					@include fontsize(12);
+					font-weight: bold;
+					text-align: center;
+				}
+			}
+			.caption {
+				@include fontsize(14);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include fontsize(11);
+				}
+			}
+		}
+	}
+	//	.list-surroundings
+	// ----------------------------------------
+	.list-surroundings {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			justify-content: space-between;
+		}
+		//	/list-surroundings__item
+		// ----------------------------------------
+		@include element(item) {
+			position: relative;
+			width: calc(( 100% - 40px ) / 3 );
+			margin-right: 20px;
+			counter-increment: list;
+			@include fontsize(14);
+			&:nth-child(n+4) {
+				margin-top: 20px;
+			}
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+			//	[media queries PC-min]
+			// ----------------------------------------
+			@include media(pc-min) {
+				width: calc( 250 / 540 * 100% );
+				&:nth-child(n+4) {
+					margin-top: 0;
+				}
+				&:nth-child(n+3) {
+					margin-top: 20px;
+				}
+			}
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 48%;
+				margin-top: 0;
+				margin-right: 0;
 				&:nth-child(n+3) {
 					margin-top: 4%;
 				}

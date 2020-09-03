@@ -1,0 +1,359 @@
+<%
+meta = { title:'', desc:'' };
+isForm = '';
+path = '../';
+srcPath ='../../';
+directory = 'toranomon';
+directoryLv2 = '';
+page = '';
+%><!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath + 'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
+<body class="<% if (directory!=='') { %> <%= directory %><% } else {%>home<% } %>" id="top">
+<div class="page" id="data-page">
+<%- include(srcPath + 'html/include/toranomon/_header') %>
+	<main class="main contents">
+		<header class="page-head">
+			<div class="container">
+				<h1 class="page-title"><ruby>ARISTO <rp>(</rp><rt>アリスト</rt><rp>)</rp></ruby>は、好立地の優良不動産に対して<br>少額からの投資が可能な<br class="is-sp">不動産小口化商品です。</h1>
+				<p class="page-title--note">ARISTO(アリスト)は、株式会社エー・ディー・ワークスが提供する、<br class="is-pc">不動産特定共同事業法に基づく不動産小口化商品です。
+				</p>
+			</div>
+		</header>
+		<!-- /[.page-head] -->
+
+		<section class="block-instruments" id="section-instruments">
+			<h2 class="block__title"><span>ARISTO第4号商品</span></h2>
+			<div class="top-carousel -horizontal">
+				<div class="top-carousel__inner" id="data-carousel">
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_toranomon01.jpg" alt=""></div>
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_toranomon02.jpg" alt=""></div>
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_toranomon03.jpg" alt=""></div>
+				</div>
+				<div class="top-carousel__message">
+					<div class="top-carousel__message__inner">
+						<h3 class="top-carousel__title">ARISTO虎ノ門</h3>
+						<p class="top-carousel__body">都心3区、港区「虎ノ門」の「事務所店舗ビル」に<br>
+						少額から投資が可能な商品です。</p>
+					</div>
+				</div>
+			</div>
+			<!-- /[.top-carousel] -->
+
+			<div class="block-title" id="section-title">
+				<div class="block -available">
+					<h2 class="block-title__logo"><img src="<%= path %>images/common/logo_aristo-toranomon.jpg" alt="ARISTO高円寺"></h2>
+				</div>
+<%- include(srcPath + 'html/include/toranomon/_block-others') %>
+				<!-- /[.block-others] -->
+			</div>
+			<!-- /[.block-title#section-title] -->
+		</section>
+		<!-- /[.block-instruments#section-instruments] -->
+
+		<section class="block block-location" id="section-location">
+			<h2 class="unit__title"><span>ロケーション</span></h2>
+			<div class="unit-map__body">
+				<p class="unit-map__main" id="data-map-aoyama-main"><img src="<%= path %>images/toranomon/map_wide.jpg" alt="地図"></p>
+			</div>
+			<div class="unit-map__information">
+				<ul class="unit-map__nav" id="data-map-aoyama">
+					<li class="unit-map__nav__item"><a href="<%= path %>images/toranomon/map_wide.jpg"><img src="<%= path %>images/toranomon/map_wide.jpg"></a></li>
+					<li class="unit-map__nav__item"><a href="<%= path %>images/toranomon/map_middle.jpg"><img src="<%= path %>images/toranomon/map_middle.jpg"></a></li>
+				</ul>
+			</div>
+		</section>
+		<!-- /[.block.block-location#section-location] -->
+
+		<div class="block block-gallery -toranomon" id="section-gallery">
+			<div class="block-gallery__body">
+				<div class="block-gallery__item">
+					<div class="block-aoyama-images">
+						<div class="gallery-images__main"></div>
+						<ul class="gallery-images__thumbnail -label">
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/toranomon/photo_gallery_palace.jpg" alt="皇居"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/toranomon/photo_gallery_toranomon.jpg" alt="虎ノ門ヒルズ"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/toranomon/photo_gallery_sotobori.jpg" alt="外堀通り"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/toranomon/photo_gallery_ginza.jpg" alt="銀座"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/toranomon/photo_gallery_national-diet.jpg" alt="国会議事堂"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/toranomon/photo_gallery_tokyotower.jpg" alt="東京タワー"></li>
+						</ul>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<!-- /[.block.block-gallery#section-gallery] -->
+		
+		<section class="block block-surroundings" id="section-surroundings">
+			<h2 class="unit__title"><span>物件周辺の開発動向</span></h2>
+			<p class="block__lead">近年の再開発による国際的ビジネス街への発展、<br class="is-pc">更には街が生まれ変わり続けることによる<br class="is-pc">価値の維持向上が期待されています。</p>
+			<div class="block-surroundings__body">
+				<div class="block-surroundings__items"><img src="<%= path %>images/toranomon/image_surroundings.jpg" alt="「田の字エリア」地区概念図"></div>
+				<div class="block-surroundings__items">
+					<ol class="list-surroundings">
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/toranomon/photo_surroundings_01.jpg" alt="東京虎ノ門グローバルスクエア：2020年7月竣工"></p>
+							<p class="name">東京虎ノ門グローバルスクエア<br>2020年7月竣工</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/toranomon/photo_surroundings_02.jpg" alt="仮）虎ノ門二丁目地区再開発事業：2023年11月竣工"></p>
+							<p class="name">仮）虎ノ門二丁目地区再開発事業<br>2023年11月竣工</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/toranomon/photo_surroundings_03.jpg" alt="東京ワールドゲート神谷町トラストタワー：2023年3月竣工"></p>
+							<p class="name">東京ワールドゲート神谷町トラストタワー<br>2020年3月竣工</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/toranomon/photo_surroundings_04.jpg" alt="仮）虎ノ門ヒルズステーションタワー：2023年7月竣工"></p>
+							<p class="name">仮）虎ノ門ヒルズステーションタワー<br>2023年7月竣工</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/toranomon/photo_surroundings_05.jpg" alt="仮）新橋田村町地区開発計画：2021年3月竣工予定"></p>
+							<p class="name">仮）新橋田村町地区開発計画<br>2021年3月竣工予定</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/toranomon/photo_surroundings_06.jpg" alt="京阪神虎ノ門ビルディング：2020年10月竣工予定"></p>
+							<p class="name">京阪神虎ノ門ビルディング<br>2020年10月竣工予定</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/toranomon/photo_surroundings_07.jpg" alt="銀泉西新橋ビルPJ：2022年4月竣工予定"></p>
+							<p class="name">銀泉西新橋ビルPJ<br>2022年4月竣工予定</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/toranomon/photo_surroundings_08.jpg" alt="仮）新橋駅西口地区再開発：2022年以降時期未定"></p>
+							<p class="name">仮）新橋駅西口地区再開発<br>2022年以降時期未定</p>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</section>
+		<!-- /[.block.block-surroundings#section-surroundings] -->
+
+		<section class="block block-characteristic" id="section-characteristic">
+			<h2 class="unit__title"><span>ARISTO虎ノ門の特性</span></h2>
+			<p class="block__lead">ARISTO虎ノ門は、都内主要道路である外堀通りに近く、<br class="is-pc">また周辺ビルと比較し、視認性の高いビルと言えます。</p>
+			<div class="block__body">
+				<div class="block-characteristic__images">
+					<div class="block-characteristic__images__item -item01">
+						<p>
+							<img src="<%= path %>images/toranomon/figure_detail.jpg" alt="">
+						</p>
+						<p class="block-characteristic__images__item">※周辺物件は、下記のように建物の規模に応じて色分けしています。<br><span class="-stories -ov7"></span>地上7階以上　　<span class="-stories -ov12"></span>地上12階以上</p>
+					</div>
+					<div class="block-characteristic__images__item -item02">
+						<p>
+							<img src="<%= path %>images/toranomon/photo_characteristic.jpg" alt="">
+						</p>
+						<p style="padding: 0 .6em">左記地図の撮影位置から見た<br class="is-pc">ARISTO虎ノ門</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /[.block.block-characteristic#section-characteristic] -->
+		
+		<section class="block block-images" id="section-images">
+			<h3 class="unit__title"><span>外観と改修工事後の物件イメージパース</span></h3>
+			<div class="block__body">
+				<div class="block-images__body">
+					<div class="block-images__unit -wide">
+						<h4 class="block-images__unit__title">正面外観</h4>
+						<div class="block-images__unit__body">
+							<figure class="block-images__unit__photo -main"><img src="<%= path %>images/toranomon/photo_images_01.jpg" alt=""></figure>
+							<figure class="block-images__unit__photo -sub"><img src="<%= path %>images/toranomon/photo_images_01B.jpg" alt=""></figure>
+						</div>
+					</div>
+					<div class="block-images__unit -half">
+						<h4 class="block-images__unit__title">ビルエントランス内</h4>
+						<div class="block-images__unit__body">
+							<figure class="block-images__unit__photo -main"><img src="<%= path %>images/toranomon/photo_images_02.jpg" alt=""></figure>
+							<figure class="block-images__unit__photo -sub"><img src="<%= path %>images/toranomon/photo_images_02B.jpg" alt=""></figure>
+						</div>
+					</div>
+					<div class="block-images__unit -half">
+						<h4 class="block-images__unit__title">ビルエントランス前外観</h4>
+						<div class="block-images__unit__body">
+							<figure class="block-images__unit__photo -main"><img src="<%= path %>images/toranomon/photo_images_03.jpg" alt=""></figure>
+							<figure class="block-images__unit__photo -sub"><img src="<%= path %>images/toranomon/photo_images_03B.jpg" alt=""></figure>
+						</div>
+					</div>
+				</div>
+				<p class="block-characteristic__images__item -note">いずれも、左側がイメージパース・右側が現況写真（2020年7月撮影）<br>
+				※イメ―パースは2020年7月撮影時写真を加工したものですが、実際の完了時と異なる場合があります。</p>
+				<h3 class="block-contact__title">資料請求・お問い合わせはこちら</h3>
+<%- include(srcPath + 'html/include/_block-contact__buttons') %>
+<%- include(srcPath + 'html/include/_block-contact') %>
+			</div>
+		</section>
+		<!-- /[.block.block-images#section-images] -->
+
+		<section class="block block-products" id="section-products">
+			<h2 class="unit__title"><span>商品概要</span></h2>
+			<div class="block-products__body">
+				<table class="outline-table">
+					<tr>
+						<th>募集総額</th>
+						<td>17.0億円</td>
+					</tr>
+					<tr>
+						<th>募集総口数</th>
+						<td>1700口</td>
+					</tr>
+					<tr>
+						<th>組合組成日</th>
+						<td>2020年12月25日（予定）</td>
+					</tr>
+					<tr>
+						<th>予定運用期間</th>
+						<td>10年間</td>
+					</tr>
+					<tr>
+						<th>お申込単位</th>
+						<td>
+							<dl>
+								<dt>1口100万円単位</dt>
+								<dd class="indent">最低出資金額500万円（5口）<br>
+									最高出資金額8.49億円（849口）<br>
+									（500万円以上であれば、100万円単位で出資額をお決め頂けます。）</dd>
+							</dl>
+						</td>
+					</tr>
+					<tr>
+						<th>必要経費</th>
+						<td>不動産取得税等（1口当たりの目安約25,380円）</td>
+					</tr>
+					<tr>
+						<th>支払期日</th>
+						<td>2020年12月18日（予定）</td>
+					</tr>
+					<tr>
+						<th>売買代金に対する予定賃料利回り</th>
+						<td>
+							<p>満室稼働想定4.80％、95％稼働想定4.56%</p>
+							<p>※売買代金に対する予定賃料利回りとは「賃料収入」÷「募集総額」で算出しています。なお売買代金に対する予定賃料利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
+						</td>
+					</tr>
+					<tr>
+						<th>投資コストに対する予定分配金利回り</th>
+						<td>
+							<p>満室稼働想定3.64％、95%稼働想定3.42％</p>
+							<p>※投資コストに対する予定分配金利回りとは「分配金」÷「全投資コスト」で算出しています。分配金とは、賃料収入から公租公課、維持管理費、修繕積立金等を控除後の金額です。</p>
+							<p>※95%稼動想定とは、1年間で1フロア（賃貸面積が最大のフロアを想定）が約3か月間空室だった場合を想定して算出しております。</p>
+							<p>※不動産市況等により賃料収入は変動します。例えば、賃料収入が現在想定賃料から『10％上昇』・『10％下落』した場合の満室稼動想定予定分配金利回りは、『4.09％』・『3.20％』となります。</p>
+							<p>※組合組成（2020年12月を予定）以後、新型コロナウイルスの影響の長期化又は再拡大による東京都からの営業自粛要請があり、テナントがその要請に従い営業自粛する場合等に起因して、賃料減額要請や、当該テナントが退去し、かつ退去後に次のテナントが見つからない場合等においては、記載の利回りを下回る可能性があります。</p>
+						</td>
+					</tr>
+					<tr>
+						<th>収益分配</th>
+						<td>年1回（2月）</td>
+					</tr>
+					<tr>
+						<th>不動産特定共同事業者</th>
+						<td>株式会社エー・ディー・ワークス<br>東京都知事　第96号</td>
+					</tr>
+					<tr>
+						<th>事業者との関係</th>
+						<td>事業者である株式会社エー・ディー・ワークス自らが不動産特定共同事業契約の当事者となります。</td>
+					</tr>
+					<tr>
+						<th>契約形態</th>
+						<td>不動産特定共同事業法に基づく任意組合契約</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- /[.block.block-products#section-products] -->
+
+		<section class="block block-property" id="section-property">
+			<h2 class="unit__title"><span>物件概要</span></h2>
+			<div class="block-property__body">
+				<table class="outline-table multi-head">
+					<tr>
+						<th>物件</th>
+						<td>
+							<dl class="in-table"><dt>名称</dt><dd>宮田ビル<br>※商品名称はARISTO虎ノ門で、ビル名称（物件名称）は宮田ビル</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>所在地</th>
+						<td>
+							<dl class="in-table"><dt>地番</dt><dd>東京都港区西新橋1丁目106番地8、106番地9</dd></dl>
+							<dl class="in-table"><dt>住居表示</dt><dd>東京都港区西新橋1丁目17番16号</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>交通</th>
+						<td>
+							<dl class="in-table"><dt> </dt><dd>東京メトロ銀座線「虎ノ門」駅　徒歩6分<br>JR線・東京メトロ銀座線「新橋」駅　徒歩5分<br>東京メトロ日比谷線「虎ノ門ヒルズ」駅　徒歩9分<br>都営浅草線「新橋」駅　徒歩6分<br>都営三田線「内幸町」駅　徒歩2分</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>土地</th>
+						<td>
+							<dl class="in-table"><dt>実測面積 </dt><dd>317.60m<sup>2</sup> （96.07坪）</dd></dl>
+							<dl class="in-table"><dt>権利</dt><dd>所有権</dd></dl>
+							<dl class="in-table"><dt>地目</dt><dd>宅地</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>建物</th>
+						<td>
+							<dl class="in-table"><dt>構造・規模</dt><dd>鉄骨鉄筋コンクリート・鉄筋コンクリート造陸屋根地下1階付7階建</dd></dl>
+							<dl class="in-table"><dt>竣工・施工</dt><dd>竣工：1984年3月　施工：清水建設</dd></dl>
+							<dl class="in-table"><dt>延床面積</dt><dd>1584.30m<sup>2</sup>（479.25坪）　</dd></dl>
+							<dl class="in-table"><dt>賃貸面積</dt><dd>1186.73m<sup>2</sup>（358.98坪）</dd></dl>
+							<dl class="in-table"><dt>用途</dt><dd>事務所・作業所・車庫</dd></dl>
+							<dl class="in-table"><dt>耐震</dt><dd>新耐震基準</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>公法上の制限</th>
+						<td>
+							<dl class="in-table"><dt>都市計画区域</dt><dd>市街化区域</dd></dl>
+							<dl class="in-table"><dt>用途地域</dt><dd>商業地域</dd></dl>
+							<dl class="in-table"><dt>指定建蔽率</dt><dd>80%</dd></dl>
+							<dl class="in-table"><dt>防火指定</dt><dd>防火地域</dd></dl>
+							<dl class="in-table"><dt>指定容積率</dt><dd>700%</dd></dl>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- /[.unit.block-property#section-property] -->	
+
+		<section class="block-seminars" id="section-seminars">
+			<h2 class="block__title"><span>セミナー情報</span></h2>
+			<div class="block">
+<%- include(srcPath + 'html/include/_block-seminar-body') %>
+			</div>
+		</section>
+		<!-- /[.block-seminars#section-seminars] -->
+
+<%- include(srcPath + 'html/include/_block-flow') %>
+		<!-- /[.block-flow#section-flow] -->
+
+<%- include(srcPath + 'html/include/_block-faq') %>
+		<!-- /[.block-flow#section-faq] -->
+		
+<%- include(srcPath + 'html/include/_block-footer-information') %>
+		<!-- /[.block.footer-information] -->
+
+	</main>
+	<!-- /[.main] -->
+<%- include(srcPath + 'html/include/_footer') %>
+
+    <div class="fixed-button" id="data-fixedButton">
+        <p class="button-entry"><a href="<%= path %>seminar/" class="btn-detail">セミナー詳細はこちら</a></p>
+        <p class="button-request"><a href="<%= path %>request/#form-contact" class="btn-detail">資料請求はこちら</a></p>
+    </div>
+    <!--　/[.fixed-button] -->
+</div><!-- /.page -->
+
+<%- include(srcPath + 'html/include/_loading') %>
+
+<%- include(srcPath + 'html/include/_body_last') %>
+
+</body>
+</html>
