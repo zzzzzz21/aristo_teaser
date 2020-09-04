@@ -3475,6 +3475,10 @@ a.btn-target:after {
   height: auto;
 }
 
+.block-images__unit__photo figcaption {
+  margin-top: .4em;
+}
+
 .block-characteristic .block__body {
   display: -ms-flexbox;
   display: flex;
@@ -6021,6 +6025,10 @@ body.rtl .formError .formErrorArrow {
     margin-left: 2%;
   }
 
+  .block-images__unit__photo figcaption {
+    display: none;
+  }
+
   .toranomon .block-characteristic__images {
     display: -ms-flexbox;
     display: flex;
@@ -7232,6 +7240,22 @@ body.rtl .formError .formErrorArrow {
 
   .block-images__unit.-half {
     width: 100%;
+  }
+
+  .block-images__unit__body {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .block-images__unit__photo.-main {
+    width: 100%;
+  }
+
+  .block-images__unit__photo.-sub {
+    width: 70%;
+    margin-top: 1em;
   }
 
   .block-characteristic .block__body {

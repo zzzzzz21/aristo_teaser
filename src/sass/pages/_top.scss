@@ -2233,6 +2233,12 @@ $title_color: #20428c;
 		@include element(body) {
 			display: flex;
 			align-items: flex-end;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				flex-direction: column;
+				align-items: flex-start;
+			}
 		}
 		//	.block-images__unit__title
 		// ----------------------------------------
@@ -2250,13 +2256,33 @@ $title_color: #20428c;
 		@include element(photo) {
 			&.-main {
 				width: 70%;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					width: 100%;
+				}
 			}
 			&.-sub {
 				width: 30%;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					width: 70%;
+					margin-top: 1em;
+				}
 			}
 			img {
 				width: 100%;
 				height: auto;
+			}
+			figcaption {
+				margin-top: .4em;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					display: none;
+				}
+				
 			}
 		}
 	}
