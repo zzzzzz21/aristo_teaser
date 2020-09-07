@@ -22,8 +22,9 @@
 			@include calcvw(36, 'font-size', 640);
 		}
 		span {
-			padding-bottom: .4em;
+			//padding-bottom: .4em;
 			border-bottom: 1px solid $base_corporate_color;
+			line-height: 1.8;
 		}
 	}
 }
