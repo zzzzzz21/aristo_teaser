@@ -158,7 +158,7 @@ page = '';
 		</section>
 		<!-- /[.block.block-characteristic#section-characteristic] -->
 
-		<section class="block block-products" id="section-products">
+		<%# section class="block block-products" id="section-products">
 			<h2 class="unit__title"><span>商品概要</span></h2>
 			<div class="block-products__body">
 				<table class="outline-table">
@@ -230,7 +230,7 @@ page = '';
 					</tr>
 				</table>
 			</div>
-		</section>
+		</section%>
 		<!-- /[.block.block-products#section-products] -->
 
 		<section class="block block-property" id="section-property">
@@ -310,10 +310,7 @@ page = '';
 	<!-- /[.main] -->
 <%- include(srcPath + 'html/include/_footer') %>
 
-    <div class="fixed-button" id="data-fixedButton">
-        <p class="button-entry"><a href="<%= path %>seminar/" class="btn-detail">セミナー詳細はこちら</a></p>
-        <p class="button-request"><a href="<%= path %>request/#form-contact" class="btn-detail">資料請求はこちら</a></p>
-    </div>
+<%- include(srcPath + 'html/include/_fixed-buttons') %>
     <!--　/[.fixed-button] -->
 </div><!-- /.page -->
 

@@ -147,14 +147,25 @@
 	border: 1px solid #a9a9a9;
 	display: flex;
 	flex-wrap: wrap;
-	.-checkbox__item {
+	&__item {
 		width: 25%;
 		padding: .2em 0;
+		&.-lineup {
+			width: auto;
+			padding: .2em 0;
+			& + & {
+				margin-left: 1em;
+			}
+		}
 	}
 	//	.page-confirm &
 	// ----------------------------------------
-	.page-confirm & {
+	.page-confirm &,
+	&.no-border {
 		padding: 0;
 		border: none;
+	}
+	&.no-border {
+		padding-top: .5em;
 	}
 }

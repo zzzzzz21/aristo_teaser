@@ -15,8 +15,35 @@
 			display: flex;
 			flex-direction: row-reverse;
 			justify-content: space-between;
+			.home .block-catalogue__body & {
+				width: calc(50% - 40px);
+				display: block;
+			}
+			.home .block-catalogue__body &:nth-child(n+3) {
+				margin-top: calc(100px + 6rem);				
+			}
+			body:not(.home) .block-catalogue__body & + & {
+				margin-top: 100px;
+			}
 		}
-		
+		//	.catalogue-item__inner
+		// ----------------------------------------
+		&__inner {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				.btn-detail {
+					display: none;
+				}
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: space-between;
+			}
+		}
 		& + & {
 			//	[media queries SP]
 			// ----------------------------------------
@@ -26,7 +53,7 @@
 			//	[media queries PC-tablet]
 			// ----------------------------------------
 			@include media(pc-tb) {
-				margin-top: 100px;
+				//margin-top: 100px;
 			}
 		}
 		.btn-detail {
@@ -39,7 +66,7 @@
 			//	[media queries PC-tablet]
 			// ----------------------------------------
 			@include media(pc-tb) {
-				margin-top: 50px;
+				margin-top: 2rem;
 			}
 		}
 	}
@@ -51,6 +78,9 @@
 		// ----------------------------------------
 		@include media(pc-tb) {
 			width: 520px;
+			.block-catalogue__body & {
+				width: calc(60% - 20px);
+			}
 			.block-others & {
 				width: 100%;
 			}
@@ -83,6 +113,9 @@
 		@include media(pc-tb) {
 			padding: .2em 0 .2em 4.5em;
 			@include fontsize(32);
+			.block-catalogue__body & {
+				padding: 0;
+			}
 		}
 		@at-root .block-others & {
 			margin-bottom: .6em;
@@ -149,6 +182,16 @@
 			@at-root .catalogue-investment & {
 				content: '運用中';
 			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@at-root .block-catalogue__body & {
+					@include fontsize(18);
+					display: block;
+					position: static;
+					width: 5em;
+				}
+			}
 			@at-root .block-others & {
 				width: 4em;
 				margin-bottom: .2em;
@@ -170,6 +213,7 @@
 	// ----------------------------------------
 	@include element(access) {
 		position: relative;
+		margin-top: .8rem;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
@@ -177,6 +221,11 @@
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
+			& + .btn-detail {
+				width: 100%;
+				position: absolute;
+				bottom: -7rem;
+			}
 		}
 	}
 	//	.catalogue__outline
@@ -186,6 +235,7 @@
 		font-weight: bold;
 		color: $base_corporate_color;
 		letter-spacing: -.03em;
+		margin-top: .8rem;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
@@ -195,6 +245,9 @@
 		// ----------------------------------------
 		@include media(pc-tb) {
 			@include fontsize(24);
+			& + .btn-detail {
+				width: 100%;
+			}
 		}
 	}
 	//	.catalogue__photo
@@ -220,6 +273,9 @@
 			@at-root .block-others & {
 				width: 343px;
 				margin-right: 32px;
+			}
+			@at-root .block-catalogue__body & {
+				width: calc(40% - 20px);
 			}
 		}
 		//	.catalogue__photo__item

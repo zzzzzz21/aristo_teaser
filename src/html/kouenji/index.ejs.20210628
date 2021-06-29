@@ -130,7 +130,7 @@ page = '';
 		</section>
 		<!-- /[.block.block-characteristic#section-characteristic] -->
 
-		<%#section class="block block-products" id="section-products">
+		<section class="block block-products" id="section-products">
 			<h2 class="unit__title"><span>商品概要</span></h2>
 			<div class="block-products__body">
 				<table class="outline-table">
@@ -205,7 +205,7 @@ page = '';
 					</tr>
 				</table>
 			</div>
-		</section%>
+		</section>
 		<!-- /[.block.block-products#section-products] -->
 
 		<section class="block block-property" id="section-property">

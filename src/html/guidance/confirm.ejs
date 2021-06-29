@@ -43,6 +43,14 @@ page = 'confirm';
 					<form action="confirm.html" method="post" name="form-contact" class="form-body h-adr" id="form-contact">
 						<input type="hidden" class="p-country-name" value="Japan">
 						<div class="form-field required">
+							<div class="form-field__label"><label for="name-familyName">ご希望商品<br>（複数選択可）</label></div>
+							<div class="form-field__element -checkbox no-border">
+								<?php if($_POST['aristo3']): ?><span class="-checkbox__item -lineup"><input type="hidden" id="data-aristo3" name="aristo3" value="<?php echo $_POST['aristo3']?>"></span><?php endif; ?>
+								<?php if($_POST['aristo4']): ?><span class="-checkbox__item -lineup"><input type="hidden" id="data-aristo4" name="aristo4" value="<?php echo $_POST['aristo4']?>"></span><?php endif; ?>
+								<div class="form-value"><?php echo $lineup ?></div>
+							</div>
+						</div>
+						<div class="form-field required">
 							<div class="form-field__label"><label for="name-familyName">お名前</label></div>
 							<div class="form-field__element">
 								<ul class="element--name">

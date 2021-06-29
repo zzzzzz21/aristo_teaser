@@ -10,7 +10,7 @@
 				<div class="siteTitle__function">
 					<div class="siteTitle__function__form">
 						<a href="<%= path %>guidance/" class="btn-contact">Web個別案内会はこちら</a>
-						<a href="<%= path %>request/#form-contact" class="btn-contact">資料請求はこちら</a>
+						<% if (isForm == 'y') { %><a href="<%= path %>request/#form-contact" class="btn-contact">資料請求はこちら</a><% } %>
 						<a href="<%= path %>seminar/" class="btn-seminar">セミナー詳細はこちら</a>
 					</div>
 					<div class="siteTitle__function__tel is--tel">
@@ -28,7 +28,7 @@
 				<div class="siteTitle">
 					<a href="<%= path %>" aria-label="トップページへのリンク"><img src="<%= path %>images/common/logo_globalheader.png" alt=""></a>
 					<a class="btn-detail block-contact__button" href="<%= path %>guidance/">Web個別案内会はこちら</a>
-					<a class="btn-detail block-contact__button" href="<%= path %>seminar/">セミナー詳細はこちら</a>
+					<% if (isForm == 'y') { %><a class="btn-detail block-contact__button" href="<%= path %>seminar/">セミナー詳細はこちら</a><% } %>
 					<a class="btn-detail block-contact__button" href="<%= path %>request/#form-contact">資料請求はこちら</a>
 				</div>
 				<nav class="gNavi">
@@ -38,7 +38,6 @@
 							<ul>
 								<li class="gNavi__item" role="presentation"><a role="menuitem" href="<%= path %>aoyama/#section-location"><span>ロケーション</span></a></li>
 								<li class="gNavi__item" role="presentation"><a role="menuitem" href="<%= path %>aoyama/#section-characteristic"><span>ARISTO青山の特性</span></a></li>
-								<li class="gNavi__item" role="presentation"><a role="menuitem" href="<%= path %>aoyama/#section-products"><span>商品概要</span></a></li>
 								<li class="gNavi__item" role="presentation"><a role="menuitem" href="<%= path %>aoyama/#section-property"><span>物件概要</span></a></li>
 							</ul>
 						</li>

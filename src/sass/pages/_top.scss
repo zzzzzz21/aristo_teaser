@@ -715,10 +715,15 @@ $title_color: #20428c;
 	//	[media queries PC-tablet]
 	// ----------------------------------------
 	@include media(pc-tb) {
-		@include clearfix;
+//		@include clearfix;
 		max-width: 1080px;
 		margin: 0 auto;
 		padding: 0;
+		.home & {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
 	}
 }
 @import 'catalogue';
@@ -1148,6 +1153,11 @@ $title_color: #20428c;
     &.pre-open {
         &:before {
             content: '先行案内中';
+        }
+    }
+    &.-onsale {
+        &:before {
+            content: '販売中';
         }
     }
     &.-investment {
@@ -1886,6 +1896,15 @@ $title_color: #20428c;
 		@include element(item) {
 			margin: 0 .3em;
 			@at-root .aoyama & {
+				margin: 0;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: 48%;
+					margin-left: 2%;
+				}
+			}
+			@at-root .toranomon & {
 				margin: 0;
 				//	[media queries PC-tablet]
 				// ----------------------------------------
@@ -2920,7 +2939,7 @@ $title_color: #20428c;
 		// ----------------------------------------
 		@include element(item) {
 			position: relative;
-			width: calc(( 100% - 40px ) / 3 );
+			width: calc(( 100% - 50px ) / 3 );
 			margin-right: 20px;
 			counter-increment: list;
 			@include fontsize(14);

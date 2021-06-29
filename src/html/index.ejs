@@ -1,8 +1,8 @@
 <%
 meta = { title:"株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO公式サイト", desc:"" };
-seminar = "";
+seminar = "finish";
 guidance = "";
-isOnsale = "y";
+isOnsale = "";
 isForm ="";
 path = "./";
 srcPath ="../";
@@ -33,7 +33,7 @@ seminarList = [
 		"seminarFee": "無料",
 		"seminarCapacity": "50名",
 		"seminarOutline": "",
-		"seminarContactName": "株式会社エー・ディー・ワークス　投資不動産事業本部　資産運用部",
+		"seminarContactName": "株式会社エー・ディー・ワークス　資産運用事業本部　ウェルスマネジメント部",
 		"seminarContactTel": "0120-540-949",
 		"seminarContactMail": "&#97;&#114;&#105;&#115;&#116;&#111;&#64;&#114;&#101;&#45;&#97;&#100;&#119;&#111;&#114;&#107;&#115;&#46;&#99;&#111;&#109;",
 		"seminarOrganizer": "株式会社エー・ディー・ワークス",
@@ -43,11 +43,11 @@ seminarList = [
 catalogue = [
 	{
 		"catalogueID":"toranomon",
-		"catalogueStatus":"available",
-		"catalogueStatusJP":"販売中",
+		"catalogueStatus":"investment",
+		"catalogueStatusJP":"運用中",
 		"catalogueTitle":"ARISTO虎ノ門",
-		"catalogueCaption":"2020年12月運用開始予定",
-		"catalogueAccess":"東京都港区西新橋1丁目17番16号<br>東京メトロ銀座線「虎ノ門」駅　徒歩6分<br>JR線・東京メトロ銀座線「新橋」駅　徒歩5分<br>東京メトロ日比谷線「虎ノ門ヒルズ」駅徒　徒歩9分<br>都営浅草線「新橋」駅　徒歩6分<br>都営三田線「内幸町」駅　徒歩2分",
+		"catalogueCaption":"2021年6月運用開始",
+		"catalogueAccess":"東京都港区西新橋1丁目17番16号<br>東京メトロ銀座線「虎ノ門」駅　徒歩6分<br>JR線・東京メトロ銀座線「新橋」駅　徒歩5分<br>東京メトロ日比谷線「虎ノ門ヒルズ」駅徒　徒歩9分<br>都営浅草線「新橋」駅　徒歩6分<br>都営三田線「内幸町」駅　徒歩2分<br>東京メトロ千代田線・日比谷線・丸ノ内線「霞ヶ関」駅　徒歩9分",
 		"catalogueOutline":"都心3区、港区「虎ノ門」の「事務所店舗ビル」",
 		"catalogueInformation":"第4号商品の「ARISTO虎ノ門」は、都心3区、港区「虎ノ門」の「事務所店舗ビル」に少額から投資が可能な商品です。",
 		"cataloguePhoto":["01"],
@@ -55,13 +55,13 @@ catalogue = [
 	},
 	{
 		"catalogueID":"kouenji",
-		"catalogueStatus":"available",
-		"catalogueStatusJP":"販売中",
+		"catalogueStatus":"investment",
+		"catalogueStatusJP":"運用中",
 		"catalogueTitle":"ARISTO高円寺",
-		"catalogueCaption":"2020年12月運用開始予定",
+		"catalogueCaption":"2020年12月運用開始",
 		"catalogueAccess":"東京都杉並区高円寺南3丁目58番22号<br>JR中央・総武線「高円寺」駅　徒歩1分<br>東京メトロ 丸の内線「新高円寺」駅　徒歩12分",
 		"catalogueOutline":"東京主要路線JR中央線「高円寺駅」から「徒歩1分」の「新築店舗ビル」",
-		"catalogueInformation":"第3号商品の「ARISTO高円寺」は、東京主要路線JR中央線「高円寺駅」から「徒歩1分」の「新築店舗ビル」に「少額から投資が可能」な商品です。",
+		"catalogueInformation":"第3号商品の「ARISTO高円寺」は、予定通り完売し現在運用中となりました。多数のお問い合わせをいただき、ありがとうございました。",
 		"cataloguePhoto":["01"],
 		"cataloguePhotoSub":["02","03",]
 	},
@@ -110,39 +110,25 @@ catalogue = [
 		<!-- /[.page-head] -->
 
 		<% if(isOnsale!== ''){%><div class="block">
-			<div class="block-catalogue__body"><% catalogue.forEach(function(item) {%>
-				<% if(item.catalogueID=='toranomon') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
-					<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
-						<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
-						<% if(item.catalogueAccess) {%><p class="catalogue__access"><%- item.catalogueAccess %></p><% } %>
-						<% if(item.catalogueOutline) {%><p class="catalogue__outline"><%- item.catalogueOutline %></p><% } %>
-						<% if(item.catalogueType) {%><div class="catalogue__photo"><% item.cataloguePhotoSub.forEach(function(value) {%>
-						<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div>
-						<%})%></div><% } %>
-						<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
-					</div>
-					<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
-						<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% if(item.catalogueType == ''){%><% item.cataloguePhotoSub.forEach(function(value) {%>
-						<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% } %>
-						<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
-					</div>
-				</article><%} %><%}); %><% catalogue.forEach(function(item) {%>
-				<% if(item.catalogueID=='kouenji') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
-					<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
-						<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
-						<% if(item.catalogueAccess) {%><p class="catalogue__access"><%- item.catalogueAccess %></p><% } %>
-						<% if(item.catalogueOutline) {%><p class="catalogue__outline"><%- item.catalogueOutline %></p><% } %>
-						<% if(item.catalogueType) {%><div class="catalogue__photo"><% item.cataloguePhotoSub.forEach(function(value) {%>
-						<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div>
-						<%})%></div><% } %>
-						<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
-					</div>
-					<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
-						<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% if(item.catalogueType == ''){%><% item.cataloguePhotoSub.forEach(function(value) {%>
-						<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% } %>
-						<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
-					</div>
-				</article><%} %><%}); %>
+			<div class="block-catalogue__body">
+				<div class="block-catalogue__body__inner"><% catalogue.forEach(function(item) {%>
+					<% if(item.catalogueID=='toranomon') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
+						<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
+							<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
+							<% if(item.catalogueAccess) {%><p class="catalogue__access"><%- item.catalogueAccess %></p><% } %>
+							<% if(item.catalogueOutline) {%><p class="catalogue__outline"><%- item.catalogueOutline %></p><% } %>
+							<% if(item.catalogueType) {%><div class="catalogue__photo"><% item.cataloguePhotoSub.forEach(function(value) {%>
+							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div>
+							<%})%></div><% } %>
+							<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
+						</div>
+						<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
+							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% if(item.catalogueType == ''){%><% item.cataloguePhotoSub.forEach(function(value) {%>
+							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% } %>
+							<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
+						</div>
+					</article><%} %><%}); %>
+				</div>
 			</div>
 		</div><%} %>
 
@@ -158,7 +144,7 @@ catalogue = [
 						<dt class="caption">国土交通省「地価公示」より当社作成</dt>
 						<dd>
 							<p><strong>2010年を100とした、地価変動推移（商業地）の比較</strong></p>
-							<p><img src="<%= path %>images/index/image_point1_rev2.jpg" alt="イメージ：安定した賃料収入が期待でき、かつ資産価値が堕ちづらい傾向がある。"></p>
+							<p><img src="<%= path %>images/index/image_point1_rev3.jpg" alt="イメージ：安定した賃料収入が期待でき、かつ資産価値が堕ちづらい傾向がある。"></p>
 						</dd>
 					</dl>
 					<p class="is--notice">※物件の資産価値が下落しないことを保証するものではありません。</p>
@@ -192,7 +178,8 @@ catalogue = [
 						</div>
 						<!-- /[.unit.unit-point--sub.-point4] -->
 					</div>
-					<p class="aristo-message">「ARISTO」は、優良不動産への投資メリットに加え、<br class="is-pc">小口化の投資メリットを兼ね備えた商品です。<br>東証一部上場のエー・ディー・ワークスがご提供する不動産小口化商品<br class="is-pc">「ARISTO」を、皆様の運用先の一つとして<br class="is-pc">ぜひご検討ください。</p>
+					<p class="aristo-message">「ARISTO」は、優良不動産への投資メリットに加え、<br class="is-pc">小口化の投資メリットを兼ね備えた商品です。<br>東証一部上場企業のグループ会社 エー・ディー・ワークスがご提供する<br class="is-pc">不動産小口化商品「ARISTO」を、皆様の運用先の一つとして<br class="is-pc">ぜひご検討ください。</p>
+					<p class="is-note" style="margin-top:-2em;">※弊社は（株）ADワークスグループ（東証一部 証券コード：2982）の100%子会社です。</p>
 				</section>
 				<!-- /[.unit.-point3-4] -->
 			</div>
@@ -207,20 +194,22 @@ catalogue = [
 			<div class="block">
 				<div class="block-catalogue__body"><% catalogue.forEach(function(item) {%>
 					<article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
-						<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
-							<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
-							<% if(item.catalogueAccess) {%><p class="catalogue__access"><%- item.catalogueAccess %></p><% } %>
-							<% if(item.catalogueOutline) {%><p class="catalogue__outline"><%- item.catalogueOutline %></p><% } %>
-							<% if(item.catalogueType) {%><div class="catalogue__photo"><% item.cataloguePhotoSub.forEach(function(value) {%>
-							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div>
-							<%})%></div><% } %>
-							<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
+						<div class="catalogue-item__inner">
+							<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
+								<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
+								<% if(item.catalogueOutline) {%><p class="catalogue__outline"><%- item.catalogueOutline %></p><% } %>
+								<% if(item.catalogueType) {%><div class="catalogue__photo"><% item.cataloguePhotoSub.forEach(function(value) {%>
+								<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div>
+								<%})%></div><% } %>
+							</div>
+							<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
+								<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% if(item.catalogueType == ''){%><% item.cataloguePhotoSub.forEach(function(value) {%>
+								<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% } %>
+								<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
+							</div>
 						</div>
-						<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
-							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% if(item.catalogueType == ''){%><% item.cataloguePhotoSub.forEach(function(value) {%>
-							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% } %>
-							<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
-						</div>
+						<% if(item.catalogueAccess) {%><p class="catalogue__access"><%- item.catalogueAccess %></p><% } %>
+						<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
 					</article><%}); %>
 				</div>
 			</div>

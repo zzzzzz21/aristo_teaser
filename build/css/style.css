@@ -1389,6 +1389,11 @@ a.btn-target:after {
   margin-left: 1em;
 }
 
+.outline-table__note {
+  margin-top: .6em;
+  text-align: right;
+}
+
 .outline-table.multi-head th {
   width: 18%;
 }
@@ -1426,8 +1431,8 @@ a.btn-target:after {
 }
 
 .unit__title span {
-  padding-bottom: .4em;
   border-bottom: 1px solid #003466;
+  line-height: 1.8;
 }
 
 .fixed .header--home {
@@ -2534,6 +2539,7 @@ a.btn-target:after {
 
 .catalogue__access {
   position: relative;
+  margin-top: .8rem;
 }
 
 .catalogue__outline {
@@ -2541,6 +2547,7 @@ a.btn-target:after {
   font-weight: bold;
   color: #003466;
   letter-spacing: -.03em;
+  margin-top: .8rem;
 }
 
 .catalogue__photo {
@@ -2834,6 +2841,10 @@ a.btn-target:after {
 
 .-available.pre-open:before {
   content: '先行案内中';
+}
+
+.-available.-onsale:before {
+  content: '販売中';
 }
 
 .-available.-investment:before {
@@ -3212,6 +3223,10 @@ a.btn-target:after {
 }
 
 .aoyama .unit-map__nav__item {
+  margin: 0;
+}
+
+.toranomon .unit-map__nav__item {
   margin: 0;
 }
 
@@ -3824,7 +3839,7 @@ a.btn-target:after {
 
 .block-surroundings .list-surroundings__item {
   position: relative;
-  width: calc(( 100% - 40px ) / 3);
+  width: calc(( 100% - 50px ) / 3);
   margin-right: 20px;
   counter-increment: list;
   font-size: 14px;
@@ -4619,14 +4634,28 @@ label + .element-input-checkbox {
   flex-wrap: wrap;
 }
 
-.-checkbox .-checkbox__item {
+.-checkbox__item {
   width: 25%;
   padding: .2em 0;
 }
 
-.page-confirm .-checkbox {
+.-checkbox__item.-lineup {
+  width: auto;
+  padding: .2em 0;
+}
+
+.-checkbox__item.-lineup + .-checkbox__item.-lineup {
+  margin-left: 1em;
+}
+
+.page-confirm .-checkbox,
+.-checkbox.no-border {
   padding: 0;
   border: none;
+}
+
+.-checkbox.no-border {
+  padding-top: .5em;
 }
 
 .contact-form {
@@ -4731,8 +4760,8 @@ label + .element-input-checkbox {
 }
 
 .form-field--child .form-field__element {
-  -ms-flex-preferred-size: 310px;
-  flex-basis: 310px;
+  -ms-flex-preferred-size: 400px;
+  flex-basis: 400px;
 }
 
 .form-field--submit {
@@ -5805,10 +5834,13 @@ body.rtl .formError .formErrorArrow {
     padding: 0;
   }
 
-  .block-catalogue__body:after {
-    clear: both;
-    content: "";
-    display: table;
+  .home .block-catalogue__body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 
   .catalogue-item {
@@ -5820,16 +5852,38 @@ body.rtl .formError .formErrorArrow {
     justify-content: space-between;
   }
 
-  .catalogue-item + .catalogue-item {
+  .home .block-catalogue__body .catalogue-item {
+    width: calc(50% - 40px);
+    display: block;
+  }
+
+  .home .block-catalogue__body .catalogue-item:nth-child(n+3) {
+    margin-top: calc(100px + 6rem);
+  }
+
+  body:not(.home) .block-catalogue__body .catalogue-item + .catalogue-item {
     margin-top: 100px;
   }
 
+  .catalogue-item__inner {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
   .catalogue-item .btn-detail {
-    margin-top: 50px;
+    margin-top: 2rem;
   }
 
   .catalogue__body {
     width: 520px;
+  }
+
+  .block-catalogue__body .catalogue__body {
+    width: calc(60% - 20px);
   }
 
   .block-others .catalogue__body {
@@ -5840,6 +5894,10 @@ body.rtl .formError .formErrorArrow {
     padding: .2em 0 .2em 4.5em;
     font-size: 32px;
     font-size: 3.2rem;
+  }
+
+  .block-catalogue__body .catalogue__title {
+    padding: 0;
   }
 
   .block-others .catalogue__title {
@@ -5858,13 +5916,31 @@ body.rtl .formError .formErrorArrow {
     margin-left: 2em;
   }
 
+  .block-catalogue__body .catalogue__title::before {
+    font-size: 18px;
+    font-size: 1.8rem;
+    display: block;
+    position: static;
+    width: 5em;
+  }
+
   .block-others .catalogue__title::before {
     position: relative;
+  }
+
+  .catalogue__access + .btn-detail {
+    width: 100%;
+    position: absolute;
+    bottom: -7rem;
   }
 
   .catalogue__outline {
     font-size: 24px;
     font-size: 2.4rem;
+  }
+
+  .catalogue__outline + .btn-detail {
+    width: 100%;
   }
 
   .catalogue__photo {
@@ -5882,6 +5958,10 @@ body.rtl .formError .formErrorArrow {
     margin-right: 32px;
   }
 
+  .block-catalogue__body .catalogue__photo {
+    width: calc(40% - 20px);
+  }
+
   .catalogue__photo__item.-item02,
   .catalogue__photo__item.-item03 {
     margin-top: 25px;
@@ -5893,6 +5973,14 @@ body.rtl .formError .formErrorArrow {
 
   .block-others {
     max-width: 640px;
+  }
+
+  .toranomon .top-carousel .note {
+    margin: .4em .6em 0 0;
+    color: #000;
+    font-size: 13px;
+    font-size: 1.3rem;
+    text-align: right;
   }
 
   .top-carousel__message {
@@ -6025,6 +6113,11 @@ body.rtl .formError .formErrorArrow {
     margin-left: 2%;
   }
 
+  .toranomon .unit-map__nav__item {
+    width: 48%;
+    margin-left: 2%;
+  }
+
   .block-images__unit__photo figcaption {
     display: none;
   }
@@ -6034,6 +6127,8 @@ body.rtl .formError .formErrorArrow {
     display: flex;
     -ms-flex-align: end;
     align-items: flex-end;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 
   .kouenji .block-characteristic__images {
@@ -6857,6 +6952,10 @@ body.rtl .formError .formErrorArrow {
     border-width: 1px;
   }
 
+  .catalogue-item__inner .btn-detail {
+    display: none;
+  }
+
   .catalogue-item + .catalogue-item {
     margin-top: 15.625vw;
   }
@@ -6929,6 +7028,11 @@ body.rtl .formError .formErrorArrow {
     width: 1.2em;
     height: 1.2em;
     border-width: 1px;
+  }
+
+  .toranomon .top-carousel .note {
+    margin: .6em auto 0;
+    padding: 0 10px;
   }
 
   .top-carousel {

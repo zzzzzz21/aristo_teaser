@@ -1,5 +1,5 @@
 				<div class="block-seminars__body">
-					<% if (seminar=='finish') {%><h2 class="block-contact__title is--attention">近日中にご案内予定でございます。<br>Web個別案内会・資料請求は随時受け付けております。</h2><% } else { 
+					<% if (seminar=='finish') {%><h2 class="block-contact__title is--attention">現在開催予定のセミナーはありません。<br>「Web個別案内会」は受付中です。<br>商品詳細のご案内をご希望の方は<br class="is-pc">下記よりお申し込みください。</h2><% } else { 
 						%><% var _counter = 0; %><% seminarList.forEach(function(item){%><%if (_counter < 5){%><article class="seminar-item">
 					<div class="seminar-detail__body">
 						<div class="seminar-detail__meta">

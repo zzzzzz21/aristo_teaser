@@ -49,8 +49,9 @@
 <meta property="og:image" content="https://www.re-adworks.com/images/logo_opg.png">
 <meta property="og:url" content="https://www.re-adworks.com/business/aristo/guidance/">
 <!-- [css] -->
-<link rel="stylesheet" href="../css/style.css?20210630235959" media="all">
+<link rel="stylesheet" href="../css/style.css?202009010000" media="all">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+
 </head>
 <body class="aristo-guidance page-input" id="top">
 <div class="page" id="data-page">
@@ -127,7 +128,7 @@
 			<div class="container">
 				<div class="page-lead">
 					<p>面倒な操作やアプリのインストールは不要です。<br>
-					詳細は「Web面談の流れ」をご確認ください。<br>
+					詳細は「Web個別案内会の流れ」をご確認ください。<br>
 					尚、ご希望の場合は、対面形式でのご面談も受け付けております。<br>
 					<span class="is--notice">必須項目は、すべて選択または入力してください。</span></p>
 				</div>
@@ -195,9 +196,16 @@
 					
 					<h2 class="section-title">Web個別案内会</h2>
 					<p class="contact-form__note">※<span class="label-required">必須</span>の入力欄は入力しなければフォームを完了できません。</p>
-					<form action="" method="post" name="form-contact" class="form-body h-adr">
+					<form action="confirm.html" method="post" name="form-contact" class="form-body h-adr">
                         <input type="hidden" class="p-country-name" value="Japan">
-                        <div class="form-field required">
+						<div class="form-field required">
+							<div class="form-field__label"><label for="name-familyName">ご希望商品<br>（複数選択可）</label></div>
+							<div class="form-field__element -checkbox no-border">
+								<span class="-checkbox__item -lineup"><input type="checkbox" id="data-aristo3" class="element-input-checkbox" name="aristo3" value="ARISTO高円寺"><label for="data-aristo3">ARISTO高円寺</label></span>
+								<span class="-checkbox__item -lineup"><input type="checkbox" id="data-aristo4" class="element-input-checkbox" name="aristo4" value="ARISTO虎ノ門"><label for="data-aristo4">ARISTO虎ノ門</label></span>
+							</div>
+						</div>
+						<div class="form-field required">
                             <div class="form-field__label"><label for="name-familyName">お名前</label></div>
                             <div class="form-field__element">
                                 <ul class="element--name">
@@ -283,7 +291,7 @@
                         <div class="form-field required">
 							<div class="form-field__label"><label for="month">面談希望日（1）</label></div>
                         	<div class="form-field__element">
-								2020年 <select name="month" id="data-month" class="element-input-number validate[required]">
+								2021年 <select name="month" id="data-month" class="element-input-number validate[required]">
 									<option value="">選択</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -317,7 +325,7 @@
                         <div class="form-field">
 							<div class="form-field__label"><label for="month">面談希望日（2）</label></div>
                         	<div class="form-field__element">
-								2020年 <select name="month" id="data-month2" class="element-input-number">
+								2021年 <select name="month2" id="data-month2" class="element-input-number">
 									<option value="">選択</option>
 									<option value="1">1</option>
 									<option value="2">2</option>

@@ -68,6 +68,12 @@
 			margin-left: 1em;
 		}
 	}
+	//	.outline-table__note
+	// ----------------------------------------
+	@include element(note) {
+		margin-top: .6em;
+		text-align: right;
+	}
 	//	[media queries SP]
 	// ----------------------------------------
 	@include media(sp) {

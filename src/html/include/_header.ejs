@@ -11,7 +11,7 @@
 					<div class="siteTitle__function__form">
 						<a href="<%= path %>guidance/" class="btn-guidance">Web個別案内会はこちら</a>
 						<a href="<%= path %>request/#form-contact" class="btn-contact">資料請求はこちら</a>
-						<% if (isForm == '') { %><a href="<%= path %>seminar/" class="btn-seminar">セミナー詳細はこちら</a><% } else { %><a href="<%= path %>entry-seminar/" class="btn-seminar">セミナー申込みはこちら</a><% } %>
+						<% if (isForm == 'y') { %><a href="<%= path %>seminar/" class="btn-seminar">セミナー詳細はこちら</a><% } %>
 					</div>
 					<div class="siteTitle__function__tel is--tel">
 						<p class="siteTitle__function__tel__number"><a href="tel:0120540949">0120-540-949</a></p>
@@ -28,7 +28,7 @@
 				<div class="siteTitle">
 					<a href="<%= path %>" aria-label="トップページへのリンク"><img src="<%= path %>images/common/logo_globalheader.png" alt=""></a>
 					<a class="btn-detail block-contact__button" href="<%= path %>guidance/">Web個別案内会はこちら</a>
-					<a class="btn-detail block-contact__button" href="<%= path %>seminar/">セミナー詳細はこちら</a>
+					<% if (isForm == 'y') { %><a class="btn-detail block-contact__button" href="<%= path %>seminar/">セミナー詳細はこちら</a><% } %>
 					<a class="btn-detail block-contact__button" href="<%= path %>request/#form-contact">資料請求はこちら</a>
 				</div>
 				<nav class="gNavi">
