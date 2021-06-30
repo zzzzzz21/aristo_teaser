@@ -5943,6 +5943,10 @@ body.rtl .formError .formErrorArrow {
     width: 100%;
   }
 
+  .catalogue__outline span {
+    display: block;
+  }
+
   .catalogue__photo {
     max-width: 522px;
     display: -ms-flexbox;
