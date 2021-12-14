@@ -94,6 +94,16 @@
                 @include calcvw(674, 'height', 640);
             }
         }
+        @at-root .shibuya & {
+            height: 674px;
+            background-image: url(#{$image_path}index/bg_header-shibuya.jpg);
+            @include media(pc-tb) {
+				margin-bottom: 0;
+			}
+            @include media(sp) {
+                @include calcvw(674, 'height', 640);
+            }
+        }
         @at-root .toranomon & {
             height: 674px;
             background-image: url(#{$image_path}index/bg_header-toranomon.jpg);
@@ -176,6 +186,19 @@
                 @include calcvw(30, 'font-size', 640);
             }
         }
+		//	.shibuya .contents .page-title
+		// ----------------------------------------
+		@at-root .shibuya & {
+			margin-top: 142px;
+			font-weight: normal;
+			@include fontsize(30);
+			color: $base_white_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(30, 'font-size', 640);
+			}
+		}
 		//	.toranomon .contents .page-title
 		// ----------------------------------------
 		@at-root .toranomon & {
@@ -230,12 +253,18 @@
 		@include modifier(note) {
 			@include fontsize(13);
 			text-align: right;
+			z-index: 999;
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
 				@include fontsize(10);
 			}
 			@at-root .home & {
+				position: absolute;
+				bottom: -3.2em;
+				right: .6em;
+			}
+			@at-root .shibuya & {
 				position: absolute;
 				bottom: -3.2em;
 				right: .6em;

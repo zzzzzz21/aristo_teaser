@@ -566,6 +566,54 @@ $title_color: #20428c;
 	}
 	//	.block-instruments .block__title
 	// ----------------------------------------
+	@at-root .shibuya & .block__title {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-items:center;
+		min-height: 280px;
+		background: url(#{$image_path}index/bg_header_flow.jpg) 0 0 no-repeat;
+		background-size: cover;
+		margin-bottom: 0;
+		@include fontsize(60);
+		font-family: $base_font_family_noto;
+		font-weight: normal;
+		color: $title_color;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding: 1em 0;
+			@include calcvw(94, 'min-height', 640);
+			@include calcvw(40, 'font-size', 640);
+		}
+		&:before,
+		&:after {
+			position: relative;
+			display: inline-block;
+			content: '';
+			width: 36px;
+			height: 36px;
+			border: 2px solid $title_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 1.2em;
+				height: 1.2em;
+				border-width: 1px;
+			}
+		}
+		&:before {
+			top: -.6em;
+			border-right: none;
+			border-bottom: none;
+		}
+		&:after {
+			bottom: -.6em;
+			border-top: none;
+			border-left: none;
+		}
+	}
 	@at-root .toranomon & .block__title {
 		position: relative;
 		display: flex;
@@ -1801,6 +1849,9 @@ $title_color: #20428c;
 		margin-bottom: 1.6em;
 		margin-right: auto;
 		margin-left: auto;
+		@at-root .shibuya & {
+			max-width: 855px;
+		}
 		@at-root .toranomon & {
 			max-width: 855px;
 		}
@@ -1858,6 +1909,18 @@ $title_color: #20428c;
 		position: absolute;
 		bottom: 12px;
 		right: 12px;
+		@at-root .shibuya & {
+			position: static;
+			width: 100%;
+			margin: auto;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				width: calc(100% - 640px);
+				margin-right: -6px;
+				//justify-content: space-between;
+			}
+		}
 		@at-root .toranomon & {
 			position: static;
 			width: 100%;
@@ -1895,7 +1958,7 @@ $title_color: #20428c;
 		// ----------------------------------------
 		@include element(item) {
 			margin: 0 .3em;
-			@at-root .aoyama & {
+			@at-root .shibuya & {
 				margin: 0;
 				//	[media queries PC-tablet]
 				// ----------------------------------------
@@ -1905,6 +1968,15 @@ $title_color: #20428c;
 				}
 			}
 			@at-root .toranomon & {
+				margin: 0;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: 48%;
+					margin-left: 2%;
+				}
+			}
+			@at-root .aoyama & {
 				margin: 0;
 				//	[media queries PC-tablet]
 				// ----------------------------------------
@@ -2038,6 +2110,15 @@ $title_color: #20428c;
 	// ----------------------------------------
 	@include element(item) {
 		width: calc(640 / 1200 * 100%);
+		@at-root .shibuya & {
+			width: calc(855 / 1200 * 100%);
+			margin: 0 auto;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+			}
+		}
 		@at-root .toranomon & {
 			width: calc(855 / 1200 * 100%);
 			margin: 0 auto;
@@ -2163,6 +2244,9 @@ $title_color: #20428c;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		margin-top: 4%;
+		.shibuya & {
+			margin-top: 20px;
+		}
 		.toranomon & {
 			margin-top: 20px;
 		}
@@ -2176,6 +2260,10 @@ $title_color: #20428c;
 			// ----------------------------------------
 			@include media(sp) {
 				width: 24%;
+			}
+			.shibuya & {
+				width: calc((100% - 20px) / 6);
+				margin-top: 0!important;
 			}
 			.toranomon & {
 				width: calc((100% - 20px) / 6);
@@ -2230,6 +2318,12 @@ $title_color: #20428c;
 	}
 	&.-ov12 {
 		background-color: #ebd4b9;
+	}
+	&.-at2021 {
+		background: #92b7d2;
+	}
+	&.-after2022 {
+		background: #e6b5c8;
 	}
 }
 
@@ -2338,6 +2432,9 @@ $title_color: #20428c;
 		@include media(sp) {
 			flex-wrap: wrap;
 		}
+		@at-root .shibuya & {
+			display: block;
+		}
 		@at-root .toranomon & {
 			display: block;
 		}
@@ -2355,6 +2452,17 @@ $title_color: #20428c;
 	//	.block-characterisistic__images
 	// ----------------------------------------
 	@include element(images) {
+		@at-root .shibuya & {
+			width: 100%;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				display: grid;
+				grid-template-columns: 50% 50%;
+				grid-template-rows: auto;
+
+			}
+		}
 		@at-root .toranomon & {
 			width: calc(855 / 1200 * 100%);
 			margin: 0 auto;
@@ -2436,6 +2544,7 @@ $title_color: #20428c;
 				@include media(pc-tb) {
 					display: block;
 					text-align: right;
+					width: 100%;
 				}
 			}
 
@@ -2476,6 +2585,16 @@ $title_color: #20428c;
 			width: 100%;
 			margin-left: 0;
 			@include calcvw(50, 'margin-top', 640);
+		}
+		@at-root .shibuya & {
+			width: 1000px;
+			margin: 130px auto 0;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+				@include calcvw(100, 'margin-top',640);
+			}
 		}
 		@at-root .toranomon & {
 			width: 100%;
@@ -2570,6 +2689,15 @@ $title_color: #20428c;
 			@include media(sp) {
 				@include calcvw(80, 'margin-top', 640);
 			}
+			@at-root .shibuya & {
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					.block-characteristic__photo__item {
+						width: 50%;
+					}
+				}
+			}
 		}
 		dt {
 			margin-bottom: 60px;
@@ -2608,6 +2736,9 @@ $title_color: #20428c;
 			// ----------------------------------------
 			@include media(pc-tb) {
 				width: calc(374 / 1200 * 100%);
+				.shibuya & {
+					width: 400px;
+				}
 				.toranomon & {
 					width: 60%;
 				}
@@ -2619,6 +2750,11 @@ $title_color: #20428c;
 				//	[media queries PC-tablet]
 				// ----------------------------------------
 				@include media(pc-tb) {
+					.shibuya & {
+						width: 600px;
+						display: flex;
+						flex-wrap: wrap;
+					}
 					.toranomon & {
 						width: 40%;
 					}
@@ -2804,7 +2940,7 @@ $title_color: #20428c;
 		}
 		&:nth-child(n+2) {
 			//max-width: 540px;
-			width: 45%;
+			width: 48%;
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {

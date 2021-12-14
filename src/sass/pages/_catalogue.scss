@@ -15,11 +15,19 @@
 			display: flex;
 			flex-direction: row-reverse;
 			justify-content: space-between;
+			.home .is-onSale .block-catalogue__body &,
+			.home .block-catalogue__body &:nth-child(1) {
+				width: 100%;
+				margin: auto;
+				.btn-detail {
+					bottom: 0;
+				}
+			}
 			.home .block-catalogue__body & {
 				width: calc(50% - 40px);
 				display: block;
 			}
-			.home .block-catalogue__body &:nth-child(n+3) {
+			.home .block-catalogue__body &:nth-child(n+2) {
 				margin-top: calc(100px + 6rem);				
 			}
 			body:not(.home) .block-catalogue__body & + & {
@@ -95,6 +103,13 @@
 			// ----------------------------------------
 			@include media(sp) {
 				display: none;
+			}
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			@at-root .is-onSale & {
+				position: relative;
 			}
 		}
 	}

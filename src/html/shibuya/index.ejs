@@ -1,0 +1,359 @@
+<%
+meta = { title:'', desc:'' };
+isForm = '';
+path = '../';
+srcPath ='../../';
+directory = 'shibuya';
+directoryLv2 = '';
+page = '';
+%><!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath + 'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
+<body class="<% if (directory!=='') { %> <%= directory %><% } else {%>home<% } %>" id="top">
+<div class="page" id="data-page">
+<%- include(srcPath + 'html/include/shibuya/_header') %>
+	<main class="main contents">
+		<header class="page-head">
+			<div class="container">
+				<h1 class="page-title"><ruby>ARISTO <rp>(</rp><rt>アリスト</rt><rp>)</rp></ruby>は、好立地の優良不動産に対して<br>少額からの投資が可能な<br class="is-sp">不動産小口化商品です。</h1>
+				<p class="page-title--note">ARISTO(アリスト)は、株式会社エー・ディー・ワークスが提供する、<br class="is-pc">不動産特定共同事業法に基づく不動産小口化商品です。
+				</p>
+			</div>
+		</header>
+		<!-- /[.page-head] -->
+
+		<section class="block-instruments" id="section-instruments">
+			<h2 class="block__title"><span>ARISTO第5号商品</span></h2>
+			<div class="top-carousel -horizontal">
+				<div class="top-carousel__inner" id="data-carousel">
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_shibuya01.jpg" alt=""></div>
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_shibuya02.jpg" alt=""></div>
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_shibuya03.jpg" alt=""></div>
+				</div>
+				<div class="top-carousel__message">
+					<div class="top-carousel__message__inner">
+						<h3 class="top-carousel__title">ARISTO渋谷</h3>
+						<p class="top-carousel__body">東京の主要都市「渋谷」の「築浅店舗事務所ビル」に<br>少額から投資が可能な商品です。
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- /[.top-carousel] -->
+
+			<div class="block-title" id="section-title">
+				<div class="block -available -investment">
+					<h2 class="block-title__logo"><img src="<%= path %>images/common/logo_aristo-shibuya.jpg" alt="ARISTO渋谷"></h2>
+				</div>
+<%- include(srcPath + 'html/include/shibuya/_block-others') %>
+				<!-- /[.block-others] -->
+			</div>
+			<!-- /[.block-title#section-title] -->
+		</section>
+		<!-- /[.block-instruments#section-instruments] -->
+
+		<section class="block block-location" id="section-location">
+			<h2 class="unit__title"><span>ロケーション</span></h2>
+			<div class="unit-map__body">
+				<p class="unit-map__main" id="data-map-aoyama-main"><img src="<%= path %>images/shibuya/map_wide.jpg" alt="地図"></p>
+			</div>
+			<div class="unit-map__information">
+				<ul class="unit-map__nav" id="data-map-aoyama">
+					<li class="unit-map__nav__item"><a href="<%= path %>images/shibuya/map_wide.jpg"><img src="<%= path %>images/shibuya/map_wide.jpg"></a></li>
+					<li class="unit-map__nav__item"><a href="<%= path %>images/shibuya/map_middle.jpg"><img src="<%= path %>images/shibuya/map_middle.jpg"></a></li>
+				</ul>
+			</div>
+		</section>
+		<!-- /[.block.block-location#section-location] -->
+
+		<div class="block block-gallery -toranomon" id="section-gallery">
+			<div class="block-gallery__body">
+				<div class="block-gallery__item">
+					<div class="block-aoyama-images">
+						<div class="gallery-images__main"></div>
+						<ul class="gallery-images__thumbnail -label">
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/shibuya/photo_gallery_hachiko.jpg" alt="ハチ公前"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/shibuya/photo_gallery_scramble.jpg" alt="渋谷スクランブルスクエア"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/shibuya/photo_gallery_center-gai.jpg" alt="渋谷センター街"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/shibuya/photo_gallery_yoyogi-park.jpg" alt="代々木公園"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/shibuya/photo_gallery_stream.jpg" alt="渋谷ストリーム"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/shibuya/photo_gallery_shoto.jpg" alt="松濤"></li>
+						</ul>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<!-- /[.block.block-gallery#section-gallery] -->
+		
+		<section class="block block-surroundings" id="section-surroundings">
+			<h2 class="unit__title"><span>物件周辺の開発動向</span></h2>
+			<p class="block__lead">ARISTO渋谷周辺では、2036年まで再開発が進行予定であり、<br class="is-pc">街が生まれ変わり続けることによる<br class="is-pc">『渋谷』エリアの価値の維持向上が期待されています。</p>
+			<div class="block-surroundings__body">
+				<div class="block-surroundings__items">
+					<p><img src="<%= path %>images/shibuya/image_surroundings.jpg" alt="「田の字エリア」地区概念図"></p>
+					<p><span class="-stories -at2021"></span>～2021年竣工　　<span class="-stories -after2022"></span>2022年以降竣工予定</p>
+				</div>
+				<div class="block-surroundings__items">
+					<ol class="list-surroundings">
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/shibuya/photo_surroundings_abema-towers.jpg" alt="住友不動産渋谷タワー（アベマタワーズ）：2019年2月竣工"></p>
+							<p class="name">住友不動産渋谷タワー<br>（アベマタワーズ）<br>2019年2月竣工</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/shibuya/photo_surroundings_nhk.jpg" alt="仮）NHK放送センター建替計画：2036年竣工予定"></p>
+							<p class="name">仮）NHK放送センター建替計画<br>2036年竣工予定</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/shibuya/photo_surroundings_parkcourt.jpg" alt="渋谷区役所　新庁舎（パークコート渋谷ザタワー）：2018年10月竣工"></p>
+							<p class="name">渋谷区役所　新庁舎（パークコート渋谷ザタワー）<br>2018年10月竣工</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/shibuya/photo_surroundings_parco.jpg" alt="渋谷パルコ/ヒューリックビル：2019年10月竣工"></p>
+							<p class="name">渋谷パルコ/ヒューリックビル<br>2019年10月竣工</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/shibuya/photo_surroundings_dogenzaka.jpg" alt="仮）渋谷区道玄坂二丁目開発計画：2023年3月竣工予定"></p>
+							<p class="name">仮）渋谷区道玄坂二丁目開発計画<br>2023年3月竣工予定</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/shibuya/photo_surroundings_dogenzaka-2.jpg" alt="仮）道玄坂二丁目南地区第一種市街地区再開発事業：2026年竣工予定"></p>
+							<p class="name">仮）道玄坂二丁目南地区第一種市街地区再開発事業<br>2026年竣工予定</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/shibuya/photo_surroundings_fukuras.jpg" alt="渋谷フクラス：2019年10月竣工"></p>
+							<p class="name">渋谷フクラス<br>2019年10月竣工</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/shibuya/photo_surroundings_sakuragaoka.jpg" alt="仮）渋谷駅桜丘地区第一種市街地再開発事業：2023年11月竣工予定"></p>
+							<p class="name">仮）渋谷駅桜丘地区第一種市街地再開発事業<br>2023年11月竣工予定</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/shibuya/photo_surroundings_tokyu.jpg" alt="仮）東急百貨店本店建替計画：2023年以降時期未定"></p>
+							<p class="name">仮）東急百貨店本店建替計画<br>2023年以降時期未定</p>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</section>
+		<!-- /[.block.block-surroundings#section-surroundings] -->
+
+		<section class="block block-characteristic" id="section-characteristic">
+			<h2 class="unit__title"><span>ARISTO渋谷の特性</span></h2>
+			<p class="block__lead">ARISTO渋谷は、「後背地の松濤居住者等の富裕層をターゲットとする店舗」<br class="is-pc">「奥渋（※）を周遊する若年層等をターゲットとする店舗」<br class="is-pc">「IT企業、放送関連企業等の事務所」等を取り込める立地です。<br><span class="is-note">（※）近年商業地として地位向上が見られ、洗練されたカフェ・店舗等が立ち並ぶエリア</span></p>
+			<div class="block__body">
+				<div class="block-characteristic__images">
+					<div class="block-characteristic__images__item -item01">
+						<p>
+							<img src="<%= path %>images/shibuya/figure_detail.jpg" alt="">
+						</p>
+						<p class="block-characteristic__images__item">※青い点線は、渋谷駅からARISTO渋谷までの経路を表しています。</p>
+					</div>
+					<div class="block-characteristic__images__item -item02">
+						<img src="<%= path %>images/shibuya/image_cross-section.jpg" alt="">
+					</div>
+				</div>
+				<p class="block-characteristic__images__item -full">また、ARISTO渋谷は2面接道かつ、それぞれの道路の高低差を活かし、<br class="is-pc">地下1階・1階を路面店舗として利用できます。</p>
+				<div class="block-characteristic__body">
+					<dl class="block-characteristic__photo">
+						<dt>外観</dt>
+						<dd>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/shibuya/photo_appearance_01.jpg" alt="">
+
+							</figure>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/shibuya/photo_appearance_02.jpg" alt="">
+								<img src="<%= path %>images/shibuya/photo_appearance_07.jpg" alt="">
+							</figure>
+							<span class="block-characteristic__images__item -note">左：物件外観　右上：1階側外観　右下：B1階側外観<br>いずれも2020年8月竣工時撮影</span>
+						</dd>
+					</dl>
+					<dl class="block-characteristic__photo">
+						<dt>内観</dt>
+						<dd>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/shibuya/photo_appearance_05.jpg" alt="">
+
+							</figure>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/shibuya/photo_appearance_06.jpg" alt="">
+							</figure>
+							<span class="block-characteristic__images__item -note">左：オフィス階内観　　右：店舗階内観（スケルトン時）<br>いずれも2020年8月竣工時撮影</span>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</section>
+		<!-- /[.block.block-characteristic#section-characteristic] -->
+		
+<%#		<section class="block block-products" id="section-products">
+			<h2 class="unit__title"><span>商品概要</span></h2>
+			<div class="block-products__body">
+				<table class="outline-table">
+					<tr>
+						<th>募集総額</th>
+						<td>16億8,000万円（税込）</td>
+					</tr>
+					<tr>
+						<th>募集総口数</th>
+						<td>1,680口</td>
+					</tr>
+					<tr>
+						<th>組合組成日</th>
+						<td>2021年12月24日（予定）</td>
+					</tr>
+					<tr>
+						<th>予定運用期間</th>
+						<td>約10年間</td>
+					</tr>
+					<tr>
+						<th>お申込単位</th>
+						<td>
+							<dl>
+								<dt>1口100万円単位</dt>
+								<dd class="indent">最低出資金額500万円（5口）<br>
+									最高出資金額8.39億円（839口）<br>
+									（500万円以上であれば、100万円単位で出資額をお決め頂けます。）</dd>
+							</dl>
+						</td>
+					</tr>
+					<tr>
+						<th>必要経費</th>
+						<td>不動産取得税等（1口当たりの目安約16,299円）</td>
+					</tr>
+					<tr>
+						<th>支払期日</th>
+						<td>2021年12月17日（予定）</td>
+					</tr>
+					<tr>
+						<th>売買代金に対する予定賃料利回り</th>
+						<td>
+							<p>満室稼働時：3.30%<br>95%稼働時：3.14%</p>
+							<p>※売買代金に対する予定賃料利回りとは「賃料収入」÷「募集総額」で算出しています。なお売買代金に対する予定賃料利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
+						</td>
+					</tr>
+					<tr>
+						<th>全投資額に対する予定分配金利回り</th>
+						<td>
+							<p>満室稼働想定：2.75%<br>95%稼働想定：2.60％</p>
+							<p>※「95%稼動想定時」とは、1年間で基準階（3階/4階/6階）が、約5ヶ月間空室だった場合を想定して算出しております。</p>
+							<p>※不動産市況等により賃料収入は変動します。</p>
+							<p>（例：賃料収入が現在想定賃料から『10％下落』/『10％上昇』した場合の満室稼動想定時予定分配金利回りは『3.07％』/『2.45％』となります。）</p>
+							<p>※組合組成以後、新型コロナウイルスの影響の長期化又は再拡大による東京都からの営業自粛要請があり、テナントがその要請に従い営業自粛する場合等に起因して、当該テナントが退去し、かつ退去後に次のテナントが見つからない場合等においては、上記記載の利回りを下回る可能性があります。</p>
+							<p>※募集口数に満たない場合は、契約口数で任意組合を組成する可能性があります。</p>
+						</td>
+					</tr>
+					<tr>
+						<th>収益分配</th>
+						<td>年1回（2月）</td>
+					</tr>
+					<tr>
+						<th>不動産特定共同事業者</th>
+						<td>株式会社エー・ディー・ワークス<br>東京都知事　第96号</td>
+					</tr>
+					<tr>
+						<th>事業者との関係</th>
+						<td>事業者である株式会社エー・ディー・ワークス自らが不動産特定共同事業契約の当事者となります。</td>
+					</tr>
+					<tr>
+						<th>契約形態</th>
+						<td>不動産特定共同事業法に基づく任意組合契約</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+      %>
+		<!-- /[.block.block-products#section-products] -->
+
+		<section class="block block-property" id="section-property">
+			<h2 class="unit__title"><span>物件概要</span></h2>
+			<div class="block-property__body">
+				<table class="outline-table multi-head">
+					<tr>
+						<th>物件</th>
+						<td>
+							<dl class="in-table"><dt>名称</dt><dd>ARISTO渋谷</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>所在</th>
+						<td>
+							<dl class="in-table"><dt>地番</dt><dd>東京都渋谷区宇田川町108番5</dd></dl>
+							<dl class="in-table"><dt>住居表示</dt><dd>東京都渋谷区宇田川町37番15号</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>交通</th>
+						<td>
+							<dl class="in-table"><dt> </dt><dd>東京メトロ半蔵門線・副都心線・銀座線「渋谷」駅　徒歩7分<br>
+							JR山手線・埼京線・湘南新宿ライン「渋谷」駅　徒歩9分<br>
+							京王井の頭線「渋谷」駅　徒歩8分<br>
+								東急田園都市線・東横線「渋谷」駅 徒歩7分<p class="alignR"><small>※それぞれの所要時間は「ARISTO渋谷」から最も近い出口からの距離です。</small></p></dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>土地</th>
+						<td>
+							<dl class="in-table"><dt>実測面積 </dt><dd>118.02m<sup>2</sup> （35.70坪）</dd></dl>
+							<dl class="in-table"><dt>権利</dt><dd>所有権</dd></dl>
+							<dl class="in-table"><dt>地目</dt><dd>宅地</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>建物</th>
+						<td>
+							<dl class="in-table"><dt>構造・規模</dt><dd>鉄筋コンクリート造陸屋根地下1階付6階建</dd></dl>
+							<dl class="in-table"><dt>竣工</dt><dd>2020年8月</dd></dl>
+							<dl class="in-table"><dt>延床面積</dt><dd>504.64m<sup>2</sup>（152.65坪）　</dd></dl>
+							<dl class="in-table"><dt>賃貸面積</dt><dd>459.13m<sup>2</sup>（138.88坪）</dd></dl>
+							<dl class="in-table"><dt>用途</dt><dd>事務所・サービス店舗・店舗</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>公法上の制限</th>
+						<td>
+							<dl class="in-table"><dt>都市計画区域</dt><dd>市街化区域</dd></dl>
+							<dl class="in-table"><dt>用途地域</dt><dd>近隣商業地域</dd></dl>
+							<dl class="in-table"><dt>指定建蔽率</dt><dd>80%</dd></dl>
+							<dl class="in-table"><dt>防火指定</dt><dd>防火地域</dd></dl>
+							<dl class="in-table"><dt>指定容積率</dt><dd>400%</dd></dl>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- /[.unit.block-property#section-property] -->	
+
+		<section class="block-seminars" id="section-seminars">
+			<h2 class="block__title"><span>セミナー情報</span></h2>
+			<div class="block">
+<%- include(srcPath + 'html/include/_block-seminar-body') %>
+			</div>
+		</section>
+		<!-- /[.block-seminars#section-seminars] -->
+
+<%- include(srcPath + 'html/include/_block-flow') %>
+		<!-- /[.block-flow#section-flow] -->
+
+<%- include(srcPath + 'html/include/_block-faq') %>
+		<!-- /[.block-flow#section-faq] -->
+		
+<%- include(srcPath + 'html/include/_block-footer-information') %>
+		<!-- /[.block.footer-information] -->
+
+	</main>
+	<!-- /[.main] -->
+<%- include(srcPath + 'html/include/_footer') %>
+
+<%- include(srcPath + 'html/include/_fixed-buttons') %>
+    <!--　/[.fixed-button] -->
+</div><!-- /.page -->
+
+<%- include(srcPath + 'html/include/_loading') %>
+
+<%- include(srcPath + 'html/include/_body_last') %>
+
+</body>
+</html>
