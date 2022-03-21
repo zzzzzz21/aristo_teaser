@@ -340,6 +340,9 @@
 	// ----------------------------------------
 	@include media(pc-tb) {
 		max-width: 640px;
+		.nishiazabu & {
+			padding-top: 0;
+		}
 	}
 	a {
 		display: flex;

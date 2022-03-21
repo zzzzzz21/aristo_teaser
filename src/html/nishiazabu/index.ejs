@@ -1,0 +1,358 @@
+<%
+meta = { title:'', desc:'' };
+isForm = '';
+path = '../';
+srcPath ='../../';
+directory = 'nishiazabu';
+directoryLv2 = '';
+projectName = 'ARISTO西麻布'
+page = '';
+%><!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath + 'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
+<body class="<% if (directory!=='') { %> <%= directory %><% } else {%>home<% } %>" id="top">
+<div class="page" id="data-page">
+<%- include(srcPath + 'html/include/nishiazabu/_header') %>
+	<main class="main contents">
+		<header class="page-head">
+			<div class="container">
+				<h1 class="page-title"><ruby>ARISTO <rp>(</rp><rt>アリスト</rt><rp>)</rp></ruby>は、好立地の優良不動産に対して<br>少額からの投資が可能な<br class="is-sp">不動産小口化商品です。</h1>
+				<p class="page-title--note">ARISTO(アリスト)は、株式会社エー・ディー・ワークスが提供する、<br class="is-pc">不動産特定共同事業法に基づく不動産小口化商品です。
+				</p>
+			</div>
+		</header>
+		<!-- /[.page-head] -->
+
+		<section class="block-instruments" id="section-instruments">
+			<h2 class="block__title"><span>ARISTO第6号商品</span></h2>
+			<div class="top-carousel -horizontal">
+				<div class="top-carousel__inner" id="data-carousel">
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_nishiazabu01.jpg" alt=""></div>
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_nishiazabu02.jpg" alt=""></div>
+					<div class="top-carousel__item"><img src="<%= path %>images/index/photo_nishiazabu03.jpg" alt=""></div>
+				</div>
+				<div class="top-carousel__message">
+					<div class="top-carousel__message__inner">
+						<h3 class="top-carousel__title"><%= projectName %></h3>
+						<p class="top-carousel__body">「3A」と称される都内屈指のブランドエリア「西麻布」の<br class="is-pc">「築浅店舗SOHOビル」に少額から投資が可能な商品です。</p>
+					</div>
+				</div>
+			</div>
+			<!-- /[.top-carousel] -->
+
+			<div class="block-title" id="section-title">
+				<div class="block -available">
+					<h2 class="block-title__logo"><img src="<%= path %>images/common/logo_aristo-nishiazabu.jpg" alt="ARISTO西麻布"></h2>
+				</div>
+<%- include(srcPath + 'html/include/nishiazabu/_block-others') %>
+				<!-- /[.block-others] -->
+			</div>
+			<!-- /[.block-title#section-title] -->
+		</section>
+		<!-- /[.block-instruments#section-instruments] -->
+
+		<section class="block block-location" id="section-location">
+			<h2 class="unit__title"><span>ロケーション</span></h2>
+			<div class="unit-map__body">
+				<p class="unit-map__main" id="data-map-aoyama-main"><img src="<%= path %>images/nishiazabu/map_wide.jpg" alt="地図"></p>
+			</div>
+			<div class="unit-map__information">
+				<ul class="unit-map__nav" id="data-map-nishiazabu">
+					<li class="unit-map__nav__item"><a href="<%= path %>images/nishiazabu/map_wide.jpg"><img src="<%= path %>images/nishiazabu/map_wide.jpg" alt="広域地図"></a></li>
+					<li class="unit-map__nav__item"><a href="<%= path %>images/nishiazabu/map_middle.jpg"><img src="<%= path %>images/nishiazabu/map_middle.jpg" alt="中域地図"></a></li>
+				</ul>
+			</div>
+		</section>
+		<!-- /[.block.block-location#section-location] -->
+
+		<div class="block block-gallery -shibuya" id="section-gallery">
+			<div class="block-gallery__body">
+				<div class="block-gallery__item">
+					<div class="block-aoyama-images">
+						<div class="gallery-images__main"></div>
+						<ul class="gallery-images__thumbnail -label">
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/nishiazabu/photo_gallery_roppongi.jpg" alt="六本木交差点"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/nishiazabu/photo_gallery_roppongi-hills.jpg" alt="六本木ヒルズ"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/nishiazabu/photo_gallery_embassy.jpg" alt="大使館エリア"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/nishiazabu/photo_gallery_nishiazabu.jpg" alt="西麻布交差点"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/nishiazabu/photo_gallery_nact.jpg" alt="国立新美術館"></li>
+							<li class="gallery-images__thumbnail__item"><img src="<%= path %>images/nishiazabu/photo_gallery_tokyo-midtown.jpg" alt="東京ミッドタウン"></li>
+						</ul>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<!-- /[.block.block-gallery#section-gallery] -->
+		
+		<section class="block block-surroundings" id="section-surroundings">
+			<h2 class="unit__title"><span>物件周辺の開発動向</span></h2>
+			<p class="block__lead">ARISTO西麻布周辺では、<br class="is-pc">大規模な開発プロジェクトが進行予定であり、<br class="is-pc">街が生まれ変わり続けることによる<br class="is-pc">「六本木」エリアの価値の維持向上が期待されています。</p>
+			<div class="block-surroundings__body">
+				<div class="block-surroundings__items">
+					<p><img src="<%= path %>images/nishiazabu/image_surroundings.jpg" alt="「ARISTO西麻布」周辺図"></p>
+					<p><span class="-stories -after2022"></span>2022年以降竣工予定<br>※イメージパースは各公式HPより引用</p>
+				</div>
+				<div class="block-surroundings__items">
+					<ol class="list-surroundings">
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/nishiazabu/photo_surroundings_1.jpg" alt="西麻布三丁目北東地区第一種市街地再開発事業（住宅・事務所・商業・ホテルの超高層棟の開発）"></p>
+							<p class="name">西麻布三丁目北東地区第一種市街地再開発事業<br>（住宅・事務所・商業・ホテルの超高層棟の開発）</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/nishiazabu/photo_surroundings_2.jpg" alt="（仮称）住友不動産六本⽊駅前プロジェクト2025年度竣工予定"></p>
+							<p class="name">（仮称）住友不動産六本⽊駅前プロジェクト<br>2025年度竣工予定</p>
+						</li>
+						<li class="list-surroundings__item">
+							<p><img src="<%= path %>images/nishiazabu/photo_surroundings_3.jpg" alt="六本木五丁目プロジェクト"></p>
+							<p class="name">六本木五丁目プロジェクト</p>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</section>
+		<!-- /[.block.block-surroundings#section-surroundings] -->
+
+		<section class="block block-characteristic" id="section-characteristic">
+			<h2 class="unit__title"><span><%= projectName %>の特性</span></h2>
+			<p class="block__lead">ARISTO西麻布は、西麻布交差点近傍・六本木通りから一本入った場所に位置するため、<br class="is-pc">著名人や富裕層等で感度の高い人が通う隠れ家的店舗の出店ニーズが取り込める他、<br class="is-pc">IT・メディア・設計関係等、創造的な執務空間を求める事務所ニーズ等を取り込める立地です。</p>
+			<div class="block__body">
+				<div class="block-characteristic__images">
+					<div class="block-characteristic__images__item -item01">
+						<p>
+							<img src="<%= path %>images/nishiazabu/figure_detail.jpg" alt="">
+						</p>
+						<p class="block-characteristic__images__item">※青い点線は、六本木駅からARISTO西麻布までの経路を表しています。</p>
+					</div>
+					<div class="block-characteristic__images__item -item02">
+						<p>
+							<img src="<%= path %>images/nishiazabu/photo_detail_1.jpg" alt="">
+						</p>
+						<p>
+							<img src="<%= path %>images/nishiazabu/photo_detail_2.jpg" alt="">
+						</p>
+						<p>
+							<img src="<%= path %>images/nishiazabu/photo_detail_3.jpg" alt="">
+						</p>
+						<p>
+							<img src="<%= path %>images/nishiazabu/photo_detail_4.jpg" alt="">
+						</p>
+						<p>
+							<img src="<%= path %>images/nishiazabu/photo_detail_5.jpg" alt="">
+						</p>
+						<p>
+							<img src="<%= path %>images/nishiazabu/photo_detail_6.jpg" alt="">
+						</p>
+					</div>
+				</div>
+				<p class="block-characteristic__images__item -full">また、ARISTO西麻布は西麻布交差点近傍・六本木通りから<br class="is-pc">一本入った場所に位置することから、<br class="is-pc">隠れ家的店舗の出店ニーズが多く、<br class="is-pc">西麻布の立地特性を存分に生かすことができ、高い収益性が見込めます。</p>
+				<div class="block-characteristic__body">
+					<dl class="block-characteristic__photo">
+						<dt>外観</dt>
+						<dd>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/nishiazabu/photo_appearance_01.jpg" alt="">
+							</figure>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/nishiazabu/photo_appearance_04.jpg" alt="">
+								<figcaption class="block-characteristic__photo__item__caption">正面外観（夜間）</figcaption>
+							</figure>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/nishiazabu/photo_appearance_02.jpg" alt="">
+								<figcaption class="block-characteristic__photo__item__caption">正面ビルエントランス内</figcaption>
+							</figure>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/nishiazabu/photo_appearance_03.jpg" alt="">
+								<figcaption class="block-characteristic__photo__item__caption">本物件4階からの眺望</figcaption>
+							</figure>
+							<span class="block-characteristic__images__item -note">いずれも2022年2月竣工時撮影</span>
+						</dd>
+					</dl>
+					<dl class="block-characteristic__photo">
+						<dt>内観</dt>
+						<dd>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/nishiazabu/photo_appearance_05.jpg" alt="">
+								<figcaption class="block-characteristic__photo__item__caption">SOHO区画内観（スケルトン）</figcaption>
+							</figure>
+							<figure class="block-characteristic__photo__item">
+								<img src="<%= path %>images/nishiazabu/photo_appearance_06.jpg" alt="">
+								<figcaption class="block-characteristic__photo__item__caption">店舗階内観（スケルトン）</figcaption>
+							</figure>
+							<span class="block-characteristic__images__item -note">いずれも2022年2月竣工時撮影</span>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</section>
+		<!-- /[.block.block-characteristic#section-characteristic] -->
+		
+		<section class="block block-products" id="section-products">
+			<h2 class="unit__title"><span>商品概要</span></h2>
+			<div class="block-products__body">
+				<table class="outline-table">
+					<tr>
+						<th>募集総額</th>
+						<td>10億5,000万円（税込）</td>
+					</tr>
+					<tr>
+						<th>募集総口数</th>
+						<td>1,050口</td>
+					</tr>
+					<tr>
+						<th>組合組成日</th>
+						<td>2022年6月30日（予定）</td>
+					</tr>
+					<tr>
+						<th>予定運用期間</th>
+						<td>約10年間</td>
+					</tr>
+					<tr>
+						<th>お申込単位</th>
+						<td>
+							<dl>
+								<dt>1口100万円単位</dt>
+								<dd class="indent">最低出資金額500万円（5口）<br>
+									最高出資金額5.24億円（524口）<br>
+									（500万円以上であれば、100万円単位で出資額をお決め頂けます。）</dd>
+							</dl>
+						</td>
+					</tr>
+					<tr>
+						<th>必要経費</th>
+						<td>不動産取得税等（1口当たりの目安約4,116円）</td>
+					</tr>
+					<tr>
+						<th>支払期日</th>
+						<td>2022年6月22日（予定）</td>
+					</tr>
+					<tr>
+						<th>売買代金に対する予定賃料利回り</th>
+						<td>
+							<p>満室稼働時：3.66%～3.91%<br>95%稼働時：3.48%～3.71%</p>
+							<p>※売売買代金に対する予定賃料利回りとは「賃料収入」÷「募集総額」で算出しています。なお売買代金に対する予定賃料利回りは想定であり、元本や分配金が将来にわたって保証されるものではありません。</p>
+						</td>
+					</tr>
+					<tr>
+						<th>全投資額に対する予定分配金利回り</th>
+						<td>
+							<p>満室稼働想定：2.84％～3.07%<br>95%稼働想定：2.68％～2.89％</p>
+							<p>※上記利回りは、募集賃料（税込）が「B1階:29,150円/坪、1階:37,400円/坪、2階:29,150円/坪、3・4階:20,000円/坪」から「B1階:30,457円/坪、1階:38,605円/坪、2階:30,195円/坪、3・4階:23,000円/坪」の間で成約となった場合のシミュレーションであり、不動産市況の変動、税制の変更、その他の事情により変動することがあります。また、あくまでも予定の利回りであり、上記記載の利回りを保証するものではありません。</p>
+							<p>※「95%稼動想定時」とは、1年間で基準階（2階）が、約3ヶ月間空室だった場合を想定して算出しております。</p>
+							<p>※不動産市況等により賃料収入は変動します。<br>（例：賃料収入が現在想定賃料から『10％下落』/『10％上昇』した場合の満室稼動想定時予定分配金利回りは『2.51%～2.71％』/『3.18%～3.42%』となります。）</p>
+							<p>※組合組成以後、新型コロナウイルスの影響の長期化又は再拡大による東京都からの営業自粛要請があり、テナントがその要請に従い営業自粛する場合等に起因して、当該テナントが退去し、かつ退去後に次のテナントが見つからない場合等においては、上記記載の利回りを下回</p>
+						</td>
+					</tr>
+					<tr>
+						<th>収益分配</th>
+						<td>年1回（2月）</td>
+					</tr>
+					<tr>
+						<th>不動産特定共同事業者</th>
+						<td>株式会社エー・ディー・ワークス<br>東京都知事　第96号</td>
+					</tr>
+					<tr>
+						<th>事業者との関係</th>
+						<td>事業者である株式会社エー・ディー・ワークス自らが不動産特定共同事業契約の当事者となります。</td>
+					</tr>
+					<tr>
+						<th>契約形態</th>
+						<td>不動産特定共同事業法に基づく任意組合契約</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- /[.block.block-products#section-products] -->
+
+		<section class="block block-property" id="section-property">
+			<h2 class="unit__title"><span>物件概要</span></h2>
+			<div class="block-property__body">
+				<table class="outline-table multi-head">
+					<tr>
+						<th>物件</th>
+						<td>
+							<dl class="in-table"><dt>名称</dt><dd><%= projectName %></dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>所在</th>
+						<td>
+							<dl class="in-table"><dt>地番</dt><dd>東京都渋谷区宇田川町108番5</dd></dl>
+							<dl class="in-table"><dt>住居表示</dt><dd>東京都渋谷区宇田川町37番15号</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>交通</th>
+						<td>
+							<dl class="in-table"><dt> </dt><dd>東京メトロ半蔵門線・副都心線・銀座線「渋谷」駅　徒歩7分<br>
+							JR山手線・埼京線・湘南新宿ライン「渋谷」駅　徒歩9分<br>
+							京王井の頭線「渋谷」駅　徒歩8分<br>
+								東急田園都市線・東横線「渋谷」駅 徒歩7分<p class="alignR"><small>※それぞれの所要時間は「ARISTO渋谷」から最も近い出口からの距離です。</small></p></dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>土地</th>
+						<td>
+							<dl class="in-table"><dt>実測面積 </dt><dd>118.02m<sup>2</sup> （35.70坪）</dd></dl>
+							<dl class="in-table"><dt>権利</dt><dd>所有権</dd></dl>
+							<dl class="in-table"><dt>地目</dt><dd>宅地</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>建物</th>
+						<td>
+							<dl class="in-table"><dt>構造・規模</dt><dd>鉄筋コンクリート造陸屋根地下1階付6階建</dd></dl>
+							<dl class="in-table"><dt>竣工</dt><dd>2020年8月</dd></dl>
+							<dl class="in-table"><dt>延床面積</dt><dd>504.64m<sup>2</sup>（152.65坪）　</dd></dl>
+							<dl class="in-table"><dt>賃貸面積</dt><dd>459.13m<sup>2</sup>（138.88坪）</dd></dl>
+							<dl class="in-table"><dt>用途</dt><dd>事務所・サービス店舗・店舗</dd></dl>
+						</td>
+					</tr>
+					<tr>
+						<th>公法上の制限</th>
+						<td>
+							<dl class="in-table"><dt>都市計画区域</dt><dd>市街化区域</dd></dl>
+							<dl class="in-table"><dt>用途地域</dt><dd>近隣商業地域</dd></dl>
+							<dl class="in-table"><dt>指定建蔽率</dt><dd>80%</dd></dl>
+							<dl class="in-table"><dt>防火指定</dt><dd>防火地域</dd></dl>
+							<dl class="in-table"><dt>指定容積率</dt><dd>400%</dd></dl>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- /[.unit.block-property#section-property] -->	
+
+		<section class="block-seminars" id="section-seminars">
+			<h2 class="block__title"><span>セミナー情報</span></h2>
+			<div class="block">
+<%- include(srcPath + 'html/include/_block-seminar-body') %>
+			</div>
+		</section>
+		<!-- /[.block-seminars#section-seminars] -->
+
+<%- include(srcPath + 'html/include/_block-flow') %>
+		<!-- /[.block-flow#section-flow] -->
+
+<%- include(srcPath + 'html/include/_block-faq') %>
+		<!-- /[.block-flow#section-faq] -->
+		
+<%- include(srcPath + 'html/include/_block-footer-information') %>
+		<!-- /[.block.footer-information] -->
+
+	</main>
+	<!-- /[.main] -->
+<%- include(srcPath + 'html/include/_footer') %>
+
+<%- include(srcPath + 'html/include/_fixed-buttons') %>
+    <!--　/[.fixed-button] -->
+</div><!-- /.page -->
+
+<%- include(srcPath + 'html/include/_loading') %>
+
+<%- include(srcPath + 'html/include/_body_last') %>
+
+</body>
+</html>

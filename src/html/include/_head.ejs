@@ -3,7 +3,7 @@ update = '2021914190000';
 siteTitle = '不動産小口化商品ARISTO（アリスト）｜株式会社エーディーワークス';
 siteDescription = '不動産小口化商品ARISTO（アリスト）｜株式会社エーディーワークス';
 siteTitleKyoto = '不動産小口化商品ARISTO京都（アリスト京都）｜株式会社エーディーワークス';
-siteKeywords = 'アリスト,ARISTO,不動産小口化商品,虎ノ門,高円寺,青山,京都,エーディーワークス';
+siteKeywords = 'アリスト,ARISTO,不動産小口化商品,西麻布,渋谷,虎ノ門,高円寺,青山,京都,エーディーワークス';
 siteDescriptionKyoto = '不動産小口化商品ARISTO京都（アリスト京都）｜株式会社エーディーワークス';
 siteKeywordsKyoto = 'アリスト京都,ARISTO京都,不動産小口化商品,京都,エーディーワークス';
 siteTitleAoyama = '不動産小口化商品ARISTO青山（アリスト青山）｜株式会社エーディーワークス';
@@ -18,6 +18,9 @@ siteKeywordsToranomon = 'アリスト,ARISTO,不動産小口化商品,虎ノ門,
 siteTitleShibuya = '不動産小口化商品ARISTO渋谷（アリスト渋谷）｜株式会社エーディーワークス';
 siteDescriptionShibuya = '不動産小口化商品ARISTO渋谷（アリスト渋谷）｜株式会社エーディーワークス';
 siteKeywordsShibuya = 'アリスト,ARISTO,不動産小口化商品,渋谷,エーディーワークス';
+siteTitleNishiazabu = '不動産小口化商品ARISTO西麻布（アリスト西麻布）｜株式会社エーディーワークス';
+siteDescriptionNishiazabu = '不動産小口化商品ARISTO西麻布（アリスト西麻布）｜株式会社エーディーワークス';
+siteKeywordsNishiazabu = 'アリスト,ARISTO,不動産小口化商品,西麻布,エーディーワークス';
 siteURL = 'https://www.re-adworks.com/';
 parentDirectory ='business/aristo/';
 %><script async src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
@@ -40,9 +43,9 @@ parentDirectory ='business/aristo/';
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="format-detection" content="telephone=no">
 <!-- [TDK] -->
-<title><% if (directory=='shibuya') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleShibuya %><% }  else if (directory=='toranomon') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleToranomon %><% } else if (directory=='kouenji') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleKouenji %><% } else if (directory=='aoyama') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleAoyama %><% } else if (directory=='kyoto') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleKyoto %><% } else { %><% if (directory!=='') { %><%= meta.title %> | <% } %><% if (directory=='seminar' || directory=='entry-seminar' || directory=='request' || directory=='inquiry') {%><%= siteTitle %><% } else { %><%= siteTitle %><% } %><% } %></title>
-<meta name="description" content="<% if (directory=='shibuya') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionShibuya %><% } else if (directory=='toranomon') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionToranomon %><% } else if (directory=='kouenji') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionKouenji %><% } else if (directory=='aoyama') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionAoyama %><% } else if (directory=='kyoto') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionKyoto %><% } else { %><% if (directory!=='') { %><%= meta.title %> | <% } %><% if (directory=='seminar' || directory=='entry-seminar' || directory=='request' || directory=='inquiry') {%><%= siteDescription %><% } else { %><%= siteDescription %><% } %><% } %>">
-<meta name="keywords" content="<% if (directory=='shibuya') { %><%= siteKeywordsShibuya %><% } else if (directory=='toranomon') { %><%= siteKeywordsToranomon %><% } else if (directory=='aoyama') { %><%= siteKeywordsAoyama %><% } else if (directory=='kyoto') { %><%= siteKeywordsKyoto %><% } else {%><%= siteKeywords %><% } %>">
+<title><% if (directory=='nishiazabu') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleNishiazabu %><% }  else if (directory=='shibuya') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleShibuya %><% }  else if (directory=='toranomon') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleToranomon %><% } else if (directory=='kouenji') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleKouenji %><% } else if (directory=='aoyama') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleAoyama %><% } else if (directory=='kyoto') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteTitleKyoto %><% } else { %><% if (directory!=='') { %><%= meta.title %> | <% } %><% if (directory=='seminar' || directory=='entry-seminar' || directory=='request' || directory=='inquiry') {%><%= siteTitle %><% } else { %><%= siteTitle %><% } %><% } %></title>
+<meta name="description" content="<% if (directory=='nishiazabu') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionNishiazabu %><% } else if (directory=='shibuya') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionShibuya %><% } else if (directory=='toranomon') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionToranomon %><% } else if (directory=='kouenji') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionKouenji %><% } else if (directory=='aoyama') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionAoyama %><% } else if (directory=='kyoto') { %><% if (directoryLv2!=='') { %><%= meta.title %> | <% } %><%= siteDescriptionKyoto %><% } else { %><% if (directory!=='') { %><%= meta.title %> | <% } %><% if (directory=='seminar' || directory=='entry-seminar' || directory=='request' || directory=='inquiry') {%><%= siteDescription %><% } else { %><%= siteDescription %><% } %><% } %>">
+<meta name="keywords" content="<%= siteKeywords %>">
 <%_ if (isForm!=='') { %><meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0"><% } _%>

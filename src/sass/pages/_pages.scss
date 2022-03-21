@@ -94,6 +94,16 @@
                 @include calcvw(674, 'height', 640);
             }
         }
+        @at-root .nishiazabu & {
+            height: 674px;
+            background-image: url(#{$image_path}index/bg_header-shibuya.jpg);
+            @include media(pc-tb) {
+				margin-bottom: 0;
+			}
+            @include media(sp) {
+                @include calcvw(674, 'height', 640);
+            }
+        }
         @at-root .shibuya & {
             height: 674px;
             background-image: url(#{$image_path}index/bg_header-shibuya.jpg);
@@ -186,6 +196,19 @@
                 @include calcvw(30, 'font-size', 640);
             }
         }
+		//	.nishiazabu .contents .page-title
+		// ----------------------------------------
+		@at-root .nishiazabu & {
+			margin-top: 142px;
+			font-weight: normal;
+			@include fontsize(30);
+			color: $base_white_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include calcvw(30, 'font-size', 640);
+			}
+		}
 		//	.shibuya .contents .page-title
 		// ----------------------------------------
 		@at-root .shibuya & {
@@ -260,6 +283,11 @@
 				@include fontsize(10);
 			}
 			@at-root .home & {
+				position: absolute;
+				bottom: -3.2em;
+				right: .6em;
+			}
+			@at-root .nishiazabu & {
 				position: absolute;
 				bottom: -3.2em;
 				right: .6em;

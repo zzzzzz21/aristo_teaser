@@ -2,7 +2,7 @@
 meta = { title:"株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO公式サイト", desc:"" };
 seminar = "finish";
 guidance = "";
-isOnsale = "";
+isOnsale = "1";
 isForm ="";
 path = "./";
 srcPath ="../";
@@ -41,6 +41,18 @@ seminarList = [
 	}
 ];
 catalogue = [
+	{
+		"catalogueID":"nishiazabu",
+		"catalogueStatus":"available",
+		"catalogueStatusJP":"販売中",
+		"catalogueTitle":"ARISTO西麻布",
+		"catalogueCaption":"2022年6月運用開始予定",
+		"catalogueAccess":"東京都港区1-9-12<br>東京メトロ日比谷線「六本木」駅　徒歩6分<br>都営大江戸線「西麻布」駅 徒歩8分",
+		"catalogueOutline":"「3A」と称される都内屈指のブランドエリア「西麻布」の「築浅店舗SOHOビル」に少額から投資が可能な商品です。",
+		"catalogueInformation":"第6号商品の「ARISTO西麻布」は、この文字はダミーです。",
+		"cataloguePhoto":["01"],
+		"cataloguePhotoSub":["02","03",]
+	},
 	{
 		"catalogueID":"shibuya",
 		"catalogueStatus":"investment",
@@ -124,7 +136,7 @@ catalogue = [
 		<% if(isOnsale!== ''){%><div class="block is-onSale">
 			<div class="block-catalogue__body">
 				<% catalogue.forEach(function(item) {%>
-					<% if(item.catalogueID=='shibuya') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
+					<% if(item.catalogueID=='nishiazabu') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
 					<div class="catalogue-item__inner">
 						<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
 							<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
@@ -205,7 +217,7 @@ catalogue = [
 			<h2 class="block__title"><span>ARISTO物件情報</span></h2>
 			<div class="block">
 				<div class="block-catalogue__body"><% catalogue.forEach(function(item) {%>
-					<% if(item.catalogueID=='shibuya') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
+					<% if(item.catalogueID=='nishiazabu') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
 					<div class="catalogue-item__inner">
 						<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
 							<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
@@ -222,7 +234,7 @@ catalogue = [
 					</div>
 					<a href="<%= path %><%= item.catalogueID %>" class="btn-detail is-sp">物件詳細はこちら</a>
 					</article><%} %><%}); %>
-				<% catalogue.forEach(function(item) {%><%if(item.catalogueID!="shibuya"){%>
+				<% catalogue.forEach(function(item) {%><%if(item.catalogueID!="nishiazabu"){%>
 					<article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
 						<div class="catalogue-item__inner">
 							<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">

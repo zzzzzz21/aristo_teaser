@@ -1,0 +1,52 @@
+<%
+meta = { title:'東証一部上場株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO青山公式サイト', desc:'' };
+isForm = '';
+path = '../';
+srcPath ='../../';
+directory = 'kouenji';
+directoryLv2 = '';
+page = 'catalogue';
+%><!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath + 'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
+<body class="<% if (directory!=='') { %> <%= directory %><% } else {%>home<% } %><% if (page == 'catalogue') { %> page-catalogue<% } %>" id="top">
+<div class="page" id="data-page">
+	<main class="main contents">
+		<section class="block-catalogue" id="section-catalogue">
+			<div class="block">
+				<div class="block-catalogue__body"><% catalogue.forEach(function(item) {%>
+					<% if(item.catalogueID!=='kouenji') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
+						<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
+							<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
+							<% if(item.catalogueAccess) {%><p class="catalogue__access"><%- item.catalogueAccess %></p><% } %>
+							<% if(item.catalogueOutline) {%><p class="catalogue__outline"><%- item.catalogueOutline %></p><% } %>
+							<% if(item.catalogueType) {%><div class="catalogue__photo"><% item.cataloguePhotoSub.forEach(function(value) {%>
+							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div>
+							<%})%></div><% } %>
+							<a href="<%= path %><%= item.catalogueID %>" class="btn-detail" target="_top">物件詳細はこちら</a>
+						</div>
+						<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
+							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% if(item.catalogueType == ''){%><% item.cataloguePhotoSub.forEach(function(value) {%>
+							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% } %>
+							<a href="<%= path %><%= item.catalogueID %>" class="btn-detail" target="_top">物件詳細はこちら</a>
+						</div>
+					</article><% } %><%}); %>
+				</div>
+			</div>
+		</section>
+		<!-- /[.block-catalogue#section-catalogue] -->
+
+
+	</main>
+	<!-- /[.main] -->
+</div><!-- /.page -->
+
+<%- include(srcPath + 'html/include/_loading') %>
+
+<%- include(srcPath + 'html/include/_body_last') %>
+
+</body>
+</html>

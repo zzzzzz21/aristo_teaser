@@ -514,9 +514,9 @@ $title_color: #20428c;
 //	ARISTO第一弾商品、ARISTO物件情報
 // ----------------------------------------
 .block-instruments,.block-catalogue {
-	//	.kouwnji .block-instruments .block__title
+	//	.block-instruments .block__title
 	// ----------------------------------------
-	@at-root .kouenji & .block__title {
+	@at-root .nishiazabu & .block__title {
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -564,8 +564,6 @@ $title_color: #20428c;
 			border-left: none;
 		}
 	}
-	//	.block-instruments .block__title
-	// ----------------------------------------
 	@at-root .shibuya & .block__title {
 		position: relative;
 		display: flex;
@@ -615,6 +613,54 @@ $title_color: #20428c;
 		}
 	}
 	@at-root .toranomon & .block__title {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-items:center;
+		min-height: 280px;
+		background: url(#{$image_path}index/bg_header_flow.jpg) 0 0 no-repeat;
+		background-size: cover;
+		margin-bottom: 0;
+		@include fontsize(60);
+		font-family: $base_font_family_noto;
+		font-weight: normal;
+		color: $title_color;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding: 1em 0;
+			@include calcvw(94, 'min-height', 640);
+			@include calcvw(40, 'font-size', 640);
+		}
+		&:before,
+		&:after {
+			position: relative;
+			display: inline-block;
+			content: '';
+			width: 36px;
+			height: 36px;
+			border: 2px solid $title_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 1.2em;
+				height: 1.2em;
+				border-width: 1px;
+			}
+		}
+		&:before {
+			top: -.6em;
+			border-right: none;
+			border-bottom: none;
+		}
+		&:after {
+			bottom: -.6em;
+			border-top: none;
+			border-left: none;
+		}
+	}
+	@at-root .kouenji & .block__title {
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -1849,6 +1895,9 @@ $title_color: #20428c;
 		margin-bottom: 1.6em;
 		margin-right: auto;
 		margin-left: auto;
+		@at-root .nishiazabu & {
+			max-width: 855px;
+		}
 		@at-root .shibuya & {
 			max-width: 855px;
 		}
@@ -1909,6 +1958,18 @@ $title_color: #20428c;
 		position: absolute;
 		bottom: 12px;
 		right: 12px;
+		@at-root .nishiazabu & {
+			position: static;
+			width: 100%;
+			margin: auto;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				width: calc(100% - 640px);
+				margin-right: -6px;
+				//justify-content: space-between;
+			}
+		}
 		@at-root .shibuya & {
 			position: static;
 			width: 100%;
@@ -2110,6 +2171,15 @@ $title_color: #20428c;
 	// ----------------------------------------
 	@include element(item) {
 		width: calc(640 / 1200 * 100%);
+		@at-root .nishiazabu & {
+			width: calc(855 / 1200 * 100%);
+			margin: 0 auto;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+			}
+		}
 		@at-root .shibuya & {
 			width: calc(855 / 1200 * 100%);
 			margin: 0 auto;
@@ -2244,6 +2314,9 @@ $title_color: #20428c;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		margin-top: 4%;
+		.nishiazabu & {
+			margin-top: 20px;
+		}
 		.shibuya & {
 			margin-top: 20px;
 		}
@@ -2260,6 +2333,10 @@ $title_color: #20428c;
 			// ----------------------------------------
 			@include media(sp) {
 				width: 24%;
+			}
+			.nishiazabu & {
+				width: calc((100% - 20px) / 6);
+				margin-top: 0!important;
 			}
 			.shibuya & {
 				width: calc((100% - 20px) / 6);
@@ -2432,6 +2509,9 @@ $title_color: #20428c;
 		@include media(sp) {
 			flex-wrap: wrap;
 		}
+		@at-root .nishiazabu & {
+			display: block;
+		}
 		@at-root .shibuya & {
 			display: block;
 		}
@@ -2515,6 +2595,30 @@ $title_color: #20428c;
 				&.-item02 {
 					grid-row: 1;
 					grid-column: 2;
+					//	.nishiazabu .block-characterisistic__images__item
+					// ----------------------------------------
+					@at-root .nishiazabu & {
+						width: 100%;
+						margin-top: 1em;
+						//	[media queries PC-tablet]
+						// ----------------------------------------
+						@include media(pc-tb) {
+							display: flex;
+							margin-bottom: 100px;
+							//flex-wrap: wrap;
+							width: 100%;
+							p {
+								height: 176px;
+								img {
+									height: 100%;
+									width: auto;
+								}
+							}
+							p + p {
+								margin-top: 0;
+							}
+						}
+					}
 				}
 				&.-item03 {
 					grid-row: 2;
@@ -2585,6 +2689,16 @@ $title_color: #20428c;
 			width: 100%;
 			margin-left: 0;
 			@include calcvw(50, 'margin-top', 640);
+		}
+		@at-root .nishiazabu & {
+			width: 1000px;
+			margin: 130px auto 0;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+				@include calcvw(100, 'margin-top',640);
+			}
 		}
 		@at-root .shibuya & {
 			width: 1000px;
@@ -2732,10 +2846,20 @@ $title_color: #20428c;
 		//	.block-characterisistic__photo__item
 		// ----------------------------------------
 		@include element(item) {
+			position: relative;
 			//	[media queries PC-tablet]
 			// ----------------------------------------
 			@include media(pc-tb) {
 				width: calc(374 / 1200 * 100%);
+				.nishiazabu & {
+					width: 500px;
+				}
+				@at-root .nishiazabu .block-characteristic__photo:nth-child(2) & {
+					width: 333px;
+				}
+				@at-root .nishiazabu .block-characteristic__photo:nth-child(2) & + & {
+					width: 666px;
+				}
 				.shibuya & {
 					width: 400px;
 				}
@@ -2751,7 +2875,7 @@ $title_color: #20428c;
 				// ----------------------------------------
 				@include media(pc-tb) {
 					.shibuya & {
-						width: 600px;
+						width: 400px;
 						display: flex;
 						flex-wrap: wrap;
 					}
@@ -2823,6 +2947,19 @@ $title_color: #20428c;
 						padding-left: 48%;
 					}
 				}
+			}
+			//	.block-characterisistic__photo__item__caption
+			// ----------------------------------------
+			@include element(caption) {
+				position: absolute;
+				top: 0;
+				right: 0;
+				display: inline-block;
+				background: #20428c;
+				margin: 0!important;
+				padding: 0.1em 0.6em;
+				color: #fff;
+				font-weight: bold;
 			}
 		}
 	}
@@ -2948,6 +3085,28 @@ $title_color: #20428c;
 				margin-top: 2em;
 			}
 		}
+		//	.nishiazabu block-surroundings__items
+		// ----------------------------------------
+		.nishiazabu & {
+			width: 60%;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+			}
+			&:nth-child(n+2) {
+				//max-width: 540px;
+				width: calc(40% - 20px);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					width: 100%;
+					margin-top: 2em;
+				}
+			}
+		}
+		//	.toranomon block-surroundings__items
+		// ----------------------------------------
 		.toranomon & {
 			width: 48%;
 			//	[media queries SP]
@@ -3066,6 +3225,16 @@ $title_color: #20428c;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
+		// .nishiazabu .list-surroundings
+		// ----------------------------------------
+		.nishiazabu & {
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				display: block;
+				width: 100%;
+			}
+		}
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
@@ -3161,6 +3330,21 @@ $title_color: #20428c;
 					@include fontsize(11);
 				}
 			}
+			// .nishiazabu .list-surroundings
+			// ----------------------------------------
+			.nishiazabu & {
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					display: flex;
+					width: 100%;
+					margin: 0 0 20px;
+					p:first-child {
+						width: 20%;
+						margin-right: 20px;
+					}
+				}
+			}
 		}
 	}
 }
@@ -3211,14 +3395,14 @@ $title_color: #20428c;
 		}
 		.unit-flow__title {
 			align-items: flex-start;
-			//	[media queries PC-table]
+			//	[media queries PC-tablet]
 			// ----------------------------------------
 			@include media(pc-tb) {
 				width: 20%;
 			}
 		}
 		.unit-flow__body {
-			//	[media queries PC-table]
+			//	[media queries PC-tablet]
 			// ----------------------------------------
 			@include media(pc-tb) {
 				width: 80%;
@@ -3229,7 +3413,7 @@ $title_color: #20428c;
 	.-guidance {
 		&__images {
 			margin-top: 1em;
-			//	[media queries PC-table]
+			//	[media queries PC-tablet]
 			// ----------------------------------------
 			@include media(pc-tb) {
 				display: flex;
@@ -3238,7 +3422,7 @@ $title_color: #20428c;
 		}
 		&__image {
 			background: #000;
-			//	[media queries PC-table]
+			//	[media queries PC-tablet]
 			// ----------------------------------------
 			@include media(pc-tb) {
 				width: 48%;
