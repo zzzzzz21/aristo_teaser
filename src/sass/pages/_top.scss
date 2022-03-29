@@ -2854,12 +2854,6 @@ $title_color: #20428c;
 				.nishiazabu & {
 					width: 500px;
 				}
-				@at-root .nishiazabu .block-characteristic__photo:nth-child(2) & {
-					width: 333px;
-				}
-				@at-root .nishiazabu .block-characteristic__photo:nth-child(2) & + & {
-					width: 666px;
-				}
 				.shibuya & {
 					width: 400px;
 				}

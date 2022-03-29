@@ -6498,14 +6498,6 @@ body.rtl .formError .formErrorArrow {
     width: 500px;
   }
 
-  .nishiazabu .block-characteristic__photo:nth-child(2) .block-characteristic__photo__item {
-    width: 333px;
-  }
-
-  .nishiazabu .block-characteristic__photo:nth-child(2) .block-characteristic__photo__item + .block-characteristic__photo__item {
-    width: 666px;
-  }
-
   .shibuya .block-characteristic__photo__item {
     width: 400px;
   }
