@@ -243,6 +243,16 @@
 			}
 		}
 	}
+	//	.catalogue__contact
+	// ----------------------------------------
+	@include element(contact) {
+		position: relative;
+		margin-top: 1.6rem;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+		}
+	}
 	//	.catalogue__outline
 	// ----------------------------------------
 	@include element(outline) {
@@ -344,23 +354,23 @@
 			padding-top: 0;
 		}
 	}
-	a {
+	a, .box {
 		display: flex;
 		box-sizing: border-box;
 		width: 100%;
 		padding: 2em;
 		border: 1px solid $base_border_color;
-		&:link, &:visited {
-			color: $base_text_color;
-		}
-		&:hover, &:active {
-			color: $base_hover_color;
-		}
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
 			flex-wrap: wrap;
 		}
+	}
+	a:link, a:visited {
+		color: $base_text_color;
+	}
+	a:hover, a:active {
+		color: $base_hover_color;
 	}
 }
 

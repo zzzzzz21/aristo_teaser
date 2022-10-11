@@ -1638,6 +1638,14 @@ a.btn-target:after {
   color: #999;
 }
 
+.gNavi__item > span {
+  box-sizing: border-box;
+  display: block;
+  padding: .4em 0;
+  transition: all .3s ease;
+  color: gray;
+}
+
 .navDrawer_btn_wrapper {
   position: fixed;
   top: 50px;
@@ -2641,6 +2649,11 @@ a.btn-target:after {
   margin-top: .8rem;
 }
 
+.catalogue__contact {
+  position: relative;
+  margin-top: 1.6rem;
+}
+
 .catalogue__outline {
   font-family: "Noto Serif JP", serif;
   font-weight: bold;
@@ -2670,7 +2683,8 @@ a.btn-target:after {
   width: 100%;
 }
 
-.block-others a {
+.block-others a,
+.block-others .box {
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
@@ -7403,7 +7417,8 @@ body.rtl .formError .formErrorArrow {
     display: none;
   }
 
-  .block-others a {
+  .block-others a,
+  .block-others .box {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }

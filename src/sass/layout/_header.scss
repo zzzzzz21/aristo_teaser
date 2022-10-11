@@ -356,6 +356,13 @@
 				color: #999;
 			}
 		}
+		> span {
+			box-sizing: border-box;
+			display: block;
+			padding: .4em 0;
+			transition: all .3s ease;
+			color: darken($base_white_color, 50%);
+		}
 	}
 }
 
