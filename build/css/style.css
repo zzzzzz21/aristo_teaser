@@ -1831,9 +1831,14 @@ a.btn-target:after {
 }
 
 .logo-adw {
-  position: absolute;
-  top: -140px;
-  left: 100px;
+  position: relative;
+  top: -20px;
+  left: 0;
+}
+
+.logo-adw img {
+  width: 140px;
+  height: auto;
 }
 
 .goPageTop {
