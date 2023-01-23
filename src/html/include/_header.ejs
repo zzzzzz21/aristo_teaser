@@ -43,7 +43,7 @@
 						<li class="gNavi__item" role="presentation">
 							<a href="<%= path %>#section-catalogue" role="menuitem">物件情報</a>
 							<ul><% catalogue.forEach(function(item) {%>
-								<li class="gNavi__item" role="menuitem"><% if(item.catalogueID!=='omotesando') {%><a href="<%= path %><%- item.catalogueID %>"><% } else { %><span class="-item"><% } %><span>［<%- item.catalogueStatusJP %>］<%- item.catalogueTitle %></span><% if(item.catalogueID!=='omotesando') {%></a><% } else { %></span><% } %></li><%})%>
+								<li class="gNavi__item" role="menuitem"><% if(item.hasPage) {%><a href="<%= path %><%- item.catalogueID %>"><% } else { %><span class="-item"><% } %>［<%- item.catalogueStatusJP %>］<%- item.catalogueTitle %><% if(item.hasPage) {%></a><% } else { %></span><% } %></li><%})%>
 							</ul>
 						</li>
 						<li class="gNavi__item" role="presentation"><a href="<%= path %>seminar/" role="menuitem"><span>セミナー情報</span></a></li>

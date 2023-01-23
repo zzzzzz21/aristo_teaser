@@ -1,11 +1,12 @@
 				<div class="block block-others">
 					<div class="block-catalogue__body"><% catalogue.forEach(function(item) {%>
 						<% if(item.catalogueID!=='toranomon') {%><div class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
-						<% if(item.catalogueID!=='omotesando') {%><a href="<%= path %><%- item.catalogueID %>/"><% } else { %><div class="box"><% } %>
-						<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
-							<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
-							<% if(item.catalogueInformation) {%><p class="catalogue__information"><%- item.catalogueInformation %></p><% } %>
-						</div>
-						<% if(item.catalogueID!=='omotesando') {%></a><% } else { %></div><% } %>						</div><%}%><%}); %>
+							<% if(item.hasPage) {%><a href="<%= path %><%- item.catalogueID %>/"><% } else { %><div class="box"><% } %>
+								<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
+									<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
+									<% if(item.catalogueInformation) {%><p class="catalogue__information"><%- item.catalogueInformation %></p><% } %>
+								</div>
+							<% if(item.hasPage) {%></a><% } else { %></div><% } %>
+						</div><%}%><%}); %>
 					</div>
 				</div>

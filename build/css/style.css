@@ -1646,6 +1646,10 @@ a.btn-target:after {
   color: gray;
 }
 
+.gNavi__item > span.-item {
+  color: #cccccc;
+}
+
 .navDrawer_btn_wrapper {
   position: fixed;
   top: 50px;
@@ -6116,13 +6120,15 @@ body.rtl .formError .formErrorArrow {
   }
 
   .home .is-onSale .block-catalogue__body .catalogue-item,
-  .home .block-catalogue__body .catalogue-item:nth-child(1) {
+  .home .block-catalogue__body .catalogue-item:nth-child(1),
+  .home .block-catalogue__body .catalogue-item:nth-child(2) {
     width: 100%;
     margin: auto;
   }
 
   .home .is-onSale .block-catalogue__body .catalogue-item .btn-detail,
-  .home .block-catalogue__body .catalogue-item:nth-child(1) .btn-detail {
+  .home .block-catalogue__body .catalogue-item:nth-child(1) .btn-detail,
+  .home .block-catalogue__body .catalogue-item:nth-child(2) .btn-detail {
     bottom: 0;
   }
 

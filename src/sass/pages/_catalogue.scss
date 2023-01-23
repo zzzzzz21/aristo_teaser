@@ -16,7 +16,8 @@
 			flex-direction: row-reverse;
 			justify-content: space-between;
 			.home .is-onSale .block-catalogue__body &,
-			.home .block-catalogue__body &:nth-child(1) {
+			.home .block-catalogue__body &:nth-child(1),
+			.home .block-catalogue__body &:nth-child(2) {
 				width: 100%;
 				margin: auto;
 				.btn-detail {

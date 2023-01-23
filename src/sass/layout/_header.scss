@@ -362,6 +362,9 @@
 			padding: .4em 0;
 			transition: all .3s ease;
 			color: darken($base_white_color, 50%);
+			&.-item {
+				color: darken($base_white_color, 20%);
+			}
 		}
 	}
 }
