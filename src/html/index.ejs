@@ -2,7 +2,7 @@
 meta = { title:"株式会社エー・ディー・ワークスの不動産小口化商品 ARISTO公式サイト", desc:"" };
 seminar = "finish";
 guidance = "";
-isOnsale = "1";
+isOnsale = "";
 isForm ="";
 path = "./";
 srcPath ="../";
@@ -42,23 +42,25 @@ seminarList = [
 ];
 catalogue = [
 	{
+		"isNew":"",
 		"catalogueID":"daimyo",
-		"catalogueStatus":"available",
-		"catalogueStatusJP":"販売中",
-		"catalogueTitle":"ARISTO大名",
-		"catalogueCaption":"",
-		"catalogueAccess":"福岡県福岡市中央区大名2-9-17<br>福岡市地下鉄空港線「赤坂」駅徒歩２分<br>福岡市地下鉄空港線「天神」駅徒歩６分<br>西鉄･天神大牟田線「西鉄福岡（天神）駅」徒歩11分　",
+		"catalogueStatus":"investment",
+		"catalogueStatusJP":"運用中",
+        "catalogueTitle":"ARISTO福岡大名",
+		"catalogueCaption":"2023年6月運用開始",
+        "catalogueAccess":"福岡県福岡市中央区大名2-9-17<br>福岡市地下鉄空港線「天神」駅　徒歩６分<br>福岡市地下鉄空港線「赤坂」駅　徒歩２分<br>西鉄･天神大牟田線「西鉄福岡（天神）」駅　徒歩11分",
 		"catalogueOutline":"大規模再開発「天神ビックバン」が進行中である<br>天神/大名エリアに位置する「新築事務所店舗ビル」",
 		"catalogueInformation":"大規模再開発「天神ビックバン」が進行中である<br>天神/大名エリアに位置する「新築事務所店舗ビル」",
 		"cataloguePhoto":["01"],
 		"cataloguePhotoSub":["02","03",]
 	},
 	{
+		"isNew":"",
 		"catalogueID":"omotesando",
-		"catalogueStatus":"available",
-		"catalogueStatusJP":"販売中",
+		"catalogueStatus":"investment",
+		"catalogueStatusJP":"運用中",
 		"catalogueTitle":"ARISTO表参道",
-		"catalogueCaption":"",
+		"catalogueCaption":"2023年6月運用開始",
 		"catalogueAccess":"東京都渋谷区神宮前4-9-9<br>東京メトロ千代田線・半蔵門線・銀座線「表参道」駅　徒歩3分<br>東京メトロ副都心線・千代田線「明治神宮前」駅　徒歩7分<br>JR山手線「原宿」駅　徒歩11分",
 		"catalogueOutline":"有力商業地である渋谷、原宿、青山に囲まれた<br>東京を代表する商業エリア「表参道」の店舗ビル",
 		"catalogueInformation":"有力商業地である渋谷、原宿、青山に囲まれた<br>東京を代表する商業エリア「表参道」の店舗ビル",
@@ -166,7 +168,7 @@ catalogue = [
 		<% if(isOnsale!== ''){%><div class="block is-onSale">
 			<div class="block-catalogue__body">
 				<% catalogue.forEach(function(item) {%>
-					<% if(item.catalogueID=='daimyo') {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
+                <% if(item.hasPage) {%><% } else { %><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
 					<div class="catalogue-item__inner">
 						<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
 							<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
@@ -174,7 +176,7 @@ catalogue = [
 							<% if(item.catalogueAccess) {%><p class="catalogue__access"><%- item.catalogueAccess %></p><% } %>
 							<% if(item.catalogueType) {%><div class="catalogue__photo"><% item.cataloguePhotoSub.forEach(function(value) {%>
 							<%})%></div><% } %>
-							<% if(item.catalogueID!=='daimyo') {%><a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a><% } else { %><div class="catalogue__contact"><strong>お問い合わせはこちらから</strong><br>
+							<% if(item.hasPage) {%><a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a><% } else { %><div class="catalogue__contact"><strong>お問い合わせはこちらから</strong><br>
 							TEL : <span class="is--tel"><a href="tel:0120540949">0120-540-949</a></span><br>
 							E-mail : <a href="mailto:&#97;&#114;&#105;&#115;&#116;&#111;&#64;&#114;&#101;&#45;&#97;&#100;&#119;&#111;&#114;&#107;&#115;&#46;&#99;&#111;&#109;">&#97;&#114;&#105;&#115;&#116;&#111;&#64;&#114;&#101;&#45;&#97;&#100;&#119;&#111;&#114;&#107;&#115;&#46;&#99;&#111;&#109;</a><br>
 							受付時間 9:00～18:00 （土日祝日除く）<br>
@@ -185,7 +187,7 @@ catalogue = [
 							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% } %>
 						</div>
 					</div>
-				<% if(item.catalogueID!=='omotesando') {%><a href="<%= path %><%= item.catalogueID %>" class="btn-detail is-sp">物件詳細はこちら</a><% } %>
+				<% if(item.hasPage) {%><a href="<%= path %><%= item.catalogueID %>" class="btn-detail is-sp">物件詳細はこちら</a><% } %>
 					</article><%} %><%}); %>
 				</div>
 			</div><%} %>
@@ -252,8 +254,8 @@ catalogue = [
 			<div class="block">
 				<div class="block-catalogue__body">
 				<% catalogue.forEach(function(item) {%>
-					<% if(item.catalogueID=='daimyo') {%>
-					<article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
+					<% if(item.isNew) {%>
+					<article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %> catalogue-item-new" id="catalogue-<%- item.catalogueID %>">
 						<div class="catalogue-item__inner">
 							<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
 								<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
@@ -274,28 +276,7 @@ catalogue = [
 						</div>
 					<% if(item.catalogueID!=='omotesando') {%><a href="<%= path %><%= item.catalogueID %>" class="btn-detail is-sp">物件詳細はこちら</a><% } %>
 					</article><%} %>
-					<% if(item.catalogueID=='omotesando') {%>
-					<article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
-						<div class="catalogue-item__inner">
-							<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
-								<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
-								<% if(item.catalogueOutline) {%><p class="catalogue__outline"><%- item.catalogueOutline %></p><% } %>
-								<% if(item.catalogueAccess) {%><p class="catalogue__access"><%- item.catalogueAccess %></p><% } %>
-								<% if(item.catalogueType) {%><div class="catalogue__photo"><% item.cataloguePhotoSub.forEach(function(value) {%>
-								<%})%></div><% } %>
-								<% if(item.catalogueID!=='omotesando') {%><a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a><% } else { %><div class="catalogue__contact"><strong>お問い合わせはこちらから</strong><br>
-								TEL : <span class="is--tel"><a href="tel:0120540949">0120-540-949</a></span><br>
-								E-mail : <a href="mailto:&#97;&#114;&#105;&#115;&#116;&#111;&#64;&#114;&#101;&#45;&#97;&#100;&#119;&#111;&#114;&#107;&#115;&#46;&#99;&#111;&#109;">&#97;&#114;&#105;&#115;&#116;&#111;&#64;&#114;&#101;&#45;&#97;&#100;&#119;&#111;&#114;&#107;&#115;&#46;&#99;&#111;&#109;</a><br>
-								受付時間 9:00～18:00 （土日祝日除く）<br>
-								株式会社エー・ディー・ワークス・資産運用事業本部　ウェルスマネジメント部</div><% } %>
-							</div>
-							<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
-								<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% if(item.catalogueType == ''){%><% item.cataloguePhotoSub.forEach(function(value) {%>
-								<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% } %>
-							</div>
-						</div>
-					<% if(item.catalogueID!=='omotesando') {%><a href="<%= path %><%= item.catalogueID %>" class="btn-detail is-sp">物件詳細はこちら</a><% } %>
-					</article><%} %>
+					
 					<%}); %>
 					<% catalogue.forEach(function(item) {%><%if(item.hasPage){%>
 					<article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
@@ -308,13 +289,29 @@ catalogue = [
 								<%})%></div><% } %>
 							</div>
 							<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
-								<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% if(item.catalogueType == ''){%><% item.cataloguePhotoSub.forEach(function(value) {%>
+								<div class="catalogue__photo__item -item<%- value %>"><a href="<%= path %><%= item.catalogueID %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></a></div><% }) %><% if(item.catalogueType == ''){%><% item.cataloguePhotoSub.forEach(function(value) {%>
 								<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% } %>
 								<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
 							</div>
 						</div>
 						<% if(item.catalogueAccess) {%><p class="catalogue__access"><%- item.catalogueAccess %></p><% } %>
 						<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
+					</article><% } else {%><article class="catalogue-item<%if(item.catalogueType){%> -<%- item.catalogueType %><% } %>" id="catalogue-<%- item.catalogueID %>">
+					<div class="catalogue-item__inner">
+						<div class="catalogue__body<% if(item.catalogueStatus) { %> catalogue-<%- item.catalogueStatus%><% } %>">
+							<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
+							<% if(item.catalogueOutline) {%><p class="catalogue__outline"><%- item.catalogueOutline %></p><% } %>
+							<% if(item.catalogueType) {%><div class="catalogue__photo"><% item.cataloguePhotoSub.forEach(function(value) {%>
+							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div>
+							<%})%></div><% } %>
+						</div>
+						<div class="catalogue__photo"><% item.cataloguePhoto.forEach(function(value) {%>
+							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% if(item.catalogueType == ''){%><% item.cataloguePhotoSub.forEach(function(value) {%>
+							<div class="catalogue__photo__item -item<%- value %>"><img src="<%= path %>images/index/photo_<%- item.catalogueID %>_<%= value %>.jpg" alt="写真：<%- item.catalogueTitle %><%- value %>"></div><% }) %><% } %>
+							<a href="<%= path %><%= item.catalogueID %>" class="btn-detail">物件詳細はこちら</a>
+						</div>
+					</div>
+					<% if(item.catalogueAccess) {%><p class="catalogue__access"><%- item.catalogueAccess %></p><% } %>
 					</article><% } %><%}); %>
 				</div>
 			</div>
