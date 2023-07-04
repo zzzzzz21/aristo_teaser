@@ -2718,6 +2718,8 @@ a.btn-target:after {
   width: 100%;
   padding: 2em;
   border: 1px solid #b5b5b5;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .block-others a:link,
@@ -7440,12 +7442,6 @@ body.rtl .formError .formErrorArrow {
   .catalogue__photo__item.-item02,
   .catalogue__photo__item.-item03 {
     display: none;
-  }
-
-  .block-others a,
-  .block-others .box {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
   }
 
   * + .block-seminars {

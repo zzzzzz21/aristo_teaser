@@ -13,6 +13,7 @@ page = 'teaser';
 <%- include(srcPath + 'html/include/_head') %>
 </head>
 <body class="<% if (directory!=='') { %> <%= directory %><% } else {%>home<% } %><% if (page!=='') { %> <%= page %><%} %>" id="top">
+<%- include(srcPath + 'html/include/_gtag_body') %>
 <div class="page" id="data-page">
 <%- include(srcPath + 'html/include/_header-teaser') %>
 	<main class="main contents">

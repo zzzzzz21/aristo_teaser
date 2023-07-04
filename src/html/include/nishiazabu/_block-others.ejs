@@ -6,6 +6,7 @@
 									<h3 class="catalogue__title"><%- item.catalogueTitle %><% if(item.catalogueCaption) {%><span class="-caption"><%- item.catalogueCaption %></span><% } %></h3>
 									<% if(item.catalogueInformation) {%><p class="catalogue__information"><%- item.catalogueInformation %></p><% } %>
 								</div>
+								<% if(item.hasPage) {%><span class="btn-detail">物件詳細はこちら</span><% } %>
 							<% if(item.hasPage) {%></a><% } else { %></div><% } %>
 						</div><%}%><%}); %>
 					</div>

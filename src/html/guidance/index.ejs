@@ -13,6 +13,7 @@ page = '';
 <%- include(srcPath + 'html/include/_head') %>
 </head>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } else { %> page-input<% } %>" id="top">
+<%- include(srcPath + 'html/include/_gtag_body') %>
 <div class="page" id="data-page">
 <%- include(srcPath +'html/include/_header') %>
 	<main class="main contents">
@@ -140,7 +141,7 @@ page = '';
                         <div class="form-field required">
 							<div class="form-field__label"><label for="month">面談希望日（1）</label></div>
                         	<div class="form-field__element">
-								2022年 <select name="month" id="data-month" class="element-input-number validate[required]">
+								<select name="month" id="data-month" class="element-input-number validate[required]">
 									<option value="">選択</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -174,7 +175,7 @@ page = '';
                         <div class="form-field">
 							<div class="form-field__label"><label for="month">面談希望日（2）</label></div>
                         	<div class="form-field__element">
-								2022年 <select name="month2" id="data-month2" class="element-input-number">
+								<select name="month2" id="data-month2" class="element-input-number">
 									<option value="">選択</option>
 									<option value="1">1</option>
 									<option value="2">2</option>

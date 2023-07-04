@@ -375,10 +375,10 @@
 		width: 100%;
 		padding: 2em;
 		border: 1px solid $base_border_color;
+		flex-wrap: wrap;
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			flex-wrap: wrap;
 		}
 	}
 	a:link, a:visited {

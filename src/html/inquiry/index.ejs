@@ -16,6 +16,7 @@ page = '';
 <meta http-equiv="expires" content="0">
 </head>
 <body class="<% if (directory!=='') { %>aristo-<%= directory %><% } else {%>home<% } %><% if (page!=='') { %> page-<%= page %><% } else { %> page-input<% } %>" id="top">
+<%- include(srcPath + 'html/include/_gtag_body') %>
 <div class="page" id="data-page">
 <%- include(srcPath + 'html/include/_header') %>
 	<main class="main contents">

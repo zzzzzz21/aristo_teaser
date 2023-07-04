@@ -1,14 +1,13 @@
 <?php require_once "{$_SERVER['DOCUMENT_ROOT']}/common/php/aristo.php" ?><!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61020271-5"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'UA-61020271-5');
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5JWPCN2');</script>
+<!-- End Google Tag Manager -->
 <script async src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
 <script>
 	window.yjDataLayer = window.yjDataLayer || [];
@@ -53,6 +52,10 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 </head>
 <body class="aristo-guidance page-confirm" id="top">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JWPCN2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="page" id="data-page">
 	<header class="globalHeader" id="data-header">
 		<div class="globalHeader__inner">
@@ -261,7 +264,7 @@
 								<input type="hidden" id="data-month" name="month" value="<?php echo $_POST['month']?>">
 								<input type="hidden" id="data-date" name="date" value="<?php echo $_POST['date']?>">
 								<input type="hidden" id="data-startTime" name="startTime" value="<?php echo $_POST['startTime']?>">
-								<div class="form-value">2020年<?php echo $_POST['month']?>月<?php echo $_POST['date']?>日<?php echo $_POST['startTime']?>～</div>
+								<div class="form-value"><?php echo $_POST['month']?>月<?php echo $_POST['date']?>日<?php echo $_POST['startTime']?>～</div>
 							</div>
 						</div>
 						<div class="form-field">
@@ -270,7 +273,7 @@
 								<input type="hidden" id="data-month2" name="month2" value="<?php echo $_POST['month2']?>">
 								<input type="hidden" id="data-date2" name="date2" value="<?php echo $_POST['date2']?>">
 								<input type="hidden" id="data-startTime2" name="startTime2" value="<?php echo $_POST['startTime2']?>">
-								<div class="form-value">2020年<?php echo $_POST['month2']?>月<?php echo $_POST['date2']?>日<?php echo $_POST['startTime2']?>～</div>
+								<div class="form-value"><?php echo $_POST['month2']?>月<?php echo $_POST['date2']?>日<?php echo $_POST['startTime2']?>～</div>
 							</div>
 						</div>
 						<div class="form-field">
