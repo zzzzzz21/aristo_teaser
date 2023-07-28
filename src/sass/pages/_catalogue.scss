@@ -1,400 +1,480 @@
 @charset "utf-8";
+
 // ===================================================================
 //  File:	pages/_catalogue.scss
 //  Date:	2019-05-01(UTC+9)
 //  Note:	
 // ===================================================================
 .catalogue {
-	//	.catalogue-item
-	// ----------------------------------------
-	&-item {
-		position: relative;
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			display: flex;
-			flex-direction: row-reverse;
-			justify-content: space-between;
-			.home .is-onSale .block-catalogue__body & {
-				width: 100%;
-				margin: auto;
-				.btn-detail {
-					bottom: 0;
-				}
-			}
-			.home .block-catalogue__body & {
-				width: calc(50% - 40px);
-				display: block;
-			}
-			.home .block-catalogue__body &:nth-child(n+3) {
-				margin-top: calc(100px + 6rem);
-			}
-			body:not(.home) .block-catalogue__body & + & {
-				margin-top: 100px;
-			}
-		}
-		//	.catalogue-item__inner
-		// ----------------------------------------
-		&__inner {
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				.btn-detail {
-					display: none;
-				}
-			}
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				display: flex;
-				flex-direction: row-reverse;
-				justify-content: space-between;
-			}
-		}
-		& + & {
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				@include calcvw(100,'margin-top',640);
-			}
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				//margin-top: 100px;
-			}
-		}
-		.btn-detail {
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				width: 100%;
-				@include calcvw(50,'margin-top',640);
-			}
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				margin-top: 2rem;
-			}
-		}
-		//	.catalogue-item
-		// ----------------------------------------
-		&.catalogue-item-new {
-			width: 100%;
-			margin: auto;
-			& + & {
-				margin-top: calc(100px + 6rem);
-			} 
-			.btn-detail {
-				bottom: 0;
-			}
-			.home .block-catalogue__body & {
-				width: 100%;
-				display: block;
-			}
-		}
-	}
-	//	.catalogue__body
-	// ----------------------------------------
-	@include element(body) {
-		position: relative;
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			width: 520px;
-			.block-catalogue__body & {
-				width: calc(60% - 20px);
-			}
-			.block-others & {
-				width: 100%;
-			}
-		}
-		.btn-detail {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			width: 80%;
-			@include fontsize(24);
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				display: none;
-			}
-		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			@at-root .is-onSale & {
-				position: relative;
-			}
-		}
-	}
-	//	.catalogue__title
-	// ----------------------------------------
-	@include element(title) {
-		margin-bottom: 1.2em;
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			padding: .2em 0 .2em 6em;
-			@include fontsize(18);
-		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			padding: .2em 0 .2em 4.5em;
-			@include fontsize(32);
-			.block-catalogue__body & {
-				padding: 0;
-			}
-		}
-		@at-root .block-others & {
-			margin-bottom: .6em;
-			padding: 0;
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				padding-left: 6em;
-			}
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				display: flex;
-				align-items: center;
-			}
-		}
-		span {
-			display: block;
-			margin-top: -.4em;
-			@include fontsize(14);
-			font-weight: normal;
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-			}
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				margin-top: -6px;
-				margin-left: 0;
-			}
-			@at-root .block-others & {
-				//	[media queries PC-tablet]
-				// ----------------------------------------
-				@include media(pc-tb) {
-					margin-left: 2em;
-				}
-			}
-		}
-		&::before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			display: inline-block;
-			margin-right: .6em;
-			padding: .2em .4em;
-			border: 4px solid $base_corporate_color;
-			color: $base_corporate_color;
-			text-align: center;
-			@include fontsize(32);
-			font-weight: bold;
-			line-height: 1;
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				@include calcvw(32, 'font-size', 640);
-			}
-			@at-root .catalogue-available & {
-				content: '販売中';
-				border: 4px solid $base_corporate_color;
-				background-color: $base_corporate_color;
-				color: $base_white_color;
-			}
-			@at-root .catalogue-investment & {
-				content: '運用中';
-			}
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				@at-root .block-catalogue__body & {
-					@include fontsize(18);
-					display: block;
-					position: static;
-					width: 5em;
-				}
-			}
-			@at-root .block-others & {
-				width: 4em;
-				margin-bottom: .2em;
-				@include fontsize(20);
-				//	[media queries SP]
-				// ----------------------------------------
-				@include media(sp) {
-					@include fontsize(18);
-				}
-				//	[media queries PC-tablet]
-				// ----------------------------------------
-				@include media(pc-tb) {
-					position: relative;
-				}
-			}
-		}
-	}
-	//	.catalogue__access
-	// ----------------------------------------
-	@include element(access) {
-		position: relative;
-		margin-top: .8rem;
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			& + .btn-detail {
-				width: 100%;
-				position: absolute;
-				bottom: -7rem;
-			}
-		}
-	}
-	//	.catalogue__contact
-	// ----------------------------------------
-	@include element(contact) {
-		position: relative;
-		margin-top: 1.6rem;
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-		}
-	}
-	//	.catalogue__outline
-	// ----------------------------------------
-	@include element(outline) {
-		font-family: $base_font_family_noto;
-		font-weight: bold;
-		color: $base_corporate_color;
-		letter-spacing: -.03em;
-		margin-top: .8rem;
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			@include fontsize(18);
-		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			@include fontsize(24);
-			& + .btn-detail {
-				width: 100%;
-			}
-			span {
-				display: block;
-			}
-		}
-	}
-	//	.catalogue__photo
-	// ----------------------------------------
-	@include element(photo) {
-		position: relative;
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			@include calcvw(50, 'margin-top', 640);
-			@at-root .block-others & {
-				margin-top: 0;
-				@include calcvw(30, 'margin-bottom', 640);
-			}
-		}
-		//	[media queries PC-tablet]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			max-width: 522px;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			@at-root .block-others & {
-				width: 343px;
-				margin-right: 32px;
-			}
-			@at-root .block-catalogue__body & {
-				width: calc(40% - 20px);
-			}
-		}
-		//	.catalogue__photo__item
-		// ----------------------------------------
-		@include element(item) {
-			position: relative;
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				//width: 100%;
-			}
-			&.-item01 {
-				width: 100%;
-			}
-			&.-item02, &.-item03 {
-				//	[media queries SP]
-				// ----------------------------------------
-				@include media(sp) {
-					display: none;
-				}
-				//	[media queries PC-tablet]
-				// ----------------------------------------
-				@include media(pc-tb) {
-					margin-top: 25px;
-				}
-			}
-		}
-		.btn-detail {
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				display: none;
-			}
-		}
-		img {
-			max-width: 100%;
-			height: auto;
-		}
-	}
+
+  //	.catalogue-item
+  // ----------------------------------------
+  &-item {
+    position: relative;
+
+    //	[media queries PC-tablet]
+    // ----------------------------------------
+    @include media(pc-tb) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      .home .is-onSale .block-catalogue__body & {
+        width: 100%;
+        margin: auto;
+
+        .btn-detail {
+          bottom: 0;
+        }
+      }
+
+      .home .block-catalogue__body & {
+        width: calc(50% - 40px);
+        display: block;
+      }
+
+      .home .block-catalogue__body &:nth-child(n+2) {
+        margin-top: calc(100px + 6rem);
+      }
+
+      body:not(.home) .block-catalogue__body & + & {
+        margin-top: 100px;
+      }
+    }
+
+    //	.catalogue-item__inner
+    // ----------------------------------------
+    &__inner {
+
+      //	[media queries SP]
+      // ----------------------------------------
+      @include media(sp) {
+        .btn-detail {
+          display: none;
+        }
+      }
+
+      //	[media queries PC-tablet]
+      // ----------------------------------------
+      @include media(pc-tb) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+    }
+
+    & + & {
+
+      //	[media queries SP]
+      // ----------------------------------------
+      @include media(sp) {
+        @include calcvw(100, 'margin-top', 640);
+      }
+
+      //	[media queries PC-tablet]
+      // ----------------------------------------
+      @include media(pc-tb) {
+        //margin-top: 100px;
+      }
+    }
+
+    .btn-detail {
+
+      //	[media queries SP]
+      // ----------------------------------------
+      @include media(sp) {
+        width: 100%;
+        @include calcvw(50, 'margin-top', 640);
+      }
+
+      //	[media queries PC-tablet]
+      // ----------------------------------------
+      @include media(pc-tb) {
+        margin-top: 2rem;
+      }
+    }
+
+    //	.catalogue-item
+    // ----------------------------------------
+    &.catalogue-item-new {
+      width: 100%;
+      margin: auto;
+
+      & + & {
+        margin-top: calc(100px + 6rem);
+      }
+
+      .btn-detail {
+        bottom: 0;
+      }
+
+      .home .block-catalogue__body & {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+
+  //	.catalogue__body
+  // ----------------------------------------
+  @include element(body) {
+    position: relative;
+
+    //	[media queries PC-tablet]
+    // ----------------------------------------
+    @include media(pc-tb) {
+      width: 520px;
+
+      .block-catalogue__body & {
+        width: calc(60% - 20px);
+      }
+
+      .block-others & {
+        width: 100%;
+      }
+    }
+
+    .btn-detail {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 80%;
+      @include fontsize(24);
+
+      //	[media queries SP]
+      // ----------------------------------------
+      @include media(sp) {
+        display: none;
+      }
+    }
+
+    //	[media queries PC-tablet]
+    // ----------------------------------------
+    @include media(pc-tb) {
+      @at-root .is-onSale & {
+        position: relative;
+      }
+    }
+  }
+
+  //	.catalogue__title
+  // ----------------------------------------
+  @include element(title) {
+    margin-bottom: 1.2em;
+
+    //	[media queries SP]
+    // ----------------------------------------
+    @include media(sp) {
+      padding: .2em 0 .2em 6em;
+      @include fontsize(18);
+    }
+
+    //	[media queries PC-tablet]
+    // ----------------------------------------
+    @include media(pc-tb) {
+      padding: .2em 0 .2em 4.5em;
+      @include fontsize(32);
+
+      .block-catalogue__body & {
+        padding: 0;
+      }
+    }
+
+    @at-root .block-others & {
+      margin-bottom: .6em;
+      padding: 0;
+
+      //	[media queries SP]
+      // ----------------------------------------
+      @include media(sp) {
+        padding-left: 6em;
+      }
+
+      //	[media queries PC-tablet]
+      // ----------------------------------------
+      @include media(pc-tb) {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    span {
+      display: block;
+      margin-top: -.4em;
+      @include fontsize(14);
+      font-weight: normal;
+
+      //	[media queries SP]
+      // ----------------------------------------
+      @include media(sp) {}
+
+      //	[media queries PC-tablet]
+      // ----------------------------------------
+      @include media(pc-tb) {
+        margin-top: -6px;
+        margin-left: 0;
+      }
+
+      @at-root .block-others & {
+
+        //	[media queries PC-tablet]
+        // ----------------------------------------
+        @include media(pc-tb) {
+          margin-left: 2em;
+        }
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      margin-right: .6em;
+      padding: .2em .4em;
+      border: 4px solid $base_corporate_color;
+      color: $base_corporate_color;
+      text-align: center;
+      @include fontsize(32);
+      font-weight: bold;
+      line-height: 1;
+
+      //	[media queries SP]
+      // ----------------------------------------
+      @include media(sp) {
+        @include calcvw(32, 'font-size', 640);
+      }
+
+      @at-root .catalogue-available & {
+        content: '販売中';
+        border: 4px solid $base_corporate_color;
+        background-color: $base_corporate_color;
+        color: $base_white_color;
+      }
+
+      @at-root .catalogue-investment & {
+        content: '運用中';
+      }
+
+      //	[media queries PC-tablet]
+      // ----------------------------------------
+      @include media(pc-tb) {
+        @at-root .block-catalogue__body & {
+          @include fontsize(18);
+          display: block;
+          position: static;
+          width: 5em;
+        }
+      }
+
+      @at-root .block-others & {
+        width: 4em;
+        margin-bottom: .2em;
+        @include fontsize(20);
+
+        //	[media queries SP]
+        // ----------------------------------------
+        @include media(sp) {
+          @include fontsize(18);
+        }
+
+        //	[media queries PC-tablet]
+        // ----------------------------------------
+        @include media(pc-tb) {
+          position: relative;
+        }
+      }
+    }
+  }
+
+  //	.catalogue__access
+  // ----------------------------------------
+  @include element(access) {
+    position: relative;
+    margin-top: .8rem;
+
+    //	[media queries SP]
+    // ----------------------------------------
+    @include media(sp) {}
+
+    //	[media queries PC-tablet]
+    // ----------------------------------------
+    @include media(pc-tb) {
+      & + .btn-detail {
+        width: 100%;
+        position: absolute;
+        bottom: -7rem;
+      }
+    }
+  }
+
+  //	.catalogue__contact
+  // ----------------------------------------
+  @include element(contact) {
+    position: relative;
+    margin-top: 1.6rem;
+
+    //	[media queries SP]
+    // ----------------------------------------
+    @include media(sp) {}
+  }
+
+  //	.catalogue__outline
+  // ----------------------------------------
+  @include element(outline) {
+    font-family: $base_font_family_noto;
+    font-weight: bold;
+    color: $base_corporate_color;
+    letter-spacing: -.03em;
+    margin-top: .8rem;
+
+    //	[media queries SP]
+    // ----------------------------------------
+    @include media(sp) {
+      @include fontsize(18);
+    }
+
+    //	[media queries PC-tablet]
+    // ----------------------------------------
+    @include media(pc-tb) {
+      @include fontsize(24);
+
+      & + .btn-detail {
+        width: 100%;
+      }
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  //	.catalogue__photo
+  // ----------------------------------------
+  @include element(photo) {
+    position: relative;
+
+    //	[media queries SP]
+    // ----------------------------------------
+    @include media(sp) {
+      @include calcvw(50, 'margin-top', 640);
+
+      @at-root .block-others & {
+        margin-top: 0;
+        @include calcvw(30, 'margin-bottom', 640);
+      }
+    }
+
+    //	[media queries PC-tablet]
+    // ----------------------------------------
+    @include media(pc-tb) {
+      max-width: 522px;
+      min-height: 260px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @at-root .block-others & {
+        width: 343px;
+        margin-right: 32px;
+      }
+
+      @at-root .block-catalogue__body & {
+        width: calc(40% - 20px);
+      }
+    }
+
+    //	.catalogue__photo__item
+    // ----------------------------------------
+    @include element(item) {
+      position: relative;
+
+      //	[media queries PC-tablet]
+      // ----------------------------------------
+      @include media(pc-tb) {
+        //width: 100%;
+      }
+
+      &.-item01 {
+        width: 100%;
+      }
+
+      &.-item02,
+      &.-item03 {
+
+        //	[media queries SP]
+        // ----------------------------------------
+        @include media(sp) {
+          display: none;
+        }
+
+        //	[media queries PC-tablet]
+        // ----------------------------------------
+        @include media(pc-tb) {
+          margin-top: 25px;
+        }
+      }
+    }
+
+    .btn-detail {
+
+      //	[media queries PC-tablet]
+      // ----------------------------------------
+      @include media(pc-tb) {
+        display: none;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
 }
+
 .block-others {
-	width: 100%;
-	//	[media queries PC-tablet]
-	// ----------------------------------------
-	@include media(pc-tb) {
-		max-width: 640px;
-		.nishiazabu & {
-			padding-top: 0;
-		}
-	}
-	a, .box {
-		display: flex;
-		box-sizing: border-box;
-		width: 100%;
-		padding: 2em;
-		border: 1px solid $base_border_color;
-		flex-wrap: wrap;
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-		}
-	}
-	a:link, a:visited {
-		color: $base_text_color;
-	}
-	a:hover, a:active {
-		color: $base_hover_color;
-	}
+  width: 100%;
+
+  //	[media queries PC-tablet]
+  // ----------------------------------------
+  @include media(pc-tb) {
+    max-width: 640px;
+
+    .nishiazabu & {
+      padding-top: 0;
+    }
+  }
+
+  a,
+  .box {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2em;
+    border: 1px solid $base_border_color;
+    flex-wrap: wrap;
+
+    //	[media queries SP]
+    // ----------------------------------------
+    @include media(sp) {}
+  }
+
+  a:link,
+  a:visited {
+    color: $base_text_color;
+  }
+
+  a:hover,
+  a:active {
+    color: $base_hover_color;
+  }
 }
 
 
 //	[media queries SP]
 // ----------------------------------------
-@include media(sp) {
-}
+@include media(sp) {}
+
 //	[media queries PC-tablet]
 // ----------------------------------------
-@include media(pc-tb) {
-}
+@include media(pc-tb) {}

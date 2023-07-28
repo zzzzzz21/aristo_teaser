@@ -6153,7 +6153,7 @@ body.rtl .formError .formErrorArrow {
     display: block;
   }
 
-  .home .block-catalogue__body .catalogue-item:nth-child(n+3) {
+  .home .block-catalogue__body .catalogue-item:nth-child(n+2) {
     margin-top: calc(100px + 6rem);
   }
 
@@ -6249,6 +6249,7 @@ body.rtl .formError .formErrorArrow {
 
   .catalogue__photo {
     max-width: 522px;
+    min-height: 260px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
