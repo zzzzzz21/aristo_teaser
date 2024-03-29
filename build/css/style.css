@@ -1836,7 +1836,7 @@ a.btn-target:after {
 
 .logo-adw {
   position: relative;
-  top: -20px;
+  top: -10px;
   left: 0;
 }
 
@@ -4305,7 +4305,7 @@ a.btn-target:after {
   background-color: #f6f6f6;
 }
 
-.home .block-faq .block__title {
+.contents .block-faq .block__title {
   position: relative;
   margin-bottom: 0;
   font-size: 48px;
@@ -4392,7 +4392,7 @@ a.btn-target:after {
 
 .contents {
   position: relative;
-  padding: 0 0 320px;
+  padding: 0 0 180px;
 }
 
 .page-catalogue .contents {
@@ -8044,7 +8044,7 @@ body.rtl .formError .formErrorArrow {
     padding-left: 0;
   }
 
-  .home .block-faq .block__title {
+  .contents .block-faq .block__title {
     font-size: 7.5vw;
   }
 

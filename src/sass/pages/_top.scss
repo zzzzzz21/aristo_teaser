@@ -3596,7 +3596,7 @@ $title_color: #20428c;
 	}
 	//	.block-faq .block__title
 	// ----------------------------------------
-	@at-root .home & .block__title {
+	@at-root .contents & .block__title {
 		position: relative;
 		margin-bottom: 0;
 		@include fontsize(48);
