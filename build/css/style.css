@@ -2150,7 +2150,7 @@ a.btn-target:after {
 }
 
 .block-point .unit-point__image.-width {
-  max-width: 662px;
+  max-width: 800px;
   width: 100%;
   margin: 0 auto;
 }
@@ -6116,7 +6116,6 @@ body.rtl .formError .formErrorArrow {
   }
 
   .block-catalogue__body {
-    max-width: 1080px;
     margin: 0 auto;
     padding: 0;
   }

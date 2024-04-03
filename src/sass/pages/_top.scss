@@ -237,7 +237,7 @@ $title_color: #20428c;
 				}
 			}
 			&.-width {
-				max-width: 662px;
+				max-width: 800px;
 				width: 100%;
 				margin: 0 auto;
 				//	[media queries PC-tablet]
@@ -810,7 +810,7 @@ $title_color: #20428c;
 	// ----------------------------------------
 	@include media(pc-tb) {
 //		@include clearfix;
-		max-width: 1080px;
+		//max-width: 1080px;
 		margin: 0 auto;
 		padding: 0;
 		.home & {
