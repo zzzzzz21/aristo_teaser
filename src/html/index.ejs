@@ -264,8 +264,12 @@ catalogue = [
 						<dl class="unit-point__image -width">
 							<dt class="caption">国土交通省「地価公示」より当社作成</dt>
 							<dd>
-								<p><strong>2010年を100とした、地価変動推移（商業地）の比較</strong></p>
-								<p><img src="<%= path %>images/index/image_point1_rev5.png" alt="イメージ：安定した賃料収入が期待でき、かつ資産価値が落ちづらい傾向がある。"></p>
+								<p>
+									<picture>
+										<source srcset="<%= path %>images/index/image_point1_rev5_sp.png" media="(max-width: 767px)">
+										<img src="<%= path %>images/index/image_point1_rev5.png" alt="イメージ：安定した賃料収入が期待でき、かつ資産価値が落ちづらい傾向がある。">
+									</picture>
+								</p>
 							</dd>
 						</dl>
 						<p class="is--notice">※物件の資産価値が下落しないことを保証するものではありません。</p>

@@ -2150,7 +2150,7 @@ a.btn-target:after {
 }
 
 .block-point .unit-point__image.-width {
-  max-width: 900px;
+  max-width: 1024px;
   width: 100%;
   margin: 0 auto;
 }
