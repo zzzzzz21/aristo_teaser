@@ -47,6 +47,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="keywords" content="アリスト,ARISTO,不動産小口化商品,西麻布,渋谷,虎ノ門,高円寺,青山,京都,エーディーワークス">
 <meta property="og:image" content="https://www.re-adworks.com/images/logo_opg.png">
 <meta property="og:url" content="https://www.re-adworks.com/business/aristo/">
+
 <!-- [css] -->
 <link rel="stylesheet" href="./css/style.css?202204111000" media="all">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
@@ -137,6 +138,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 		</header>
 		<!-- /[.page-head] -->
+      <a class="single" href="./images/index/image_point1.jpg" title="画像単体タイトル">
+        <img src="./images/index/image_point1.jpg" alt="" />
+      </a>
+      <a href="https://www.youtube.com/embed/Wf8IR3eTMFs?autoplay=1" class="iframe">ライトボックスのリンク</a>
+      <div class="row">
+        <iframe width="50%" height="315" src="https://www.youtube.com/embed/eB0arUZ-63I?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="50%" height="315" src="https://www.youtube.com/embed/eB0arUZ-63I?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="50%" height="315" src="https://www.youtube.com/embed/eB0arUZ-63I?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="50%" height="315" src="https://www.youtube.com/embed/eB0arUZ-63I?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+
 		
 		<section class="block block-point" id="section-point">
 			<h2 class="block__title">好立地の優良不動産へ<br class="is-sp">投資することのメリットとは？</h2>
@@ -815,6 +828,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="./js/lib.js?201905100000"></script>
 <script src="./js/main.js?201905100000"></script>
 
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  window.onload = function() {
+    const onPlayerStateChange = ({ target }) => {
+      players.forEach((player, index) => {
+        // targetと同じ場合はreturn
+        if (target === player) return ;
+
+        // プレイヤーのステータスを取得
+        let state = player.getPlayerState();
+
+        // プレイ中のものは再生を止める
+        if (state === YT.PlayerState.PLAYING) {
+          player.stopVideo();
+        }
+      });
+    };
+
+    const onReady = (e) => {
+      // console.log(e,'ready')
+    };
+
+    var iframes = Array.from(document.querySelectorAll('iframe'));
+    // console.log(iframes)
+
+    var players = iframes.map((iframe) => {
+      return new YT.Player(iframe , {
+        events: {
+          'onStateChange': onPlayerStateChange,
+        },
+      });
+    });
+  };
+</script>
+
 <script async src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
 <script>
 	window.yjDataLayer = window.yjDataLayer || [];
@@ -836,6 +884,90 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="//conf.f-tra.com/fcconf/fcconf_0556_0002.js" charset="utf-8" type="text/javascript"></script>
 <script src="//asset.f-tra.com/track/cta2.js" charset="utf-8" type="text/javascript"></script>
 
+  <script>
+    //画像単体
+    $(function() {
+      $(".single").colorbox({
+        maxWidth:"90%",
+        maxHeight:"90%",
+        opacity: 0.7
+      });
+    });
 
+    //スライドショー
+    $(function() {
+      $(".gallery").colorbox({
+        rel:'slideshow',
+        slideshow:true,
+        slideshowSpeed:3000,
+        maxWidth:"90%",
+        maxHeight:"90%",
+        opacity: 0.7
+      });
+    });
+
+    //インライン
+    $(function() {
+      $(".inline").colorbox({
+        inline:true,
+        maxWidth:"90%",
+        maxHeight:"90%",
+        opacity: 0.7
+      });
+    });
+
+    //iframe
+    $(function() {
+      $(".iframe").colorbox({
+        iframe:true,
+        width:"80%",
+        height:"80%",
+        opacity: 0.7
+      });
+    });
+
+    //ajax
+    $(function() {
+      $(".ajax").colorbox({
+        maxWidth:"80%",
+        maxHeight:"80%",
+        opacity: 0.7
+      });
+    });
+  </script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    window.onload = function() {
+      const onPlayerStateChange = ({ target }) => {
+        players.forEach((player, index) => {
+          // targetと同じ場合はreturn
+          if (target === player) return ;
+
+          // プレイヤーのステータスを取得
+          let state = player.getPlayerState();
+
+          // プレイ中のものは再生を止める
+          if (state === YT.PlayerState.PLAYING) {
+            player.stopVideo();
+          }
+        });
+      };
+
+      const onReady = (e) => {
+        // console.log(e,'ready')
+      };
+
+      var iframes = Array.from(document.querySelectorAll('iframe'));
+      // console.log(iframes)
+
+      var players = iframes.map((iframe) => {
+        return new YT.Player(iframe , {
+          events: {
+            'onStateChange': onPlayerStateChange,
+          },
+        });
+      });
+    };
+  </script>
 </body>
 </html>

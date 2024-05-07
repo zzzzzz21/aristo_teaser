@@ -331,22 +331,22 @@ var goPageTop = function goPageTop() {
 var fixedButton = function fixedButton() {
     var $fixedBtn = $('#data-fixedButton'),
         $goTopBtn = $('#data-goPageTop'),
-        triggerPosition = window.innerHeight / 2;
+        triggerPosition = window.innerHeight / 10;
     var scroll_position = 0,
         scrollTimer = false;
 
     function init() {
         $(window).on('scroll', scrollEvent);
         $goTopBtn.on('click', goPageTop);
-		$fixedBtn.attr('aria-hidden', 'true');
+//		$fixedBtn.attr('aria-hidden', 'true');
     }
 
     function switchDisplay() {
         scroll_position = pageYOffset;
         if (triggerPosition <= scroll_position) {
             $fixedBtn.attr('aria-hidden', 'false').find('a').attr('tabindex', '0');
-        } else {
-            $fixedBtn.attr('aria-hidden', 'true').find('a').attr('tabindex', '-1');
+ //       } else {
+  //          $fixedBtn.attr('aria-hidden', 'true').find('a').attr('tabindex', '-1');
         }
     }
 

@@ -621,3 +621,119 @@
 		}
 	}
 }
+
+
+// ----------------------------------------
+//	documents/index.html
+// ----------------------------------------
+.documents {
+	.block {
+		padding: 50px 0;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+			@include calcvw(50, 'padding', 640);
+			padding-right: $base_padding_sp;
+			padding-left: $base_padding_sp;
+		}
+	}
+}
+
+// ----------------------------------------
+//	.c-iframe
+// ----------------------------------------
+.c-iframe {
+  iframe  {
+	  aspect-ratio: 16 / 9;
+	  width: 100%;
+	  height: 100%;
+  }
+}
+
+// ----------------------------------------
+//	.c-movie-list
+// ----------------------------------------
+.c-movie-list {
+	@include media(site-width) {
+		display: flex;
+		justify-content: center;
+		margin-top: 24px;
+		width: 100%;
+	}
+	@include media(sp) {
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__item {
+		background: $base_white_color;
+		cursor: pointer;
+		display: block;
+		padding: .4em;
+		transition: all ease .3s;
+		@include media(site-width) {
+			margin: 0 12px;
+			width: 16%;
+		}
+		@include media(sp) {
+			margin: 0;
+			width: calc(33% - 16px);
+		}
+		&:nth-child(n+2) {
+			margin-top: 24px;
+			@include media(site-width) {
+				margin-top: 0;
+			}
+		}
+		&.-current, &:hover {
+			background-color: $base_corporate_color;
+		}
+	}
+	&__title {
+		background: $base_white_color;
+		display: block;
+		padding: .2em;
+		text-align: center;
+	}
+	img  {
+		aspect-ratio: 1.618 / 1;
+		cursor: pointer;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 100% 0;
+		@include media(site-width) {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+// ----------------------------------------
+//	.c-files-list
+// ----------------------------------------
+.c-files-list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 0 12px;
+	&__item {
+		width: calc((100% - 24px) / 2);
+		display: flex;
+		&:nth-child(n+3) {
+			margin-top: 16px;
+		}
+		@include media(sp) {
+			width: 100%;
+			&:nth-child(n+2) {
+				margin-top: 16px;
+			}
+		}
+		a {
+			display: flex;
+			align-items: center;
+			width: 100%;
+		}
+	}
+}

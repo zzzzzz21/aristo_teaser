@@ -513,9 +513,57 @@ $title_color: #20428c;
 //	.block-instruments, .block-catalogue
 //	ARISTO第一弾商品、ARISTO物件情報
 // ----------------------------------------
-.block-instruments,.block-catalogue {
+.block-instruments,.block-catalogue, .block-documents {
 	//	.block-instruments .block__title
 	// ----------------------------------------
+	@at-root .documents & .block__title {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-items:center;
+		min-height: 280px;
+		background: url(#{$image_path}index/bg_header_flow.jpg) 0 0 no-repeat;
+		background-size: cover;
+		margin-bottom: 0;
+		@include fontsize(60);
+		font-family: $base_font_family_noto;
+		font-weight: normal;
+		color: $title_color;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			padding: 1em 0;
+			@include calcvw(94, 'min-height', 640);
+			@include calcvw(40, 'font-size', 640);
+		}
+		&:before,
+		&:after {
+			position: relative;
+			display: inline-block;
+			content: '';
+			width: 36px;
+			height: 36px;
+			border: 2px solid $title_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 1.2em;
+				height: 1.2em;
+				border-width: 1px;
+			}
+		}
+		&:before {
+			top: -.6em;
+			border-right: none;
+			border-bottom: none;
+		}
+		&:after {
+			bottom: -.6em;
+			border-top: none;
+			border-left: none;
+		}
+	}
 	@at-root .nishiazabu & .block__title {
 		position: relative;
 		display: flex;
@@ -3664,6 +3712,57 @@ $title_color: #20428c;
 			}
 		}
 	}
+}
+
+//	.block-movies
+//	ARISTO関連資料 > 動画
+// ----------------------------------------
+.block-movies {
+	.block__body {
+		display: flex;
+		justify-content: space-between;
+		@include media(site-width) {
+			display: block;
+		}
+		.movie-panel {
+			width: 80%;
+			height: calc(80% / 16 * 9);
+			@include media(site-width) {
+				width: 100%;
+				height: calc(100% * 9 / 16);
+			}
+		}
+		.c-movie-list {
+			width: calc(100% - 80% - 24px);
+			@include media(site-width) {
+				width: 100%;
+			}
+		}
+	}
+}
+
+//	.block-files
+//	ARISTO関連資料 > 関連資料
+// ----------------------------------------
+.block-files {
+	@at-root .documents & .block__lead {
+	}
+	@at-root .documents & .block__lead {
+		margin-bottom: 70px;
+		text-align: center;
+		@include fontsize(24);
+		font-family: $base_font_family;
+	}
+	.is-note {
+		text-align: center;
+	}
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		@include calcvw(70, 'margin-bottom', 640);
+		@include fontsize(20);
+	}
+
 }
 
 //	.footer-information

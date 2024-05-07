@@ -47,6 +47,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="keywords" content="アリスト,ARISTO,不動産小口化商品,西麻布,渋谷,虎ノ門,高円寺,青山,京都,エーディーワークス">
 <meta property="og:image" content="https://www.re-adworks.com/images/logo_opg.png">
 <meta property="og:url" content="https://www.re-adworks.com/business/aristo/inquiry/complete.html">
+
 <!-- [css] -->
 <link rel="stylesheet" href="../css/style.css?202204111000" media="all">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
@@ -212,6 +213,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="../js/lib.js?201905100000"></script>
 <script src="../js/main.js?201905100000"></script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  window.onload = function() {
+    const onPlayerStateChange = ({ target }) => {
+      players.forEach((player, index) => {
+        // targetと同じ場合はreturn
+        if (target === player) return ;
+
+        // プレイヤーのステータスを取得
+        let state = player.getPlayerState();
+
+        // プレイ中のものは再生を止める
+        if (state === YT.PlayerState.PLAYING) {
+          player.stopVideo();
+        }
+      });
+    };
+
+    const onReady = (e) => {
+      // console.log(e,'ready')
+    };
+
+    var iframes = Array.from(document.querySelectorAll('iframe'));
+    // console.log(iframes)
+
+    var players = iframes.map((iframe) => {
+      return new YT.Player(iframe , {
+        events: {
+          'onStateChange': onPlayerStateChange,
+        },
+      });
+    });
+  };
+</script>
 
 <script async src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
 <script>

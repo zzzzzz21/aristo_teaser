@@ -1,0 +1,118 @@
+<%
+meta = { title:'', desc:'' };
+isForm = '';
+path = '../';
+srcPath ='../../';
+directory = 'documents';
+directoryLv2 = '';
+page = '';
+%><!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<%- include(srcPath + 'html/include/_gtag') %>
+<%- include(srcPath + 'html/include/_head') %>
+</head>
+<body class="<% if (directory!=='') { %> <%= directory %><% } else {%>home<% } %>" id="top">
+<%- include(srcPath + 'html/include/_gtag_body') %>
+<div class="page" id="data-page">
+<%- include(srcPath + 'html/include/_header') %>
+	<main class="main contents">
+		<section class="block-documents" id="section-documents">
+			<h2 class="block__title"><span>ARISTO関連資料</span></h2>
+			<div class="block block-movies">
+				<h3 class="unit__title"><span>動画</span></h3>
+				<div class="block__body">
+					<div class="movie-panel c-iframe">
+						<div id="movie-play"></div>
+					</div>
+					<ul id="movie-menu" class="c-movie-list"></ul>
+				</div>
+			</div>
+			<div class="block block-files">
+				<h3 class="unit__title"><span>関連資料</span></h3>
+				<div class="block__lead">
+					<p>「商品説明書」「任意組合出資参加申込書」等は以下よりダウンロードいただけます。</p>
+					<p class="is-note">※クリックしてもダウンロードが始まらない場合は、別のブラウザでお試しください。</p>
+				</div>
+				<div class="block__body">
+					<ul class="c-files-list">
+						<li class="c-files-list__item m-files__item__wide">
+							<a href="<%= path %>files/pamphlet_aristo_20240424.pdf" class="btn-download-pdf" download="【ARISTO】概要パンフレット_20240424.pdf">【ARISTO】概要パンフレット_20240424.pdf</a>
+						</li>
+						<li class="c-files-list__item m-files__item__wide">
+							<a href="<%= path %>files/pamphlet_aristo_hiroo_20240416.pdf" class="btn-download-pdf" download="【ARISTO広尾】商品説明パンフレット_20240416.pdf">【ARISTO広尾】商品説明パンフレット_20240416.pdf</a>
+						</li>
+						<li class="c-files-list__item m-files__item__wide">
+							<a href="<%= path %>files/pamphlet_aristo_hiroo_extra_20240416.pdf" class="btn-download-pdf" download="【ARISTO広尾】別冊_相続税法上の評価.pdf">【ARISTO広尾】別冊_相続税法上の評価.pdf</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- /[.unit.block-property#section-property] -->	
+	</main>
+	<!-- /[.main] -->
+<%- include(srcPath + 'html/include/_footer') %>
+
+<%- include(srcPath + 'html/include/_fixed-buttons') %>
+    <!--　/[.fixed-button] -->
+</div><!-- /.page -->
+
+<%- include(srcPath + 'html/include/_loading') %>
+
+<%- include(srcPath + 'html/include/_body_last') %>
+	<script>
+		const tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/player_api";
+		const firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		let thumbInsert = '';
+		let ytPlayer;
+		let ytData = [
+			{ id: 'Wf8IR3eTMFs', title: 'エー・ディー・ワークスの「ARISTO」紹介動画' },
+			{ id: 'divrMyf6mnU', title: 'ARISTO広尾 物件紹介動画' },
+			{ id: 'hFZz9UiRXto', title: 'ARISTO広尾 商品詳細案内動画' }
+		];
+		for(let i = 0; i < ytData.length; i++) {
+			thumbInsert += '<li class="c-movie-list__item">';
+			thumbInsert += '<img decoding="async" src="https://img.youtube.com/vi/' + ytData[i]['id'] + '/mqdefault.jpg" alt="">';
+			thumbInsert += '<p class="c-movie-list__title">' + ytData[i]['title'] + '</p>';
+			thumbInsert += '</li>';
+		}
+		window.onYouTubeIframeAPIReady = function() {
+			ytPlayer = new YT.Player('movie-play', {
+				height: '360',
+				width: '640',
+				videoId: ytData[0]['id'],
+				playerVars:{
+					rel: 0,
+					modestbranding: 1
+				}
+			});
+		}
+		function play(ytId, seekTime) {
+			ytPlayer.loadVideoById(ytId, seekTime);
+		}
+
+		$(function() {
+			$('#movie-menu').append(thumbInsert);
+			/* 指定した動画を再生 */
+			$('#movie-menu li').on('click', function() {
+				ytId = $(this).children('img').attr('src').replace('https://img.youtube.com/vi/', '');
+				ytId = ytId.replace('/mqdefault.jpg', '');
+				play(ytId, 0);
+				return false;
+			});
+
+		});
+		$(function(){
+			$('#movie-menu li:first-child').addClass('-current');
+			$('#movie-menu li').on('click', function(){ 
+				$(this).addClass('-current').siblings().removeClass('-current');
+				return false;
+			});    
+		});	
+	</script>
+
+</body>
+</html>

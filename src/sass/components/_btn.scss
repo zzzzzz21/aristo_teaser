@@ -10,6 +10,10 @@
 .btn-contact {
 	@include btn-mail;
 }
+.btn-download-pdf {
+	@include btn-download-pdf;
+	text-align: left;
+}
 
 .btn-seminar {
     @include btn-seminar;
