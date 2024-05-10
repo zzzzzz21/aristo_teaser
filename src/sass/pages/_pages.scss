@@ -662,31 +662,34 @@
 		width: 100%;
 	}
 	@include media(sp) {
-		flex-wrap: wrap;
-		justify-content: space-between;
+		display: block;
 	}
 
 	&__item {
 		background: $base_white_color;
 		cursor: pointer;
 		display: block;
-		padding: .4em;
-		transition: all ease .3s;
 		@include media(site-width) {
 			margin: 0 12px;
 			width: 16%;
 		}
 		@include media(sp) {
-			margin: 0;
-			width: calc(33% - 16px);
+			align-items: center;
+			display: flex;
+			justify-content: flex-start;
+			margin: 0 auto;
+			width: 80%;
 		}
 		&:nth-child(n+2) {
 			margin-top: 24px;
 			@include media(site-width) {
 				margin-top: 0;
 			}
+			@include media(sp) {
+				margin-top: 12px;
+			}
 		}
-		&.-current, &:hover {
+		&.-current img, &:hover img {
 			background-color: $base_corporate_color;
 		}
 	}
@@ -695,8 +698,14 @@
 		display: block;
 		padding: .2em;
 		text-align: center;
+		@include media(sp) {
+			margin-left: 1em;
+		text-align: left;
+		}
 	}
 	img  {
+		padding: .4em;
+		transition: all ease .3s;
 		aspect-ratio: 1.618 / 1;
 		cursor: pointer;
 		width: 100%;
@@ -706,6 +715,9 @@
 		@include media(site-width) {
 			width: 100%;
 			height: auto;
+		}
+		@include media(sp) {
+			width: 36%;
 		}
 	}
 }

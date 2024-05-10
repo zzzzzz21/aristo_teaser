@@ -4997,16 +4997,14 @@ a.btn-target:after {
   background: #fff;
   cursor: pointer;
   display: block;
-  padding: .4em;
-  transition: all ease .3s;
 }
 
 .c-movie-list__item:nth-child(n+2) {
   margin-top: 24px;
 }
 
-.c-movie-list__item.-current,
-.c-movie-list__item:hover {
+.c-movie-list__item.-current img,
+.c-movie-list__item:hover img {
   background-color: #003466;
 }
 
@@ -5018,6 +5016,8 @@ a.btn-target:after {
 }
 
 .c-movie-list img {
+  padding: .4em;
+  transition: all ease .3s;
   aspect-ratio: 1.618 / 1;
   cursor: pointer;
   width: 100%;
@@ -8553,15 +8553,31 @@ body.rtl .formError .formErrorArrow {
   }
 
   .c-movie-list {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    display: block;
   }
 
   .c-movie-list__item {
-    margin: 0;
-    width: calc(33% - 16px);
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .c-movie-list__item:nth-child(n+2) {
+    margin-top: 12px;
+  }
+
+  .c-movie-list__title {
+    margin-left: 1em;
+    text-align: left;
+  }
+
+  .c-movie-list img {
+    width: 36%;
   }
 
   .c-files-list__item {
