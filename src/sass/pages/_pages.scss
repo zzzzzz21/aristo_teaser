@@ -723,6 +723,28 @@
 }
 
 // ----------------------------------------
+//	.c-dl
+// ----------------------------------------
+.c-dl {
+	dt {
+		margin-bottom: 1em;
+		@include fontsize(24);
+		font-family: $base_font_family_noto;
+		text-align: center;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include calcvw(32, 'margin-bottom',640);
+			@include fontsize(16);
+		}
+	}
+	dd + dt {
+		margin-top: 3em;
+	}
+}
+
+
+// ----------------------------------------
 //	.c-files-list
 // ----------------------------------------
 .c-files-list {

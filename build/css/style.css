@@ -5026,6 +5026,18 @@ a.btn-target:after {
   object-position: 100% 0;
 }
 
+.c-dl dt {
+  margin-bottom: 1em;
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-family: "Noto Serif JP", serif;
+  text-align: center;
+}
+
+.c-dl dd + dt {
+  margin-top: 3em;
+}
+
 .c-files-list {
   display: -ms-flexbox;
   display: flex;
@@ -8578,6 +8590,12 @@ body.rtl .formError .formErrorArrow {
 
   .c-movie-list img {
     width: 36%;
+  }
+
+  .c-dl dt {
+    margin-bottom: 5vw;
+    font-size: 16px;
+    font-size: 1.6rem;
   }
 
   .c-files-list__item {
